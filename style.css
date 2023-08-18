@@ -10,8 +10,7 @@ a {
 }
 
 #logo,
-.topnav a,
-h1 {
+.topnav a {
 	text-align: center;
 }
 
@@ -166,7 +165,6 @@ h1 {
 }
 
 h3 {
-	color: wheat;
 	margin-left: 10px;
 }
 
