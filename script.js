@@ -1,0 +1,1 @@
+function myFunction(){var a=document.getElementById("myTopnav");"topnav"===a.className?a.className+=" responsive":a.className="topnav";var s=document.getElementById("bar");"fa fa-bars"===s.className?s.className="fa fa-times":s.className="fa fa-bars"}
