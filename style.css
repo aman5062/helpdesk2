@@ -242,3 +242,7 @@ pointer-events: none;
     margin-top: 10px;
   }
   
+#myTopnav{
+	position: fixed;
+	width: 100%;
+}
