@@ -258,6 +258,26 @@ pointer-events: none;
 	float: right;
 	background-color: black;
 	border-radius: 50%;
+	
 	color: white;
 	padding: 10px;
+}
+/* CSS in a separate file (e.g., style.css) or in a <style> tag in the HTML document */
+
+.go-to-top-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.go-to-top-button span {
+    font-size: 20px;
 }
