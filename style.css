@@ -285,7 +285,7 @@ iframe {
 	visibility: hidden;
 }
 #preprocessor{
-    background: #000 url(infinity.gif) no-repeat center center;
+    background: #000 url(img/preloader.gif) no-repeat center center;
     background-size: 50%;
 	mix-blend-mode: multiply;
     z-index: 100;
