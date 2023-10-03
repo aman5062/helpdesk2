@@ -280,3 +280,7 @@ pointer-events: none;
 .go-to-top-button span {
     font-size: 20px;
 }
+iframe {
+	display: none;
+	visibility: hidden;
+}
