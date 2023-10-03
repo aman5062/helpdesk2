@@ -10,9 +10,9 @@ window.addEventListener('scroll', function () {
     }
 });
 
-document.getElementById('goToTopButton').addEventListener('click', function () {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+
+
+ window.addEventListener("load",function(){
+    var loader = document.getElementById("preprocessor");
+    loader.style.display = "none";
+ })

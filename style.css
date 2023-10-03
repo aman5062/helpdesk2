@@ -284,3 +284,13 @@ iframe {
 	display: none;
 	visibility: hidden;
 }
+#preprocessor{
+    background: #000 url(infinity.gif) no-repeat center center;
+    background-size: 50%;
+	mix-blend-mode: multiply;
+    z-index: 100;
+    position: fixed;
+	/* display: none; */
+    height: 100vh;
+    width: 100%;
+  }
