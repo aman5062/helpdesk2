@@ -8,25 +8,57 @@
 </head>
 <link rel="stylesheet" type="text/css" href="style.css?v=1" />
 <script src="script.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+	crossorigin="anonymous"
+></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div id="preprocessor"></div>
-<body>   
- 
-        <div class="topnav" id="myTopnav">
-            <a href="#" class="head"><img src="logo.png" id="imglogo"><div id="heading">Helpdesk</div></a>
-            <a href="index.html" class="active">DBMS</a>
-            <a href="mech.html" class="inactive">Mechanics</a>
-            <a href="object.html" class="inactive">OPPS</a>
-            <a href="daa.html" class="inactive">DAA</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fa fa-bars" id="bar" style="background-color: transparent;"></i>
-            </a>
-          </div>
-    </div>
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+/>
+<div id="preprocessor">
+  <div class="spinner-grow" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<body>     
+
+    
+  <div>
+    <header class="d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img src="logo.png" id="imglogo">
+        <span class="fs-4 mr-5 lo" ><h2 class="bold-text">Helpdesk</h2></span>
+      </a>
+      
+      <ul class="nav nav-pills" id="myNav">
+        <li class="nav-item"><a href="index.html" class="nav-link">DBMS</a></li>
+        <li class="nav-item"><a href="mech.html" class="nav-link">Mechanics</a></li>
+        <li class="nav-item dropdown" id="myDropdown">
+          <a class="nav-link dropdown-toggle show" href="object.html" data-bs-toggle="dropdown" aria-expanded="false">OPPS</a>
+          <ul class="dropdown-menu" data-bs-popper="static">
+            <li><a class="dropdown-item" href="object.html">Code</a></li>
+            <li><a class="dropdown-item" href="oops notes.html">Notes</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="daa.html" class="nav-link">DAA</a></li>
+      </ul>
+    </header>
+  </div>
+    
 <div id="body">
  
-  <br><br><br><br><br><a href="whatsapp://send?text=DBMS Notes: https://bit.ly/3EyMflG" data-action="share/whatsapp/share"><center><button>Share</button>
+  <a href="whatsapp://send?text=DBMS Notes: https://bit.ly/3EyMflG" data-action="share/whatsapp/share"><center><button>Share</button>
   </center></a>
   <center>
   Click on Open⬇️
@@ -37,6 +69,8 @@
     <!-- <iframe src="pdf/Database Management System (Debuggers).pdf" style="width:600px; height:650px;" frameborder="0"></iframe> -->
 
 </center></div><br><br>
+
+
 
 </body>
 
