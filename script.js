@@ -27,31 +27,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Check if the current page matches the link's href attribute
         if (isCurrentPage) {
-            link.classList.add('active');
+            link.classList.add('active', 'text-white');
             link.classList.remove('text-black');
         } else {
-            link.classList.remove('active');
+            link.classList.remove('active', 'text-white');
             link.classList.add('text-black');
         }
     });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const dropdown = document.querySelector("#myDropdown");
-    const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
-    const dropdownMenu = dropdown.querySelector(".dropdown-menu");
-    const dropdownItems = dropdownMenu.querySelectorAll(".dropdown-item");
-
-    dropdownToggle.addEventListener("click", function(event) {
-        event.preventDefault();
-
-        // Toggle the 'show' class to expand/collapse the dropdown menu
-        if (!dropdownMenu.classList.contains("show")) {
-            dropdownMenu.classList.add("show");
-        } else {
-            dropdownMenu.classList.remove("show");
-        }
-    });
-
 });
