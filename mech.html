@@ -40,7 +40,7 @@
               <li class="nav-item"><a href="index.html" class="nav-link">DBMS</a></li>
               <li class="nav-item"><a href="mech.html" class="nav-link">Mechanics</a></li>
               <li class="nav-item dropdown" id="myDropdown">
-                <a class="nav-link dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="false">OPPS</a>
+                <a class="nav-link dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="false">OOPS</a>
                 <ul class="dropdown-menu" data-bs-popper="static">
                   <li><a class="nav-link dropdown-item" href="object.html">Code</a></li>
                   <li><a class="nav-link dropdown-item" href="oops notes.html">Notes</a></li>
@@ -225,7 +225,7 @@
         &DoubleRightArrow; -17600=-40000cosx<br> 
         &DoubleRightArrow; cosy=17600/40000<br>
         &DoubleRightArrow; cosy=0.44<br>
-        &DoubleRightArrow; y=63.89<br><br>
+        &DoubleRightArrow; y=63.89   <b>Ans</b><br><br>
     
      <h3><b>Resolution of Forces:</b></h3>
      Finding the components of a given force in two given direction is called Resolution. These components of Forces
@@ -280,10 +280,285 @@
 <br>
         &sum;F<sub>y</sub>=F<sub>1</sub>sin&theta;<sub>1</sub>+F<sub>2</sub>cos&theta;<sub>2</sub>
         +F<sub>3</sub>cos&theta;<sub>3</sub>+F<sub>4</sub>cos&theta;<sub>4</sub>
+        <br><br>
 
     <h3>Lami's theorem-</h3>
     It state that if a body is in equilibrium under the action of three forces each 
-    force is proportional to the sine of the angle between the other two forces.
+    force is proportional to the sine of the angle between the other two forces.<br>
+
+    <img src="img/7.png" alt="Image Not found"><br>
+
+    <b>F<sub>1</sub>/sin&alpha;=F<sub>2</sub>/sin&beta;=F<sub>3</sub>/sin&gamma;<br><br>
+
+        Q&GreaterGreater; A machine weighing 5KN supporting by two chains attached to same
+        point on the machine. One chain goes to the hook in the sealing and has an inclination
+        45&deg; with the horizontal and the other chain goes to the eyevolt in the wall and 
+        is inclined at 30&deg; to the horizontal. Make calculation for tension induced in the 
+        chain.<br><br>
+        Sol -</b><br>
+        <img src="img/6.png" alt="Image Not found" width="300px"><br>
+        from lami's theorem,<br>
+        &DoubleRightArrow;T<sub>1</sub>/sin(90&deg;+30&deg;)=T<sub>2</sub>/sin(90&deg;+45&deg;)=W/sin(105&deg;)<br>
+        so, T<sub>1</sub>/cos30&deg;=5KN/sin(105&deg;)<br>
+        &DoubleRightArrow;T<sub>1</sub>=4.48KN <b>Ans</b><br>
+        And, T<sub>2</sub>/cos45&deg;=W/sin(105&deg;)<br>
+        &DoubleRightArrow;T<sub>2</sub>=3.66KN <b>Ans</b><br><br>
+    
+        <b>Q&GreaterGreater; Find out the resultant of given forces as shown in fig.</b><br>
+        <img src="img/8.png" alt="Image Not found" width="300px"><br>
+        <b>Sol -</b><br>
+         we know that,<br>
+         <b>R&sup2;=(&sum;F<sub>x</sub>)&sup2;+(&sum;F<sub>y</sub>)&sup2;</b> --------eq(1)
+            <br>
+            so, &sum;F<sub>x</sub>=20+15cos60&deg;-25cos30&deg;<br>
+            &sum;F<sub>x</sub>=5.85KN<br>
+            &sum;F<sub>y</sub>=30+15sin60&deg;+25sin30&deg;<br>
+            &sum;F<sub>y</sub>=55.45KN<br>
+    
+            from eq 1,<br>
+            R&sup2;=(5.85)&sup2;+(55.45)&sup2;<br>
+            R=55.75KN <b>Ans</b><br>
+            And, tan&theta;= &sum;F<sub>y</sub>/ &sum;F<sub>x</sub><br>
+            &theta;=tan<sup>-1</sup>(55.45/ 5.85)=83.9 <b>Ans</b><br>
+<br>
+    <h3>Free body diagram-</h3>
+
+    The diagram showing the body free from all the other bodies in contact and showing
+    all the forces acting on it including selfweight and reaction from the other bodies 
+    removed.<br>
+    <img src="img/9.png" alt="Image Not found" width="300px"><br><br><br>
+
+
+    <b>Q&GreaterGreater; A sphere weighing 100N is tide to a smooth wall by a string as 
+        shown in fig. Find the tension T in the string and reaction R from the ball.
+    </b><br>
+    <img src="img/11.1.png" alt="Image Not found "><br>
+    <b>Sol -</b><br>
+
+        from lami's theorem,<br>
+        T/sin90&deg;=R/sin165&deg;=W/sin150&deg;<br>
+        considering, T/sin90&deg;=W/sin150&deg;<br>
+        &DoubleRightArrow;T=sin90&deg;*100/sin150&deg;=103.53N <b>Ans</b><br>
+        considering, R/sin165&deg;=W/sin150&deg;<br>
+        &DoubleRightArrow;T=sin165&deg;*100/sin150&deg;=26.7N <b>Ans</b><br><br>
+    
+    <b>Q&GreaterGreater;Find the magnitude and direction of a given system of forces
+        as shown in the fig.
+    </b><br>
+    <b>Sol -</b>
+        &sum;F<sub>x</sub>=0<br>
+        &DoubleRightArrow; 300+400cos30&deg;+600cos50&deg;-1200cos65&deg;=0<br>
+        &DoubleRightArrow; 524.94N<br>
+        &sum;F<sub>y</sub>=0<br>
+        &DoubleRightArrow; 800+400sin30&deg;-600sin50&deg;-1200sin65&deg;=0<br>
+        &DoubleRightArrow; -547.19N<br>
+        R&sup2;=(&sum;F<sub>x</sub>)&sup2;+(&sum;F<sub>y</sub>)&sup2;<br>
+        &DoubleRightArrow;R&sup2;=(524.94)&sup2;+(-547.19)&sup2;<br>
+        &DoubleRightArrow;R=758.27N <b>Ans</b><br>
+        And, tan&theta;= &sum;F<sub>y</sub>/ &sum;F<sub>x</sub><br>
+        &DoubleRightArrow;&theta;=tan<sup>-1</sup>(-547.19/ 524.94)=46.189 <b>Ans</b><br><br>
+
+    <ul><h3>Moment of force-</h3>
+    It is the turning effect produced by a force on the body on which it acts
+    <table border="2"><tr><td><b>M=p*l</b></td></tr></table></b></br>
+        where, p=force acting on the body <br>
+           l=distance.<br>
+    
+
+    The moment of a force is equal to the product of the forces and perpendicular distance
+    of the point about which the moment is required and the line of the force.
+
+    Unit of the moment is Nm.<br>
+
+    <li><b>Type of moment -</b></li>
+    <ol><li>Clockwise</li>
+        <li>Anti-clockwise</li></ol>
+    
+    <b>NOTE-</b> The general sign convention is to take Clockwise moment as +ve and Anti-clockwise
+    moment as -ve.
+    <li><b>Vanignan's theorem (principle of moment)-</b></li>
+    The algebric sum of moment of a system of co-planer forces about a moment center is 
+    equal to their resultant forces about the same moment center.</ul>
+    
+    <table border="2"><tr><td><b>R*d=F<sub>1</sub>.d<sub>1</sub>+ F<sub>2</sub>.d<sub>2</sub></b></td></tr></table></br>
+
+<b>Q&GreaterGreater;The moment of given system of force about point "A" is zero then find the 
+    value of force "P".<br>
+    <img src="img/12.png" alt="Image Not found " width="300px"><br>
+    sol-<br>
+</b>
+<img src="img/13.png" alt="Image Not found" width="300px"> <br>
+&circlearrowright;+ve &sum;M<sub>A</sub>=0<br>
+&DoubleRightArrow;(0x3)+(2x2)+(2x4)+(2x3)-Psin30&deg;x4-Pcos30&deg;x2=0<br>
+&DoubleRightArrow;4+8+6-4Psin30&deg;-2Pcos30&deg;=0<br>
+&DoubleRightArrow;18-2P-&Sqrt;3P=0<br>
+&DoubleRightArrow;3.732P=18<br>
+&DoubleRightArrow;P=4.823KN <b>Ans</b><br><br>
+
+<b>Q&GreaterGreater;Calculate the moment about point B for the force system in fig.<br>
+    <img src="img/14.png" alt="Image Not found" width="300px"> <br>
+Sol-
+
+</b><br>
+&circlearrowright;+ve &sum;M<sub>B</sub>= 0+(10x3)-(20x2)-(30x3)+(30x2)<br>
+=30-40-90+60<br>
+=-40KNm <b>OR</b> 40KNm(Anti-clockwise).<b>Ans</b><br><br>
+
+<b>Q&GreaterGreater;A force of 1200N acts on a braket find the moment of a force about 'A' <br>
+    <img src="img/14.2.png" alt="Image Not found" width="300px"> <br>
+    Sol-<br>
+    <img src="img/15.png" alt="Image Not found" width="300px"> <br>
+</b>
+&circlearrowright;+ve &sum;M<sub>A</sub>=(-1200sin30&deg; x 140)+(1200cos30&deg; x 120)<br>
+=(-1200 x 1/2 x 140)+ (1200 x &Sqrt;3/2 x 120)<br>
+=-84000 + 124707.658<br>
+=40707.658Nmm <b>OR</b> 40707.658Nmm(Clockwise).<b>Ans</b><br><br>
+<b>Q&GreaterGreater;Find the algebric sum of moment of all the forces as shown in fig. about 'C'
+    Consider AB=BC=CA=1m <br>
+    <img src="img/16.2.png" alt="Image Not found" width="300px"> <br>
+    Sol-<br>
+    <img src="img/16.1.png" alt="Image Not found" width="300px"> <br>
+</b>
+we know that,
+sin60&deg;=p/h=p/1<br>
+&therefore; p=&Sqrt;3/2=0.866m<br>
+So, &circlearrowright;+ve&sum;M<sub>C</sub>=(3 x 0.866)+0+0<br>
+=2.598KNm <b>Ans</b><br><br>
+
+<h3>Equilibrium-</h3>
+<h5>Types of support-</h5>
+<ol type="1">
+    <li><b>Simple support-</b></li>
+    The end of the beam rest on a rigid support.<br>
+    <img src="img/17.png" alt="Image Not found" width="300px"> <br>
+    <li><b>Roller support-</b></li>
+    In this case beam end is support on the roller. In such cases reaction is always normal to the 
+    support.<br>
+    <img src="img/17.1.png" alt="Image Not found" width="300px"> <br>
+    <li><b>Hinged or pinned support-</b></li>
+    In such cases the position of the end of the beam is fixed but the end is freed to rotate.<br>
+    <img src="img/17.2.png" alt="Image Not found" width="300px"> <br>
+    <li><b>Fixed support-</b></li>
+    At fixed support the end of beam is neither permited to move in any direction nor allow to rotate.<br>
+    <img src="img/17.3.png" alt="Image Not found" width="300px"> <br>
+    </ol><br><h5>Type of beam-</h5>
+    
+    <ol type="1">
+    <li><b>Cantilever-</b></li>
+    <li><b>Simply supported beam-</b> </li>
+</ol>
+
+<b>Q&GreaterGreater;Find the reaction at support 'A'and 'B' for the beam shown in fig. <br>
+    <img src="img/18.png" alt="Image Not found" width="300px"> <br>
+    Sol-<br>
+</b>
+Free body diagram of beam AB,<br>
+<img src="img/18.1.png" alt="Image Not found" width="300px"> <br>
+&DoubleRightArrow;&RightArrow;+ve&sum;F<sub>x</sub> = 0<br>
+&DoubleRightArrow;R<sub>AH</sub>-8cos30&deg; = 0<br>
+&DoubleRightArrow;R<sub>AH</sub> = 8 x &Sqrt;3/2<br>
+&DoubleRightArrow;R<sub>AH</sub> = 6.928KN <b>Ans</b><br><br>
+&DoubleRightArrow;&uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+&DoubleRightArrow;R<sub>Av</sub>-8sin30&deg;-4+R<sub>B</sub> = 0<br>
+&DoubleRightArrow;R<sub>AV</sub>+R<sub>B</sub>-8= 0 --------eq1<br><br>
+&DoubleRightArrow;&circlearrowright;+ve &sum;M<sub>A</sub> = 0<br>
+&DoubleRightArrow;(8sin30&deg; x 3)+(4x6)-(R<sub>B</sub> x 8) = 0<br>
+&DoubleRightArrow;12+24-8R<sub>B</sub> = 0<br>
+&DoubleRightArrow;R<sub>B</sub> = 36/8 =4.5KN <b>Ans</b><br><br>
+    putting R<sub>B</sub> in eq1,<br>
+&DoubleRightArrow;R<sub>AV</sub> = 3.5KN <b>Ans</b><br><br>
+
+<b>Q&GreaterGreater;Find the reaction at support 'A'and 'B' for the beam shown in fig. <br>
+    <img src="img/19.png" alt="Image Not found" width="300px"> <br>
+     Sol-<br>
+</b>
+Free body diagram of beam AB,<br>
+<img src="img/19.1.png" alt="Image Not found" width="300px"> <br>
+uniform distributed load = bxh<br>
+= 2m x 4KN/m<br>
+= 8KN<br>
+And, b/2=1m (distance)<br><br>
+&DoubleRightArrow;&RightArrow;+ve&sum;F<sub>x</sub> = 0<br>
+&therefore; R<sub>AH</sub> = 0 <b>Ans</b><br><br>
+&DoubleRightArrow;&uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+&DoubleRightArrow; R<sub>AV</sub>-5-8+R<sub>B</sub> = 0<br>
+&DoubleRightArrow;R<sub>AV</sub>+R<sub>B</sub> = 13 --------eq1<br><br>
+&DoubleRightArrow;&circlearrowright;+ve &sum;M<sub>A</sub> = 0<br>
+&DoubleRightArrow;(5x1)+(8x3)-(R<sub>B</sub> x 4)-25 = 0<br>
+&DoubleRightArrow;5+2-4R<sub>B</sub>-25 = 0<br>
+&DoubleRightArrow;4-4R<sub>B</sub> = 0<br>
+&DoubleRightArrow;R<sub>B</sub> = 1KN <b>Ans</b><br><br>
+putting R<sub>B</sub> in eq1,<br>
+&therefore;R<sub>AV</sub>+1 = 13<br>
+&DoubleRightArrow; R<sub>AV</sub> = 12KN <b>Ans</b> <br><br>
+
+<b>Q&GreaterGreater;Find the reaction at support 'A'and 'B' for the beam shown in fig. <br>
+    <img src="img/20.png" alt="Image Not found" width="300px"> <br>
+      Sol-<br>
+</b>
+Free body diagram of beam ABC,<br>
+<img src="img/20.1.png" alt="Image Not found" width="300px"> <br>
+uniform varing load = 1/2 xbxh<br>
+=1/2 x3x6<br>
+=9KN<br>
+And, b/3=3/3=1m(distance)<br><br>
+
+&DoubleRightArrow;&RightArrow;+ve&sum;F<sub>x</sub> = 0<br>
+&therefore; R<sub>AH</sub> = 0 <b>Ans</b><br><br>
+&DoubleRightArrow;&uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+&DoubleRightArrow; R<sub>AV</sub>-9+R<sub>B</sub>-4 = 0<br>
+&DoubleRightArrow;R<sub>AV</sub>+R<sub>B</sub> = 13 --------eq1<br><br>
+&DoubleRightArrow;&circlearrowright;+ve &sum;M<sub>A</sub> = 0<br>
+&DoubleRightArrow;(9x3)-(4x6)-(R<sub>B</sub> x 5) = 0<br>
+&DoubleRightArrow;27-5R<sub>B</sub>+24 = 0<br>
+&DoubleRightArrow; -5R<sub>B</sub>+51 = 0<br>
+&DoubleRightArrow;R<sub>B</sub> = 51/5 = 10.2KN <b>Ans</b><br><br>
+putting R<sub>B</sub> in eq1,<br>
+&therefore;R<sub>AV</sub>+10.2 = 13<br>
+&DoubleRightArrow; R<sub>AV</sub>  = 2.8KN <b>Ans</b> <br><br>
+
+<b>Q&GreaterGreater;Find the value of support reaction, when reaction at A will be 
+    double that of B. Find 'X' weight of 1<sup>st</sup> and 2<sup>st</sup> sphere is 1800N and 600N <br>
+    <img src="img/21.png" alt="Image Not found" width="300px"> <br>
+      Sol-<br>
+</b>
+Free body diagram of beam AB,<br>
+<img src="img/21.1.png" alt="Image Not found" width="300px"> <br>
+Given that, R<sub>A</sub> = 2R<sub>B</sub><br>
+&DoubleRightArrow;&uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+&DoubleRightArrow; R<sub>A</sub>-1800-600+R<sub>B</sub> = 0<br>
+&DoubleRightArrow; 2R<sub>B</sub>+R<sub>B</sub>-2400 = 0 <br>
+&DoubleRightArrow; 3R<sub>B</sub> = 2400<br>
+&DoubleRightArrow; R<sub>B</sub> = 800N<br><br>
+&therefore; R<sub>A</sub> = 2R<sub>B</sub> = 2x800 = 1600N<br><br>
+&DoubleRightArrow;&circlearrowright;+ve &sum;M<sub>A</sub> = 0<br>
+&DoubleRightArrow; 0+(1800 x X;)-{600x(6+X)}-(R<sub>B</sub> x18) = 0<br>
+&DoubleRightArrow;1800X + 3600 + 600X - (800x18) = 0<br>
+&DoubleRightArrow; 2400X - 10800 = 0<br>
+&DoubleRightArrow; X = 10800/2400 = 4.5m <b>Ans</b><br><br>
+
+<b>Q&GreaterGreater;Calculate support reaction for the beam loaded as shown. <br>
+    <img src="img/22.png" alt="Image Not found" width="300px"> <br>
+      Sol-<br>
+</b>
+Free body diagram of beam AB,<br>
+<img src="img/22.1.png" alt="Image Not found" width="300px"> <br>
+uniform distributed load = bxh<br>
+=4x300<br>
+=1200KN<br>
+And, b/2=4/2=2m(distance)<br><br>
+&DoubleRightArrow;&uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+&DoubleRightArrow; R<sub>A</sub>-1200-2000-1200+R<sub>B</sub> = 0<br>
+&DoubleRightArrow;R<sub>A</sub>-4400+R<sub>B</sub> = 0<br>
+&DoubleRightArrow;R<sub>A</sub>+R<sub>B</sub> = 4400N --------eq1<br><br>
+&DoubleRightArrow;&circlearrowright;+ve &sum;M<sub>A</sub> = 0<br>
+&DoubleRightArrow; 0 -(1200x2)-(2000x4)+(R<sub>A</sub> x 6)-(1200x8) = 0<br>
+&DoubleRightArrow; -2400-8000+6R<sub>A</sub>-9600 = 0<br>
+&DoubleRightArrow; 6R<sub>A</sub> = 20000<br>
+&DoubleRightArrow; R<sub>A</sub> = 20000/6 = 3333.34N <b>Ans</b><br><br>
+putting R<sub>A</sub> in eq1,<br>
+&therefore;R<sub>B</sub>+3333.34 = 4400<br>
+&DoubleRightArrow; R<sub>B</sub>  = 666.67N <b>Ans</b> <br><br>
 
 
 
