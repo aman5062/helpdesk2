@@ -205,6 +205,10 @@ a:hover{
 	.topnav.responsive #heading {
 		padding-right: 30%;
 	}
+	.nav-link{
+		padding: 0.5rem 1rem 0.5rem 1rem !important;
+
+	}
 }
 
 h1 {
