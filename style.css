@@ -345,4 +345,8 @@ iframe {
 }
 
 
-  
+  #preprocessor img{
+	margin-top: 20%;
+	width: 10rem;
+	height: 10rem;
+}
