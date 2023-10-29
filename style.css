@@ -350,7 +350,7 @@ iframe {
 	width: 10rem;
 	height: 10rem;
 }
-thead{
+tbody, td, tfoot, th, thead, tr{
 	border-width: 1px !important;
+	padding: 5px;
 }
-
