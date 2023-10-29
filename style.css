@@ -357,3 +357,7 @@ tbody, td, tfoot, th, thead, tr{
 table{
 margin:5px;
 }
+li.nav-item a:hover{
+	background-color: #c4dcff;
+	border: 1px gray solid;
+}
