@@ -1,31 +1,36 @@
-function myFunction(){var a=document.getElementById("myTopnav");"topnav"===a.className?a.className+=" responsive":a.className="topnav";var s=document.getElementById("bar");"fa fa-bars"===s.className?s.className="fa fa-times":s.className="fa fa-bars"}
-// JavaScript in script.js or within <script> tags in HTML
+function toggleMenu() {
+    const topnav = document.getElementById("myTopnav");
+    const bar = document.getElementById("bar");
 
-window.addEventListener('scroll', function () {
+    topnav.classList.toggle("responsive");
+    bar.classList.toggle("fa-bars");
+    bar.classList.toggle("fa-times");
+}
+
+function handleScroll() {
     const goToTopButton = document.getElementById('goToTopButton');
-    if (window.scrollY > 300) { // Adjust this value based on your needs
+    const scrollPositionThreshold = 300;
+
+    if (window.scrollY > scrollPositionThreshold) {
         goToTopButton.style.display = 'block';
     } else {
         goToTopButton.style.display = 'none';
     }
-});
+}
 
-window.addEventListener("load",function(){
-    var loader = document.getElementById("preprocessor");
+function hideLoader() {
+    const loader = document.getElementById("preprocessor");
     loader.style.display = "none";
-})
+}
 
-document.addEventListener("DOMContentLoaded", function() {
+function highlightActiveNavLink() {
     const navLinks = document.querySelectorAll('#myNav .nav-link');
-    // Get the current URL path without the domain
     const currentPath = window.location.pathname;
 
-    // Loop through the navigation links
     navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
         const isCurrentPage = currentPath.endsWith(linkHref);
 
-        // Check if the current page matches the link's href attribute
         if (isCurrentPage) {
             link.classList.add('active', 'text-white');
             link.classList.remove('text-black');
@@ -34,4 +39,12 @@ document.addEventListener("DOMContentLoaded", function() {
             link.classList.add('text-black');
         }
     });
+}
+
+// Event Listeners
+document.addEventListener("DOMContentLoaded", function() {
+    highlightActiveNavLink();
 });
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener("load", hideLoader);
