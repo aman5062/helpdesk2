@@ -350,3 +350,7 @@ iframe {
 	width: 10rem;
 	height: 10rem;
 }
+thead{
+	border-width: 1px !important;
+}
+
