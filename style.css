@@ -354,3 +354,6 @@ tbody, td, tfoot, th, thead, tr{
 	border-width: 1px !important;
 	padding: 5px;
 }
+table{
+margin:5px;
+}
