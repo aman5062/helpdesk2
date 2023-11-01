@@ -81,6 +81,11 @@ a {
 	margin: 0;
 	/* background-color: #111824; */
 	font-family: 'Times New Roman', Times, serif;
+	-webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #imglogo {
