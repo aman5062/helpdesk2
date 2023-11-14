@@ -1,0 +1,37 @@
+[
+    {
+        "Question":"Q1:- WAP in c to implement linear search?",
+        "Code":"code/daa_code_1.png",
+        "Output":"output/daa_output_1.png"
+    },
+    {
+        "Question":"Q2:- WAP in c to implement binary search  ?",
+        "Code":"code/daa_code_2.png",
+        "Output":"output/daa_output_2.png"
+    },
+    {
+        "Question":"Q3:- WAP in c to implement Bubble sort?",
+        "Code":"code/daa_code_3.png",
+        "Output":"output/daa_output_3.png"
+    },
+    {
+        "Question":" Q4:- WAP in c to implement Insertion sort?",
+        "Code":"code/daa_code_4.png",
+        "Output":"output/daa_output_4.png"
+    },
+    {
+        "Question":"Q5:- WAP in c to implement Selection sort?",
+        "Code":"code/daa_code_5.png",
+        "Output":"output/daa_output_5.png"
+    },
+    {
+        "Question":"Q6:- WAP in c to implement BFS?",
+        "Code":"code/daa_code_6.png",
+        "Output":"output/daa_output_6.png"
+    },
+    {
+        "Question":" Q7:- WAP in c to implement DFS?",
+        "Code":"code/daa_code_7.png",
+        "Output":"output/daa_output_7.png"
+    }
+]

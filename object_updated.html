@@ -54,7 +54,30 @@
     </div>
 
     </header>
-
+    <script>
+      fetch("json/oops.json")
+      .then(function(response) {
+          if (!response.ok) {
+              throw new Error("Network response was not ok");
+          }
+          return response.json();
+      })
+      .then(function(datas) {
+          let thedata = document.querySelector("#data");
+          let out = "";
+          for (let data of datas) {
+              out += `<h4> ${data.Question}</h4> 
+              <img id="img1" src="${data.Code}"> <br>
+      
+              <h5>Output:</h5>
+              <img id="img1"  src="${data.Output}"><br><br>`;
+          }
+          thedata.innerHTML = out;
+      })
+      .catch(function(error) {
+          console.error('Error during fetch:', error);
+      });
+    </script>
     <style>
       #img1{
           width:300px;
@@ -74,51 +97,9 @@
       </a>
       </div>
         <center> <div class="justify-content-center text-danger"><h4> OBJECT ORIENTED PROGRAMING SYSTEM</h4></div></center>
+        <div id="data">
 
-         <h4> Q1:- WAP to store student details using class ?</h4> 
-        <img id="img1" src="code/oops_code_1.png"> <br>
-        <h5>Output:</h5>
-        <img id="img1"  src="output/oops_output_1.png"><br><br><br>
-
-
-        <h4> Q2:- WAP to enter student details using function ?</h4>
-        <img id="img1" src="code/oops_code_2.png"> <br>
-        <h5>Output:</h5>
-        <img id="img1" src="output/oops_output_2.png"><br><br><br>
-
-        
-        <h4> Q3:- How do create an object without name of class ?</h4>
-        <img id ="img1"  src="code/oops_code_3.png"> <br>
-        <h5>Output:</h5>
-        <img id="img1"  src="output/oops_output_3.png"><br><br><br>
-
-
-        <h4> Q4:- WAP to find the area of rectangle using class ?</h4>
-        <img id ="img1"  src="code/oops_code_4.png"> <br>
-        <h5>Output:</h5>
-        <img id="img1"  src="output/oops_output_4.png"><br><br><br>
-
-
-        <h4> Q5:- WAP to find simple Interest using class ?</h4>
-        <img id ="img1"  src="code/oops_code_5.png"> <br>
-        <h5>Output:</h5>
-        <img id="img1"  src="output/oops_output_5.png"><br><br><br>
-
-        <h4> Q6:- WAP to find largest among two number ?</h4>
-        <img id ="img1"  src="code/oops_code_6.png"> <br>
-        <h5>Output:</h5>
-        <img id="img1"  src="output/oops_output_6.png"><br><br><br>
-
-
-        <h4> Q7:- WAP to find out the largest no b/w two number using the concept of static keyword ?</h4>
-        <img id ="img1"  src="code/oops_code_7.png"> <br>
-        <h5>Output:</h5>
-        <img id="img1"  src="output/oops_output_7.png"><br><br><br>
-
-        <h4> Q8:- WAP to find out the Bigger object b/w to classes using friend function ?</h4>
-        <img id ="img1"  src="code/oops_code_9.png"> <br>
-        <h5>Output:</h5>
-        <img id="img1"  src="output/oops_output_9.png"><br><br><br>
+        </div>
         </div>
        </div>
 </body>

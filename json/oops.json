@@ -1,0 +1,43 @@
+[
+    {
+        "Question":"Q1:- WAP to store student details using class ?",
+        "Code":"code/oops_code_1.png",
+        "Output":"output/oops_output_1.png"
+    },
+    {
+        "Question":"Q2:- WAP to enter student details using function ?",
+        "Code":"code/oops_code_2.png",
+        "Output":"output/oops_output_2.png"
+    },
+    {
+        "Question":"Q3:- How do create an object without name of class ?",
+        "Code":"code/oops_code_3.png",
+        "Output":"output/oops_output_3.png"
+    },
+    {
+        "Question":"Q4:- WAP to find the area of rectangle using class ?",
+        "Code":"code/oops_code_4.png",
+        "Output":"output/oops_output_4.png"
+    },
+    {
+        "Question":"Q5:- WAP to find simple Interest using class ?",
+        "Code":"code/oops_code_5.png",
+        "Output":"output/oops_output_5.png"
+    },
+    {
+        "Question":"Q6:- WAP to find largest among two number ?",
+        "Code":"code/oops_code_6.png",
+        "Output":"output/oops_output_6.png"
+    },
+    {
+        "Question":" Q7:- WAP to find out the largest no b/w two number using the concept of static keyword ?",
+        "Code":"code/oops_code_7.png",
+        "Output":"output/oops_output_7.png"
+    },
+    {
+        "Question":"Q8:- WAP to find out the Bigger object b/w to classes using friend function ?",
+        "Code":"code/oops_code_8.png",
+        "Output":"output/oops_output_8.png"
+    }
+    
+]

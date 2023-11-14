@@ -36,7 +36,30 @@
 <script src="script.js"></script>
 
 
-
+<script>
+  fetch("json/daa.json")
+  .then(function(response) {
+      if (!response.ok) {
+          throw new Error("Network response was not ok");
+      }
+      return response.json();
+  })
+  .then(function(datas) {
+      let thedata = document.querySelector("#data");
+      let out = "";
+      for (let data of datas) {
+          out += `<h4> ${data.Question}</h4> 
+          <img id="img1" src="${data.Code}"> <br>
+  
+          <h5>Output:</h5>
+          <img id="img1"  src="${data.Output}"><br><br>`;
+      }
+      thedata.innerHTML = out;
+  })
+  .catch(function(error) {
+      console.error('Error during fetch:', error);
+  });
+</script>
   
 <body> 
   <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
@@ -73,50 +96,9 @@
       </a>
       </div>  
      <center><u style="color:black;"> <h4>DESIGN AND ANALYSIS OF ALGORITHMS</h4></u></center>
-<!-- Start -->
-      <h4> Q1:- WAP in c to implement linear search?</h4> 
-        <img id="img1" src="code/daa_code_1.png"> <br>
+     <div id="data">
 
-        <h5>Output:</h5>
-        <img id="img1"  src="output/daa_output_1.png"><br><br>
-        
-  <!-- End -->
-
-        <h4> Q2:- WAP in c to implement binary search  ?</h4>
-      <img id="img1"  src="code/daa_code_2.png"><br><br>
-      <h5> output:</h5>
-      <img id="img1"  src="output/daa_output_2.png"><br><br>
-
-
-
-      <h4> Q3:- WAP in c to implement Bubble sort?</h4> 
-        <img id="img1"  src="code/daa_code_3.png"> <br>
-
-      <h5>Output:</h5>
-      <img id="img1"  src="output/daa_output_3.png"><br><br>
-
-      <h4> Q4:- WAP in c to implement Insertion sort?</h4>
-      <img id="img1"  src="code/daa_code_4.png"> <br>
-
-      <h5>Output:</h5>
-      <img id="img1"  src="output/daa_output_4.png"><br><br>
-
-        <h4> Q5:- WAP in c to implement Selection sort?</h4>
-      <img id="img1"  src="code/daa_code_5.png"> <br>
-
-      <h5>Output:</h5>
-      <img id="img1"  src="output/daa_output_5.png"><br><br>
-
-      <h4> Q6:- WAP in c to implement BFS?</h4>
-      <img id="img1"  src="code/daa_code_6.png"> <br>
-
-      <h5>Output:</h5>
-      <img id="img1"  src="output/daa_output_6.png"><br><br>
-      <h4> Q7:- WAP in c to implement DFS?</h4>
-      <img id="img1"  src="code/daa_code_7.png"> <br>
-
-      <h5>Output:</h5>
-      <img id="img1"  src="output/daa_output_7.png"><br><br>
+     </div>
        </div>
 </body>
 <div id="footer">
