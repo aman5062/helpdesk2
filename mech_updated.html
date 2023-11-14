@@ -13,6 +13,9 @@
 	<style>
 		#set_img{
 			width: 80%;
+table{
+  width:90% !important;
+}
 		}
 	</style>
 <script
@@ -1741,15 +1744,15 @@ So, X = &sum;Ax/&sum;A = 360/72 = 5cm<br>
 And, Y = &sum;Ay/&sum;A = 432/72 = 6m<br>
 &therefore; Centroid, C = (x,y) = (5,6) <b>Ans</b><br><br>
 
-<h3>Moment of Inertia -</h3>
+<h3><b><u>Moment of Inertia -</u></b></h3>
 The moment of force (1st moment of force) about any point is given by<br>
- <b>M<sub>f</sub> = F x r<br></b>
+<center><b>M<sub>f</sub> = F x r</b></center>
 where, F = force.<br>
 r = perpendicular distance from reference point O.<br><br>
 The 2nd moment of inertia in given by<br>
-M<sub>s</sub> = M<sub>f</sub><br>
-M<sub>s</sub> = F x r x r <br>
-M<sub>s</sub> = Fr<sup>2</sup><br><br>
+<center><b>M<sub>s</sub> = M<sub>f</sub><br>
+    M<sub>s</sub> = F x r x r <br>
+    M<sub>s</sub> = Fr<sup>2</sup></b></center>
 
 If instead of force F the area of figure is condered it is called Second moment of inertia 
 and in general it is termed as moment of inertia and commonly denoted by I.<br>
@@ -1765,7 +1768,404 @@ of member in bending.<br>
 The mass moment of inertia gives a measure of the resistance that body offers to change 
 in angular velocity and Accordingly is used inconjuction with rotation of rigid bodies.
 <br><br>
-<h5>Moment of inertia of an Area -</h5>
+<h5><b><li>Moment of Inertia of an Area -</li></b></h5>
+Consider an Area ABCDA (regular & irregular) situated in the space where axis xx' is 
+located as shown in the figure. <br>
+Consider an element area dA which is located at distance y from xx' axis. Then the 
+moment of inertia of dA about xx' axis is given by<br>
+<center><b>dI = dAxy<sup>2</sup></b></center>
+Therefore, total moment of inertia is given by,
+<center><b>&Integral;dI = &Integral;dAxy<sup>2</sup> </b></center>
+Thus, the moment of inertia of an area about the given axis is the sum of moment of 
+inertia of an elementary area constuting the given area about the given axis.<br><br>
+
+<h5><li><b>Moment of inertia of an Rectangular lemane -</b></li></h5>
+A Rectangle of b x d as shown in figure and xx and yy axis located in passing through
+the centre of gravity of Rectangular lemuna.<br>
+Consider an element area of thickness by at a distance y from xx axis, then the 
+moment of inertia of an element area is given by,<br>
+<center>
+    <b>
+        dI = dAxy<sup>2</sup><br>
+        dI = (bxdy)y<sup>2</sup><br>
+        I<sub>xx</sub> = <sub>-d/2</sub>&Integral;<sup>d/2</sup>(bxdy)y<sup>2</sup><br>
+        I<sub>xx</sub> = bd<sup>3</sup>/12<br>
+        Similarly, I<sub>yy</sub> = db<sup>3</sup>/12
+    </b>
+</center>   <br>
+<h5><b><li>Theorem of perpendicular axis -</li></b></h5>
+It states if I<sub>xx</sub> be the moment of inertia of a plane section about to perpendicular 
+axis meeting at point 'O'. The moment of inertia I about the axis I<sub>zz</sub> perpendicular 
+to the plane and passing through the intersection of xx and yy is given by<br>
+<center><b>I<sub>zz</sub> =  I<sub>xx</sub> + I<sub>yy</sub></b><br><br>
+<img src="img/59.png" alt="Image Not found" width="250px"></center><br>
+Consider an area dA from total area A located in the 3D and whose coordinate are x and y 
+in the xy plane and its distance from zz-axis is r as shown in fig.<br>
+<center><b>r<sup>2</sup> = x<sup>2</sup> + y<sup>2</sup><br>
+    and, dI<sub>zz</sub> = dAr<sup>2</sup><br>
+    dI<sub>zz</sub> = dA(x<sup>2</sup> + y<sup>2</sup>) <br>
+    dI<sub>zz</sub> = dAx<sup>2</sup> + dAy<sup>2</sup> <br>
+    &therefore; &sum;dAx<sup>2</sup> = I<sub>xx</sub><br>
+    and, &sum;dAy<sup>2</sup> = I<sub>yy</sub><br>
+    &therefore; I<sub>zz</sub> = I<sub>xx</sub> + I<sub>yy</sub> 
+</b></center> <br>
+
+<h5><b><li>Theorem of parallel axis -</li></b></h5>
+This theorem states that the moment of inertia of an area about non-centroidal axis is 
+equal to the moment of inertia of an area about its centre of gravity axis which is 
+parallel to the non-centroidal axis plus the product of area and square of the distance 
+between the referred axis passing through centre of gravity and parallel of the referred 
+axis.<br>
+the moment of inertia dA about xx is given by,<br>
+<center><b>
+     I<sub>xx</sub> = &Integral;dA(h+y)<sup>2</sup><br>
+     I<sub>xx</sub> = &Integral;dAy<sup>2</sup> + &Integral;dAh<sup>2</sup> + &Integral;dA2hy<br>
+     I<sub>xx</sub> = I<sub>yy</sub> + h<sup>2</sup>A + 2h&Integral;dAy<br>
+     I<sub>xx</sub> = I<sub>yy</sub> + h<sup>2</sup>A + 2hAy<br>
+</b></center>
+where y is the distance of centre of gravity of area PQRS from gg-axis as gg passes
+through centre of gravity of area PQRS.<br>
+<center><b>
+     &therefore; I<sub>xx</sub> = I<sub>yy</sub> + h<sup>2</sup>A<br>
+</b></center>
+
+<h5><li><b>Formula of Moment of Inertia -</b></li></h5>
+<li><b>Rectangle -<br>
+    <img src="img/53.png" alt="Image Not found" width="300px"><br>
+</b></li><br>
+<li><b>Triangle -<br>
+    <img src="img/54.png" alt="Image Not found" width="300px"><br>
+</b></li><br>
+<li><b>Circle -<br>
+    <img src="img/55.png" alt="Image Not found" width="300px"><br>
+</b></li><br>
+<li><b>Quarter circle -<br>
+    <img src="img/56.png" alt="Image Not found" width="300px"><br>
+</b></li><br>
+<li><b>Semi circle -<br>
+    <img src="img/57.png" alt="Image Not found" width="300px"><br>
+    <img src="img/58.png" alt="Image Not found" width="300px"><br>
+</b></li><br>
+
+<b>Q&GreaterGreater;Find the moment of inertia for the given shape w.r.t. X and Y axis.<br>
+    <img src="img/60.png" alt="Image Not found" width="200px"><br>
+Sol -
+    </b><br>
+    <img src="img/60.1.png" alt="Image Not found" width="200px"><br>
+A = 18m<sup>2</sup><br>
+x = 1.5m<br>
+Y = 3m<br>
+Ix<sub>1</sub> = bh<sup>3</sup>/12 = 3x(6)<sup>3</sup>/12 = 54m<sup>4</sup><br>
+Iy<sub>1</sub> = b<sup>3</sup>h/12 = 6x(3)<sup>3</sup>/12 = 13.5m<sup>4</sup><br>
+Ixx<sub>1</sub> = Ix<sub>1</sub> + Al<sup>2</sup><br>
+Ixx<sub>1</sub> = 54 + 18x(3)<sup>2</sup> = 216m<sup>4</sup><br>
+Iyy<sub>1</sub> = Iy <sub>1</sub> + Al<sup>2</sup><br>
+Iyy<sub>1</sub> = 13.5 + 18x(1.5)<sup>2</sup> = 54m<sup>4</sup><br><br>
+
+<img src="img/60.2.png" alt="Image Not found" width="200px"><br>
+A = 9m<sup>2</sup><br>
+x = 4m<br>
+Y = 2m<br>
+Ix<sub>2</sub> = bh<sup>3</sup>/36 = 3x(6)<sup>3</sup>/36 = 18m<sup>4</sup><br>
+Iy<sub>2</sub> = b<sup>3</sup>h/36 = 6x(3)<sup>3</sup>/36 = 4.5m<sup>4</sup><br>
+Ixx<sub>2</sub> = Ix<sub>2</sub> + Al<sup>2</sup><br>
+Ixx<sub>2</sub> = 18 + 9x(2)<sup>2</sup>= 54m<sup>4</sup><br>
+Iyy<sub>2</sub> = Iy<sub>2</sub> + Al<sup>2</sup><br>
+Iyy<sub>2</sub> = 4.5 + 9x(4)<sup>2</sup>= 148.5m<sup>4</sup><br><br>
+<img src="img/60.3.png" alt="Image Not found" width="150px"><br>
+A = 14.137m<sup>2</sup><br>
+x = 1.273m<br>
+Y = 3m<br>
+Ix<sub>3</sub> = 0.392r<sup>4</sup>  = 0392x(3)<sup>4</sup> = 31.752m<sup>4</sup><br>
+Iy<sub>3</sub> = 0.11r<sup>4</sup> = 0.11x(3)<sup>4</sup> = 8.91m<sup>4</sup><br>
+Ixx<sub>3</sub> = Ix<sub>3</sub> + Al<sup>2</sup><br>
+Ixx<sub>2</sub> = 31.752 + 14.137x(3)<sup>2</sup> = 158.985m<sup>4</sup><br>
+Iyy<sub>3</sub> = Iy<sub>3</sub> + Al<sup>2</sup><br>
+Iyy<sub>3</sub> = 8.91 + 14.137x(1.273)<sup>2</sup> = 31.819m<sup>4</sup><br><br>
+
+Ix = Ixx <sub>1</sub> + Ixx<sub>2</sub> - Ixx<sub>3</sub><br>
+Ix = 216 + 54 - 158.985<br>
+Ix = 111.015m<sup>4</sup> <b>Ans</b><br>
+
+Iy = Iyy <sub>1</sub> + Iyy<sub>2</sub> - Iyy<sub>3</sub><br>
+Iy = 54 + 148.5 - 31.819<br>
+Iy = 170.681m<sup>4</sup> <b>Ans</b><br><br>
+
+<b>Q&GreaterGreater;Find the moment of inertia for the given shape w.r.t. X and Y axis.<br>
+    <img src="img/61.png" alt="Image Not found" width="200px"><br>
+    Sol -
+        </b><br>
+        <img src="img/61.1.png" alt="Image Not found" width="150px"><br>
+        A = 750cm<sup>2</sup><br>
+        x = 5cm<br>
+        Y = 37.5cm<br>
+        Ix<sub>1</sub> = bh<sup>3</sup>/12 = 10x(75)<sup>3</sup>/12 = 351562.5cm<sup>4</sup><br>
+        Iy<sub>1</sub> = b<sup>3</sup>h/12 = 75x(10)<sup>3</sup>/12 = 6250cm<sup>4</sup><br>
+        Ixx<sub>1</sub> = Ix<sub>1</sub> + Al<sup>2</sup><br>
+        Ixx<sub>2</sub> = 351562.5 + 750x(37.5)<sup>2</sup> = 1406250cm<sup>4</sup><br>
+        Iyy<sub>1</sub> = Iy<sub>1</sub> + Al<sup>2</sup><br>
+        Iyy<sub>1</sub> = 6250 + 750x(5)<sup>2</sup> = 25000cm<sup>4</sup><br><br>
+        <img src="img/61.2.png" alt="Image Not found" width="200px"><br>
+        A = 675cm<sup>2</sup><br>
+        x = 20cm<br>
+        Y = 45cm<br>
+        Ix<sub>2</sub> = bh<sup>3</sup>/36 = 30x(45)<sup>3</sup>/36 = 75937.5cm<sup>4</sup><br>
+        Iy<sub>2</sub> = b<sup>3</sup>h/36 = 45x(30)<sup>3</sup>/36 = 33750cm<sup>4</sup><br>
+        Ixx<sub>2</sub> = Ix<sub>2</sub> + Al<sup>2</sup><br>
+        Ixx<sub>2</sub> = 75937.5 + 675x(45)<sup>2</sup> = 1442812.5cm<sup>4</sup><br>
+        Iyy<sub>2</sub> = Iy<sub>2</sub> + Al<sup>2</sup><br>
+        Iyy<sub>2</sub> = 33750 + 675x(20)<sup>2</sup> = 303750cm<sup>4</sup><br><br>
+        
+        Ix = Ixx<sub>1</sub> + Ixx<sub>2</sub><br>
+        Ix = 1406250 + 1442812.5<br>
+        Ix = 2849062.5cm<sup>4</sup>
+        
+        Iy = Iyy<sub>1</sub> + Iyy<sub>2</sub><br>
+        Iy = 25000 + 303750<br>
+        Iy = 328750cm<sup>4</sup><br><br>
+        
+
+<b>Q&GreaterGreater;Find the moment of inertia for the given shape w.r.t. X and Y axis.<br>
+    <img src="img/62.png" alt="Image Not found" width="200px"><br>
+Sol -
+    </b><br>
+    <img src="img/62.1.png" alt="Image Not found" width="200px"><br>
+    A = 2400mm<sup>2</sup><br>
+    x = 60mm<br>
+    Y= 140mm<br>
+    Ix<sub>1</sub>= bh<sup>3</sup>/12 = 120x(20)<sup>3</sup>/12 = 8x10<sup>4</sup>mm<sup>4</sup><br>
+    Iy<sub>1</sub>= b<sup>3</sup>h/12 = 20x(120)<sup>3</sup>/12 = 288x10<sup>4</sup>mm<sup>4</sup><br>
+    Ixx<sub>1</sub> = Ix<sub>1</sub> + Al<sup>2</sup><br>
+    Ixx<sub>1</sub> = 8x10<sup>4</sup> + 2400x(140)<sup>2</sup> = 47.12x10<sup>6</sup>mm<sup>4</sup><br>
+    Iyy<sub>1</sub>= Iy<sub>1</sub> + Al<sup>2</sup><br>
+    Iyy<sub>1</sub> = 288x10<sup>4</sup> + 2400x(60)<sup>2</sup> = 11.52x10<sup>6</sup>mm<sup>4</sup><br><br>
+    <img src="img/62.2.png" alt="Image Not found" width="200px"><br>
+    A = 2600mm<sup>2</sup><br>
+    x = 60mm<br>
+    Y= 65mm<br>
+    Ix<sub>2</sub> = bh<sup>3</sup>/12 = 20x(130)<sup>3</sup>/12 = 3.661x10<sup>6</sup>mm<sup>4</sup><br>
+    Iy<sub>2</sub>= b<sup>3</sup>h/12 = 130x(20)<sup>3</sup>/12 = 86.666x10<sup>3</sup>mm<sup>4</sup><br>
+    Ixx<sub>2</sub>= Ix<sub>2</sub> + Al<sup>2</sup><br>
+    Ixx<sub>2</sub>= 3.661x10<sup>6</sup> + 2600x(65)<sup>2</sup>= 14.646x10<sup>6</sup>mm<sup>4</sup><br>
+    Iyy<sub>2</sub> = Iy<sub>2</sub> + Al<sup>2</sup><br>
+    Iyy<sub>2</sub>= 86.666x10<sup>3</sup> + 2600x(60)<sup>2</sup>= 9.446x10<sup>6</sup>mm<sup>4</sup><br><br>
+
+Ix = Ixx <sub>1</sub> + Ixx<sub>2</sub> <br>
+Ix = 47.12x10<sup>6</sup> + 14.646x10<sup>6</sup><br>
+Ix = 61.766x10<sup>6</sup>mm<sup>4</sup> <b>Ans</b><br>
+
+Iy = Iyy <sub>1</sub> + Iyy<sub>2</sub><br>
+Iy = 11.52x10<sup>6</sup> + 9.446x10<sup>6</sup><br>
+Iy = 20.966x10<sup>6</sup>mm<sup>4</sup> <b>Ans</b><br><br>
+
+<b>Q&GreaterGreater;Find the moment of inertia for the given L section about X and Y axis.<br>
+    <img src="img/63.png" alt="Image Not found" width="200px"><br>
+    Sol -
+        </b><br>
+        <img src="img/63.1.png" alt="Image Not found" width="200px"><br>
+        A = 700mm<sup>2</sup><br>
+        x = 45mm<br>
+        Y= 5mm<br>
+        Ix<sub>1</sub>= bh<sup>3</sup>/12 = 70x(10)<sup>3</sup>/12 = 5.833x10<sup>3</sup>mm<sup>4</sup><br>
+        Iy<sub>1</sub>= b<sup>3</sup>h/12 = 10x(70)<sup>3</sup>/12 = 285.833x10<sup>3</sup>mm<sup>4</sup><br>
+        Ixx<sub>1</sub> = Ix<sub>1</sub> + Al<sup>2</sup><br>
+        Ixx<sub>1</sub> = 5.833x10<sup>3</sup> + 700x(5)<sup>2</sup> = 23.333x10<sup>3</sup>mm<sup>4</sup><br>
+        Iyy<sub>1</sub> = Iy<sub>1</sub> + Al<sup>2</sup><br>
+        Iyy<sub>1</sub> = 285.833x10<sup>3</sup> + 700x(45)<sup>2</sup> = 1703.333x10<sup>3</sup>mm<sup>4</sup><br><br>
+        <img src="img/63.2.png" alt="Image Not found" width="200px"><br>
+        A = 1200mm<sup>2</sup><br>
+        x = 5mm<br>
+        Y= 60mm<br>
+        Ix<sub>2</sub> = bh<sup>3</sup>/12 = 10x(120)<sup>3</sup>/12 = 1.44x10<sup>6</sup>mm<sup>4</sup><br>
+        Iy<sub>2</sub>= b<sup>3</sup>h/12 = 120x(10)<sup>3</sup>/12 = 10x10<sup>3</sup>mm<sup>4</sup><br>
+        Ixx<sub>2</sub>= Ix<sub>2</sub> + Al<sup>2</sup><br>
+        Ixx<sub>2</sub>= 1.44x10<sup>6</sup> + 1200x(60)<sup>2</sup>= 5.76x10<sup>6</sup>mm<sup>4</sup><br>
+        Iyy<sub>2</sub> = Iy<sub>2</sub> + Al<sup>2</sup><br>
+        Iyy<sub>2</sub>= 10x10<sup>3</sup> + 1200x(5)<sup>2</sup>= 40x10<sup>3</sup>mm<sup>4</sup><br><br>
+    
+    Ix = Ixx <sub>1</sub> + Ixx<sub>2</sub> <br>
+    Ix = 23.333x10<sup>3</sup> + 5.76x10<sup>6</sup><br>
+    Ix = 5.783x10<sup>6</sup>mm<sup>4</sup> <b>Ans</b><br>
+    
+    Iy = Iyy <sub>1</sub> + Iyy<sub>2</sub><br>
+    Iy = 1703.333x10<sup>3</sup> + 40x10<sup>3</sup><br>
+    Iy = 1.7433x10<sup>6</sup>mm<sup>4</sup> <b>Ans</b><br><br>
+
+<h4><b><u>Friction -</u></b></h4>
+When a body slides towards another body a force is exerted at the surface of contact by the 
+stationary body on the moving body. This resisting force is called the force of friction 
+and acts in opposite direction of motion.<br>
+Friction is quite undesireable and needs to be mitigrated in same machine and process such
+as power fuse. So, bearing and gears, flow of fluids in pipe.<br>
+It presents good cause loss of power, wearing out of parts and huge economic losses. However,
+the working of many devices such as friction breaks and clutch, belt and rope drives, 
+hoilding and fastening devices.<br>
+
+<h5><b><li>Statics and dynamic friction - </li></b></h5>
+Statics friction is the frictional force that develops between mating surfaces when subjected to external 
+forces but there is no relative motion between them.<br>
+The Dynamic friction is the frictional force that develops between mating surfaces subjected to external
+forces and there is relative motion between them. The Dynamic friction is also known as <b>Kinetic friction</b>.
+The Kinetic friction is always somewhat less than the maximum static friction.
+
+<h5><b><li>Nature of friction -</li></b></h5>
+<ol>
+<li>Dry friction</li>
+<ul>
+<li>Sliding friction</li>
+<li>Rolling friction</li></ul>
+<li>Fluid friction</li>
+</ol>
+<b>NOTE -</b>It may be pointed out that rolling friction is always less than sliding friction.<br><br>
+
+<h5><b><li>Laws of friction (for both static and dynamic) - </li></b></h5>
+<ol>
+    <li>Friction acts tanjential to the surface in contact and is in a direction opposite
+        to that in which motion is applied.
+    </li>
+    <li>Friction force is maximum at the instant of impending motion. It varition from 0 to 
+        max value (limiting friction) depends upon the resultant force tending to cause motion.
+    </li>
+    <li>The magnitude of limiting friction bears a constant ratio to the normal reaction
+        between the mating surfaces. These ratio drops to a slightly lower value when the 
+        motion starts.
+    </li>
+    <li>Limiting friction depends upon the nature of the surface in contact.</li>
+    <li>At low velocities between sliding surfaces the friction force is practically independent
+        of the velocity. However slide reduction in friction occurs when speeds are high.
+    </li>
+</ol>
+<b>Q&GreaterGreater;A block of weight 200 N is just on on the point of moving horizontally 
+    by a force of 52 N. What is the coefficient of friction<br>
+    <img src="img/64.png" alt="Image Not found" width="200px"><br>
+    Sol -
+    </b><br>
+    Free body diagram of block-<br>
+    <img src="img/64.1.png" alt="Image Not found" width="200px"><br>
+    &DoubleRightArrow; &RightArrow;+ve&sum;F<sub>x</sub> = 0<br>
+    &DoubleRightArrow; 52-F = 0<br>
+    &DoubleRightArrow; &therefore; F = 52N<br><br>
+    &DoubleRightArrow; &uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+    &DoubleRightArrow; R-200 = 0<br>
+    &DoubleRightArrow; R = 200N<br><br>
+    Now, frictional force<br>
+    &DoubleRightArrow;F = &mu;R<br>
+    &DoubleRightArrow; &therefore; &mu; = F/R = 53/200 = 0.26A <b>Ans</b><br><br>
+
+<b>Q&GreaterGreater;A block of weight 200 N rest on a rough horizontal surface. 
+    Find the magnitude of the force to be applied at an angle of 30 degree to 
+    the horizontal in order to move the block on the surface. Assume u= 0.30<br>
+    <img src="img/65.png" alt="Image Not found" width="200px"><br>
+    Sol -
+    </b><br>
+    Free body diagram of block-<br>
+    <img src="img/65.1.png" alt="Image Not found" width="200px"><br>
+    &DoubleRightArrow; &RightArrow;+ve&sum;F<sub>x</sub> = 0<br>
+    &DoubleRightArrow; Pcos30&deg; - F = 0<br>
+    &DoubleRightArrow; Pcos30&deg; - &mu;R = 0<br>
+    &DoubleRightArrow; Pcos30&deg; - 0.3R = 0 --------eq1<br><br>
+    &DoubleRightArrow; &uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+    &DoubleRightArrow; Psin30&deg; + R -200 = 0<br>
+    &DoubleRightArrow; Psin30&deg; + R = 200 --------eq2<br><br>
+    From eq1 and eq2, we get<br>
+    &DoubleRightArrow; P = 59.053N <b>Ans</b><br>
+    &DoubleRightArrow; R = 170.473N <b>Ans</b><br><br>   
+    
+<b>Q&GreaterGreater;Find the value of weight "W", If the body is in limiting 
+    equilibrium condition.<br>
+    <img src="img/66.png" alt="Image Not found" width="200px"><br>
+    Sol -
+    </b><br>
+    Free body diagram of block-<br>
+    <img src="img/66.1.png" alt="Image Not found" width="250px"><br>
+    &DoubleRightArrow; &RightArrow;+ve&sum;F<sub>x</sub> = 0<br>
+    &DoubleRightArrow; F - 500cos30&deg; = 0<br>
+    &DoubleRightArrow; F - 433.012 = 0<br>
+    &DoubleRightArrow; F = 433.012N<br><br>
+    Frictional force,<br>
+    &DoubleRightArrow; F = &mu;R<br>
+    &DoubleRightArrow; &therefore; R = F/&mu; = 1732.048N<br><br>
+    &DoubleRightArrow; &uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+    &DoubleRightArrow; -W + R - 500sin30&deg; = 0<br>
+    &DoubleRightArrow; -W + 1732.048 - 250 = 0<br>
+    &DoubleRightArrow; -W + 1482.048 = 0<br>
+    &DoubleRightArrow; &therefore; W = 1482.048N <b>Ans</b><br><br>    
+    
+<b>Q&GreaterGreater;A block of weight 500 N is resting on the incline plane making an 
+    angle of 20 degree to the horizontal. Calculate the value of force P applied parallel
+     to the plane to just move the block up the plane if the coefficient of friction is 
+     0.14<br>
+    <img src="img/67.png" alt="Image Not found" width="200px"><br>
+    Sol -
+    </b><br>
+    Free body diagram of block-<br>
+    <img src="img/67.1.png" alt="Image Not found" width="250px"><br>
+    &DoubleRightArrow; &uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+    &DoubleRightArrow; R - 500sin70&deg; = 0<br>
+    &DoubleRightArrow; R - 469.846 = 0<br>
+    &DoubleRightArrow; R = 469.846N<br><br>
+    Frictional force,<br>
+    &DoubleRightArrow; F = &mu;R<br>
+    &DoubleRightArrow; &therefore; F = 0.14x469.846 = 65.778N<br><br>
+    &DoubleRightArrow; &rightarrow;+ve&sum;F<sub>x</sub> = 0<br>
+    &DoubleRightArrow; P - F - 500cos70&deg; = 0<br>
+    &DoubleRightArrow; P - 65.778 - 500cos70&deg; = 0<br>
+    &DoubleRightArrow; P - 236.788 = 0<br>
+    &DoubleRightArrow; &therefore; P = 236.788N <b>Ans</b><br><br>
+
+<b>Q&GreaterGreater;A block of mass 200 N resting on a horizontal surface supports another
+     block of 100 N as shown in figure. The smaller block is attach to the string from the
+     wall. Find the horizontal force P just to move the 200 N block to the left. Coefficient
+      of friction is 0.35 for all the rubbing surfaces.<br>
+    <img src="img/68.png" alt="Image Not found" width="200px"><br>
+    Sol -
+    </b><br>
+    Free body diagram of 100N block-<br>
+    <img src="img/68.1.png" alt="Image Not found" width="250px"><br>
+    &DoubleRightArrow; &RightArrow;+ve&sum;F<sub>x</sub> = 0<br>
+    &DoubleRightArrow; Tcos30&deg; - F<sub>2</sub> = 0<br>
+    &DoubleRightArrow; Tcos30&deg; - &mu;R<sub>2</sub>= 0<br>
+    &DoubleRightArrow; Tcos30&deg; - 0.35R<sub>2</sub>= 0 --------eq1<br><br>
+    &DoubleRightArrow; &uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+    &DoubleRightArrow; Tsin30&deg; + R<sub>2</sub> - 100 = 0<br>
+    &DoubleRightArrow; Tsin30&deg; + R<sub>2</sub> = 100 --------eq2<br><br>
+    From eq1 and eq2, we get<br>
+    &DoubleRightArrow; T = 33.62N<br>
+    &DoubleRightArrow; R<sub>2</sub> = 83.189N<br><br>
+    Free body diagram of 200N block, <br>
+    <img src="img/68.2.png" alt="Image Not found" width="200px"><br>
+    &DoubleRightArrow; &uparrow;+ve&sum;F<sub>y</sub> = 0<br>
+    &DoubleRightArrow; R<sub>1</sub> - R<sub>2</sub> - 200 = 0<br>
+    &DoubleRightArrow; R<sub>1</sub> - 83.189 - 200 = 0<br>
+    &DoubleRightArrow; R<sub>1</sub> = 283.189N<br><br>
+    &DoubleRightArrow; &RightArrow;+ve&sum;F<sub>x</sub> = 0<br>
+    &DoubleRightArrow; -P + F<sub>1</sub> + F<sub>2</sub> = 0<br>
+    &DoubleRightArrow; -P + &mu;R<sub>1</sub> + &mu;R<sub>2</sub> = 0<br>
+    &DoubleRightArrow; -P + 0.35x283.189 + 0.35x83.189 = 0<br>
+    &DoubleRightArrow; &therefore; P = 128.232N <b>Ans</b><br><br>
+
+    <b>Q&GreaterGreater;The body on the incline plane is subjected to the vertical and the
+         horizontal forces as shown in figure. Find the component of each force along X and 
+         Y axis, oriented parallel and perpendicular to the incline plane.<br>
+    <img src="img/69.png" alt="Image Not found" width="200px"><br>
+    Sol -
+    </b><br>
+    Free body diagram of 100N block-<br>
+    <img src="img/69.1.png" alt="Image Not found" width="250px"><br>
+    From the fig.<br>
+    x component of force P = -Pcos53.13<br>
+    x component of force P = -1200cos53.13<br>
+    x component of force P = -720N <b>Ans</b><br><br>
+    y component of force P = -Psin53.13<br>
+    y component of force P = -1200sin53.13<br>
+    y component of force P = -960N <b>Ans</b><br><br>
+    Now,<br>
+    x component of force F = Fcos36.869<br>
+    x component of force F = 400cos36.869<br>
+    x component of force F = 320N <b>Ans</b><br><br>
+    y component of force F = -Fsin36.869<br>
+    y component of force F = -Fsin36.869<br>
+    y component of force F = -240N <b>Ans</b><br>
 
 
 
