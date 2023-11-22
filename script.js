@@ -18,10 +18,6 @@ function handleScroll() {
     }
 }
 
-function hideLoader() {
-    const loader = document.getElementById("preprocessor");
-    loader.style.display = "none";
-}
 
 function highlightActiveNavLink() {
     const navLinks = document.querySelectorAll('#myNav .nav-link');
