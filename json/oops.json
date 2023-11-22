@@ -53,5 +53,36 @@
         "Question":"Q11:- WAP to calculate total Marks obtained by a Student according to roll no.",
         "Code":"code/oops_code_11.png",
         "Output":"output/oops_output_11.png"
+    },
+    {
+        "Question":"Q12:- WAP to find percentage and division of Student using array of objects",
+        "Code":"code/oops_code_12.png",
+        "Output":"output/oops_output_12.png"
+    },
+    {
+        "Question":"Q13:- WAP to add 2 numbers using the concept of call by value",
+        "Code":"code/oops_code_13.png",
+        "Output":"output/oops_output_13.png"
+    },
+    {
+        "Question":"Q14:- WAP to add two number passing objects as function argument and also class type as return type.",
+        "Code":"code/oops_code_14.png",
+        "Output":"output/oops_output_14.png"
+    },
+    {
+        "Question":"Q15:- WAP to show the concept of default constructor",
+        "Code":"code/oops_code_15.png",
+        "Output":"output/oops_output_15.png"
+    },
+    {
+        "Question":"Q16:- WAP to show the concept of parameterised constructor",
+        "Code":"code/oops_code_16.png",
+        "Output":"output/oops_output_16.png"
+    },
+    {
+        "Question":"Q17:- WAP to illustrate the use of static data member within non-static member function",
+        "Code":"code/oops_code_17.png",
+        "Output":"output/oops_output_17.png"
     }
+
 ]
