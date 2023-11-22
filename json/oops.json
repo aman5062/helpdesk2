@@ -38,6 +38,20 @@
         "Question":"Q8:- WAP to find out the Bigger object b/w to classes using friend function ?",
         "Code":"code/oops_code_8.png",
         "Output":"output/oops_output_8.png"
+    },
+    {
+        "Question":"Q9:- WAP to show how to call a private member function.",
+        "Code":"code/oops_code_9.png",
+        "Output":"output/oops_output_9.png"
+    },
+    {
+        "Question":"Q10:- WAP to find the product of two numbers using the concept of static keyword.",
+        "Code":"code/oops_code_10.png",
+        "Output":"output/oops_output_10.png"
+    },
+    {
+        "Question":"Q11:- WAP to calculate total Marks obtained by a Student according to roll no.",
+        "Code":"code/oops_code_11.png",
+        "Output":"output/oops_output_11.png"
     }
-    
 ]
