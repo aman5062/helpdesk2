@@ -1,0 +1,23 @@
+{
+    "Admins":[
+    {
+        "Name":"Aman",
+        "Designation":"Owner"
+    },
+    {
+        "Name":"Harsh",
+        "Designation":"Data Entry"
+    }
+],
+"Users":[
+    {
+        "Name":"Ritesh",
+        "Designation":"Show"
+    },
+    {
+        "Name":"Nikhil",
+        "Designation":"Show"
+    }
+] 
+    
+}
