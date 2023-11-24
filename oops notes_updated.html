@@ -63,78 +63,56 @@
           
       
       </style>
+      <script>
+        fetch("json/viva_oops.json")
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(function(datas) {
+            let thedata = document.querySelector("#viva");
+            let out = "";
+            for (let data of datas) {
+                out += `<h4>${data.number}. ${data.question}</h4>
+                <h6 style="padding-left:15px;">${data.answer}</h6><br>
+                
+        
+                `;
+            }
+            thedata.innerHTML = out;
+        })
+        .catch(function(error) {
+            console.error('Error during fetch:', error);
+        });
+      </script>
+      <style>
+        #img1{
+            width:300px;
+            transition:transform .2s ease-in-out;
+        }
+            #img1:hover{transform:scale(1.2);cursor:zoom-in}
+            h3{
+            margin-left: 0 !important;
+            }
+            
+        
+        </style>
     <div id="body">
       <div id="up">
         <a href="#" id="goToTopButton" class="go-to-top-button">
           <span><i class="fa fa-arrow-up" aria-hidden="true" id="arrow"></i></span>
       </a>
       </div>
-        <center> <div class="justify-content-center text-danger"><h4> OBJECT ORIENTED PROGRAMING SYSTEM</h4></div></center>
-
-        <h4> Q1:- Define Class function in oops?</h4> 
-        
-        <h5>In object-oriented programming (OOP), a class is a blueprint or template for creating objects (instances). It defines the properties (attributes) and behaviors (methods) that objects created from the class will have.<br><br>
-
-            A class can contain various elements, including:<br><br>
-            
-            1. **Attributes**: These are variables that store data or state information about the objects created from the class. Attributes are sometimes referred to as member variables or instance variables.<br>
-            
-            2. **Methods**: These are functions or procedures that define the behavior or actions that objects of the class can perform. Methods are sometimes called member functions.<br>
-            
-            A class is like a blueprint for creating objects, and objects are instances of that class. You can think of a class as a user-defined data type that encapsulates both data (attributes) and the functions (methods) that operate on that data.<br><br>
-            
-            Here's a simple example in Python to illustrate a class:<br><br>
-            
-            Classes are fundamental to OOP as they allow you to model real-world entities with their characteristics and behaviors, making code more organized, reusable, and easier to maintain.</h5>
-        <br><br><br>
-
-        <h4> Q2:- Define the term Function in OOPS ?</h4> 
+        <center>
+           <div class="justify-content-center text-danger"><h4> OBJECT ORIENTED PROGRAMING SYSTEM</h4>
+         
+          
+          
+          </div></center>
+ <div id="viva"></div><hr><center>Best of Luck👍👍</center><hr><br>
        
-        <h5>In object-oriented programming (OOP), a function is a block of code that defines a specific behavior or action that can be performed by objects of a class. Functions in OOP are also referred to as methods. These methods are associated with classes and operate on the data and attributes of objects created from those classes.<br><br>
-
-            Here are some key points about functions (methods) in OOPS:<br><br>
-            
-            1. **Member Functions/Methods**: Functions defined within a class are often called methods or member functions. These methods are used to define the behavior of objects created from the class.<br><br>
-            
-            2. **Access to Class Data**: Methods have access to the class's attributes (data members) and can manipulate them as needed. This allows you to encapsulate data and behavior within a class, promoting data hiding and abstraction.<br><br>
-            
-            3. **Instance Methods**: Most methods in OOP are instance methods, which means they operate on specific instances or objects of the class. They typically take the instance itself (`self` in Python) as the first parameter to access instance-specific data.<br><br>
-            
-            4. **Encapsulation**: Methods help in encapsulating data and behavior together within a class. This encapsulation is one of the fundamental principles of OOP, and it helps in managing the complexity of large software systems.<br><br>
-            
-            Here's an example in Python that demonstrates a class with methods:<br><br>
-            
-            Functions (methods) in OOP help you define the behavior of objects and enable you to work with instances of classes, making it a powerful paradigm for organizing and structuring code.</h5>
-        <br><br><br>
-
-        <h4> Q3:- Define the term of Object in OOPS?</h4> 
-        
-        <h5>In object-oriented programming (OOP), an object is a fundamental concept that represents a real-world entity or concept as an instance of a class. An object is a self-contained unit that combines both data (attributes or properties) and behaviors (methods or functions) that operate on that data. Objects are created based on the blueprint or template defined by a class.<br><br>
-
-            Here are some key characteristics and points about objects in OOP:<br><br>
-            
-            1. **Instance of a Class**: An object is essentially an instance of a class. A class defines the structure (attributes) and behavior (methods) that its objects will have.<br><br>
-            
-            2. **Attributes (Properties)**: Objects have attributes that store data or state specific to that object. These attributes are sometimes called member variables or instance variables.<br>
-            
-            3. **Methods (Functions)**: Objects have methods that define the actions or behaviors that can be performed by that object. These methods are sometimes called member functions.<br>
-            
-            4. **Encapsulation**: Objects encapsulate both data and behavior within a single unit. This helps in organizing and managing complex systems by grouping related data and functions together.<br><br>
-            
-            5. **Identity**: Each object has a unique identity, allowing it to be distinguished from other objects of the same class.<br><br>
-            
-            6. **State**: An object's state refers to the current values of its attributes. These values can change over time as methods are called.<br><br>
-            
-            7. **Behavior**: An object's behavior refers to the actions it can perform through its methods. The behavior of an object is determined by the class it belongs to.<br><br>
-            
-            Here's a simple example in Python to illustrate the concept of objects:<br><br>
-            
-            
-            
-            Objects are a central concept in OOP and provide a way to model and work with complex systems by organizing data and behavior into reusable and self-contained units.</h5>
-        <br><br><br>
-
-
 
          
        </div>
