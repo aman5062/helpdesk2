@@ -12,7 +12,28 @@
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
 	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
 	crossorigin="anonymous"
-></script>
+>
+
+
+
+function onloading(){
+    var cookieString = document. cookie;
+    var cookies = cookieString. split(';');
+    var len = cookies. length;
+    var foundActiveUser = false;
+    for(i=0; i<len; i++){
+        var n = cookies[i].split("=");
+        for(j=0; j<2; j++){
+
+        if(n[j]==="name"){
+            alert("Welcome Back"+n[1]);
+        break;
+        }}
+       
+    }
+   }
+
+</script>
 <style>
   *{
       padding: 0;
@@ -38,8 +59,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
   </div>
 </div>
-<body>  
+<body onload="onloading()">  
     <script>
+       
+
         fetch("json/dbms_viva.json")
         .then(function(response) {
             if (!response.ok) {
@@ -530,14 +553,30 @@
 </div><br><br>
 </div>
 <script>
-    
-   
+    var cookieString = document. cookie;
+    var cookies = cookieString. split(';');
+    var len = cookies. length;
+    var foundActiveUser = false;
+    for(i=0; i<len; i++){
+        if(cookies[i]==="user=active"){
+            close();
+            foundActiveUser = true;
+        break;
+        }
+       
+    }
+    if (!foundActiveUser) {
+        feedback();
+    }
+   function feedback(){
     setTimeout(function() {
         document.getElementById("body").style.position = "absolute";
         setTimeout(function() {
             close();
         }, 60000);
-    }, 2000); 
+    }, 2000);
+   }
+    
 
    
     function close() {
@@ -653,6 +692,8 @@ form.addEventListener("submit", e => {
     
     alert("Thank you for Your feedback");
     close1();
+    document.cookie = "user:active";
+    document.cookie = "name:"+document.getElementById("name").value;
 
   });
 });
