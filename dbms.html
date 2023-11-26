@@ -53,11 +53,23 @@
 
         if(n[j]===" name"){
             alert("Welcome Back "+n[1]);
+            wish(n[1]);
         break;
         }}
        
     }
-   }</script>
+   }
+   function wish(name){
+        document.getElementById("wishing_part").innerHTML="Welcome back "+ name;
+        document.getElementById("wishing_part").style.position = "absolute";
+        setTimeout(closeit, 1000);
+        
+   }
+   function closeit(){
+    document.getElementById("wishing_part").style.position = "none";
+   }
+
+</script>
 <body onload="onloading()">  
     <script>
        
@@ -656,7 +668,13 @@
         }
     }
     
-    
+    #wishing_part{
+        position: relative;
+        width: 80%;
+        height: 10%;
+        background-color: rgb(183, 175, 175);
+        
+    }
 </style>
 </head>
 <div id="main">
@@ -678,6 +696,9 @@
             <input type="submit" value="Submit" onclick="close1()">
         </form>
     </div>
+</div>
+<div id="wishing_part">
+
 </div>
 <script>
     var form = document.getElementById('sheetdb-form');
