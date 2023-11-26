@@ -1,0 +1,102 @@
+[
+
+      {
+        "sno": 1,
+        "question": "What is a database?",
+        "answer": "A database is a collection of organized and structured data."
+      },
+      {
+        "sno": 2,
+        "question": "What is the purpose of a DBMS?",
+        "answer": "A DBMS (Database Management System) is software that manages and organizes databases, ensuring data integrity and providing an interface for users to interact with the data."
+      },
+      {
+        "sno": 3,
+        "question": "Explain the concept of a table in a database.",
+        "answer": "A table is a collection of rows and columns used to store data in a structured format. Each row represents a record, and each column represents a field."
+      },
+      {
+        "sno": 4,
+        "question": "What is a primary key, and why is it important?",
+        "answer": "A primary key is a unique identifier for each record in a table. It ensures data integrity and helps establish relationships between tables."
+      },
+      {
+        "sno": 5,
+        "question": "What is SQL, and why is it used?",
+        "answer": "SQL (Structured Query Language) is a language used to manage and manipulate relational databases. It is used to perform tasks such as querying data, updating records, and defining database structures."
+      },
+      {
+        "sno": 6,
+        "question": "What is normalization?",
+        "answer": "Normalization is the process of organizing data in a database to reduce redundancy and dependency, ensuring efficient storage and retrieval."
+      },
+      {
+        "sno": 7,
+        "question": "What is a foreign key, and how is it used?",
+        "answer": "A foreign key is a column that establishes a link between data in two tables. It is used to enforce referential integrity by ensuring that values in one table correspond to values in another table's primary key."
+      },
+      {
+        "sno": 8,
+        "question": "Explain the purpose of the SELECT statement in SQL.",
+        "answer": "The SELECT statement is used to retrieve data from one or more tables in a database. It allows users to specify the columns they want to retrieve and apply conditions to filter the results."
+      },
+      {
+        "sno": 9,
+        "question": "What is a database index, and why is it important?",
+        "answer": "A database index is a data structure that enhances the speed of data retrieval operations on a database table. It is important for improving query performance by reducing the time it takes to search for specific data."
+      },
+      {
+        "sno": 10,
+        "question": "Explain the concept of a transaction in a database.",
+        "answer": "A transaction is a sequence of one or more database operations that are executed as a single unit. It follows the ACID properties (Atomicity, Consistency, Isolation, Durability) to ensure the reliability and consistency of the database."
+      },
+      {
+        "sno": 16,
+        "question": "Explain the difference between a candidate key and a composite key.",
+        "answer": "A candidate key is a column or set of columns that can uniquely identify a record in a table. A composite key is a combination of two or more columns that together uniquely identify a record. All composite keys are candidate keys, but not all candidate keys are composite keys."
+      },
+      {
+        "sno": 17,
+        "question": "What is the purpose of the GROUP BY clause in SQL?",
+        "answer": "The GROUP BY clause in SQL is used to group rows that have the same values in specified columns into summary rows. It is often used with aggregate functions like COUNT, SUM, AVG, etc., to perform calculations on each group of rows."
+      },
+      {
+        "sno": 18,
+        "question": "Explain the difference between a view and a materialized view.",
+        "answer": "A view is a virtual table that is based on the result of a SELECT query and does not store data itself. A materialized view, on the other hand, is a physical copy of the result set of a query that is stored for faster retrieval. Materialized views are updated periodically to reflect changes in the underlying data."
+      },
+      {
+        "sno": 19,
+        "question": "What is a trigger in a database?",
+        "answer": "A trigger is a set of instructions that are automatically executed or fired in response to a particular event, such as an INSERT, UPDATE, or DELETE operation on a specified table. Triggers are often used to enforce business rules, data integrity, and perform actions automatically when certain events occur."
+      },
+      {
+        "sno": 20,
+        "question": "Explain the concept of a deadlock in a database.",
+        "answer": "A deadlock occurs when two or more transactions are blocked, each waiting for the other to release a lock. This situation can lead to a standstill where no transaction can proceed. To resolve deadlocks, databases often use techniques such as deadlock detection and automatic rollback of one or more transactions involved in the deadlock."
+      },
+      {
+        "sno": 21,
+        "question": "What is the purpose of the HAVING clause in SQL?",
+        "answer": "The HAVING clause in SQL is used in combination with the GROUP BY clause to filter the results of a grouped query based on specified conditions. It is similar to the WHERE clause but is applied after the grouping has taken place."
+      },
+      {
+        "sno": 22,
+        "question": "Explain the concept of data integrity in a database.",
+        "answer": "Data integrity ensures the accuracy, consistency, and reliability of data in a database. It is maintained through constraints such as primary keys, foreign keys, check constraints, and the use of transactions. Data integrity prevents the insertion of inconsistent or incorrect data into the database."
+      },
+      {
+        "sno": 23,
+        "question": "What is the role of the SQL JOIN operation?",
+        "answer": "The SQL JOIN operation is used to combine rows from two or more tables based on a related column between them. There are different types of joins, including INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN, each specifying how the data from the tables should be combined."
+      },
+      {
+        "sno": 24,
+        "question": "Explain the concept of a database index and its advantages.",
+        "answer": "A database index is a data structure that improves the speed of data retrieval operations on a database table. It allows the database engine to find and access the rows more quickly, resulting in faster query performance. Indexes provide advantages such as improved search performance, efficient data retrieval, and faster sorting and grouping of data."
+      },
+      {
+        "sno": 25,
+        "question": "What is the purpose of the ROLLBACK statement in SQL?",
+        "answer": "The ROLLBACK statement in SQL is used to undo changes made during the current transaction that has not been committed. It is used to revert the database to its state before the transaction began, ensuring that no changes are permanently saved if an error or issue occurs during the transaction."
+      }]
