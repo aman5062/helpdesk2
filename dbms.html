@@ -567,7 +567,7 @@
     var foundActiveUser = false;
     for(i=0; i<len; i++){
         if(cookies[i]==="user=active"){debugger;
-            hide();
+                document.getElementById("main").style.display = "none";
             foundActiveUser = true;
         break;
         }
@@ -711,9 +711,7 @@ form.addEventListener("submit", e => {
   });
 });
 
-function hide(){
-    document.getElementById("main").style.visibility = "hidden";
-}
+
 </script>
 </body>
 </html>
