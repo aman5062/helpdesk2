@@ -61,14 +61,10 @@
    }
    function wishme(name){debugger;
         document.getElementById("wishing_part").innerHTML="Welcome back "+ name;
-        document.getElementById("wishing_part").style.position = "absolute";
-        setTimeout(closeit, 10000);
+       
+      
         
    }
-   function closeit(){
-    document.getElementById("wishing_part").style.position = "none";
-   }
-
 </script>
 <body onload="onloading()">  
     <script>
@@ -120,6 +116,7 @@
         </div></div>
       </header>
 <div id="body">
+    <center><div id="wishing_part">Welcome</div></center>
  <hr>
  <marquee><a href="https://bit.ly/47pIBam">Mathematics assignment </a></marquee>
  <hr>
@@ -670,16 +667,13 @@
     
     #wishing_part{
         position: relative;
-        width: 80%;
-        height: 10%;
-        background-color: rgb(183, 175, 175);
+      align-self: center;
         
     }
 </style>
 </head>
 <div id="main">
     <div id="box">
-      
         <div id="right" onclick="close1()">
             <i class="fa fa-times" aria-hidden="true"></i>
         </div> 
@@ -697,9 +691,7 @@
         </form>
     </div>
 </div>
-<div id="wishing_part">
 
-</div>
 <script>
     var form = document.getElementById('sheetdb-form');
 form.addEventListener("submit", e => {
