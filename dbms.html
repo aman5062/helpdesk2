@@ -565,9 +565,10 @@
     var cookies = cookieString. split(';');
     var len = cookies. length;
     var foundActiveUser = false;
+    var invis = false;
     for(i=0; i<len; i++){
         if(cookies[i]==="user=active"){debugger;
-                document.getElementById("main").style.display = "none !important";
+               invis = false;
             foundActiveUser = true;
         break;
         }
@@ -711,7 +712,9 @@ form.addEventListener("submit", e => {
   });
 });
 
-
+if (invis) {
+    document.getElementById("main").style.display = "none";
+}
 </script>
 </body>
 </html>
