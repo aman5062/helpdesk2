@@ -689,8 +689,6 @@ form.addEventListener("submit", e => {
   }).then(
       response => response.json()
   ).then((html) => {
-    
-    alert("Thank you for Your feedback");
     close1();
     document.cookie = "user=active";
     document.cookie = "name="+document.getElementById("name").value;
