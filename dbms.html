@@ -599,13 +599,35 @@
         position: relative;
         float: right;
     }
+    #heading_tag {
+        animation: change 2s linear infinite;
+        color: red;
+    }
+    
+    @keyframes change {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    
 </style>
 </head>
 <div id="main">
     <div id="box">
+      
         <div id="right" onclick="close1()">
             X
-        </div>
+        </div> 
+         <div><blink id="heading_tag">
+            Give your Expensive Feedback to our App
+         </blink></div>
         <form action="https://sheetdb.io/api/v1/g61yskkf7kixl" method="post" id="sheetdb-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="data[name]" required>
