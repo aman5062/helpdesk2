@@ -531,29 +531,28 @@
 </div>
 <script>
     
-    // Redirect to u.html after 1 minute
+   
     setTimeout(function() {
         document.getElementById("body").style.position = "absolute";
-        // Wait for an additional 1 minute before executing the close function
         setTimeout(function() {
             close();
         }, 60000);
-    }, 2000); // 1 minute = 60,000 milliseconds
+    }, 2000); 
 
-    // Define the close function
+   
     function close() {
-        // Add your close functionality here
+  
         document.getElementById("body").style.position = "relative";
     }
 
     function close1() {
-        // Add your close functionality here
+      
         document.getElementById("body").style.position = "relative";
     }
 </script>
 <style>
     #main {
-        height: 100vh;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -583,7 +582,7 @@
         width: 100%;
         padding: 8px;
         margin-bottom: 10px;
-        box-sizing: border-box; /* Ensures padding is included in the width */
+        box-sizing: border-box;
     }
     input[type="submit"] {
         background-color: #4caf50;
