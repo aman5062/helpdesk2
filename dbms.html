@@ -42,7 +42,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
   </div>
 </div>
-<script>function onloading(){debugger;
+<script>function onloading(){
     var cookieString = document. cookie;
     var cookies = cookieString. split(';');
     var len = cookies. length;
@@ -52,14 +52,14 @@
         for(j=0; j<2; j++){
 
         if(n[j]===" name"){
-            alert("Welcome Back "+n[1]);
-            wish(n[1]);
+         //   alert("Welcome Back "+n[1]);
+            wishme(n[1]);
         break;
         }}
        
     }
    }
-   function wish(name){
+   function wishme(name){debugger;
         document.getElementById("wishing_part").innerHTML="Welcome back "+ name;
         document.getElementById("wishing_part").style.position = "absolute";
         setTimeout(closeit, 1000);
