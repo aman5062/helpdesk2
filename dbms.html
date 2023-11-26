@@ -567,7 +567,7 @@
     var foundActiveUser = false;
     for(i=0; i<len; i++){
         if(cookies[i]==="user=active"){debugger;
-                document.getElementById("main").style.display = "none";
+                document.getElementById("main").style.display = "none !important";
             foundActiveUser = true;
         break;
         }
