@@ -6,6 +6,30 @@
     <meta meta name="viewport" content="width=device-width, user-scalable=no" />
     <title>Helpdesk</title>
 </head>
+    <script>
+
+
+        fetch("json/daa_viva.json")
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(function(datas) {
+            let thedata = document.querySelector("#viva");
+            let out = "";
+            for (let data of datas) {
+                out += `<h4>${data.sno}. ${data.question}</h4>
+                <h6 style="padding-left:15px;">${data.answer}</h6><br>
+                `;
+            }
+            thedata.innerHTML = out;
+        })
+        .catch(function(error) {
+            console.error('Error during fetch:', error);
+        });
+      </script>
 <script
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
 	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -100,6 +124,7 @@
 
      </div>
        </div>
+<div id="viva"></div>
 </body>
 <div id="footer">
         <div id="download">
