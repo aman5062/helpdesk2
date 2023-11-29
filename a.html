@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .hidden{
+        display: none;
+    }
+</style>
+<script>
+    fetch("json/mcq/sample.json")
+    .then(function(response) {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then(function(data) {
+        let thedata = document.querySelector("#mcq");
+        let out = "";
+        for (let question of data.questions) {
+            out += `<div>
+                      <h4>${question.sno}.${question.question}</h4>
+                      <ul>`;
+            for (let option of question.options) {
+                out += `<li id="${question.sno}"> ${option}</li>`;
+            }
+            out += `</ul>
+            <p class = "hidden">${question.answer}</p>
+                   </div><br>`;
+        }
+        thedata.innerHTML = out;
+    })
+    .catch(function(error) {
+        console.error('Error during fetch:', error);
+    });
+  </script>
+  
+<body>
+    <div id="mcq"></div>
+</body>
+</html>

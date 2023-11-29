@@ -1,0 +1,35 @@
+{
+    "questions": [
+      {
+        "sno": 1,
+        "question": "What is the capital of France?",
+        "options": ["Berlin", "Madrid", "Paris", "Rome"],
+        "answer": "Paris"
+      },
+      {
+        "sno": 2,
+        "question": "Which planet is known as the Red Planet?",
+        "options": ["Mars", "Venus", "Jupiter", "Saturn"],
+        "answer": "Mars"
+      },
+      {
+        "sno": 3,
+        "question": "What is the largest mammal on Earth?",
+        "options": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+        "answer": "Blue Whale"
+      },
+      {
+        "sno": 4,
+        "question": "Who is the author of 'To Kill a Mockingbird'?",
+        "options": ["J.K. Rowling", "Harper Lee", "George Orwell", "Ernest Hemingway"],
+        "answer": "Harper Lee"
+      },
+      {
+        "sno": 5,
+        "question": "What is the powerhouse of the cell?",
+        "options": ["Mitochondria", "Nucleus", "Endoplasmic Reticulum", "Golgi Apparatus"],
+        "answer": "Mitochondria"
+      }
+    ]
+  }
+  
