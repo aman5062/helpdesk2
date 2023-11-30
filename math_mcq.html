@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Helpdesk</title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css?v=1" />
+<script src="script.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+	crossorigin="anonymous"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+/>
+
+  </div>
+</div>
+<body>  
+    <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
+      <div class="container-fluid">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="logo.png" id="imglogo">
+          <span class="fs-4 mr-5 lo" ><h2 class="bold-text">Helpdesk</h2></span>
+        </a>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="nav nav-pills navbar-nav ms-auto" id="myNav">
+            <li class="nav-item"><a href="dbms.html" class="nav-link">DBMS</a></li>
+            <li class="nav-item"><a href="mech_updated.html" class="nav-link">Mechanics</a></li>
+            <li class="nav-item dropdown" id="myDropdown">
+              <a class="nav-link dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="false">OOPS</a>
+              <ul class="dropdown-menu" data-bs-popper="static">
+                <li><a class="nav-link dropdown-item" href="object_updated.html">Code</a></li>
+                <li><a class="nav-link dropdown-item" href="oops notes_updated.html">Notes</a></li>
+              </ul>
+              </li>
+              <li class="nav-item"><a href="daa_updated.html" class="nav-link">DAA</a></li>
+            </ul>
+        </div>
+      </div>
+      <style>
+        .hidden {
+            display: none;
+        }
+    
+        .feedback {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    
+        .correct {
+            color: green;
+        }
+    
+        .incorrect {
+            color: red;
+        }
+    </style>
+      <script>
+        fetch("json/mcq/math_mcq.json")
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(function(data) {
+            let thedata = document.querySelector("#mcq");
+            let out = "";
+            for (let question of data.questions) {
+                out += `<div>
+                          <h4>${question.sno}. ${question.question}</h4>`;
+                for (let i = 0; i < question.options.length; i++) {
+                    out += `<input type="radio" name="question${question.sno}" id="option${question.sno}_${i + 1}" value="${question.options[i]}" onclick="checkAnswer(${question.sno}, ${i})">
+                            <label for="option${question.sno}_${i + 1}">${question.options[i]}</label><br>`;
+                }
+                out += `
+                <p class="hidden" id="answer${question.sno}">${question.answer}</p>
+                <p id="feedback${question.sno}" class="feedback" onchange="color_chnage()"></p></div><br>`;
+            }
+            thedata.innerHTML = out;
+        })
+        .catch(function(error) {
+            console.error('Error during fetch:', error);
+        });
+    
+        function checkAnswer(questionNumber, selectedOption) {
+            let selectedAnswer = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
+            let correctAnswer = document.querySelector(`#answer${questionNumber}`).innerText;
+            let feedbackElement = document.querySelector(`#feedback${questionNumber}`);
+    
+            feedbackElement.innerText = ""; // Reset feedback text
+    
+            if (selectedAnswer === correctAnswer) {
+                feedbackElement.classList.add("correct");
+                feedbackElement.innerText = "Correct!";
+              
+    
+            } else {
+                feedbackElement.classList.add("incorrect");
+                feedbackElement.innerText = "Incorrect. Try again!";
+                
+            }
+        }
+
+        function color_chnage(){
+            
+        }
+    </script>
+      </header>
+<div id="body">
+    <center><h1>MCQ</h1></center>
+   <div id="mcq"></div>
+</head>
+</center></div><br><br>
+
+</div>
+
+</body>
+
+</html>

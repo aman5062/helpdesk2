@@ -1,0 +1,154 @@
+{
+  "questions": [
+    {
+      "sno": 1,
+      "question": "What is the Laplace transform of f(t) = 1?",
+      "options": ["1/s", "1/s^2", "1", "s"],
+      "answer": "1/s"
+    },
+    {
+      "sno": 2,
+      "question": "Which PDE represents a heat conduction equation?",
+      "options": ["Laplace's equation", "Wave equation", "Burger's equation", "Heat equation"],
+      "answer": "Heat equation"
+    },
+    {
+      "sno": 3,
+      "question": "Which method is used to solve ordinary differential equations numerically?",
+      "options": ["Euler's method", "Simpson's rule", "Bisection method", "Secant method"],
+      "answer": "Euler's method"
+    },
+    {
+      "sno": 4,
+      "question": "What is the Newton-Raphson method used for?",
+      "options": ["Solving linear equations", "Solving differential equations", "Finding roots of nonlinear equations", "Optimization problems"],
+      "answer": "Finding roots of nonlinear equations"
+    },
+    {
+      "sno": 5,
+      "question": "Which of the following is a step size control method in the Runge-Kutta method?",
+      "options": ["Euler's method", "Heun's method", "Adams-Bashforth method", "Dormand-Prince method"],
+      "answer": "Dormand-Prince method"
+    },
+    {
+      "sno": 6,
+      "question": "The Laplace transform of e^(at) is:",
+      "options": ["1/(s-a)", "1/(s+a)", "s/(s-a)", "s/(s+a)"],
+      "answer": "1/(s-a)"
+    },
+    {
+      "sno": 7,
+      "question": "Which PDE represents a vibrating string?",
+      "options": ["Laplace's equation", "Wave equation", "Burger's equation", "Heat equation"],
+      "answer": "Wave equation"
+    },
+    {
+      "sno": 8,
+      "question": "What order is the classical Runge-Kutta method?",
+      "options": ["First order", "Second order", "Third order", "Fourth order"],
+      "answer": "Fourth order"
+    },
+    {
+      "sno": 9,
+      "question": "In Newton-Raphson method, what is the formula for the next approximation, x_{n+1}?",
+      "options": ["x_{n+1} = x_n - f(x_n)", "x_{n+1} = x_n + f(x_n)", "x_{n+1} = x_n - f'(x_n)", "x_{n+1} = x_n + f'(x_n)"],
+      "answer": "x_{n+1} = x_n - f(x_n) / f'(x_n)"
+    },
+    {
+      "sno": 10,
+      "question": "Which method is also known as the Regula Falsi method?",
+      "options": ["Newton-Raphson method", "Secant method", "Bisection method", "Runge-Kutta method"],
+      "answer": "False Position method"
+    },
+    {
+      "sno": 11,
+      "question": "The Laplace transform of sin(at) is:",
+      "options": ["a/(s^2 + a^2)", "s/(s^2 + a^2)", "1/(s^2 + a^2)", "a/s"],
+      "answer": "a/(s^2 + a^2)"
+    },
+    {
+      "sno": 12,
+      "question": "Which PDE represents a steady-state condition with no time dependence?",
+      "options": ["Laplace's equation", "Wave equation", "Burger's equation", "Heat equation"],
+      "answer": "Laplace's equation"
+    },
+    {
+      "sno": 13,
+      "question": "The Runge-Kutta method is particularly useful for solving:",
+      "options": ["ODEs", "PDEs", "Algebraic equations", "Integral equations"],
+      "answer": "ODEs"
+    },
+    {
+      "sno": 14,
+      "question": "What is the primary advantage of the Newton-Raphson method over the bisection method?",
+      "options": ["Faster convergence", "Simplicity of implementation", "Robustness", "Does not require derivative information"],
+      "answer": "Faster convergence"
+    },
+    {
+      "sno": 15,
+      "question": "The false position method involves:",
+      "options": ["Linear interpolation", "Quadratic interpolation", "Cubic interpolation", "Exponential interpolation"],
+      "answer": "Linear interpolation"
+    },
+    {
+      "sno": 16,
+      "question": "The Laplace transform of t^n (where n is a positive integer) is:",
+      "options": ["n!/s^(n+1)", "n!/s^n", "s^n/n!", "n!/s"],
+      "answer": "n!/s^(n+1)"
+    },
+    {
+      "sno": 17,
+      "question": "Which PDE represents a combination of a convection term and a diffusion term?",
+      "options": ["Laplace's equation", "Wave equation", "Burger's equation", "Heat equation"],
+      "answer": "Burger's equation"
+    },
+    {
+      "sno": 18,
+      "question": "The Runge-Kutta method is an example of a:",
+      "options": ["Single-step method", "Multistep method", "Direct method", "Iterative method"],
+      "answer": "Single-step method"
+    },
+    {
+      "sno": 19,
+      "question": "What is the convergence order of the Newton-Raphson method?",
+      "options": ["First order", "Second order", "Third order", "Quadratic order"],
+      "answer": "Second order"
+    },
+    {
+      "sno": 20,
+      "question": "In the false position method, the interval is reduced based on the:",
+      "options": ["Midpoint of the interval", "Average of function values", "Slope of the secant line", "Slope of the tangent line"],
+      "answer": "Slope of the secant line"
+    },
+    {
+      "sno": 21,
+      "question": "The Laplace transform of a constant, f(t) = C, where C is a constant, is:",
+      "options": ["C/s", "C", "Cs", "1"],
+      "answer": "C/s"
+    },
+    {
+      "sno": 22,
+      "question": "Which PDE represents an equation that models fluid flow?",
+      "options": ["Laplace's equation", "Wave equation", "Burger's equation", "Navier-Stokes equation"],
+      "answer": "Navier-Stokes equation"
+    },
+    {
+      "sno": 23,
+      "question": "The Runge-Kutta method is particularly effective for solving stiff ODEs, where:",
+      "options": ["The step size needs to be small", "The step size can be large", "The problem has a simple solution", "The problem has no solution"],
+      "answer": "The step size can be large"
+    },
+    {
+      "sno": 24,
+      "question": "What is the main disadvantage of the Newton-Raphson method?",
+      "options": ["Slow convergence", "Sensitivity to initial guess", "Requires derivative information", "Limited applicability"],
+      "answer": "Sensitivity to initial guess"
+    },
+    {
+      "sno": 25,
+      "question": "The false position method is also known as the:",
+      "options": ["Bisection method", "Secant method", "Regula Falsi method", "Newton-Raphson method"],
+      "answer": "Regula Falsi method"
+    }
+  ]
+}
