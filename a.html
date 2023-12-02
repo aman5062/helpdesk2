@@ -61,7 +61,9 @@
                     });
 
                     // Manually submit the form after setting values
-                    form.submit();
+                    setTimeout(function () {
+                        form.submit();
+                    }, 1000); // Delay for 1 second
 
                     break; // Exit loop if "name" cookie is found
                 }
