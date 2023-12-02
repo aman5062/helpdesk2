@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admins</title>
     <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        th, td {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        #main {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <script>
     function fetchData() {
@@ -38,27 +57,26 @@
     setInterval(fetchData, 10000);
 </script>
 
-<body><center><b><u>Only for Admins</u></b></center>
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>S.no</th>
-                                <th>Username</th>
-                                <th>Time</th>
-                            </tr>
-                        </thead>
-                        <tbody id="data">
-                            <!-- Data will be dynamically inserted here -->
-                        </tbody>
-                    </table>
-                </div>
-                <div id="main"></div>
-            </div>
+<body>
+    <div class="container">
+        <h2 class="text-center text-primary">Only for Admins</h2>
+        <p class="text-center">Login Details</p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Username</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="data">
+                    <!-- Data will be dynamically inserted here -->
+                </tbody>
+            </table>
         </div>
+        <div id="main" class="text-center"></div>
     </div>
 
     <!-- Add Bootstrap JS and Popper.js -->
