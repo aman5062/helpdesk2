@@ -1,0 +1,243 @@
+{
+    "questions": [
+      {
+        "sno": 1,
+        "question": "In statics, what does the term 'particle' refer to?",
+        "options": ["An object with negligible size", "A point in space", "A large and heavy object", "An object at rest"],
+        "answer": "A point in space"
+      },
+      {
+        "sno": 2,
+        "question": "What is the moment of inertia of a particle about an axis?",
+        "options": ["Zero", "Infinite", "Depends on the mass", "Mass times the square of the distance to the axis"],
+        "answer": "Zero"
+      },
+      {
+        "sno": 3,
+        "question": "Which theorem is used to determine the centroid of a composite area?",
+        "options": ["Parallel Axis Theorem", "Perpendicular Axis Theorem", "Centroidal Axis Theorem", "Composite Axis Theorem"],
+        "answer": "Parallel Axis Theorem"
+      },
+      {
+        "sno": 4,
+        "question": "Virtual work is associated with the principle of:",
+        "options": ["Conservation of energy", "Minimum potential energy", "Equilibrium", "Least action"],
+        "answer": "Minimum potential energy"
+      },
+      {
+        "sno": 5,
+        "question": "In lifting machines, what is the mechanical advantage?",
+        "options": ["Force applied to the machine", "Velocity ratio", "Efficiency of the machine", "Load lifted divided by effort applied"],
+        "answer": "Load lifted divided by effort applied"
+      },
+      {
+        "sno": 6,
+        "question": "What type of friction occurs before the motion of the object starts?",
+        "options": ["Dynamic friction", "Sliding friction", "Static friction", "Rolling friction"],
+        "answer": "Static friction"
+      },
+      {
+        "sno": 7,
+        "question": "Which type of drive is commonly used in bicycles?",
+        "options": ["Gear drive", "Chain drive", "Belt drive", "Rope drive"],
+        "answer": "Chain drive"
+      },
+      {
+        "sno": 8,
+        "question": "What is the study of the geometry of motion called?",
+        "options": ["Statics", "Kinematics", "Dynamics", "Kinetostatics"],
+        "answer": "Kinematics"
+      },
+      {
+        "sno": 9,
+        "question": "Newton's second law of motion is related to the:",
+        "options": ["Kinematics of particles", "Statics of particles", "Kinematics of rigid bodies", "Dynamics of particles"],
+        "answer": "Dynamics of particles"
+      },
+      {
+        "sno": 10,
+        "question": "In the work-energy principle, work is equal to:",
+        "options": ["Force times time", "Force times displacement", "Mass times velocity", "Acceleration times distance"],
+        "answer": "Force times displacement"
+      },
+      {
+        "sno": 11,
+        "question": "What is the power of a machine?",
+        "options": ["Force times distance", "Force times velocity", "Force times time", "Work done per unit time"],
+        "answer": "Work done per unit time"
+      },
+      {
+        "sno": 12,
+        "question": "Which of the following is a scalar quantity?",
+        "options": ["Force", "Velocity", "Acceleration", "Work"],
+        "answer": "Work"
+      },
+      {
+        "sno": 13,
+        "question": "The center of mass and the centroid of a body are the same for a:",
+        "options": ["Uniform density body", "Homogeneous body", "Regular-shaped body", "Symmetric body"],
+        "answer": "Uniform density body"
+      },
+      {
+        "sno": 14,
+        "question": "In the method of joints, what is assumed at each joint in a truss?",
+        "options": ["Moment equilibrium", "Zero displacement", "Force equilibrium", "Zero velocity"],
+        "answer": "Force equilibrium"
+      },
+      {
+        "sno": 15,
+        "question": "What is the purpose of a flywheel in a machine?",
+        "options": ["Increase speed", "Store energy", "Control motion", "Reduce friction"],
+        "answer": "Store energy"
+      },
+      {
+        "sno": 16,
+        "question": "The coefficient of friction is defined as the ratio of the:",
+        "options": ["Normal force to the frictional force", "Frictional force to the normal force", "Frictional force to the weight", "Weight to the normal force"],
+        "answer": "Frictional force to the normal force"
+      },
+      {
+        "sno": 17,
+        "question": "Which type of belt is preferred for high-speed operation?",
+        "options": ["Flat belt", "Round belt", "V-belt", "Timing belt"],
+        "answer": "V-belt"
+      },
+      {
+        "sno": 18,
+        "question": "What is the formula for angular velocity?",
+        "options": ["Velocity / Radius", "Radius / Velocity", "Displacement / Time", "Time / Displacement"],
+        "answer": "Velocity / Radius"
+      },
+      {
+        "sno": 19,
+        "question": "What is the condition for equilibrium of a particle?",
+        "options": ["Zero net force", "Zero net work", "Zero net velocity", "Zero net acceleration"],
+        "answer": "Zero net force"
+      },
+      {
+        "sno": 20,
+        "question": "Which of the following is a type of non-conservative force?",
+        "options": ["Gravity", "Friction", "Spring force", "Tension"],
+        "answer": "Friction"
+      },
+      {
+        "sno": 21,
+        "question": "The principle of transmissibility is associated with:",
+        "options": ["Forces", "Moments", "Couples", "Torque"],
+        "answer": "Forces"
+      },
+      {
+        "sno": 22,
+        "question": "Which law of motion is essential for the design of rockets?",
+        "options": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "None of the above"],
+        "answer": "Newton's Third Law"
+      },
+      {
+        "sno": 23,
+        "question": "What is the condition for a system to be in mechanical equilibrium?",
+        "options": ["Zero net force and zero net torque", "Zero net force", "Zero net torque", "Zero net energy"],
+        "answer": "Zero net force and zero net torque"
+      },
+      {
+        "sno": 24,
+        "question": "Which method is commonly used to analyze trusses?",
+        "options": ["Method of sections", "Method of joints", "Moment distribution method", "Virtual work method"],
+        "answer": "Method of joints"
+      },
+      {
+        "sno": 25,
+        "question": "The term 'shear force' in mechanics refers to the force that:",
+        "options": ["Causes rotation", "Causes compression", "Causes bending", "Acts parallel to the surface"],
+        "answer": "Acts parallel to the surface"
+      },
+      {
+        "sno": 26,
+        "question": "Which of the following is a condition for equilibrium of a rigid body?",
+        "options": ["Zero net force", "Zero net work", "Zero net velocity", "Zero net torque"],
+        "answer": "Zero net torque"
+      },
+      {
+        "sno": 27,
+        "question": "What is the principle of conservation of energy?",
+        "options": ["Energy cannot be created", "Energy cannot be destroyed", "Energy is conserved in an isolated system", "All of the above"],
+        "answer": "All of the above"
+      },
+      {
+        "sno": 28,
+        "question": "The coefficient of restitution measures the:",
+        "options": ["Stiffness of a material", "Ratio of elastic to plastic deformation", "Energy loss in collisions", "Strength of a material"],
+        "answer": "Energy loss in collisions"
+      },
+      {
+        "sno": 29,
+        "question": "Which type of motion involves both translation and rotation?",
+        "options": ["Rectilinear motion", "Angular motion", "General motion", "Curvilinear motion"],
+        "answer": "General motion"
+      },
+      {
+        "sno": 30,
+        "question": "What is the formula for the kinetic energy of a particle?",
+        "options": ["1/2 * mass * velocity^2", "mass * acceleration", "force * distance", "momentum / time"],
+        "answer": "1/2 * mass * velocity^2"
+      },
+      {
+        "sno": 31,
+        "question": "Which of the following is a conservative force?",
+        "options": ["Friction", "Gravity", "Air resistance", "Tension"],
+        "answer": "Gravity"
+      },
+      {
+        "sno": 32,
+        "question": "The Euler's equation relates the rate of change of momentum to the:",
+        "options": ["Force", "Mass", "Acceleration", "Energy"],
+        "answer": "Force"
+      },
+      {
+        "sno": 33,
+        "question": "In a simple pendulum, the restoring force is proportional to the:",
+        "options": ["Amplitude", "Mass", "Displacement", "Velocity"],
+        "answer": "Displacement"
+      },
+      {
+        "sno": 34,
+        "question": "The principle of conservation of linear momentum is based on:",
+        "options": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "None of the above"],
+        "answer": "Newton's Third Law"
+      },
+      {
+        "sno": 35,
+        "question": "Which of the following statements about elastic and inelastic collisions is correct?",
+        "options": ["Total kinetic energy is conserved in elastic collisions", "Total kinetic energy is conserved in inelastic collisions", "Momentum is conserved in elastic collisions", "Both A and C are correct"],
+        "answer": "Both A and C are correct"
+      },
+      {
+        "sno": 36,
+        "question": "Which law of motion is involved in the operation of a rocket?",
+        "options": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of gravitation"],
+        "answer": "Newton's Third Law"
+      },
+      {
+        "sno": 37,
+        "question": "The formula for gravitational potential energy near the surface of the Earth is:",
+        "options": ["mgh", "1/2 * m * v^2", "kx^2", "1/2 * k * x^2"],
+        "answer": "mgh"
+      },
+      {
+        "sno": 38,
+        "question": "Which of the following statements about work done by a force is correct?",
+        "options": ["Work is a scalar quantity", "Work is a vector quantity", "Work is always positive", "Work is always negative"],
+        "answer": "Work is a scalar quantity"
+      },
+      {
+        "sno": 39,
+        "question": "In the context of energy conservation, what is the principle of conservation of mechanical energy?",
+        "options": ["Mechanical energy is always conserved", "Mechanical energy is conserved in an isolated system", "Mechanical energy is conserved only in linear motion", "Mechanical energy is never conserved"],
+        "answer": "Mechanical energy is conserved in an isolated system"
+      },
+      {
+        "sno": 40,
+        "question": "What is the angular momentum of an object rotating about a fixed axis?",
+        "options": ["mv", "Iω", "1/2 Iω^2", "mgh"],
+        "answer": "Iω"
+      }
+    ]}
