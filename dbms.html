@@ -588,7 +588,6 @@
             foundActiveUser = true;
         break;
         }
-       
     }
     if (!foundActiveUser) {
         feedback();
@@ -596,7 +595,6 @@
    function feedback(){
     setTimeout(function() {
         document.getElementById("body").style.position = "absolute";
-       
         setTimeout(function() {
             close();
         }, 60000);
@@ -772,8 +770,11 @@ if (!invis) {
             if (n[0] === "name") {
                 // Set values in the form
                 document.getElementById("user").value = n[1];
+                break;
+                var userset = false;
                 
-            }else{
+            }
+            if(!userset){
                 document.getElementById("user").value = "user";
             }
                 // Prevent the default form submission behavior
