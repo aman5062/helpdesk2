@@ -60,10 +60,9 @@
                         });
                     });
 
-                    // Manually submit the form after setting values
-                    setTimeout(function () {
-                        form.submit();
-                    }, 1000); // Delay for 1 second
+                    // Manually trigger a click on the submit button
+                    var submitButton = document.getElementById('subme');
+                    submitButton.click();
 
                     break; // Exit loop if "name" cookie is found
                 }
