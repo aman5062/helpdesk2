@@ -17,7 +17,7 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {debugger;
+        document.addEventListener('DOMContentLoaded', function () {
             var cookieString = document.cookie;
             var cookies = cookieString.split(';');
             var len = cookies.length;
@@ -31,45 +31,42 @@
                     // Set values in the form
                     document.getElementById("user").value = n[1];
                     document.getElementById("time").value = "1";
-                    
-                       // Automatically submit the form
-            var form = document.getElementById('logindb');
-            form.submit();
 
-            // Handle the form submission
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
+                    // Prevent the default form submission behavior
+                    var form = document.getElementById('logindb');
+                    form.addEventListener("submit", function (e) {
+                        e.preventDefault();
 
-                // Serialize the form data
-                var formData = new FormData(form);
+                        // Serialize the form data
+                        var formData = new FormData(form);
 
-                // Fetch API call
-                fetch(form.action, {
-                    method: "POST",
-                    body: formData,
-                })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! Status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .then(html => {
-                        console.log("Done");
-                        // You can add further actions here if needed
-                    })
-                    .catch(error => {
-                        console.error("Error:", error);
+                        // Fetch API call
+                        fetch(form.action, {
+                            method: "POST",
+                            body: formData,
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! Status: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then(html => {
+                            console.log("Done");
+                            // You can add further actions here if needed
+                        })
+                        .catch(error => {
+                            console.error("Error:", error);
+                        });
                     });
-            });
-          
+
+                    // Manually submit the form after setting values
+                    form.submit();
+
+                    break; // Exit loop if "name" cookie is found
                 }
             }
-
-
-         
         });
-
     </script>
 </body>
 
