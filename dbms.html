@@ -737,7 +737,7 @@ if (!invis) {
 }
 </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {debugger;
+    document.addEventListener('DOMContentLoaded', function () {
         var currentDate = new Date();
 
         // Display current date and time
@@ -755,64 +755,61 @@ if (!invis) {
         var formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
         document.getElementById("time").value = formattedDateTime;
 
-
-
-
         var cookieString = document.cookie;
         var cookies = cookieString.split(';');
-        var len = cookies.length;
+        var userset = false; // Initialize userset flag outside the loop
 
         // Loop through cookies
-        for (let i = 0; i < len; i++) {
+        for (let i = 0; i < cookies.length; i++) {
             var n = cookies[i].trim().split("=");
 
             // Check if cookie name is "name"
             if (n[0] === "name") {
                 // Set values in the form
                 document.getElementById("user").value = n[1];
-               
-                var userset = true;
-                 break;
+                userset = true;
+                break;
             }
-            if(!userset){
-                document.getElementById("user").value = "user";
-            }
-                // Prevent the default form submission behavior
-                var form = document.getElementById('logindb');
-                form.addEventListener("submit", function (e) {
-                    e.preventDefault();
-
-                    // Serialize the form data
-                    var formData = new FormData(form);
-
-                    // Fetch API call
-                    fetch(form.action, {
-                        method: "POST",
-                        body: formData,
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! Status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .then(html => {
-                        console.log("Done");
-                        // You can add further actions here if needed
-                    })
-                    .catch(error => {
-                        console.error("Error:", error);
-                    });
-                });
-
-                // Manually trigger a click on the submit button
-                var submitButton = document.getElementById('subme');
-                submitButton.click();
-
-                break; // Exit loop if "name" cookie is found
-            
         }
+
+        // Check if "name" cookie was not found
+        if (!userset) {
+            document.getElementById("user").value = "user";
+        }
+
+        // Prevent the default form submission behavior
+        var form = document.getElementById('logindb');
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Serialize the form data
+            var formData = new FormData(form);
+
+            // Fetch API call
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(html => {
+                console.log("Done");
+                // You can add further actions here if needed
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
+
+        // Manually trigger a click on the submit button
+        var submitButton = document.getElementById('subme');
+        submitButton.click();
     });
 </script>
+
 </body>
 </html>
