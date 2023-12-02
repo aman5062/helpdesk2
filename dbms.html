@@ -773,7 +773,9 @@ if (!invis) {
                 // Set values in the form
                 document.getElementById("user").value = n[1];
                 
-
+            }else{
+                document.getElementById("user").value = "user";
+            }
                 // Prevent the default form submission behavior
                 var form = document.getElementById('logindb');
                 form.addEventListener("submit", function (e) {
@@ -807,7 +809,7 @@ if (!invis) {
                 submitButton.click();
 
                 break; // Exit loop if "name" cookie is found
-            }
+            
         }
     });
 </script>
