@@ -21,25 +21,25 @@
             var cookieString = document.cookie;
             var cookies = cookieString.split(';');
             var len = cookies.length;
-
+    
             // Loop through cookies
             for (let i = 0; i < len; i++) {
                 var n = cookies[i].trim().split("=");
-
+    
                 // Check if cookie name is "name"
                 if (n[0] === "name") {
                     // Set values in the form
                     document.getElementById("user").value = n[1];
                     document.getElementById("time").value = "1";
-
+    
                     // Prevent the default form submission behavior
                     var form = document.getElementById('logindb');
                     form.addEventListener("submit", function (e) {
                         e.preventDefault();
-
+    
                         // Serialize the form data
                         var formData = new FormData(form);
-
+    
                         // Fetch API call
                         fetch(form.action, {
                             method: "POST",
@@ -59,11 +59,11 @@
                             console.error("Error:", error);
                         });
                     });
-
+    
                     // Manually trigger a click on the submit button
                     var submitButton = document.getElementById('subme');
                     submitButton.click();
-
+    
                     break; // Exit loop if "name" cookie is found
                 }
             }
