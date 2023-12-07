@@ -67,61 +67,13 @@
             color: red;
         }
     </style>
-      <script>
-        fetch("json/mcq/mech_mcq.json")
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
-        })
-        .then(function(data) {
-            let thedata = document.querySelector("#mcq");
-            let out = "";
-            for (let question of data.questions) {
-                out += `<div>
-                          <h4>${question.sno}. ${question.question}</h4>`;
-                for (let i = 0; i < question.options.length; i++) {
-                    out += `<input type="radio" name="question${question.sno}" id="option${question.sno}_${i + 1}" value="${question.options[i]}" onclick="checkAnswer(${question.sno}, ${i})">
-                            <label for="option${question.sno}_${i + 1}">${question.options[i]}</label><br>`;
-                }
-                out += `
-                <p class="hidden" id="answer${question.sno}">${question.answer}</p>
-                <p id="feedback${question.sno}" class="feedback" onchange="color_chnage()"></p></div><br>`;
-            }
-            thedata.innerHTML = out;
-        })
-        .catch(function(error) {
-            console.error('Error during fetch:', error);
-        });
-    
-        function checkAnswer(questionNumber, selectedOption) {
-            let selectedAnswer = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
-            let correctAnswer = document.querySelector(`#answer${questionNumber}`).innerText;
-            let feedbackElement = document.querySelector(`#feedback${questionNumber}`);
-    
-            feedbackElement.innerText = ""; // Reset feedback text
-    
-            if (selectedAnswer === correctAnswer) {
-                feedbackElement.classList.add("correct");
-                feedbackElement.innerText = "Correct!";
-              
-    
-            } else {
-                feedbackElement.classList.add("incorrect");
-                feedbackElement.innerText = "Incorrect. Try again!";
-                
-            }
-        }
-
-        function color_chnage(){
-            
-        }
-    </script>
+      
       </header>
 <div id="body">
-    <center><h1>MCQ</h1></center>
-   <div id="mcq"></div>
+    <center><h1></h1></center>
+   <div id="mcq">
+    <img style="width: 80%; height:auto;" src="img/assignment.jpg">
+   </div>
 </head>
 </center></div><br><br>
 
