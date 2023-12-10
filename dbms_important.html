@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Helpdesk</title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css?v=1" />
+<script src="script.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+	crossorigin="anonymous"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+/>
+
+  </div>
+</div>
+<body>  
+    <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
+      <div class="container-fluid">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="logo.png" id="imglogo">
+          <span class="fs-4 mr-5 lo" ><h2 class="bold-text">Helpdesk</h2></span>
+        </a>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="nav nav-pills navbar-nav ms-auto" id="myNav">
+            <li class="nav-item"><a href="dbms.html" class="nav-link">DBMS</a></li>
+            <li class="nav-item"><a href="mech_updated.html" class="nav-link">Mechanics</a></li>
+            <li class="nav-item dropdown" id="myDropdown">
+              <a class="nav-link dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="false">OOPS</a>
+              <ul class="dropdown-menu" data-bs-popper="static">
+                <li><a class="nav-link dropdown-item" href="object_updated.html">Code</a></li>
+                <li><a class="nav-link dropdown-item" href="oops notes_updated.html">Notes</a></li>
+              </ul>
+              </li>
+              <li class="nav-item"><a href="daa_updated.html" class="nav-link">DAA</a></li>
+            </ul>
+        </div>
+      </div>
+      <style>
+        .hidden {
+            display: none;
+        }
+    
+        .feedback {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    
+        .correct {
+            color: green;
+        }
+    
+        .incorrect {
+            color: red;
+        }
+    </style>
+    <script>
+       
+
+        fetch("json/dbms_exam.json")
+        .then(function(response) { 
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(function(datas) {
+            let thedata = document.querySelector("#imp");
+            let out = "";
+            for (let data of datas) {
+                out += `<h4>Q. ${data.question}</h4>
+                <h6 style="padding-left:15px;">${data.answer}</h6><br>
+                `;
+            }
+            thedata.innerHTML = out;
+        })
+        .catch(function(error) {
+            console.error('Error during fetch:', error);
+        });
+      </script>
+      </header>
+<div id="body">
+    <center><h1>Important Questions</h1></center>
+   <div id="imp"></div>
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    p {
+        color: #666;
+    }
+</style>
+</head>
+
+<body>
+<hr>
+
+<p><strong>1. Definition of DBMS:</strong> A Database Management System (DBMS) is software that facilitates the creation, organization, retrieval, and management of data in a structured format...</p>
+
+<p><strong>2. Advantages of DBMS:</strong> Data Integrity: Ensures accuracy and consistency of data. Data Security: Controls access to the data to prevent unauthorized usage...</p>
+
+<p><strong>3. Components of DBMS:</strong> Data Definition Language (DDL), Data Manipulation Language (DML), Data Query Language (DQL), Transaction Control Language (TCL)...</p>
+
+<p><strong>4. Entities and Attributes:</strong> An entity is a real-world object or concept represented in the database. Attributes are properties or characteristics of entities...</p>
+
+<p><strong>5. Tables and Rows:</strong> Tables are the fundamental structure for organizing data in a relational database. Rows represent individual records in a table, and columns represent attributes...</p>
+
+<p><strong>6. Primary Key:</strong> A primary key uniquely identifies each record in a table. It must be unique for each record and cannot contain NULL values...</p>
+
+<p><strong>7. Foreign Key:</strong> A foreign key establishes a relationship between two tables. It refers to the primary key of another table and enforces referential integrity...</p>
+
+<p><strong>8. Normalization:</strong> The process of organizing data to minimize redundancy and dependency. Normal forms (1NF, 2NF, 3NF, BCNF) help achieve a well-organized database...</p>
+
+<p><strong>9. ACID Properties:</strong> Atomicity, Consistency, Isolation, and Durability ensure the reliability of transactions. For example, in a banking system, transferring funds from one account to another must maintain these ACID properties...</p>
+
+<p><strong>10. Indexes:</strong> Indexes improve the speed of data retrieval operations. Clustered indexes determine the physical order of data, while non-clustered indexes do not...</p>
+
+<p><strong>11. Joins:</strong> SQL JOIN operations (INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN) combine rows from multiple tables based on related columns...</p>
+
+<p><strong>12. Views:</strong> A view is a virtual table derived from the result of a SELECT query. It provides a way to present a specific perspective of the data to users...</p>
+
+<p><strong>13. Stored Procedures and Triggers:</strong> Stored Procedures are precompiled sets of SQL statements executed with a single call. Triggers are sets of instructions that automatically execute in response to specific events...</p>
+
+<p><strong>14. Database Design Considerations:</strong> Consider factors such as normalization, denormalization, data types, and performance trade-offs when designing a database schema...</p>
+
+<p><strong>15. Database Optimization:</strong> Involves query optimization, index tuning, and caching to enhance database performance. Techniques such as proper indexing and query design can significantly impact performance.</p>
+</body>
+
+
+   
+</head>
+</center></div><br><br>
+
+</div>
+
+</body>
+
+</html>
