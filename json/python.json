@@ -1,0 +1,8 @@
+[
+    {   
+        "Sno":1,
+        "Question":"Write a Python program to print 'Hello World'",
+        "code":"code/python_code_1.png",
+        "output":"output/python_output_1.png"
+    }
+]
