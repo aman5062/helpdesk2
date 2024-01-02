@@ -6,30 +6,7 @@
     <meta meta name="viewport" content="width=device-width, user-scalable=no" />
     <title>Helpdesk</title>
 </head>
-    <script>
-
-
-        fetch("json/daa_viva.json")
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
-        })
-        .then(function(datas) {
-            let thedata = document.querySelector("#viva");
-            let out = "";
-            for (let data of datas) {
-                out += `<h4>${data.sno}. ${data.question}</h4>
-                <h6 style="padding-left:15px;">${data.answer}</h6><br>
-                `;
-            }
-            thedata.innerHTML = out;
-        })
-        .catch(function(error) {
-            console.error('Error during fetch:', error);
-        });
-      </script>
+   
 <script
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
 	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -42,19 +19,7 @@
 	rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
 />
-<style>
-#img1{
-    width:300px;
-    transition:transform .2s ease-in-out;
-}
-    #img1:hover{transform:scale(1.2);cursor:zoom-in}
-    h3{
-    margin-left: 0 !important;
-    }
-  
-    
 
-</style>
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="stylesheet" type="text/css" href="style.css?v=8" />
 <script src="script.js"></script>
@@ -128,38 +93,5 @@
           <span><i class="fa fa-arrow-up" aria-hidden="true" id="arrow"></i></span>
       </a>
       </div>  
-     <center><u style="color:black;"> <h4>DESIGN AND ANALYSIS OF ALGORITHMS</h4></u></center>
-     <div id="data">
-
-     </div>
-       </div><br>
-<center><u style="color:black;"> <h4>DESIGN AND ANALYSIS OF ALGORITHMS VIVA</h4></u></center><br>
-<div id="viva"></div>
-</body>
-<div id="footer">
-        <div id="download">
-            Download data<br>
-            <a href="d/output_1.png" download="Ak-download.png">Output1</a>&nbsp;
-            <a href="d/output_2.png" download="Ak-download2.png">Output2</a>&nbsp;
-    </div></div>
-        <br>
-        <div style="display: flex; justify-content: space-between;">
-        <a href="Contibutors.html" style="display: flex;">
-      <div style="background-color: aqua; padding: 2px; border-radius: 5px; margin: 5px; font-size: large;">
-        Contributors
-      </div>
-        </a>
-        <a href="Users.html" style="display: flex;">
-          <div style=" border-radius: 5px; margin: 5px; font-size: large;">
-           Our Valuable users
-          </div>
-            </a>
-        <div>
-          <a href="https://wa.me/+919122701848">
-            <i class="fa fa-whatsapp" style="font-size:30px;color:green; background-color: transparent;"></i></a>
-            <i class="fa fa-facebook" style="font-size:30px;color:skyblue; background-color: transparent;">&nbsp;&nbsp;</i>
-        <i class="fa fa-twitter" style="font-size:30px;color:rgb(61, 61, 234); background-color: transparent;"></i>
-       &nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-    </div>
+    
 </html>
