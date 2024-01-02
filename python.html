@@ -23,33 +23,6 @@
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="stylesheet" type="text/css" href="style.css?v=8" />
 <script src="script.js"></script>
-
-
-<script>
-  fetch("json/daa.json")
-  .then(function(response) {
-      if (!response.ok) {
-          throw new Error("Network response was not ok");
-      }
-      return response.json();
-  })
-  .then(function(datas) {
-      let thedata = document.querySelector("#data");
-      let out = "";
-      for (let data of datas) {
-          out += `<h4> ${data.Question}</h4> 
-          <img id="img1" src="${data.Code}"> <br>
-  
-          <h5>Output:</h5>
-          <img id="img1"  src="${data.Output}"><br><br>`;
-      }
-      thedata.innerHTML = out;
-  })
-  .catch(function(error) {
-      console.error('Error during fetch:', error);
-  });
-</script>
-  
 <body> 
   <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
     <div class="container-fluid">
