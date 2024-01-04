@@ -23,7 +23,18 @@
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="stylesheet" type="text/css" href="style.css?v=8" />
 <script src="script.js"></script>
- 
+<style>
+  #img1{
+      width:300px;
+      transition:transform .2s ease-in-out;
+  }
+      #img1:hover{transform:scale(1.2);cursor:zoom-in}
+      h3{
+      margin-left: 0 !important;
+      }
+      
+  
+  </style>
 <body> 
   <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
     <div class="container-fluid">
@@ -51,10 +62,10 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 4</a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link dropdown-item" href="python.html">Python</a></li>
-              <li><a class="nav-link dropdown-item" href="os.html">OS</a></li>
-              <li><a class="nav-link dropdown-item" href="web_tech.html">Web Technologies</a></li>
-              <li><a class="nav-link dropdown-item" href="archi.html">Comp. Architecture</a></li>
+            <li><a class="nav-link dropdown-item" href="python.html">Python</a></li>
+            <li><a class="nav-link dropdown-item" href="os.html">OS</a></li>
+            <li><a class="nav-link dropdown-item" href="web_tech.html">Web Technologies</a></li>
+            <li><a class="nav-link dropdown-item" href="archi.html">Comp. Architecture</a></li>
         </ul>
           </li>
         </ul>
@@ -68,5 +79,29 @@
           <span><i class="fa fa-arrow-up" aria-hidden="true" id="arrow"></i></span>
       </a>
       </div>  
-    
+      <div>
+        <section>
+          <center><h1>Computer  Orgranisation and Architecture</h1></center>
+
+
+          Historically there had been two types of computers:-
+          <br>
+          <ol>
+            <li>Fixed Program Computers: <br>
+            The functions are very specific and they couldn't be reprogrammed. Ex - Calculator</li>
+            <li>Stored Program Computers: <br>
+            These can be programmed to carries out many different task, applications are stored on them. <br>
+            Modern computers arre based on source program concept introduced by John Von Nuemann.
+          </li>
+            
+            <img id="img1" src="img/john_von.png" alt="John Von Nuemann">
+          </ol>
+          Central Proccessing Unit: <br>
+          <ol>
+            <li><b>Control Unit: </b> A control unit (C.U) handles all proccess control signals. It direct all input and output flows fetches code for instructions and control how data moves around the system.</li>
+            <li><b>Arithematics Logic Unit: </b> The Arithematics Logic unit is that part of the C.P.U that handles all the calculations, the C.P.U mainly. <br> Ex -  Addition, Substraction, etc. <br>
+            It performs logical operations such bitshifting operation, comparisions, etc.</li>
+          </ol>
+        </section>
+      </div>
 </html>
