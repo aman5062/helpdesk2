@@ -24,6 +24,18 @@
 <link rel="stylesheet" type="text/css" href="style.css?v=8" />
 <script src="script.js"></script>
 <body> 
+  <style>
+    #img1{
+        width:300px;
+        transition:transform .2s ease-in-out;
+    }
+        #img1:hover{transform:scale(1.055);cursor:zoom-in}
+        h3{
+        margin-left: 0 !important;
+        }
+        
+    
+    </style>
   <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
     <div class="container-fluid">
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -76,10 +88,31 @@
   </header>
   
     <div id="body">
-      <div id="up">
-        <a href="#" id="goToTopButton" class="go-to-top-button">
-          <span><i class="fa fa-arrow-up" aria-hidden="true" id="arrow"></i></span>
-      </a>
-      </div>  
+     
+      
+      <center><h1>Operating System</h1></center><br><br>
+
+      <h3><b>MainFrame System</b></h3>
+      MainFrame are one of the large and powerfull computer systems. Mainframes consist of a large storage capacity. They are the first computers used to handle the high volume and complex processing needs of commercial sector, scientific applications and government agencies. In last few years mainframe has got grown from being a simple batch system to a multiprogramming system to time sharing system.
+      <br>
+      <ol type="1">
+        <li><b>Batch Systems </b><br>
+          Batch processing was very popular in the 1970s. The jobs were executed in batches. People used to have a single computer known as a mainframe. Users using batch operating systems do not interact directly with the computer. Each user prepares their job using an offline device like a punch card and submitting it to the computer operator. Jobs with similar requirements are grouped and executed as a group to speed up processing. </li>
+          <img src="img/batch.png" alt="" id="img1">
+          <br>
+         There were many disadvantages of batch operating System : <br><br>
+            <ol type="i">
+              <li><strong>Limited Interactivity:</strong> Batch systems lack real-time user interaction during job processing.</li>
+              <li><strong>Turnaround Time:</strong> Jobs in batch systems may have longer turnaround times, causing delays.</li>
+              <li><strong>Resource Utilization:</strong> Suboptimal use of resources may occur due to fixed resource allocations.</li>
+              <li><strong>Difficulty in Debugging:</strong> Identifying and fixing errors can be challenging, especially if they occur late in the batch.</li>
+              <li><strong>Job Prioritization:</strong> Lack of dynamic job prioritization may lead to inefficiencies in task execution.</li>
+            </ol>
+            <br><br>
+          <li><b>Multiprogramming System</b></li>
+          A multiprogramming system is one where many programs (application or user programs ) reside in the main memory at the same time. These application or users programs not only share the main memory but also CPU time and other system resources. Earliar these resides only a single program in memory and that single program was not able to make efficient use of systen in multiprogramming was developed so as to improve the CPU utilisation and make effiecient use of system. IN multiprogramming system, the memory is divided into several small portions. One portion of the memory holds the operating system and other portions of the memory holds different programs.
+          <br><br>
+          <img src="img/multiprogramming.jpg" alt="" id="img1">
+      </ol>
     
 </html>
