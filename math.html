@@ -109,6 +109,152 @@
           <h4><b><u><li>Application of Discrete Mathematics -</li></u></b></h4>
           It provides mathematical foundation for many computer science course including data structures, algoric, 
           database theory, autometa theory, formal language compiler theory, computer security and operating system.
+ <h4><b><u><li>Venn-Diagram</li></u></b></h4>
+         A Venn-Diagram is a pictorial representation of sets in which sets are represented by inclose areas in the plane.
+         The universal set U represented by the interior of a rectangle.<br>
+         eg-<br>
+         <img src="img/73.png" alt="img not found" width="200px"><br>
+          (A&SubsetEqual;B)<br>
+         <img src="img/74.png" alt="img not found" width="200px"><br>
+         (A&Intersection;B) <br>
+
+         <img src="img/75.png" alt="img not found" width="200px"><br>
+         (A and B are disjoint) <br><br>
+
+
+
+          <b>Q. Let A and B be sets such that (A&Intersection;B)&SubsetEqual;B and B∈A. Draw Venn-Diagram.<br>
+          sol-</b>
+          <img src="img/73.png" alt="img not found" width="200px"><br><br>
+
+          <b>Q. Let A,B and C be sets such that (B&Intersection;C)&SubsetEqual;A and A&SubsetEqual;(B&Intersection;C). Draw Venn-Diagram.<br>
+            sol-</b>
+          <img src="img/76.png" alt="img not found" width="200px"><br><br>
+
+          <b>Q. A<sup>c</sup>&Intersection;U = &emptyset; . Draw Venn-Diagram.<br>
+            sol-</b>
+          <img src="img/77.png" alt="img not found" width="200px"><br><br>
+
+          <b>Q. (A&Intersection;B)<sup>c</sup> = B<sup>c</sup> . Draw Venn-Diagram.<br>
+            sol-</b>
+          <img src="img/78.png" alt="img not found" width="200px"><br><br>
+
+         <b>Q. A<sup>c</sup>&Intersection;B = A<sup>c</sup>&Intersection;C and A&Intersection;B = A&Intersection;C . Draw Venn-Diagram.<br>
+          sol-</b>
+          <img src="img/79.png" alt="img not found" width="200px"><br><br>
+
+          
+          <b><u><li>cardinlity of set -</li></u></b>
+          Let, S be a set if there are exactly a distinct element in S where n is not negative integer then S is a 
+          finite ser and n is the cardinlity of S denoted by <br>
+           <b>|S| = n</b><br>
+           eq-<br>1. Let S be the set of english alphabet.<br>
+           sol- |S| = 26<br>
+           2.Let S be the empty set<br>
+           sol- |&emptyset;| =0<br><br>
+
+           <b><u><li>Infinite set -</li></u></b>
+           A set is said to be infinite, if it is not finite.<br>
+           eq- set of positive integer.<br><br>
+
+           <b><u><li> Power set-</li></u></b>
+           Given a set S, the power set of S is the set of all subset of the set S.<br>
+           eg- let A={0,1,2}<br>
+           &DoubleRightArrow;P(A) = {&emptyset;,{0},{1},{2},{0,1},{0,2},{1,2},{0,1,2}}<br>
+           &DoubleRightArrow;P(A) = 2<sup>n</sup>=2<sup>3</sup>=8<br><br>
+
+           <b><u><li>Cartesian Product -</li></u></b>
+           Let A and B be set, the Cartesian product of A and B denoted by AxB, if the set of all order pairs (a,b),
+           where a∈A and b∈B.<br>
+           Hence, AxB = {(a,b)|a∈A &and; b∈B}.<br>
+           The ordered n-tuple (a<sub>1</sub>,a<sub>2</sub>,......a<sub>n</sub>) is the ordered collection that has 
+           a<sub>1</sub> as its first element, a<sub>2</sub> as its second element,.........a<sub>n</sub> as its n<sup>th</sup>
+           element.<br>
+           (a<sub>1</sub>,a<sub>2</sub>,......a<sub>n</sub>) = (b<sub>1</sub>,b<sub>2</sub>,......b<sub>n</sub>) <br>
+           if a<sub>i</sub> = b<sub>i</sub> for i = 1,2,3,.....n .<br>
+           eg -<p> The Cartesian product of A = {1,2}, B = {a,b,c}<br>
+          Then, AxB = {(1,a),(1,b,(1,c),(2,a),(2,b),(2,c))} <br>
+                BxA = {(a,1),(a,2),(b,1),(b,2),(c,1),(c,2)} </p>
+
+            <b><u><li>Union of two set A and B -</li></u></b>
+            Let, A and B be sets <br>
+            &therefore; A&Union;B = {x | x∈A &or; x∈B} <br>
+
+            <b><u><li>Intersection of sets - </li></u></b>
+            Let, A and B be sets <br>
+            &therefore; A&Intersection;B = {x | x∈A &and; x∈B} <br>
+
+            <b><u><li>Difference of two sets - </li></u></b>
+            Let, A and B be sets <br>
+            &therefore; A-B = {x | x∈A &and; x∉B} <br>
+
+            <b><u><li>Complement of sets - </li></u></b>
+            Let, A and B be sets <br>
+            &therefore;  A<sup>c</sup> = {x | x∉A} <br><br>
+
+
+            <b>Q. Convert Roster to set builder form.<br>
+            A = {0,3,6,9,12}<br>
+            sol-</b> A = {x | x=3n, n=0,1,2,3,4}<br><br>
+
+            <b>Q. Convert set builder to Roster<br>
+            A = {x | x is an integer such that x<sup>2</sup>=2}<br>
+            sol-</b> A = {&emptyset;}<br><br>
+
+            <b><u><li>Set Identities - </li></u></b>
+            <ol>
+              <li><b>Identity law -<br></b>
+                 i. A&Union;&emptyset; = A <br>
+                ii.  A&Intersection;U = A
+              </li>
+              <li><b>Dominartion law -</b><br>
+                i. A&Union;U = U <br>
+                ii.  A&Intersection;&emptyset; = &emptyset;
+              </li>
+              <li><b>Idempotent law -</b><br>
+                i. A&Union;A = A <br>
+                ii.  A&Intersection;A = A
+               </li>
+              <li><b>Double Complement law - </b><br>
+                i. (A<sup>c</sup>)<sup>c</sup> = A <br>
+                
+              </li>
+              <li><b>Commutative law - </b><br>
+                i. A&Union;B =B&Union;A <br>
+                ii.  A&Intersection;B = B&Intersection;A
+              </li>
+              <li><b>Associative law - </b><br>
+                i. A&Union;(B&Union;C) = (A&Union;B)&Union;C <br>
+                ii. A&Intersection;(B&Intersection;C) = (A&Intersection;B)&Intersection;C
+              </li>
+              <li><b>Distributive law - </b><br>
+                i. A&Union;(B&Intersection;C) = (A&Union;B)&Intersection;(A&Union;B) <br>
+                ii.  A&Intersection;(B&Union;C) = (A&Intersection;B)&Union;(A&Intersection;C)
+              </li>
+              <li><b>De-Morgans law- </b><br>
+                i. (A&Union;B)<sup>c</sup> = A<sup>c</sup>&Intersection;B<sup>c</sup> <br>
+                ii.  (A&Intersection;B)<sup>c</sup> = A<sup>c</sup>&Union;B<sup>c</sup>
+              </li>
+              <li><b>Absorption law -</b> <br>
+                i. A&Union;(A&Intersection;B) = A <br>
+                ii. A&Intersection;(A&Union;B)  = A
+              </li>
+              <li><b>Complement law - </b><br>
+                i. A&Union;A<sup>c</sup> = U <br>
+                ii.  A&Intersection;A<sup>c</sup> = &emptyset;
+              </li>
+            </ol>
+           <b> Q. Use set builder notation and logical equivalent to establish the first and second De-Morgans law.<br>
+            sol- <br></b>
+            &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | x∉(A&Intersection;B)}<br>
+            &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | &not;(x∈(A&Intersection;B))}<br>
+            &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | &not;(x∈(A &and; B))}<br>
+            &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | &not;(x∈A &and; x∈B) }<br>
+            &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | &not;(x∈A) &or; &not;(x∈B)}<br>
+            &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | x∉A &or; x∉B}<br>
+            &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | x∈A<sup>c</sup> &or; x∈B<sup>c</sup>)}<br>
+            &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | x∈(A<sup>c</sup> &Union;B<sup>c</sup> )}<br>
+            &DoubleRightArrow; &therefore; (A&Intersection;B)<sup>c</sup> = A<sup>c</sup>&Union;B<sup>c</sup>
 
          
         </section>
