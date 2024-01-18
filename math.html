@@ -248,7 +248,7 @@
                 ii.  A&Intersection;A<sup>c</sup> = &emptyset;
               </li>
             </ol>
-           <b> Q. Use set builder notation and logical equivalent to establish the first and second De-Morgans law.<br>
+           <b> Q. Use set builder notation and logical equivalent to establish the first De-Morgans law.<br>
             sol- <br></b>
             &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | x∉(A&Intersection;B)}<br>
             &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | &not;(x∈(A&Intersection;B))}<br>
@@ -258,9 +258,76 @@
             &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | x∉A &or; x∉B}<br>
             &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | x∈A<sup>c</sup> &or; x∈B<sup>c</sup>)}<br>
             &DoubleRightArrow; (A&Intersection;B)<sup>c</sup> = {x | x∈(A<sup>c</sup> &Union;B<sup>c</sup> )}<br>
-            &DoubleRightArrow; &therefore; (A&Intersection;B)<sup>c</sup> = A<sup>c</sup>&Union;B<sup>c</sup>
+            &DoubleRightArrow; &therefore; (A&Intersection;B)<sup>c</sup> = A<sup>c</sup>&Union;B<sup>c</sup><br><br>
 
-          
+            <b> Q. Use set builder notation and logical equivalent to establish the second De-Morgans law.<br>
+              sol- <br></b>
+              &DoubleRightArrow; (A&Union;B)<sup>c</sup> = {x | x∉(A&Union;B)}<br>
+              &DoubleRightArrow; (A&Union;B)<sup>c</sup> = {x | &not;(x∈(A&Union;B))}<br>
+              &DoubleRightArrow; (A&Union;B)<sup>c</sup> = {x | &not;(x∈(A &or; B))}<br>
+              &DoubleRightArrow; (A&Union;B)<sup>c</sup> = {x | &not;(x∈A &or; x∈B) }<br>
+              &DoubleRightArrow; (A&Union;B)<sup>c</sup> = {x | &not;(x∈A) &and; &not;(x∈B)}<br>
+              &DoubleRightArrow; (A&Union;B)<sup>c</sup> = {x | x∉A &and; x∉B}<br>
+              &DoubleRightArrow; (A&Union;B)<sup>c</sup> = {x | x∈A<sup>c</sup> &and; x∈B<sup>c</sup>)}<br>
+              &DoubleRightArrow; (A&Union;B)<sup>c</sup> = {x | x∈(A<sup>c</sup> &Intersection;B<sup>c</sup> )}<br>
+              &DoubleRightArrow; &therefore; (A&Union;B)<sup>c</sup> = A<sup>c</sup>&Intersection;B<sup>c</sup><br><br>
+
+            <b> Q. Let A,B and C be sets. Show that A&Union;(B&Intersection;C)<sup>c</sup> <br> = ((C)<sup>c</sup>&Union;(B)<sup>c</sup>)&Intersection;(A)<sup>c</sup> 
+              sol- <br></b>
+              A&Union;(B&Intersection;C)<sup>c</sup> <br> = (A)<sup>c</sup>&Intersection;(B&Intersection;C)<sup>c</sup>     [by De-morgans law] <br>
+              A&Union;(B&Intersection;C)<sup>c</sup> <br> = (B&Intersection;C)<sup>c</sup>&Intersection;(A)<sup>c</sup>     [by Commutative law] <br>
+              A&Union;(B&Intersection;C)<sup>c</sup> <br> = ((B)<sup>c</sup>&Union;(C)<sup>c</sup>)&Intersection;(A)<sup>c</sup>     [by De-morgans law] <br>
+              A&Union;(B&Intersection;C)<sup>c</sup> <br> = ((C)<sup>c</sup>&Union;(B)<sup>c</sup>)&Intersection;(A)<sup>c</sup>     [by Commutative law] <br><br>
+
+            <li><b>The Inclusion-Exclusion principles -<br></b>
+              Let, A and B be any finite sets.<br>
+              Then, n(A&Union;B) = n(A) + n(B) - n(A&Intersection;B)<br>
+              also, n(A&Union;B&Union;C) = n(A) + n(B) + n(C) - n(A&Intersection;B) - n(A&Intersection;C) - n(B&Intersection;C) + n(A&Intersection;B&Intersection;C)<br><br>
+              <b>Eg-<br>
+             Find the number of student at a college taking alteast one of the languages French, German and Russian given the following data. Total number of 
+              student taking is 120. 65 study French, 45 study German, 42 study Russian, 20 study French and German, 25 study French and Russian, 15 study German and Russian,
+              8 study all three language. Draw Venn-Diagram using result.<br>
+              sol-</b><br>
+                Given, n(F) = 65<br>
+                n(G) = 45<br>
+                n(R) = 42<br>
+                n(F&Intersection;G) = 20<br>
+                n(F&Intersection;R) = 25<br>
+                n(G&Intersection;G) = 15<br>
+                n(F&Intersection;G&Intersection;R) = 8<br>
+                &therefore;  n(A&Union;B&Union;C) = n(A) + n(B) + n(C) - n(A&Intersection;B) - n(A&Intersection;C) - n(B&Intersection;C) + n(A&Intersection;B&Intersection;C)<br>
+                n(A&Union;B&Union;C) = 65 + 45 + 42 - 20 - 25 - 15 + 8<br>
+                n(A&Union;B&Union;C) = 100<br>
+                Venn-Diagram - <br>
+                <img src="img/80.png" alt="img not found" width="200px"><br><br>
+
+            <li><b>Computer representation of a sets -<br>
+              Eg-<br>
+              Let U = {1,2,3,4,5,6,7,8,9,10} and the ordering of element of U has the element in increasing order, that is a<sub>i</sub> = i. 
+              What bit strings represent the subset of all odd interger in U, the subset of all even integers in U and the subset of intergers
+              not exceding 5 in U? <br>
+              sol - <br></b>
+              U = {1,2,3,4,5,6,7,8,9,10}<br><br>
+              O = set of odd interger = {1,3,5,7,9}<br>
+              bit string of O = 1010101010<br><br>
+              E = set of even integer = {2,4,6,8,10}<br>
+              bit string of E = 0101010101<br><br>
+              A = Set of integer not exceding 5 in U<br>
+              A = {1,2,3,4,5}<br>
+              bit string of A = 1111100000 <br><br>
+              bit string of O<sup>c</sup> = bit string of E = 0101010101<br><br>
+              bit string of {1,2,3,4,5} &or; {1,3,5,7,9} = A&Union;O = {1,2,3,4,5,7,9}<br>
+              bit string = 1111101010<br>
+              bit string of {1,2,3,4,5} &and; {1,3,5,7,9} = A&Intersection;O = {1,3,5}<br>
+              bit string = 1010100000<br>
+
+
+
+
+
+
+
+
          
         </section>
       </div>
