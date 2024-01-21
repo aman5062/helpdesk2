@@ -1,46 +1,66 @@
-.container{
-    width: 95%;
-    overflow: hidden;
-    background: skyblue;
-    margin: 20px auto;
-    padding: 20px 0px;
-}
-.container ul{
-    padding: 0px;
-    margin: 0px;
-}
-.container ul li{
-    list-style: none;
-    float: left;
-    width: 20%;
-    height: 300px;
-    background: rgb(248, 245, 245);
-    margin: 40px 30px 0px 40px;
-    box-sizing: border-box;
-    border: 2px solid rgb(10, 9, 9);
-}
-.container ul li:hover{
-    opacity: 0.9;
-}
-.container ul li .title:hover{
-    background: rgb(42, 17, 181);
-    color: white;
-}
-.container ul li .title{
+.header{
+    margin: 0%;
     width: 100%;
-    height: 50px;
-    line-height: 50px;
-    background: white;
-    text-align: center;
+    background-color: rgba(0, 204, 255, 0.564);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
+.container1{
+    width: 100%;
+    height: auto;
+    background: skyblue;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+
+.pic{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin: 10px;
+    background-image: url(harsh_pic.jpg);
+    background-size: 300px 400px;
+    border-color: white;
+    border-width: 5px;
+    border-style: solid;
+    background-repeat: no-repeat;
+    
+    }
+
+.pic:hover{  
+background-color: rgba(0,0, 0,0.8);
+}
+
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    display: flex;
+    margin-top: 120px;
+    margin-left: 20px;
+    color: white;
+    justify-content: center;
+    display: none;
+}
+.pic:hover h2{
+    display: block;
+}
+
 footer {
-    text-align: center;
     padding: 10px;
     background-color: #333;
     color: #fff;
     position: relative;
     bottom: 0;
     width: 100%;
+    display:flex ;
+    justify-content: center;
+    box-sizing: border-box;
 }
     
  
