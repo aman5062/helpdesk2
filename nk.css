@@ -12,40 +12,39 @@
 .container1{
     width: 100%;
     height: auto;
-    background: skyblue;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     flex-direction:column;
 }
+.border_sq{
+    width: 630px;
+    height: 800px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
 
+}
 .pic{
-    width: 300px;
-    height: 300px;
+    width: 600px;
+    height: 600px;
     border-radius: 100%;
     margin: 10px;
     background-image: url(harsh_pic.jpg);
-    background-size: 300px 400px;
-    border-color: white;
-    border-width: 5px;
-    border-style: solid;
+    background-size: 600px 800px;  
     background-repeat: no-repeat;
     
     }
 
-.pic:hover{  
-background-color: rgba(0,0, 0,0.8);
-}
-
-h2{
+.name{
+    margin-bottom: 0%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    position: relative;
-    display: flex;
-    margin-top: 120px;
-    margin-left: 20px;
-    color: white;
-    justify-content: center;
-    display: none;
+    font-size: 40px;
+}
+.proj{
+    font-family: sans-serif;
+;    margin-top: 0%;
+    font-size: 40px;
 }
 .pic:hover h2{
     display: block;
