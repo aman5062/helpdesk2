@@ -1,12 +1,16 @@
-[
+[    {
+         "image" : "contributers_image/harsh.jpg",
+        "name" : "Harsh kumar",
+        "dept" : "Os"
+     },
     {
         "image" : "contributers_image/ashutosh.jpg",
         "name" : "Ashutosh Nayak",
-        "dept" : ""
+        "dept" : "Web Technology"
     },
     {
         "image" : "contributers_image/nitin.png",
         "name" : "Nitin kumar",
-        "dept" : ""
+        "dept" : "Web Technology"
     }
 ]
