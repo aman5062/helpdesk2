@@ -19,7 +19,7 @@
 }
 .border_sq{
     width: 330px;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column; 
     align-items: center;   
