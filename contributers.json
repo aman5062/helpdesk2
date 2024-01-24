@@ -6,13 +6,18 @@
      },
 {
          "image" : "contributers_image/Nikhil sahu.jpg",
-        "name" : "Nikhil_s",
+        "name" : "Nikhil Sahu",
         "dept" : "Operating System"
      },
  {
          "image" : "contributers_image/ritesh.jpg",
         "name" : "Ritesh kumar",
         "dept" : "Computer Architecture"
+     },
+     {
+        "image" : "contributers_image/nikhil.jpg",
+        "name" : "Nikhil kumar",
+        "dept" : "Web Technology"
      },
     {
         "image" : "contributers_image/ashutosh.jpg",

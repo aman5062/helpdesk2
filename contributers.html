@@ -18,17 +18,7 @@
 
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    if (window.location.href.indexOf("daa_viva") > -1) {
-        location.href = 'json/daa_viva.json';
-    }
-    else if (window.location.href.indexOf("oops_viva") > -1 ){
-        location.href = 'json/oops_viva.json';
-    }
-  });
-</script>
+
 <style>
   *{
       padding: 0;
@@ -84,30 +74,7 @@
    }
 </script>
 <body onload="onloading()">  
-    <script>
-       
-
-        fetch("json/dbms_viva.json")
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
-        })
-        .then(function(datas) {
-            let thedata = document.querySelector("#viva");
-            let out = "";
-            for (let data of datas) {
-                out += `<h4>${data.sno}. ${data.question}</h4>
-                <h6 style="padding-left:15px;">${data.answer}</h6><br>
-                `;
-            }
-            thedata.innerHTML = out;
-        })
-        .catch(function(error) {
-            console.error('Error during fetch:', error);
-        });
-      </script>
+   
       <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
         <div class="container-fluid">
           <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
