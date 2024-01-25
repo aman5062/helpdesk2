@@ -29,4 +29,10 @@
         "name" : "Nitin kumar",
         "dept" : "Web Technology"
     }
+         
+   {
+        "image" : "contributers_image/priyanshu.png",
+        "name" : "Priyanshu Gupta",
+        "dept" : "Computer Architecture"
+    }
 ]
