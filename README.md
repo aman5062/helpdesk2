@@ -13,4 +13,8 @@
 </td>
 </tr>
 </table>
+<br><br>
 
+### GitHub Contributor Over Time
+
+[![GitHub Contributor Over Time](https://contributor-overtime-api.git-contributor.com/contributors-svg?chart=contributorOverTime&repo=aman5062/helpdesk2)](https://git-contributor.com?chart=contributorOverTime&repo=aman5062/helpdesk2)
