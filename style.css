@@ -389,3 +389,17 @@ li.nav-item a{
 	color: black;
 	font-weight: bold;
 } */
+
+
+#share{
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	background-color: black;
+	align-self: center;
+	padding-top: 15px;
+	padding-left: 10px;
+}
