@@ -403,3 +403,17 @@ li.nav-item a{
 	padding-top: 15px;
 	padding-left: 10px;
 }
+.show_it{
+    list-style: none;
+    display: flex;
+    margin-bottom: 10px;
+
+  }
+  .show_it xmp{
+    margin-right: 20px;
+	
+
+  }
+  .show_it input{
+	width: 35%;
+  }
