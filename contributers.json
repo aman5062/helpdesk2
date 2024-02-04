@@ -1,0 +1,37 @@
+[   
+{
+         "image" : "contributers_image/harsh.jpg",
+        "name" : "Harsh kumar",
+        "dept" : "Mathematics"
+     },
+{
+         "image" : "contributers_image/Nikhil_sahu.jpg",
+        "name" : "Nikhil Sahu",
+        "dept" : "Operating System"
+     },
+ {
+         "image" : "contributers_image/ritesh.jpg",
+        "name" : "Ritesh kumar",
+        "dept" : "Computer Architecture"
+     },
+     {
+        "image" : "contributers_image/nikhil.jpg",
+        "name" : "Nikhil kumar",
+        "dept" : "Web Technology"
+     },
+    {
+        "image" : "contributers_image/ashutosh.jpg",
+        "name" : "Ashutosh Nayak",
+        "dept" : "Web Technology"
+    },
+    {
+        "image" : "contributers_image/nitin.png",
+        "name" : "Nitin kumar",
+        "dept" : "Web Technology"
+    },        
+   {
+        "image" : "contributers_image/priyanshu.png",
+        "name" : "Priyanshu Gupta",
+        "dept" : "Computer Architecture"
+    }
+]

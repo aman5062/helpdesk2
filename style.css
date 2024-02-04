@@ -134,7 +134,7 @@ a {
 #body {
 	width: 100%;
 	/* color: #fff; */
-   padding-left: 1.5rem;
+   padding-left: 1.5rem;   
 }
 
 #image,
@@ -369,3 +369,52 @@ li.nav-item a:hover{
 li.nav-item a{
 	padding-left: 10px;
 }
+
+#img1{
+    width:300px;
+    transition:transform .2s ease-in-out;
+}
+    #img1:hover{transform:scale(1.2);cursor:zoom-in}
+    h3{
+    margin-left: 0 !important;
+    }
+
+
+/* body{
+	background: url(img/vel_bg.png) repeat;
+} */
+/* #body{
+	background-color: white;
+	opacity: 0.6;
+	color: black;
+	font-weight: bold;
+} */
+
+
+#share{
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	background-color: black;
+	align-self: center;
+	padding-top: 15px;
+	padding-left: 10px;
+}
+.show_it{
+    list-style: none;
+    display: flex;
+    margin-bottom: 10px;
+
+  }
+  .show_it xmp{
+    margin-right: 20px;
+	
+
+  }
+  .show_it input{
+	width: 35%;
+	margin-right: 10px;
+  }

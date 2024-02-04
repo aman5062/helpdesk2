@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta meta name="viewport" content="width=device-width, user-scalable=no" />
-    <title>Helpdesk</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta meta name="viewport" content="width=device-width, user-scalable=no" />
+  <title>Helpdesk</title>
 </head>
-<script
-	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-	crossorigin="anonymous"
-></script>
+
+<style>
+  #img1 {
+    width: 300px;
+    transition: transform .2s ease-in-out;
+  }
+
+  #img1:hover {
+    transform: scale(1.2);
+    cursor: zoom-in
+  }
+
+  h3 {
+    margin-left: 0 !important;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link
-	rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
 
 <link rel="icon" href="logo.png" type="image/png">
-<link rel="stylesheet" type="text/css" href="style.css?v=8" />
+<link rel="stylesheet" type="text/css" href="style.css?v=0" />
 <script src="script.js"></script>
- 
-<body> 
+
+<body>
   <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
     <div class="container-fluid">
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <img src="logo.png" id="imglogo">
-        <span class="fs-4 mr-5 lo"><h2 class="bold-text">Helpdesk</h2></span>
+        <span class="fs-4 mr-5 lo">
+          <h2 class="bold-text">Helpdesk</h2>
+        </span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -37,20 +51,23 @@
         <ul class="nav nav-pills navbar-nav ms-auto" id="myNav">
           <!-- Sem1 -->
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 1</a>
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Semister 1</a>
             <ul class="dropdown-menu">
-                <li><a class="nav-link dropdown-item" href="c_language.html">C-Language</a></li>
-                             
-             </ul>
+              <li><a class="nav-link dropdown-item" href="c_language.html">C-Language</a></li>
+
+            </ul>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 2</a>
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Semister 2</a>
             <ul class="dropdown-menu">
-                <li><a class="nav-link dropdown-item" href="data_structure.html">Data Structure</a></li>
-                </ul>
+              <li><a class="nav-link dropdown-item" href="data_structure.html">Data Structure</a></li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 3</a>
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Semister 3</a>
             <ul class="dropdown-menu">
               <!-- Add subjects for Sem1 here -->
               <li><a class="nav-link dropdown-item" href="dbms.html">DBMS</a></li>
@@ -61,36 +78,173 @@
           </li>
           <!-- Sem2 -->
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 4</a>
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Semister 4</a>
             <ul class="dropdown-menu">
-                <li><a class="nav-link dropdown-item" href="python.html">Python</a></li>
-                <li><a class="nav-link dropdown-item" href="os.html">OS</a></li>
-                <li><a class="nav-link dropdown-item" href="web_tech.html">Web Technologies</a></li>
-                <li><a class="nav-link dropdown-item" href="archi.html">Comp. Architecture</a></li>
-                <li><a class="nav-link dropdown-item" href="math.html">Mathematics</a></li>     
+              <li><a class="nav-link dropdown-item" href="python.html">Python</a></li>
+              <li><a class="nav-link dropdown-item" href="os.html">OS</a></li>
+              <li><a class="nav-link dropdown-item" href="web_tech.html">Web Technologies</a></li>
+              <li><a class="nav-link dropdown-item" href="archi.html">Comp. Architecture</a></li>
+              <li><a class="nav-link dropdown-item" href="math.html">Mathematics</a></li>
+              <li><a class="nav-link dropdown-item" href="archi_lab.html">Comp. Architecture Lab</a></li>
+              <li><a class="nav-link dropdown-item" href="web_tech_lab.html">Web Technologies Lab</a></li>
+              <li><a class="nav-link dropdown-item" href="os_lab.html">OS Lab</a></li>
             </ul>
-          </li>
+          <li><a class="nav-link dropdown-item" href="contributers.html">
+              <center>Our Valuable Contributers</center>
+            </a></li>
+        </ul>
+        </li>
         </ul>
       </div>
     </div>
   </header>
-  
-    <div id="body">
+
+  <div id="body">
+
+    <center>
+      <h1>Web Technology</h1>
+    </center>
+    <b>Web Server : </b>Web communicatation takes place between a client process and the web server. The server process
+    creates a socket and client process access the server through the socket mechanism.<br>
+    <ol type="1">
+      <li>HTTP server process is created on a port, which wait for clients to establish TCP (Transmission Control
+        Protocol) connection. </li>
+      <li>An HTTP client initiate a TCP connection with HTTP server at the deginated port.</li>
+      <li>The HTTP server accept this connection.</li>
+      <li>The HTTP client send a request for a resources to the server.</li>
+      <li>The HTTP server closes the TCP connection.</li>
+      <li>The HTTP client receive the response containing information and process it.</li>
+
+    </ol>
+    <b>WWW</b> - The world wide web is an application that run the internet and its application.
+    <br>
+    There are several types of browsers such as nextstep navigator, mozilla, firefox, internet exprorer are the
+    hyperlink through world wide web.
+    <br><br>There are five layer exist in TCP/IP :
+    <ol type="1">
+      <li><b>Physical Layer - </b> This layer deals with the hardware connectivity, voltage, etc..</li>
+      <li><b>Data Link Layer - </b> It is also very similar to the other network model. This cover mac ( media access
+        control ) that is how can send the data when needed. This also deals with frame formats. </li>
+      <li><b>Internet Layer - </b> It is very important from the context of communication over ans internal. THis layer
+        function with format of datagram as define in IP and also about the mechanism of forwarding the datagram from
+        source computer to the final destination via one or more route.</li>
+      <li><b>Transport Layer - </b> There are two main protocols in this layer TCP and UTP. TCP ensure that
+        communication between the sender and reciever is relaible, error free and is sequence however UTP does not offer
+        relaiblity. Hence, TCP is a connection oriented protocol and VTP is a connectionless protocol. </li>
+      <li><b>Application Layer - </b> It allows and end user to run various applications on the internet and used the
+        internet in the different way. These applications are FTP(File transfer protocol), SMTP(Simple main transfer
+        protocol), TFTP(TRival file transfer protocol), HTTP(HYper text transfer protocol).</li>
+    </ol>
+
+
+    </ol>
+    <b>Web technologies</b> Www is an application that runs the internet and it’s applications. There are several types
+    of browsers such as Mozilla Firefox, internet explorer, Google Chrome are the hyperlink through www.
+    <br>
+    <b>TCP/IP ( Transmission control protocol)/(Internet protocol) <br>5 layers
+    </b>
+    <ol type="1">
+      <li>Physical layer</li>
+      <li>link layer</li>
+      <li>Internet layer </li>
+      <li>Transport layer</li>
+      <li>Application layer</li>
+    </ol>
+
+    <ol type="1">
+      <li><b>Data link layer :- </b>It is also very similar to the other network models. This covers MAC (Media access
+        control),that is, who can send the data when needed. It also deals with frame format .</li>
+      <li><b>Internet layer :- </b>It is very important from the context of communication over an internet. This layer
+        concerns with the format of datagram as defined in internet protocol (IP) and also about the mechanism of
+        forwarding the datagram from source computer to final destination via one or more router.</li>
+      <li><b>Transport layer :- </b>There are two main protocols in this layer. TCP and UDP. TCP ensures that
+        communication between the sender and receiver is reliable, error free and in sequence, however UDP doesn’t offer
+        reliability. Hence , TCP is a connection oriented protocol. UDP is a connection less protocol.</li>
+      <li><b>Application layer :- </b>It allows an end user to run the various applications on the internet and use the
+        internet in the different ways. These applications are :- FTP(file transfer protocol), SMTP(simple main transfer
+        protocol),TFTP,HTTP.</li>
+
+    </ol>
+
+
+
+    <ol>
+      <br>
+      <b>Q. What is UNIX and LINUX server?</b><br>
+      Linux and Unix is a server running variant of LINUX open source operating system. It is designed to handle the
+      most demanding business applications such as web services and databases. UNIX/LINUX server provides a strong
+      foundation for complex, enterprise level data centre and container workload environment ranging bare metal to
+      machine container including public or private cloud. Its is open source software OS, build around the LINUX, UNIX
+      kernel. LINUX is also leading OS on servers and popular on mainframe and supercomputers. LINUX server have
+      virtually no downtimes. It gives software developers a degree of control when creating certain softwares as a
+      service tool.
+      <br>
       
 
-      <center><h1>Web Technology</h1></center>
-
-      <b>WWW</b> - The world wide web is an application that run the internet and its application.
-      <br>
-      There are several types of browsers such as nextstep navigator, mozilla, firefox, internet exprorer are the hyperlink through world wide web.
-      <br><br>There are five layer exist in TCP/IP : 
-      <ol type="1">
-        <li><b>Physical Layer - </b> This layer deals with the hardware connectivity, voltage, etc..</li>
-        <li><b>Data Link Layer - </b> It is also very similar to the other network model. This cover mac ( media access control ) that is how can send the data when needed. This also deals with frame formats. </li>
-        <li><b>Internet Layer - </b> It is very important from the context of communication over ans internal. THis layer function with format of datagram as define in IP and also about the mechanism of forwarding the datagram from source computer to the final destination via one or more route.</li>
-        <li><b>Transport Layer - </b> There are two main protocols in this layer TCP and UTP ensure that communication between the sender and reciever is relaible, even from </li>
-      </ol>
-      </div>
-
+      <img src="img\webtech\image (3).jpg" alt="" srcset="" id="img1">
+      
     
+
+    <img src="img\webtech\image (2).jpg" alt="" srcset="" id="img1">
+
+    </ol>
+
+    <b>File organisation</b>
+    <ol type="1">
+      <li><b>Ordinary file :- </b>An ordinary file consists of characters stored in the disk.</li>
+      <li><b>Special file :- </b>A special file is always representing devices such as terminal, printer etc. </li>
+      <li><b>Directory:- </b>It is a collection of files and other sub directories.</li>
+      <li><b>Bin :- </b>It contains executable files for booting the process and system software.</li>
+      <li><b>Dev :- </b>It contains the special files that represent devices like terminal, console, printer etc.</li>
+      <li><b>Home :- </b>The route of the subtree of user directories. After logging, user is placed in the default directories is called home / home directories.</li>
+    </ol>
+    <img src="img\webtech\image (1).jpg" alt="" srcset="" id="img1">
+    <br>
+
+    <b>HTML:- </b>An HTML document is a text file that contains text and mark-up called "tags".
+    <br>
+    <b>HTML elements:- </b>:HTML elements are the fundamentals building blocks of web pages. An element consist of a tag, it is a  attributes and content. The content of the tag may be simple text, or maybe one or more tags both. These elements are organised in a tree , like structure.
+    
+    <br>
+
+    <xmp>
+      The root element of HTML documents
+      <html>
+        <head>…………</head>
+        <body>…………</body>
+      </html>
+    </xmp>
+ <br>
+ <b>OS commands </b>
+ <ol type="1">
+  <li><b>ls :- </b>Displays information about files in the current directory.</li>
+  <li><b>mkdir :- </b>Creates a directory.</li>
+  <li><b>rmdir :- </b>Removes empty directories from the directory lists.</li>
+  <li><b>chmod :- </b>allows an administrator to set or modify a file permission.</li>
+  <li><b>cd :- </b>To navigate between different folders.</li>
+ </ol>
+ 
+ 
+ <b>HTML commands</b>
+ <xmp>    <html>: beginning and end of an HTML document.
+    <head>: header information of the document.
+    <title>: specifies the title of the page.
+    <body>: contains the main content.
+    <h1> to <h6>: define headings of different sizes.
+    <p>: This tag defines a paragraph of text.
+    <a>: creates a hyperlink.
+    <img>: inserts an image into the page.
+    <ul>: create an unordered list.
+    <ol>: create an ordered list.
+    <br>: inserts a single line break
+    <hr>: the element is displayed as a horizontal rule that is used to separate content.
+    
+    
+</xmp>
+ 
+
+  </div>
+
 </html>
+
