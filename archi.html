@@ -191,6 +191,37 @@
     <p><b>IC:</b> Instruction cycle</p>
     <p><b>FC:</b> Fetch cycle</p>
     <p><b>EC:</b> Execute cycle</p>
+<img src="inscycle.jpg.png" alt="Description of your image">
+    <h4>Instruction Cycle :-</h4>
+    <p><strong>The total number of clock cycles required to execute an instruction is called the instruction cycle.</strong></p>
+    <p>Instruction cycle contains two operations: fetch and execute.</p>
 
+    <ol>
+        <li>
+            <p><strong>Fetch Cycle:</strong> The total number of clock cycles required to fetch the operand or instruction cycle from memory is called the fetch cycle.</p>
+        </li>
+        <li>
+            <p><strong>Execute Cycle:</strong> The total number of clock cycles required to execute an instruction is called the execute cycle. IC = FC + EC</p>
+        </li>
+    </ol>
+
+    <h4>Register Transfer Language (RTL)</h4>
+    <p>The information transformed from one register to another register is represented in symbolic form by the replacement operator and is called Register Transfer.</p>
+
+    <h4>Basic Symbols of RTL</h4>
+    <img src="RTLsymbol.jpg.png" alt="Description of your image">
+
+    <h4>Register Transfer Operations</h4>
+    <p>The operation performed on the data stored in the registers is referred to as register transfer operations.</p>
+
+    <p><strong>1. Simple Transfer – R2 <- R1:</strong> The content of R1 is copied into R2 without affecting the content of R1. It is an unconditional type of transfer operation.</p>
+
+    <p><strong>2. Conditional Transfer:</strong></p>
+    <img src="RTL1.jpg.png" alt="Description of your image">
+    <p>It indicates that if P=1, then the content of R1 is transferred to R2. It is a unidirectional operation.</p>
+
+    <p><strong>3. Simultaneous Operations:</strong> If 2 or more operations are to occur simultaneously, then they are separated with a comma (,).</p>
+    <img src="RTL2.jpg.png" alt="Description of your image">
+    <p>If the control function P=1, then load the content of R1 into R2, and at the same clock, load the content of R2 into R1.</p>
 </body>
 </html>
