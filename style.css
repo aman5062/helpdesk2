@@ -381,7 +381,7 @@ li.nav-item a{
 
 
  body{
-	background: url(img/vel_bg.png) repeat !important;
+	background: url("https://aman5062.github.io/helpdesk2/img/vel_bg.png") repeat !important;
 } 
  #body{
 	background-color: white !important;
