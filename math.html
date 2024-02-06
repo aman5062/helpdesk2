@@ -411,6 +411,120 @@
             &therefore; √-1 does not have an image under this defination<br>
             &therefore; f is not a function
 
+            <li><b>Geometric of characterization of one to one and onto function -</b></li>
+            <ol>
+              <li>If a function f : A&rightarrow;B is to one to one means that there are no two distinct pairs (a<sub>1</sub>,b)
+                and (a<sub>2</sub>,b) in the graph of f. Hence, each horizontal line can intersect the graph of f in 
+                at most one point.
+              </li>
+              <li>If a function f : A&rightarrow;B is an onto function then for every b&isin;B there must be atleast
+                one a&isin;A such that (a,b) belongs to graph of f. Hence, each horizontal line must intersect the 
+                graph of f atleast once.
+              </li>
+            </ol>
+  
+            <h4><b><u><li>Relation -</li></u></b></h4>
+            Let A and B be sets. A binary relation or simply relation from A to B is a subset of AxB <br>
+            <ol>
+              <li>(a,b)&isin;R &DoubleRightArrow; aRb (a is related to b) </li>
+              <li>(a,b)&notin;R &DoubleRightArrow; a b</li>
+              <li>A<sup>2</sup> &DoubleRightArrow;; AxA &DoubleRightArrow;ARA</li>
+            </ol>
+            <li><b>Inverse Relation -</b></li>
+            Let R be any relation from A to a set B. The inverse of R, denoted by <b>R<sup>-1</sup></b> and 
+            defined as<br>
+            <center>R<sup>-1</sup> = {(b,a):(a,b)&isin;R} </center>
+  
+            Eg- a = {1,2,3}<br>
+            b = {x,y,z}<br>
+            R = {(1,y),(1,z),(3,y)}<br>
+            Here, aRb &DoubleRightArrow; 1Ry, 1Rz,3Ry<br>
+            R<sup>-1</sup> = {(y,1),(z,1),(y,3)}<br><br>
+  
+            <li><b>Type of relation -</b></li>
+            <ol>
+              <li>Reflexive relation -</li>
+              A relation R on a set A is Reflexive if aRa for every a&isin;A, i.e. if (a,a)&isin;R for every
+              a&isin;A.<br>
+              Eg- Consider A = {1,2,3,4}<br>
+              R1 = {(1,1),(1,2),(2,3),(1,3),(4,4)}<br>
+              R2 = {(1,1),(1,2),(2,1),(2,2),(3,3),(4,4)}<br>
+              R3 = {(1,3),(2,1)}<br>            
+              R4 = &emptyset;, the empty relation <br>
+              R5 = A x A, the universal set<br><br>
+  
+              <b>Sol:</b><br>
+              Given, A={1,2,3,4}<br>
+              R1 = {(1,1),(1,2),(2,3),(1,3),(4,4)}<br>
+              Since, (2,2) &notin; R1<br>
+              &there4; R1 is not a reflexive relation<br><br>
+  
+              R2 is reflexive because  each element (1, 2, 3, and 4) is paired with itself, satisfying the 
+              reflexive property.<br><br>
+  
+              Given, A={1,2,3,4}<br>
+              R3 = {(1,3),(2,1)}<br> 
+              Since, (2,2) &notin; R3<br>
+              &there4; R3 is not a reflexive relation<br><br>
+  
+              Given, A={1,2,3,4}<br>
+              R4 = &emptyset;, the empty relation <br>
+              Since, no element is in R4. So,it doesnot satisfying the reflexive property. <br>
+              &there4; R4 is not a reflexive relation<br><br>
+  
+              R5 is reflexive because  universal set have each element (1, 2, 3, and 4) is paired with itself, satisfying the 
+              reflexive property.<br><br>
+  
+              <li>Symmetric relation -</li>
+              A relation R on a set A is Symmetric if whenever  aRb then bRa, this is if whenever (a,b)&isin;R then
+              (b,a)&isin;R.<br>
+              Eg- Consider A = {1,2,3,4}<br>
+              R1 = {(1,1),(1,2),(2,3),(1,3),(4,4)}<br>
+              R2 = {(1,1),(1,2),(2,1),(2,2),(3,3),(4,4)}<br>
+              R3 = {(1,3),(2,1)}<br>            
+              R4 = &emptyset;, the empty relation <br>
+              R5 = A x A, the universal set<br><br>
+              <b>Sol:</b>  <br>
+              R1 is not symmetric because (1,2)&isin;R1 but (2,1) &notin;R1<br><br>
+  
+              R2 is symmetric because (1,2)&isin;R1 and (2,1) &isin;R1<br><br>
+  
+              R3 is not symmetric because (1,3)&isin;R1 but (3,1) &notin;R1<br><br>
+              R4 is symmetric because empty set has no elements, so it vacuously satisfies this condition.<br><br>
+              R5 is symmetric because universal set is the set of all possible ordered pairs of elements from A, so it 
+              contains both (a,b) and (b,a) for any a and b in A.<br><br>
+  
+              <li>Transitive relation -</li>
+              A relation R on a set A is transitive if whenever aRb and bRc then, aRc this is whenever (a,b),(b,c)&isin;R
+              then (a,c)&isin;R.<br>
+              Eg- Consider A = {1,2,3,4}<br>
+              R1 = {(1,1),(1,2),(2,3),(1,3),(4,4)}<br>
+              R2 = {(1,1),(1,2),(2,1),(2,2),(3,3),(4,4)}<br>
+              R3 = {(1,3),(2,1)}<br>            
+              R4 = &emptyset;, the empty relation <br>
+              R5 = A x A, the universal set<br>
+              <br>
+              <b>Sol -</b>
+              R1 is transitive because (1,2) and (2,3)&isin;R1 and also (1,3)&isin;R1<br><br>
+  
+              R2 is transitive because (1,2) and (2,1)&isin;R1 and also (1,1)&isin;R1<br><br>
+  
+              R3 is not transitive because (2,1) and (1,3)&isin;R1 but (2,3)&notin;R3<br><br>
+  
+              R4 is transitive because empty set has no elements, so it vacuously satisfies this condition.<br><br>
+              R5 is transitive because universal set is the set of all possible ordered pairs of elements from A, so it 
+              contains (a,b) and (b,c) and also (a,c).<br><br>
+  
+  
+              <li>Equivalence relation -</li>
+              Consider a non-empty set S. A relation R on S is an equivalence relation if R is reflexive, symmetric and 
+              transitive i.e.<br>
+              <ol type="i">
+                <li>for every a&isin;S, aRa</li>
+                <li>If aRb, then bRc</li>
+                <li>If aRb and bRc, then aRc</li>
+              </ol>
+            </ol>
 
 
 
