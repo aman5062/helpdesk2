@@ -205,6 +205,7 @@ It stands for Hold Acknowledgement signal and is available at pin 30. This signa
 This signal indicates to the processor that external devices are requesting to access the address/data buses. It is available at pin 31.<br>
 <b>QS1 and QS0</b><br>
 These are queue status signals and are available at pin 24 and 25. These signals provide the status of instruction queue. Their conditions are shown in the following table-<br><br>
+<table>		
   <tr>
     <td>QS</td>
     <td>QS</td>
@@ -230,15 +231,14 @@ These are queue status signals and are available at pin 24 and 25. These signals
     <td>1</td>
     <td>1</td>
     <td>Subsequent byte from the queue</td>
-
+  </tr>
 </table >
 
 <br><br>
 <b>S0, S1, S2</b><br><br>
-These are queue status status signals that provide the status of operation, which is used by the Bus controller 8288 to generate memory & I/O control signals. These are available at pin 26,27, and 28. Following is the table showingtheir status-<br><br>	      
-
+These are queue status status signals that provide the status of operation, which is used by the Bus controller 8288 to generate memory & I/O control signals. These are available at pin 26,27, and 28. Following is the table showingtheir status-<br><br>
 <table>
-  <tr> 
+  <tr>
     <td>S2</td>
     <td>S1</td>
     <td>S0</td>
@@ -249,7 +249,13 @@ These are queue status status signals that provide the status of operation, whic
     <td>0</td>
     <td>0</td>
     <td>Interrupt acknowledgement</td>
-      </tr>
+    </tr>
+	<tr>
+        <td>0</td> 
+        <td>0</td> 
+        <td>1</td> 
+        <td>I/O read</td> 
+	</tr>
       <tr>
         <td>0</td> 
         <td>1</td> 
@@ -278,8 +284,19 @@ These are queue status status signals that provide the status of operation, whic
           <td>1</td> 
           <td>1</td>        
           <td>0</td> 
-          <td>Memory write</td> 
+          <td>Memory write</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>Passive</td>
+            </tr>
+           
         </table>
+
+
+        
 <b>LOCK</b><br>
 When this signal is active, it indicates to the other processors not to ask the CPU to leave the system bus. It is activated using the LOCK prefix on any instruction and is available at pin 29.<br>
 <b>RQ/GT1 and RQ/GT0</b><br>
