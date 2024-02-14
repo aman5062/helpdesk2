@@ -1,4 +1,4 @@
-window.location.href="puja.html";
+
 function toggleMenu() {
     const topnav = document.getElementById("myTopnav");
     const bar = document.getElementById("bar");
