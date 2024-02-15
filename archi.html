@@ -233,5 +233,73 @@
     <p>If the control function P=1, then load the content of R1 into R2, and at the same clock, load the content of R2 into R1.</p>
     <img src="img/instruction_cycle.png" alt="Error" id="img1">
 
+		<strong>Addressing Modes Examples</strong>
+
+    <ol>
+        <li>
+            <strong>Immediate Addressing:- </strong> Operand is directly specified in the instruction.<br>
+            
+            <em>Example:</em> MOV AX, 5 - Moves the immediate value 5 into register AX.
+        </li>
+
+        <li>
+            <strong>Direct Addressing:-</strong> Operand is specified by a memory address directly in the instruction.<br>
+            
+            <em>Example:</em> MOV AX, [1000] - Moves the value stored at memory address 1000 into register AX.
+        </li>
+
+        <li>
+            <strong>Indirect Addressing:-</strong> Operand address is held in a register or memory location, and the actual operand is located at that address.<br>
+            
+            <em>Example:</em> MOV AX, [BX] - Moves the value stored at the memory address stored in register BX into register AX.
+        </li>
+
+        <li>
+            <strong>Register Addressing:-</strong> Operand is located in a register specified in the instruction.<br>
+            
+            <em>Example:</em> ADD AX, BX - Adds the value in register BX to the value in register AX.
+        </li>
+
+        <li>
+            <strong>Indexed Addressing:-</strong> Operand address is calculated by adding an offset to a base address stored in a register.<br>
+            
+            <em>Example:</em> MOV AX, [SI+10] - Moves the value stored at the memory address obtained by adding 10 to the value in register SI into register AX.
+        </li>
+
+        <li>
+            <strong>Relative Addressing:-</strong> Operand address is calculated relative to the current program counter or instruction pointer.<br>
+            
+            <em>Example:</em> JMP Label - Jumps to the instruction at the memory address specified by the label.
+        </li>
+
+        <li>
+            <strong>Base-Relative Addressing:-</strong> Similar to indexed addressing, but the base address is provided implicitly by a base register.<br>
+            
+            <em>Example:</em> MOV AX, [BP-4] - Moves the value stored at the memory address obtained by subtracting 4 from the value in register BP into register AX.
+        </li>
+
+        <li>
+            <strong>Stack Addressing:-</strong> Operands are accessed from the top of the stack, with stack pointers managing the stack's current position.<br>
+            
+            <em>Example:</em> PUSH AX - Pushes the value in register AX onto the stack.
+        </li>
+
+        <li>
+            <strong>Base Pointer Addressing:-</strong> Operands are accessed using a combination of a base register and a displacement specified in the instruction.<br>
+            
+            <em>Example:</em> MOV AX, [BX+2] - Moves the value stored at the memory address obtained by adding 2 to the value in register BX into register AX.
+        </li>
+        
+        <li>
+            <strong>PC-relative Addressing:-</strong> Operand address is calculated relative to the current program counter.<br>
+            
+            <em>Example:</em> JMP Offset - Jumps to the instruction at the memory address specified by the offset relative to the current program counter.
+        </li>
+    </ol>
+</body>
+</html>
+</body>
+</html>
+
 </body>
 </html>
