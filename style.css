@@ -421,9 +421,3 @@ li.nav-item a{
   ::-webkit-scrollbar-track{
 	background: #f1f1f1;
   }
-  @media screen and (max-width: 768px) {
-    .content::-webkit-scrollbar {
-        width: 5px; /* Adjust as needed for smaller screens */
-    }
-    /* Add other mobile-specific styles */
-}
