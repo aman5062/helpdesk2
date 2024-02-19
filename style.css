@@ -409,3 +409,15 @@ li.nav-item a{
 	width: 35%;
 	margin-right: 10px;
   }
+  ::-webkit-scrollbar{
+	width: 18px;
+	
+  }
+  ::-webkit-scrollbar-thumb{
+	background: url(down-arrow.gif) no-repeat;
+	background-size: contain; /* or cover, depending on your image */
+    border: none;
+  }
+  ::-webkit-scrollbar-track{
+	background: #f1f1f1;
+  }
