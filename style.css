@@ -421,3 +421,13 @@ li.nav-item a{
   ::-webkit-scrollbar-track{
 	background: #f1f1f1;
   }
+#watermark{
+ position:fixed;
+ bottom:40%;
+ right:20%;
+ opacity:0.2;
+ font-size: 55px;
+ rotate: -45deg;
+ z-index:99;
+ color:rgb(112, 109, 109);
+}
