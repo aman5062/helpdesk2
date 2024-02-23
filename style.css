@@ -50,7 +50,9 @@ a {
 .topnav a {
 	text-align: center;
 }
-
+header{
+	z-index: 100;
+}
 #image,
 #output {
 	transition: transform .2s ease-in-out;
@@ -430,4 +432,7 @@ li.nav-item a{
  rotate: -45deg;
  z-index:99;
  color:rgb(112, 109, 109);
+ user-select: none;
+ pointer-events: none;
+
 }
