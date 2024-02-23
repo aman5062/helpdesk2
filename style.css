@@ -425,7 +425,7 @@ li.nav-item a{
  position:fixed;
  bottom:40%;
  right:15%;
- opacity:0.2;
+ opacity:0.1;
  font-size: 55px;
  rotate: -45deg;
  z-index:99;
