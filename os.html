@@ -121,14 +121,14 @@
         <li><b>increased throughout and efficient system use</b></li>
        <br> 
        <h3>Disadvantages of O.S :-</h3>There were many disadvantages of batch operating System : <br><br>
-            <ol type="i">
+            <ol type="i"><ol></ol>
               <li><strong>Limited Interactivity:</strong> Batch systems lack real-time user interaction during job processing.</li>
               <li><strong>Turnaround Time:</strong> Jobs in batch systems may have longer turnaround times, causing delays.</li>
               <li><strong>Resource Utilization:</strong> Suboptimal use of resources may occur due to fixed resource allocations.</li>
               <li><strong>Difficulty in Debugging:</strong> Identifying and fixing errors can be challenging, especially if they occur late in the batch.</li>
               <li><strong>Job Prioritization:</strong> Lack of dynamic job prioritization may lead to inefficiencies in task execution.</li>
             </ol> <br>
-      <ol type="1">
+      <ol type="1"></ol>
         <h3><b>Types of O.S :-</b> </h3>
      
         <li><b>Uni-Programing </b><br>
@@ -212,6 +212,35 @@ Program counter: It stores the counter,: which contains the address of the next 
 Register: These are the CPU registers which include the accumulator, base, registers, and general-purpose registers.<br><br>
 Memory limits: This field contains the information about memory management system used by the operating system. This may include page tables, segment tables, etc.<br><br>
 Open files list : This information includes the list of files opened for a process.
+<br><br><br>
+
+<h3><b><U>CPU SCHEDULAR :- </U></b></h3>
+CPU Schedular in the operating system is a method by which one process is allowed to use CPU while the other processes are kept on hold or are kept in the waiting state . Whenever the CPU becomes idle, the operating system must select one of the processes in the line ready for launch. The selection process is done by a temporary (CPU) scheduler. The Scheduler selects between memory processes ready to launch and assigns the CPU to one of them.
+<br><br>
+
+
+
+<h5><b>Types of procces / CPU scheduler :-</b></h5>
+
+<b>1. Long Term or Job Schedule - </b>
+It brings the new process to the ‘Ready State’. It controls the Degree of Multi-programming, i.e., the number of processes present in a ready state at any point in time. It is important that the long-term scheduler make a careful selection of both I/O and CPU-bound processes. I/O-bound tasks are which use much of their time in input and output operations while CPU-bound processes are which spend their time on the CPU. The job scheduler increases efficiency by maintaining a balance between the two. They operate at a high level and are typically used in batch-processing systems.
+<br><br>
+<b>2. Short-Term or CPU Scheduler -</b>
+It is responsible for selecting one process from the ready state for scheduling it on the running state. Note: Short-term scheduler only selects the process to schedule it doesn’t load the process on running.  Here is when all the scheduling algorithms are used. The CPU scheduler is responsible for ensuring no starvation due to high burst time processes.
+<br>
+<img src="img/Opreting System/sts.png" alt=""id="img1">
+<br>
+The dispatcher is responsible for loading the process selected by the Short-term scheduler on the CPU (Ready to Running State) Context switching is done by the dispatcher only. A dispatcher does the following: 
+<br> <br>
+
+*Switching context.<br>
+*Switching to user mode.<br>
+*Jumping to the proper location in the newly loaded program.
+<br><br>
+<b>3. Medium-Term Scheduler -</b>
+It is responsible for suspending and resuming the process. It mainly does swapping (moving processes from main memory to disk and vice versa). Swapping may be necessary to improve the process mix or because a change in memory requirements has overcommitted available memory, requiring memory to be freed up. It is helpful in maintaining a perfect balance between the I/O bound and the CPU bound. It reduces the degree of multiprogramming.
+<img src="img/Opreting System/mts.png" alt=""id="img1">
+
 
     
     </div>
