@@ -1,8 +1,20 @@
 [
     {   
         "Sno":1,
-        "Question":"Write a Python program to print 'Hello World'",
-        "code":"code/python_code_1.png",
-        "output":"output/python_output_1.png"
+        "Question":"WAP in python to find the area of circle using single return value function with arguments.",
+        "code":"python_img/1_code.png",
+        "output":"python_img/1_output.png"
+    },
+    {   
+        "Sno":2,
+        "Question":"WAP in python to find sum, difference and product of two numbers using multiple retuen values function with arguments.",
+        "code":"python_img/2_code.png",
+        "output":"python_img/2_output.png"
+    },
+    {   
+        "Sno":3,
+        "Question":"WAP in python to find the biggest numbers of two numbers using function",
+        "code":"python_img/3_code.png",
+        "output":"python_img/3_output.png"
     }
 ]
