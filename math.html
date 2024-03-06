@@ -715,6 +715,91 @@
         &DoubleRightArrow; P(1) = 1<br>
         And from RHS of eq1<br>
         &DoubleRightArrow; P(1) = {1(1+1)}/2 = 1<br>
+        since, LHS = RHS for n = 1<br>
+        &therefore; Result is true for n = 1<br>
+          Let us assume that the result is true for n = k <br>
+          1+2+3..........+{k(k+1)}/2 = P(k)  -------eq2<br>
+          claim: Result is also true for n = k + 1 i.e. <br>
+          Taking,<br>
+          p(k+1) = 1+2+3......+(k+1)<br>
+          p(k+1) = 1+2+3......+k+(k+1)<br>
+          p(k+1) = p(k)+(k+1)<br>
+          p(k+1) = {k(k+1)}/2 + (k+1) <br>
+          p(k+1) = {k(k+1) + 2(k+1)}/2 <br>
+          p(k+1) = {(k+1) + (k+2)}/2 <br>
+          &there4; Result is also true for n = k+1 using induction hypothesis result is also true for n=n<br>
+          i.e. P(n) = 1+2+3+.........+n = {n(n=1)}/2<br><br>
+        <b>Q. Use mathematical induction to show that 1+2+2<sup>2</sup>.....+2<sup>n</sup> = 2<sup>n+1</sup>-1 for all non-negative integer.<br>
+          Sol-<br></b>  
+          Let P(n) = 1+2+2<sup>2</sup>.....+2<sup>n</sup> = 2<sup>n+1</sup>-1<br>
+          for n = 0, form LHS <br>
+          P(0) = 1<br>
+          and form RHS <br>
+          P(0) = 2<sup>0 + 1</sup> - 1 = 1<br>
+          since LHS = RHS<br>
+          &there4; Result is true for n = 0<br>
+          Assuming result is true for n = k, i.e.<br>
+          p(k) = 1+2+2<sup>2</sup>.....+2<sup>k</sup> = 2<sup>k+1</sup>-1 ------eq1<br>
+          Claim: P(k+1) = 1+2+2<sup>2</sup>.....+2<sup>k</sup>+2<sup>k+1</sup> = 2<sup>k+2</sup>-1<br>
+          i.e. result is true for n = k+1<br>
+          considering, <br>
+          P(k+1) = 1+2+2<sup>2</sup>.....+2<sup>k</sup>+2<sup>k+1</sup> <br>
+          P(k+1) = 2<sup>k+1</sup>-1 + 2<sup>k+1</sup> {using eq1}<br>
+          P(k+1) = 2.2<sup>k+1</sup> - 1<br>
+          P(k+1) = 2<sup>k+2</sup> - 1<br>
+          &there4; Result is also true for n = k+1<br>
+          By induction hypothen result is for n <br>
+          i.e. 1+2+.....+2<sup>n</sup> = 2<sup>n+1</sup><br><br>
+
+
+        <b>Q. Using mathematical induction to prove the inequality n < 2<sup>n</sup> for all positive integer n .<br>
+        Sol-<br></b>     
+        Let P(n) = n < 2<sup>n</sup><br>
+        for n = 1, <br>
+        1 < 2<sup>1</sup><br>
+        i.e. 1 < 2 <br>
+        i.e. result is true for n=1<br>
+        Assuming result is true for n = k, i.e.<br>
+        p(k) = k < 2<sup>k</sup> -------eq1<br>
+        Claim: result is also true for n = k+1<br>
+        i.e. P(k+1) = k+1 < 2k+1 <br>
+        considering, <br>
+        P(k+1) = k+1 <br>
+        P(k+1) < 2<sup>k</sup>+ 1 {using eq1}<br>
+        P(k+1) &LessSlantEqual; 2<sup>k</sup> + 2<sup>k</sup> {1&LessSlantEqual;2<sup>k</sup> for all non-negative k}<br>
+        P(k+1) = k+1 < 2<sup>k</sup> + 2<sup>k</sup><br>
+        P(k+1) = k+1 < 2<sup>k</sup>(1+1)<br>
+        P(k+1) = k+1 < 2<sup>k</sup> .2<sup>1</sup><br>
+        P(k+1) = k+1 < 2<sup>k+1</sup> <br>
+        &there4; Result is also true for n = k+1<br>
+        By induction hypothen result is for n <br>
+        i.e. n < 2<sup>n</sup><br><br>
+
+        <b>Q. Using mathematical induction to prove that n<sup>3</sup> - n is divisible by 3 whenever n is a positive integer .<br>
+        Sol-<br></b>  
+        Let P(n) = n<sup>3</sup> - n is divisible by 3<br>
+        Taking, n=1<br>
+        P(1) = 1 - 1<br>
+        P(1) = 0 is also divisible by 3<br>
+        &there4; Result is true for n = 1<br>
+        Assuming result is true for n = k,<br>
+        i.e. P(k) = k<sup>3</sup> - k is divisible by 3<br>
+        Claim : P(k+1) = (k+1)<sup>3</sup> - (k+1) is divisible by 3<br>
+        Taking,<br>
+        P(k+1) = (k+1)<sup>3</sup> - (k+1) <br>
+        P(k+1) = (k+1)[(k+1)<sup>2</sup> - 1]<br>
+        P(k+1) = (k+1)k(k+2) <br>
+        P(k+1) = (k<sup>2</sup>+k)(k+2) <br>
+        P(k+1) = k<sup>3</sup> + 3k<sup>2</sup> +2k<br>
+        P(k+1) = k<sup>3</sup> -k + k 3k<sup>2</sup> +2k<br>
+        P(k+1) = k<sup>3</sup> -k 3k<sup>2</sup> +3k<br>
+        P(k+1) = k<sup>3</sup> -k + 3(k<sup>2</sup> +k)<br>
+        Since, k<sup>3</sup> - k is divisible by  3 and 3(k<sup>2</sup> +k) is also divisible by 3<br>
+        &there4; P(k+1) is divisible by 3<br>
+        &there4; Result is true for n = k+1 <br>
+        Using induction hypothen, result is true for n<br>
+        i.e. n<sup>3</sup> - n is divisible by 3<br>
+
         
 
 
