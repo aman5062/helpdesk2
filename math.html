@@ -697,7 +697,275 @@
 
 
 
-kjgklsdjj
+        <li><b>Principle of mathematical induction-</b></li>
+        To prove that P(n) is true for all positive integer n, where P(n) is a propositional function, we complete two
+        step:
+        <ol>
+          <li>Basic step-</li>
+          We verify that P(1) is true i.e. result is true for n=1.<br>
+          <li>Inductive step-</li>
+          Showing that the conditional statement P(k) &rightarrow; P(k+1) is true for all positive integer k i.e.,
+          the result will be true for n = k+1 i.e. P(k+1).
+        </ol>
+
+        <b>Q. Show that if n is a positive integer, then 1+2+3+......+n = {n(n+1)}/2<br>
+        Sol-<br></b>
+        Let P(n) = 1+2+3+.......+n = {n(n+1)}/2  ------eq1<br>
+        when n = 1, from LHS of eq1<br>
+        &DoubleRightArrow; P(1) = 1<br>
+        And from RHS of eq1<br>
+        &DoubleRightArrow; P(1) = {1(1+1)}/2 = 1<br>
+        since, LHS = RHS for n = 1<br>
+        &therefore; Result is true for n = 1<br>
+          Let us assume that the result is true for n = k <br>
+          1+2+3..........+{k(k+1)}/2 = P(k)  -------eq2<br>
+          claim: Result is also true for n = k + 1 i.e. <br>
+          Taking,<br>
+          p(k+1) = 1+2+3......+(k+1)<br>
+          p(k+1) = 1+2+3......+k+(k+1)<br>
+          p(k+1) = p(k)+(k+1)<br>
+          p(k+1) = {k(k+1)}/2 + (k+1) <br>
+          p(k+1) = {k(k+1) + 2(k+1)}/2 <br>
+          p(k+1) = {(k+1) + (k+2)}/2 <br>
+          &there4; Result is also true for n = k+1 using induction hypothesis result is also true for n=n<br>
+          i.e. P(n) = 1+2+3+.........+n = {n(n=1)}/2<br><br>
+        <b>Q. Use mathematical induction to show that 1+2+2<sup>2</sup>.....+2<sup>n</sup> = 2<sup>n+1</sup>-1 for all non-negative integer.<br>
+          Sol-<br></b>  
+          Let P(n) = 1+2+2<sup>2</sup>.....+2<sup>n</sup> = 2<sup>n+1</sup>-1<br>
+          for n = 0, form LHS <br>
+          P(0) = 1<br>
+          and form RHS <br>
+          P(0) = 2<sup>0 + 1</sup> - 1 = 1<br>
+          since LHS = RHS<br>
+          &there4; Result is true for n = 0<br>
+          Assuming result is true for n = k, i.e.<br>
+          p(k) = 1+2+2<sup>2</sup>.....+2<sup>k</sup> = 2<sup>k+1</sup>-1 ------eq1<br>
+          Claim: P(k+1) = 1+2+2<sup>2</sup>.....+2<sup>k</sup>+2<sup>k+1</sup> = 2<sup>k+2</sup>-1<br>
+          i.e. result is true for n = k+1<br>
+          considering, <br>
+          P(k+1) = 1+2+2<sup>2</sup>.....+2<sup>k</sup>+2<sup>k+1</sup> <br>
+          P(k+1) = 2<sup>k+1</sup>-1 + 2<sup>k+1</sup> {using eq1}<br>
+          P(k+1) = 2.2<sup>k+1</sup> - 1<br>
+          P(k+1) = 2<sup>k+2</sup> - 1<br>
+          &there4; Result is also true for n = k+1<br>
+          By induction hypothen result is for n <br>
+          i.e. 1+2+.....+2<sup>n</sup> = 2<sup>n+1</sup><br><br>
+
+
+        <b>Q. Using mathematical induction to prove the inequality n < 2<sup>n</sup> for all positive integer n .<br>
+        Sol-<br></b>     
+        Let P(n) = n < 2<sup>n</sup><br>
+        for n = 1, <br>
+        1 < 2<sup>1</sup><br>
+        i.e. 1 < 2 <br>
+        i.e. result is true for n=1<br>
+        Assuming result is true for n = k, i.e.<br>
+        p(k) = k < 2<sup>k</sup> -------eq1<br>
+        Claim: result is also true for n = k+1<br>
+        i.e. P(k+1) = k+1 < 2k+1 <br>
+        considering, <br>
+        P(k+1) = k+1 <br>
+        P(k+1) < 2<sup>k</sup>+ 1 {using eq1}<br>
+        P(k+1) &LessSlantEqual; 2<sup>k</sup> + 2<sup>k</sup> {1&LessSlantEqual;2<sup>k</sup> for all non-negative k}<br>
+        P(k+1) = k+1 < 2<sup>k</sup> + 2<sup>k</sup><br>
+        P(k+1) = k+1 < 2<sup>k</sup>(1+1)<br>
+        P(k+1) = k+1 < 2<sup>k</sup> .2<sup>1</sup><br>
+        P(k+1) = k+1 < 2<sup>k+1</sup> <br>
+        &there4; Result is also true for n = k+1<br>
+        By induction hypothen result is for n <br>
+        i.e. n < 2<sup>n</sup><br><br>
+
+        <b>Q. Using mathematical induction to prove that n<sup>3</sup> - n is divisible by 3 whenever n is a positive integer .<br>
+        Sol-<br></b>  
+        Let P(n) = n<sup>3</sup> - n is divisible by 3<br>
+        Taking, n=1<br>
+        P(1) = 1 - 1<br>
+        P(1) = 0 is also divisible by 3<br>
+        &there4; Result is true for n = 1<br>
+        Assuming result is true for n = k,<br>
+        i.e. P(k) = k<sup>3</sup> - k is divisible by 3<br>
+        Claim : P(k+1) = (k+1)<sup>3</sup> - (k+1) is divisible by 3<br>
+        Taking,<br>
+        P(k+1) = (k+1)<sup>3</sup> - (k+1) <br>
+        P(k+1) = (k+1)[(k+1)<sup>2</sup> - 1]<br>
+        P(k+1) = (k+1)k(k+2) <br>
+        P(k+1) = (k<sup>2</sup>+k)(k+2) <br>
+        P(k+1) = k<sup>3</sup> + 3k<sup>2</sup> +2k<br>
+        P(k+1) = k<sup>3</sup> -k + k 3k<sup>2</sup> +2k<br>
+        P(k+1) = k<sup>3</sup> -k 3k<sup>2</sup> +3k<br>
+        P(k+1) = k<sup>3</sup> -k + 3(k<sup>2</sup> +k)<br>
+        Since, k<sup>3</sup> - k is divisible by  3 and 3(k<sup>2</sup> +k) is also divisible by 3<br>
+        &there4; P(k+1) is divisible by 3<br>
+        &there4; Result is true for n = k+1 <br>
+        Using induction hypothen, result is true for n<br>
+        i.e. n<sup>3</sup> - n is divisible by 3<br><br>
+
+      <h4><b><u><li>Sequence -</li></u></b></h4>
+      A Sequence is a f:N &RightArrow;A. Here, N = {1,2,3.......} set of natural no. and A be any set. The sequence
+      is usually denoted by a<sub>1</sub>,a<sub>2</sub>,a<sub>3</sub>....... or { a<sub>n</sub> : n &isin; N} or simply 
+      {a<sub>n</sub>}.<br><br>
+
+      <b>Note -</b><br>
+      Sometimes the domain of sequence is W (set of whole no.) in place of N.<br><br>
+
+      A finite sequence over a set A is function from {1,2,......m} into A and usually denoted to a<sub>1</sub>,a<sub>2</sub>,..........
+      a<sub>m</sub> such a finite sequence is called a list or an m - tuple.<br><br>
+      Eg- <ol>
+        <li>The sequence <br>
+            1,1/2,1/3,1/4,......<br>
+            i.e., a<sub>n</sub> = 1/n, where n =1,2,3.....
+        </li>
+        <li>
+          The sequence <br>
+            1,1/2,1/4,1/8,......<br>
+            i.e., b<sub>n</sub> = 2<sup>-n</sup>, where n =0,1,2,3.....
+        </li>
+        <li>
+          The sequence <br>
+            1,-1,1,-1,......<br>
+            i.e., a<sub>n</sub> = (1)<sup>n+1</sup>, where n =1,2,3.....<br>
+            or, b<sub>n</sub> = (-1)<sup>n</sup>, where n =0,1,2,3.....
+        </li>
+      </ol>
+      <li><b>Summation symbol, sums-</b></li>
+      The summation symbol &sum; (sigma)<br>
+      Consider the sequence, <br>
+      a<sub>1</sub>,a<sub>2</sub>,a<sub>3</sub>.......<br>
+      Then, the sums<br>
+      a<sub>1</sub>,a<sub>2</sub>,......a<sub>n</sub> = <img src="img/sum.png" alt="sum" width="35px"><br>
+      Here, i is called dummy index or dummy variable.<br><br>
+
+      <li><b>Indexed classes of sets -</b></li>
+      Let, I be any non empty set and let, S be the collection of sets. And indexing function is
+      f:I &rightarrow; S for any i &isin; I, we denote the image f(i) by A<sub>i</sub>.<br>
+      The set I is called the indexing set, and elements of I are called Indices. If f is one to one
+      and onto we say that S is index by I.<br>
+      The concept of union and intersection define for index classes of sets by<br>
+      <img src="img/index_class_set1.png" alt="index_class_set1" width="270px"><br>
+      <img src="img/index_class_set2.png" alt="index_class_set2" width="270px"><br><br>
+
+      <li><b>Recursive -</b></li>
+      Sometime it is difficult to define an object explicitly. However, it may be easy to define this object in term
+      of itself. The process is called recursion. For instance the picture shown here is produced recursively first 
+      and original picture is given then the process of successively superimposing centred smaller picture on top 
+      of the previous picture is carried out.
+      <img src="img/recursion_math.png" alt="recursion_math" width="300px"><br><br>
+
+      <li><b>Recursive defination consist of three steps -</b></li>
+      <ol>
+        <li><b>Basic step -</b> <br>
+            Specify the primitive elements (at least one).
+        </li>
+        <li><b>Recursive step -</b><br>
+            Rules for generating new element from existing elements.
+        </li>
+        <li><b>Terminal step -</b><br>
+            Gurantees that the first two steps, basis and recursive clause, are the only ways
+            the element can be obtained.
+        </li>
+      </ol>
+
+      <li><b>Recursive defined set -</b></li>
+      Sets can be defined recursively. Recursive definition of sets have two parts, a basis step and a recursive sep (omitting the terminal step).<br>
+      Eg -The recursive definition to define a set A is as:<br>
+      (i) 3 &isin; A<br>
+      (ii) if xe A then x +3 &isin; A<br>
+      &there4; A ={3,6,9,12,15,...}<br><br>
+
+      <b>Q. Let B be the set defined recursively as follows.
+        (a) 2 &isin; B
+        (b) if n &isin; B then n<sup>2</sup> &isin; B <br>
+        Describe the set by listing method.<br>
+        sol-</b><br>
+         B={2,4,16,256,65536,...}<br><br>
+
+      <b>Define following sets recursively.<br>
+        1. L={0,00,10,100,110,0000,1010,...}<br>
+          sol-</b><br>
+          (i) 0 &isin; l<br>
+          (ii) If x &isin; L then 1x &isin; L and xx &isin; L<br>
+        <b>2. L= {b, bb, bbb, bbbb, ...}<br>
+          sol-</b><br>
+          (i) b &isin; L<br>
+          (ii) If x &isin; L then bx &isin; L<br>
+        <b>3. L={a, aaa, aaaaa, aaaaaaa, ...}<br>
+          sol-</b><br>
+          (i) a &isin; L<br>
+          (ii) If x &isin; L then axa  &isin; L.<br><br>
+
+      <li><b>Recursive defined function -</b></li>
+      Let x &isin; A and B = {x,x+1,x+2,...} The recursive definition of a function with domain B consists of three steps:<br> for k &GreaterEqual; 1<br>
+      <b>(1) Basis step -<br></b>
+       A few initial values of the function f(x),f(x+1),...,f(x+k-1) are specified. An equation that specifies such initial values is called an initial condition.<br><br>
+      
+      <b>(ii) Recursive step - </b>
+      A formula to compute f(n) from the k preceding functional values f(n-1),f(n-2),....,f(n-k) is made. Such a formula is called recursive formula or recurrence relation<br><br>
+
+      <b>(iii)Terminal steps can be omited -</b><br>
+      let us consider factorial function. The factorial function is defined by f(n)=n! where f(0)=1. 
+      f is recursively defined as<br>
+      (i) f(0)=1 (initial value)<br>
+      (ii) f(n)=n*f(n-1), n&GreaterEqual;1 (recurrence relation)<br><br>
+
+      Eg- <b>Fibonacci Numbers</b>
+      The number 1, 1, 2, 3, 5, 8,..... are Fibonacci numbers. They have a Fibonacci number, except the first two, is the sum of two immediately preceding Fibonacci numbers. <br>
+      The recursive definition of n<sup>th</sup> Fibonacci number as:<br>
+      (a)f_{1}=f_{2}=1 (initial condition)<br>
+      (b) f_{n}=f_{n-1}+f_{n-2},n&GreaterEqual;3 (recurrence relation)<br><br>
+
+      Eg - <b>Tower of Hanoi</b><br>
+      Let H<sub>n</sub> denote the number of moves needed to solve puzzle with n disks.
+       Let us define H<sub>n</sub> recursively. Clearly H<sub>n</sub>=1. Let n &GreaterEqual; 2. Consider top (n-1) disks. We can move top (n-1) disks, following the rules to middle peg using H<sub>n-1</sub> moves using third peg as an auxiliary. That leaves the largest disk at first peg. It takes one move to transfer it to third peg. Now, the n-1 disks at middle peg can be moved to third peg using peg as auxiliary peg in H<sub>n-1</sub> moves. Hence total number of moves H<sub>n</sub> can be recursively defined as<br>
+       <center>
+          H<sub>n</sub> = 1, if n=1<br>
+          H<sub>n</sub> = 2H<sub>n-1</sub> + 1, otherwise       </center><br>
+
+        <li><b>Recursive relation -</b></li>
+        A recurrence relation for the sequence {a<sub>n</sub>} is an equation that expresses a<sub>n</sub>, in terms of one or more preceding terms of the sequence, viz, a<sub>0</sub>,a<sub>1</sub>,...,a<sub>n-1</sub>, for n&GreaterEqual; n<sub>0</sub>, Here n<sub>0</sub> is used to define initial condition and is a nonnegative integer. A sequence is called as a solution of a recurrence relation if its terms satisfy the recurrence relation<br><br>
+     
+        <li><b>Application -</b></li>
+        Recurrence relations are used to model variety of problems. Few problems are inherently recursive, viz, Towers of Hanoi, divide and conquer algorithms, computing compound interest etc. Let us consider following example of computing compound interest.<br>
+
+        Eg-<b>
+          Hemant deposits Rupees 10,000 in a saving account at bank. The annual interest rate of bank is 9%. Define recursive formula (recurrence relation) to compute the amount A<sub>n</sub>. Hemant will have in his account at the end of n<sup>th</sup> years.
+        </b><br>
+        <b>Sol-</b>
+
+        Let A<sub>n</sub> denote the amount after n<sup>th</sup> year. Clearly A<sub>0</sub> = initial amount. Hence<br>
+        A<sub>0</sub> = 10,000 Rupees.<br>
+        A<sub>n</sub> = (Compound amount at the end of (n-1)<sup>th</sup> year )+(interest earned during n<sup>th</sup> year) <br> 
+        A<sub>n</sub> = A<sub>n-1</sub> + (A<sub>n-1</sub>) x (0.09) <br>
+        A<sub>n</sub> = (1.09) x A<sub>n-1</sub><br>
+        Hence the recurrence relation to compute amount n<sup>th</sup> year is<br>
+        <center> A<sub>n-1</sub> = 1.09 A<sub>n-1</sub></center><br>
+        
+        <li><b>Solving Recurrence Relation -</b></li>
+        A numeric function can be described by a recurrence relation together with an appropriate set of boundary conditions. Such a numeric function is called as solution of the recurrence relation. Solution of recurrence relation is a sequence satisfying recurrence relation.
+        <ol>
+          <li>        <b>Substitution Method -</b><br>
+            Simple class of recurrence relations can be solved by substitution method. The substitution method is also called as iterative method which is used for finding formula for recurrence relation. Solving the recurrence relation by iteration means finding an explicit formula for f(n). This is done in two steps:<br>
+            <ul type="disk">
+            <li> the recurrence formula iteratively and look for a pattern to predict an explicit formula using initial conditions.</li>
+            <li>Use induction to prove the predicted formula.</li>
+            </ul>
+                  </li>
+        </ol>
+
+
+        
+
+
+
+
+
+
+
+
+      
+
+
+
+
 
 
          
