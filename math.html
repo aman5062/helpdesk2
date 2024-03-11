@@ -907,11 +907,52 @@
       (i) f(0)=1 (initial value)<br>
       (ii) f(n)=n*f(n-1), n&GreaterEqual;1 (recurrence relation)<br><br>
 
-      Eg- Fibonacci Numbers
+      Eg- <b>Fibonacci Numbers</b>
       The number 1, 1, 2, 3, 5, 8,..... are Fibonacci numbers. They have a Fibonacci number, except the first two, is the sum of two immediately preceding Fibonacci numbers. <br>
       The recursive definition of n<sup>th</sup> Fibonacci number as:<br>
       (a)f_{1}=f_{2}=1 (initial condition)<br>
-      (b) f_{n}=f_{n-1}+f_{n-2},n&GreaterEqual;3 (recurrence relation)<br>
+      (b) f_{n}=f_{n-1}+f_{n-2},n&GreaterEqual;3 (recurrence relation)<br><br>
+
+      Eg - <b>Tower of Hanoi</b><br>
+      Let H<sub>n</sub> denote the number of moves needed to solve puzzle with n disks.
+       Let us define H<sub>n</sub> recursively. Clearly H<sub>n</sub>=1. Let n &GreaterEqual; 2. Consider top (n-1) disks. We can move top (n-1) disks, following the rules to middle peg using H<sub>n-1</sub> moves using third peg as an auxiliary. That leaves the largest disk at first peg. It takes one move to transfer it to third peg. Now, the n-1 disks at middle peg can be moved to third peg using peg as auxiliary peg in H<sub>n-1</sub> moves. Hence total number of moves H<sub>n</sub> can be recursively defined as<br>
+       <center>
+          H<sub>n</sub> = 1, if n=1<br>
+          H<sub>n</sub> = 2H<sub>n-1</sub> + 1, otherwise       </center><br>
+
+        <li><b>Recursive relation -</b></li>
+        A recurrence relation for the sequence {a<sub>n</sub>} is an equation that expresses a<sub>n</sub>, in terms of one or more preceding terms of the sequence, viz, a<sub>0</sub>,a<sub>1</sub>,...,a<sub>n-1</sub>, for n&GreaterEqual; n<sub>0</sub>, Here n<sub>0</sub> is used to define initial condition and is a nonnegative integer. A sequence is called as a solution of a recurrence relation if its terms satisfy the recurrence relation<br><br>
+     
+        <li><b>Application -</b></li>
+        Recurrence relations are used to model variety of problems. Few problems are inherently recursive, viz, Towers of Hanoi, divide and conquer algorithms, computing compound interest etc. Let us consider following example of computing compound interest.<br>
+
+        Eg-<b>
+          Hemant deposits Rupees 10,000 in a saving account at bank. The annual interest rate of bank is 9%. Define recursive formula (recurrence relation) to compute the amount A<sub>n</sub>. Hemant will have in his account at the end of n<sup>th</sup> years.
+        </b><br>
+        <b>Sol-</b>
+
+        Let A<sub>n</sub> denote the amount after n<sup>th</sup> year. Clearly A<sub>0</sub> = initial amount. Hence<br>
+        A<sub>0</sub> = 10,000 Rupees.<br>
+        A<sub>n</sub> = (Compound amount at the end of (n-1)<sup>th</sup> year )+(interest earned during n<sup>th</sup> year) <br> 
+        A<sub>n</sub> = A<sub>n-1</sub> + (A<sub>n-1</sub>) x (0.09) <br>
+        A<sub>n</sub> = (1.09) x A<sub>n-1</sub><br>
+        Hence the recurrence relation to compute amount n<sup>th</sup> year is<br>
+        <center> A<sub>n-1</sub> = 1.09 A<sub>n-1</sub></center><br>
+        
+        <li><b>Solving Recurrence Relation -</b></li>
+        A numeric function can be described by a recurrence relation together with an appropriate set of boundary conditions. Such a numeric function is called as solution of the recurrence relation. Solution of recurrence relation is a sequence satisfying recurrence relation.
+        <ol>
+          <li>        <b>Substitution Method -</b><br>
+            Simple class of recurrence relations can be solved by substitution method. The substitution method is also called as iterative method which is used for finding formula for recurrence relation. Solving the recurrence relation by iteration means finding an explicit formula for f(n). This is done in two steps:<br>
+            <ul type="disk">
+            <li> the recurrence formula iteratively and look for a pattern to predict an explicit formula using initial conditions.</li>
+            <li>Use induction to prove the predicted formula.</li>
+            </ul>
+                  </li>
+        </ol>
+
+
+        
 
 
 
