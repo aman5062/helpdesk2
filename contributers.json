@@ -33,5 +33,15 @@
         "image" : "contributers_image/priyanshu.png",
         "name" : "Priyanshu Gupta",
         "dept" : "Computer Architecture"
+    },
+    {
+        "image" : "contributers_image/deepak.jpg",
+        "name" : "Deepak Rana",
+        "dept" : "Computer Architecture" 
+    },
+    {
+        "image" : "contributers_image/kunal.jpg",
+        "name" : "Kunal raj sharma",
+        "dept" : "Python"
     }
 ]
