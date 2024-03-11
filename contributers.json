@@ -39,10 +39,10 @@
         "image" : "contributers_image/kunal.jpg",
         "name" : "Kunal raj sharma",
         "dept" : "Python"
-    }
+    },
     {
         "image" : "contributers_image/chandan.jpg",
         "name" : "Chandan Kumar",
         "dept" : "Web Technology"
-     },
+     }
 ]
