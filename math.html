@@ -919,7 +919,9 @@
        Let us define H<sub>n</sub> recursively. Clearly H<sub>1</sub>=1. Let n &GreaterEqual; 2. Consider top (n-1) disks. We can move top (n-1) disks, following the rules to middle peg using H<sub>n-1</sub> moves using third peg as an auxiliary. That leaves the largest disk at first peg. It takes one move to transfer it to third peg. Now, the n-1 disks at middle peg can be moved to third peg using peg as auxiliary peg in H<sub>n-1</sub> moves. Hence total number of moves H<sub>n</sub> can be recursively defined as<br>
        <center>
           H<sub>n</sub> = 1, if n=1<br>
-          H<sub>n</sub> = 2H<sub>n-1</sub> + 1, otherwise       </center><br>
+          H<sub>n</sub> = 2H<sub>n-1</sub> + 1, otherwise       </center>
+      <b>NOTE-</b><br>
+      The minimum number of moves required to solve a tower of hanoi puzzle  is 2<sup>n</sup> -1 where n is a number of disk.<br><br>
 
         <li><b>Recursive relation -</b></li>
         A recurrence relation for the sequence {a<sub>n</sub>} is an equation that expresses a<sub>n</sub>, in terms of one or more preceding terms of the sequence, viz, a<sub>0</sub>,a<sub>1</sub>,...,a<sub>n-1</sub>, for n&GreaterEqual; n<sub>0</sub>, Here n<sub>0</sub> is used to define initial condition and is a nonnegative integer. A sequence is called as a solution of a recurrence relation if its terms satisfy the recurrence relation<br><br>
