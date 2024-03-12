@@ -913,9 +913,10 @@
       (a)f_{1}=f_{2}=1 (initial condition)<br>
       (b) f_{n}=f_{n-1}+f_{n-2},n&GreaterEqual;3 (recurrence relation)<br><br>
 
-      Eg - <b>Tower of Hanoi</b><br>
+      Eg - <b>Tower of Hanoi-</b><br>
+      It is also called <b> problem of Benares Temple or Tower of Brahma</b> <br>
       Let H<sub>n</sub> denote the number of moves needed to solve puzzle with n disks.
-       Let us define H<sub>n</sub> recursively. Clearly H<sub>n</sub>=1. Let n &GreaterEqual; 2. Consider top (n-1) disks. We can move top (n-1) disks, following the rules to middle peg using H<sub>n-1</sub> moves using third peg as an auxiliary. That leaves the largest disk at first peg. It takes one move to transfer it to third peg. Now, the n-1 disks at middle peg can be moved to third peg using peg as auxiliary peg in H<sub>n-1</sub> moves. Hence total number of moves H<sub>n</sub> can be recursively defined as<br>
+       Let us define H<sub>n</sub> recursively. Clearly H<sub>1</sub>=1. Let n &GreaterEqual; 2. Consider top (n-1) disks. We can move top (n-1) disks, following the rules to middle peg using H<sub>n-1</sub> moves using third peg as an auxiliary. That leaves the largest disk at first peg. It takes one move to transfer it to third peg. Now, the n-1 disks at middle peg can be moved to third peg using peg as auxiliary peg in H<sub>n-1</sub> moves. Hence total number of moves H<sub>n</sub> can be recursively defined as<br>
        <center>
           H<sub>n</sub> = 1, if n=1<br>
           H<sub>n</sub> = 2H<sub>n-1</sub> + 1, otherwise       </center><br>
@@ -948,8 +949,27 @@
             <li> the recurrence formula iteratively and look for a pattern to predict an explicit formula using initial conditions.</li>
             <li>Use induction to prove the predicted formula.</li>
             </ul>
-                  </li>
+            </li>
+            Eg-Let us consider the following recurrence relation: <br>
+            a<sub>n</sub> = a<sub>n-1</sub> + 3, n&GreaterEqual;2 and a<sub>n</sub> = 2 for n = 1.<br>
+            Applying it for a<sub>n-1</sub> we get<br>
+            a<sub>n</sub> = (a<sub>n-2</sub>+3) + 3<br>            
+            a<sub>n</sub> = a<sub>n-2</sub>+ (3 x 2)<br>
+            Applying it for a<sub>n-2</sub> we get<br>
+
+            a<sub>n</sub> = (a<sub>n-3</sub>+3)+2(3)   <br>
+            a<sub>n</sub> = (a<sub>n-3</sub>)+3(3)<br>
+            
+            Applying recurrence for a<sub>n-3</sub> we get<br>
+            a<sub>n</sub> = (a<sub>n-4</sub>)+4(3)<br>
+            After i iterations we will get<br>
+            a<sub>n</sub> = (a<sub>n-i</sub>)+i(3)<br>
+            As we know that the term a<sub>n-i</sub> will become a<sub>1</sub> after (n-1) such substitutions, that is, for i=n-1.<br> Hence<br>
+             a<sub>n</sub> = a<sub>1</sub> + (n-1)(3)<br>
+             a<sub>1</sub> = 2,<br>
+             a<sub>n</sub> = 2+(n-1)(3) is solution of given recurrence relation. 
         </ol>
+        
 
 
         
