@@ -14,11 +14,7 @@
         "name" : "Ritesh kumar",
         "dept" : "Computer Architecture"
      },
-     {
-        "image" : "contributers_image/nikhil.jpg",
-        "name" : "Nikhil kumar",
-        "dept" : "Web Technology"
-     },
+     
     {
         "image" : "contributers_image/ashutosh.jpg",
         "name" : "Ashutosh Nayak",
@@ -43,5 +39,10 @@
         "image" : "contributers_image/kunal.jpg",
         "name" : "Kunal raj sharma",
         "dept" : "Python"
-    }
+    },
+    {
+        "image" : "contributers_image/chandan.jpg",
+        "name" : "Chandan Kumar",
+        "dept" : "Web Technology"
+     }
 ]
