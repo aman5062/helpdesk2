@@ -1023,7 +1023,28 @@
       When i = k, we get 2<sup>k</sup> = n and T(n/n) = T(1)=1 by initial conditions.<br>
       Hence if 2<sup>k</sup> = n, after k<sup>th</sup> substitutions T(n) reduces to T(1).<br>
       Hence k=log<sub>2</sub>n and the solution of recurrence is <br>
-      T(n)=log<sub>2</sub>n
+      T(n)=log<sub>2</sub>n<br>
+      <br>
+
+      <li><b>Growth of Functions -</b></li>
+      Given functions f and g, we wish to show how to quantify the statement:<br>
+        <center>“g grows as fast as f”.</center>
+      The growth of functions is directly related to the complexity of algorithms. We
+      are guided by the following principles.<br>
+      • We only care about the behavior for “large” problems.<br>
+      • We may ignore implementation details such as loop counter incrementation.<br><br> 
+
+      The growth of function is often described using special notation such as big-O, big-Omega, and big-Theta.<br>
+
+      <li><b>Big-O Notation -</b></li>
+      Let f and g be functions from the set of integers or the set of real numbers to the set of real
+      numbers. We say that f (x) is O(g(x)) if there are constants C and k such that<br>
+        <center>|f (x)| ≤ C|g(x)|  </center>
+      whenever x>k. <br>
+      The constants C and k in the definition of big-O notation are called witnesses to the
+      relationship f (x) is O(g(x))
+
+
 
 
 
