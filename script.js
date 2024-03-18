@@ -19,7 +19,6 @@ function handleScroll() {
     }
 }
 
-
 function highlightActiveNavLink() {
     const navLinks = document.querySelectorAll('#myNav .nav-link');
     const currentPath = window.location.pathname;
@@ -58,3 +57,39 @@ function share(){
         window.open(whatsappLink, "_blank");
       
 }
+function createPopup() {
+    var popupDiv = document.createElement('div');
+    popupDiv.id = 'popup';
+    popupDiv.classList.add('popup');
+
+    var closeButton = document.createElement('span');
+    closeButton.innerHTML = '&times;';
+    closeButton.classList.add('close-btn');
+    closeButton.onclick = closePopup;
+    
+    var heading = document.createElement('h2');
+    heading.textContent = 'Happy Holi!';
+
+    var paragraph = document.createElement('p');
+    paragraph.textContent = 'Wishing you a colorful and joyful Holi celebration!';
+
+    popupDiv.appendChild(closeButton);
+    popupDiv.appendChild(heading);
+    popupDiv.appendChild(paragraph);
+
+    document.body.appendChild(popupDiv);
+
+    // Display the popup
+    popupDiv.style.display = 'block';
+}
+
+// Function to close the popup
+function closePopup() {
+    var popupDiv = document.getElementById('popup');
+    if (popupDiv) {
+        popupDiv.style.display = 'none';
+    }
+}
+
+// Create and display the popup when the page loads
+window.onload = createPopup;

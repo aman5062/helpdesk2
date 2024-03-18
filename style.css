@@ -7,7 +7,6 @@
   outline: none;
   box-shadow: none;
 }
-
 input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
@@ -38,8 +37,13 @@ input[type='number']::-webkit-outer-spin-button {
 #body,
 #logo {
 	height: auto;
+	
 }
+#body{
+	background-image: linear-gradient(135deg, #ffb3b393, #ffd6998f, #ffffb396, #b3ffb39e, #b3b3ff93, #dab3ff94, #ffb3e68c);
 
+
+}
 .tab,
 .topnav a,
 a {
@@ -435,4 +439,28 @@ li.nav-item a{
  user-select: none;
  pointer-events: none;
 
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-image: linear-gradient(-45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #8f8fd6, #4b0082, #9400d3);
+
+	border: 2px solid #f39c12;
+	padding: 20px;
+	z-index: 1000;
+	max-width: 80%;
+	text-align: center;
+}
+.popup h2 {
+	color: #f39c12;
+}
+.close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
 }
