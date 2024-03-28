@@ -1042,7 +1042,22 @@
         <center>|f (x)| ≤ C|g(x)|  </center>
       whenever x>k. <br>
       The constants C and k in the definition of big-O notation are called witnesses to the
-      relationship f (x) is O(g(x))
+      relationship f (x) is O(g(x)).<br><br>
+      <b><li>Application-</li></b>
+      One of the advantages of using big-O notation is that we can estimate the growth of a function without worrying
+      about constant multipliers or smaller order terms. This means that using big-O notation we do not have to worry about the hardware and software used to implement an algorithm.<br>
+      Futhermore, using big-O notation we can assume that the differnt operation used in an algorithm take the same time which simplifies the analysis considerably. Big-O notation is used extensively to estimate the number of operation and algorithm uses as its input growth.<br><br>
+
+      Eg-<b>Show that f(x) = x<sup>2</sup> + 2x + 1 is O(x<sup>2</sup>).<br>
+      Sol</b><br>
+      Here, f(x) = x<sup>2</sup> + 2x + 1 & g(x) = x<sup>2</sup>.<br>
+      when, x > 1<br>
+       x < x<sup>2</sup> & 1 < x<sup>2</sup><br> 
+       0 ≤ (x<sup>2</sup> + 2x + 1) ≤ (x<sup>2</sup> + 2x<sup>2</sup> + x<sup>2</sup>) ≤ 4x2<br>
+       (x<sup>2</sup> + 2x + 1) ≤ 4x2 {whenever x > 1}<br>
+       here, C = 4 and k = 1 <br>
+       <img src="img/big0.png" alt="bigO" width="350px">
+
 
 
 
