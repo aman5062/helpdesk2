@@ -288,8 +288,54 @@ An Opreting System Architecture is the fundamental Design and Structure of an Op
 <img src="img/Opreting System/architecture .png" alt=""id="img1">
 <br><br><br>
 
+   
+<h3><b><u><mark>Deadlock:-</mark></u></b></h3>
+A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process.<BR> 
+
+Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once they are in front of each other. A similar situation occurs in operating systems when there are two or more processes that hold some resources and wait for resources held by other(s). For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1. <br>
+<img src="img/Opreting System/dead.png" alt=""id="img1"><br>
+
+ 
+<h5>Examples Of Deadlock:-</h5>
+<ol type="i">
+<li>The system has 2 tape drives. P0 and P1 each hold one tape drive and each needs another one.</li>
+<li>Semaphores A and B, initialized to 1, P0, and P1 are in deadlock as follows:</li> 
+</ol>
+<ol type="a">
+ <li> P0 executes wait(A) and preempts.</li>
+ <li>P1 executes wait(B).</li> 
+  <li>Now P0 and P1 enter in deadlock.</li>
+</ol>
+<img src="img/Opreting System/dwd.png" alt=""id="img1"><br><br>
+
+<b>Difference between Starvation and Deadlock:-</b><br>
+<img src="img/Opreting System/diff.png" alt=""id="img1"><br><br>
+
+<h4><b>Necessary conditions for Deadlocks:-</b></h4>
+<ol type="i">
+  <li><mark>Mutual Exclusion:-</mark></li>
+    A resource can only be shared in mutually exclusive manner. It implies, if two process cannot use the same resource at the same time.
+    Mutual section from the resource point of view is the fact that a resource can never be used by more than one process simultaneously which is fair enough but that is the main reason behind the deadlock. If a resource could have been used by more than one process at the same time then the process would have never been waiting for any resource.However, if we can be able to violate resources behaving in the mutually exclusive manner then the deadlock can be prevented.
 
 
-    
+  <li><mark>Hold and Wait:-</mark></li>
+    A process waits for some resources while holding another resource at the same time.
+    Hold and wait condition lies when a process holds a resource and waiting for some other resource to complete its task. Deadlock occurs because there can be more than one process which are holding one resource and waiting for other in the cyclic order.
+
+However, we have to find out some mechanism by which a process either doesn't hold any resource or doesn't wait. That means, a process must be assigned all the necessary resources before the execution starts. A process must not wait for any resource once the execution has been started.
+  <li><mark>No preemption:-</mark></li>
+    The process which once scheduled will be executed till the completion. No other process can be scheduled by the scheduler meanwhile.
+    Deadlock arises due to the fact that a process can't be stopped once it starts. However, if we take the resource away from the process which is causing deadlock then we can prevent deadlock.
+
+This is not a good approach at all since if we take a resource away which is being used by the process then all the work which it has done till now can become inconsistent.
+
+Consider a printer is being used by any process. If we take the printer away from that process and assign it to some other process then all the data which has been printed can become inconsistent and ineffective and also the fact that the process can't start printing again from where it has left which causes performance inefficiency.
+    <li><mark>Circular Wait:-</mark></li>
+      All the processes must be waiting for the resources in a cyclic manner so that the last process is waiting for the resource which is being held by the first process.
+      To violate circular wait, we can assign a priority number to each of the resource. A process can't request for a lesser priority resource. This ensures that not a single process can request a resource which is being utilized by some other process and no cycle will be formed.
+      </ol><br>
+      
+
+
     </div>
 </html>
