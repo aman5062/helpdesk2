@@ -293,7 +293,8 @@ An Opreting System Architecture is the fundamental Design and Structure of an Op
 A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process.<BR> 
 
 Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once they are in front of each other. A similar situation occurs in operating systems when there are two or more processes that hold some resources and wait for resources held by other(s). For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1. <br>
-<img src="img/Opreting System/dead.png" alt=""id="img1"><br>
+<img src="img/Opreting System/dead.png" alt=""id="img1">
+<img src="img/Opreting System/ded.png" alt=""id="img1"><br>
 
  
 <h5>Examples Of Deadlock:-</h5>
@@ -334,7 +335,141 @@ Consider a printer is being used by any process. If we take the printer away fro
       All the processes must be waiting for the resources in a cyclic manner so that the last process is waiting for the resource which is being held by the first process.
       To violate circular wait, we can assign a priority number to each of the resource. A process can't request for a lesser priority resource. This ensures that not a single process can request a resource which is being utilized by some other process and no cycle will be formed.
       </ol><br>
-      
+
+      <h4><b>Strategies for handling Deadlock:-</b></h4>
+      <ol type="1">
+        <li><mark>Deadlock Ignorance:-</mark></li>
+        Deadlock Ignorance is the most widely used approach among all the mechanism. This is being used by many operating systems mainly for end user uses. In this approach, the Operating system assumes that deadlock never occurs. It simply ignores deadlock. This approach is best suitable for a single end user system where User uses the system only for browsing and all other normal stuff.
+
+There is always a tradeoff between Correctness and performance. The operating systems like Windows and Linux mainly focus upon performance. However, the performance of the system decreases if it uses deadlock handling mechanism all the time if deadlock happens 1 out of 100 times then it is completely unnecessary to use the deadlock handling mechanism all the time.
+
+<li><mark>Deadlock prevention:-</mark></li>
+Deadlock happens only when Mutual Exclusion, hold and wait, No preemption and circular wait holds simultaneously. If it is possible to violate one of the four conditions at any time then the deadlock can never occur in the system.
+The idea behind the approach is very simple that we have to fail one of the four conditions but there can be a big argument on its physical implementation in the system.
+
+<li><mark> Deadlock avoidance:-</mark></li>
+In deadlock avoidance, the operating system checks whether the system is in safe state or in unsafe state at every step which the operating system performs. The process continues until the system is in safe state. Once the system moves to unsafe state, the OS has to backtrack one step.
+
+In simple words, The OS reviews each allocation so that the allocation doesn't cause the deadlock in the system.
+
+<li><mark>Deadlock Detection:-</mark></li>
+A deadlock can be detected by by a Resourse schedular as it tracks all the resoures that are allocated to different processes. after a deadlock is detected.</ol><br>
+<b>It can resolved by following method</b><br>
+<ul type="disc">
+  <li>All the processes that are involved in the deadlock are terminated. This is not a good approach as all the progress made by the processes is destroyed.
+    Resources can be preempted from some processes and given to others till the deadlock is Resolved.</li></ul> <br>
+    <h4><b> Banker's Algorithm</b></h4>
+    The Banker's Algorithm is a Resource allocation and deadlock avoidance algorithm that tests. for safety by stimulating the allocation for predetermined maximum possible amounts of all resources, then makes an "s- state" check to test for possible activities, before deciding
+    whether the allocation should allowed to Continue.<br>
+    1. Active:= Running U Blocked;
+
+for k=1…r
+
+New_ request[k]:= Requested_ resources[requesting_ process, k];<br>
+
+2. Simulated_ allocation:= Allocated_ resources;
+
+for k=1…..r //Compute projected allocation state
+
+Simulated_ allocation [requesting _process, k]:= Simulated_ allocation [requesting _process, k] + New_ request[k];<br>
+
+3. feasible:= true;
+
+for k=1….r // Check whether projected allocation state is feasible
+
+if Total_ resources[k]< Simulated_ total_ alloc [k] then feasible:= false;
+<br>
+4. if feasible= true
+
+then // Check whether projected allocation state is a safe allocation state
+
+while set Active contains a process P1 such that
+
+For all k, Total _resources[k] – Simulated_ total_ alloc[k]>= Max_ need [l ,k]-Simulated_ allocation[l, k]
+
+Delete Pl from Active;
+
+for k=1…..r
+
+Simulated_ total_ alloc[k]:= Simulated_ total_ alloc[k]- Simulated_ allocation[l, k];
+<br>
+5. If set Active is empty
+
+then // Projected allocation state is a safe allocation state
+
+for k=1….r // Delete the request from pending requests
+
+Requested_ resources[requesting_ process, k]:=0;
+
+for k=1….r // Grant the request
+
+Allocated_ resources[requesting_ process, k]:= Allocated_ resources[requesting_ process, k] + New_ request[k];
+
+Total_ alloc[k]:= Total_ alloc[k] + New_ request[k];<br>
+
+
+
+<h3><b><u>Memory Management:-</u></b></h3>
+
+ Main memory refers to a that is the internal memory to the computer. The word main is used to distinguish it from external mass storage devices such as disk drives Main memory is also known as RAM. The computer is able to change only data that is in main memory Therefore every program we execute and every. file we access must be copied from a storage device into main memory.
+All the programs are loaded in the main mem- ory for execution. Sometimes complete program is loaded into the memory, but sometimes a certain part or routine of the program is loaded into the main memory only when it is called. by the program, this mechanism is called Dynamic loading, this enhance the performance.<br>
+
+<h5><B>Memory Management Techniques:-</B></h5>
+The memory management techniques can be classified into following main categories:-
+<ul type="disc">
+  <li>Contiguous memory management schemes</li>
+  <li>Non-Contiguous memory management schemes</li>
+</ul>
+
+<img src="img/Opreting System/mm.png" alt=""id="img1">
+
+<h5><b><mark>Contiguous memory management:-</mark></b></h5>
+Contiguous memory allocation is a memory allocation strategy. As the name implies, we utilize this technique to assign contiguous blocks of memory to each task. Thus, whenever a process asks to access the main memory, we allocate a continuous segment from the empty region to the process based on its size. In this technique, memory is allotted in a continuous way to the processes.<br> 
+<b>Contiguous Memory Management has two types:-</b><br>
+<ol type="1">
+  <li><b>Fixed Partitioning =></b>The main memory is divided into several fixed-sized partitions in a fixed partition memory management scheme or static partitioning. These partitions can be of the same size or different sizes. Each partition can hold a single process. The number of partitions determines the degree of multiprogramming, i.e., the maximum number of processes in memory. These partitions are made at the time of system generation and remain fixed after that.</li>
+
+  <b>Advantages of Fixed Partitioning memory management schemes:</b>
+<ul type="disc">
+  <li>Simple to implement.</li>
+  <li>Easy to manage and design.</li></ul>
+  <b> Disadvantages of Fixed Partitioning memory management schemes:</b>
+  <ul type="disc">
+  <li>This scheme suffers from internal fragmentation.
+  </li>
+  <li>The number of partitions is specified at the time of system generation.
+  </li>
+    
+  
+
+
+<img src="img/Opreting System/fix.png" alt=""id="img1">
+
+Internal fragmentation is found in fixed partition scheme. To overcome the problem of internal fragmentation, instead of fixed partition scheme, variable partition scheme is used.</ul><br>
+
+<li><b>Dynamic Partitioning =></b>The dynamic partitioning was designed to overcome the problems of a fixed partitioning scheme. In a dynamic partitioning scheme, each process occupies only as much memory as they require when loaded for processing. Requested processes are allocated memory until the entire physical memory is exhausted or the remaining space is insufficient to hold the requesting process. In this scheme the partitions used are of variable size, and the number of partitions is not defined at the system generation time.</li><br>
+<b>Advantages of Dynamic Partitioning memory management schemes:</b>
+<ul type="disc">
+  <li>Simple to implement.</li>
+  <li>Easy to manage and design.</li>
+</ul>
+
+
+<b>Disadvantages of Dynamic Partitioning memory management schemes:</b>
+<ul type="disc">
+  <li>This scheme also suffers from internal fragmentation.
+    </li>
+  <li>The number of partitions is specified at the time of system segmentation.</li>
+</ul>
+</ol>
+
+
+
+
+
+
+
+
 
 
     </div>
