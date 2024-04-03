@@ -170,27 +170,32 @@
         }
 
         fetch("https://arambhsoftech.com/admin_login_helpdesk.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                username: username,
-                password: password
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === "success") {
-                window.location.href = "all_users.html";
-            } else {
-                document.getElementById("error-message").textContent = data.message;
-                document.getElementById("error-message").style.display = "block";
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              username: username,
+              password: password
+          })
+      })
+      .then(response => {
+          console.log("Response status:", response.status);
+          return response.json();
+      })
+      .then(data => {
+          console.log("Response data:", data);
+          if (data.status === "success") {
+              window.location.href = "all_users.html";
+          } else {
+              document.getElementById("error-message").textContent = data.message;
+              document.getElementById("error-message").style.display = "block";
+          }
+      })
+      .catch(error => {
+          console.error("Error:", error);
+      });
+      
     });
 </script>
         </div>
