@@ -10,7 +10,7 @@
 <script src="script.js"></script>
 <script>
     function wishme(name){
-        document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ name+"</b>";
+        document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ name+"</b>";}
  // Function to retrieve the value of a cookie by its name
 function getCookie(cookieName) {
     const cookies = document.cookie.split(';');
@@ -120,29 +120,7 @@ if (cookieValue === "active") {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
   </div>
 </div>
-<script>function onloading(){
-    var cookieString = document. cookie;
-    var cookies = cookieString. split(';');
-    var len = cookies. length;
-    var foundActiveUser = false;
-    for(i=0; i<len; i++){
-        var n = cookies[i].split("=");
-        for(j=0; j<2; j++){
 
-        if(n[j]==="name"){
-         //   alert("Welcome Back "+n[1]);
-           // wishme(n[1]);
-        break;
-        }}
-       
-    }
-   }
-   
-       
-      
-        
-   }
-</script>
 <body >  
     <script>
        
