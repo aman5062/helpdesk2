@@ -134,49 +134,65 @@
           <span><i class="fa fa-arrow-up" aria-hidden="true" id="arrow"></i></span>
       </a>
       </div>
-      <form id="login-form">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
-    
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-    
-        <input type="submit" value="Login">
-    </form>
-    
-    <div id="error-message" class="error" style="display: none;"></div>
-    
-    <script>
-        document.getElementById("login-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-    
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-    
-            fetch("https://arambhsoftech.com/admin_login_helpdesk.php", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    username: username,
-                    password: password
-                })
+      <div id="login-form-container" class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <div id="error-message" class="error" style="display: none;"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Fetch the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const usernameParam = urlParams.get('username');
+        const passwordParam = urlParams.get('password');
+
+        // Check if username and password are provided in the URL parameters
+        if (usernameParam && passwordParam) {
+            username = usernameParam;
+            password = passwordParam;
+        }
+
+        fetch("https://arambhsoftech.com/admin_login_helpdesk.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === "success") {
-                    window.location.href = "all_users.html";
-                } else {
-                    document.getElementById("error-message").textContent = data.message;
-                    document.getElementById("error-message").style.display = "block";
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                window.location.href = "all_users.html";
+            } else {
+                document.getElementById("error-message").textContent = data.message;
+                document.getElementById("error-message").style.display = "block";
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
         });
-    </script>
+    });
+</script>
         </div>
        </div>
 </body>
