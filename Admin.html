@@ -149,55 +149,25 @@
         </form>
         <div id="error-message" class="error" style="display: none;"></div>
     </div>
-</div>
-
-<script>
-    document.getElementById("login-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-
-        // Fetch the URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const usernameParam = urlParams.get('username');
-        const passwordParam = urlParams.get('password');
-
-        // Check if username and password are provided in the URL parameters
-        if (usernameParam && passwordParam) {
-            username = usernameParam;
-            password = passwordParam;
-        }
-
-        fetch("https://arambhsoftech.com/admin_login_helpdesk.php", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-              username: username,
-              password: password
-          })
-      })
-      .then(response => {
-          console.log("Response status:", response.status);
-          return response.json();
-      })
-      .then(data => {
-          console.log("Response data:", data);
-          if (data.status === "success") {
-              window.location.href = "all_users.html";
-          } else {
-              document.getElementById("error-message").textContent = data.message;
-              document.getElementById("error-message").style.display = "block";
-          }
-      })
-      .catch(error => {
-          console.error("Error:", error);
-      });
-      
-    });
-</script>
+    
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+    
+            // Simulate a login check using JavaScript
+            if (username === "Admin@1299" && password === "Admin_hu") {
+                // Redirect to the dashboard or desired page
+                window.location.href = "all_users.html";
+            } else {
+                // Show error message
+                document.getElementById("error-message").textContent = "Invalid username or password";
+                document.getElementById("error-message").style.display = "block";
+            }
+        });
+    </script>
         </div>
        </div>
 </body>
