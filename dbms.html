@@ -1,144 +1,481 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta meta name="viewport" content="width=device-width, user-scalable=no" />
     <title>Helpdesk</title>
-    <link rel="stylesheet" type="text/css" href="style.css?v=2" />
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f2f2f2;
-        }
-
-        .container {
-            background-color: #fff;
-            margin: 20px;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 60%;
-            max-width: 400px;
-        }
-
-        .container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .form-group button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        @media screen and (max-width: 600px) {
-            .container {
-                width: 90%;
-            }
-        }
-    </style>
 </head>
+<link rel="stylesheet" type="text/css" href="style.css?v=2" />
+<script src="script.js"></script>
+<script>
+ // Function to retrieve the value of a cookie by its name
+function getCookie(cookieName) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        // Check if the cookie starts with the desired name
+        if (cookie.startsWith(cookieName + '=')) {
+            return cookie.substring(cookieName.length + 1);
+        }
+    }
+    return null; // Return null if cookie not found
+}
+
+// Check if the cookie 'user' exists
+var cookieValue = getCookie('user');
+
+// If the cookie value is "active", continue, else redirect to the login page
+if (cookieValue === "active") {
+    // Retrieve the username from the cookie
+    const username = getCookie('username');
+    if (username) {
+        // Prepare the data to be sent to the API
+        const data = { username: username };
+
+        // Send the data to the API endpoint
+        fetch('https://arambhsoftech.com/Helpdesk_login.php?username=' + encodeURIComponent(username), {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // Log the response from the API
+            // Continue with further actions if needed
+        })
+        .catch(error => {
+            console.error('Error:', error); // Log any errors
+            // Handle errors if needed
+        });
+    } else {
+        console.log('Username not found in cookie'); // Log if username not found in cookie
+        // Redirect to the login page
+        window.location.href = "login.html";
+    }
+} else {
+    // Redirect to the login page
+    //window.location.href = "login.html";
+    newuser();
+}
+function newuser(){
+    
+}
+</script>
+<script>
+    window.onload = function() {
+        
+    };
+</script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+	crossorigin="anonymous"
+>
+
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    
+  $(document).ready(function() {
+    if (window.location.href.indexOf("daa_viva") > -1) {
+        location.href = 'json/daa_viva.json';
+    }
+    else if (window.location.href.indexOf("oops_viva") > -1 ){
+        location.href = 'json/oops_viva.json';
+    }
+  });
+</script>
+<style>
+  *{
+      padding: 0;
+  }
+  #all{
+      
+      padding: 5px;
+
+  }
+  .box{
+      /* border: 1px black solid; */
+      padding: 2px;
+      margin: 5px;
+      border-radius: 10px;
+  }
+  #body{
+    position: relative;
+  }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
+  </div>
+</div>
+<script>function onloading(){
+    var cookieString = document. cookie;
+    var cookies = cookieString. split(';');
+    var len = cookies. length;
+    var foundActiveUser = false;
+    for(i=0; i<len; i++){
+        var n = cookies[i].split("=");
+        for(j=0; j<2; j++){
+
+        if(n[j]===" name"){
+         //   alert("Welcome Back "+n[1]);
+            wishme(n[1]);
+        break;
+        }}
+       
+    }
+   }
+   function wishme(name){
+        document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ name+"</b>";
+       
+      
+        
+   }
+</script>
+<body onload="redirect();" >  
+    <script>
+       
+
+        fetch("json/dbms_viva.json")
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(function(datas) {
+            let thedata = document.querySelector("#viva");
+            let out = "";
+            for (let data of datas) {
+                out += `<h4>${data.sno}. ${data.question}</h4>
+                <h6 style="padding-left:15px;">${data.answer}</h6><br>
+                `;
+            }
+            thedata.innerHTML = out;
+        })
+        .catch(function(error) {
+            console.error('Error during fetch:', error);
+        });
+      </script>
+      <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
+        <div class="container-fluid">
+          <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="logo.png" id="imglogo">
+            <span class="fs-4 mr-5 lo"><h2 class="bold-text">Helpdesk</h2></span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav nav-pills navbar-nav ms-auto" id="myNav">
+              <!-- Sem1 -->
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 1</a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link dropdown-item" href="c_language.html">C-Language</a></li>
+                                 
+                 </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 2</a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link dropdown-item" href="data_structure.html">Data Structure</a></li>
+                    </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 3</a>
+                <ul class="dropdown-menu">
+                  <!-- Add subjects for Sem1 here -->
+                  <li><a class="nav-link dropdown-item" href="dbms.html">DBMS</a></li>
+                  <li><a class="nav-link dropdown-item" href="mech_updated.html">Mechanics</a></li>
+                  <li><a class="nav-link dropdown-item" href="object_updated.html">OOPS Code</a></li>
+                  <li><a class="nav-link dropdown-item" href="daa_updated.html">DAA</a></li>
+                </ul>
+              </li>
+              <!-- Sem2 -->
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 4</a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link dropdown-item" href="python.html">Python</a></li>
+                    <li><a class="nav-link dropdown-item" href="os.html">OS</a></li>
+                    <li><a class="nav-link dropdown-item" href="web_tech.html">Web Technologies</a></li>
+                    <li><a class="nav-link dropdown-item" href="archi.html">Comp. Architecture</a></li>
+                    <li><a class="nav-link dropdown-item" href="math.html">Mathematics</a></li>     
+                    <li><a class="nav-link dropdown-item" href="archi_lab.html">Comp. Architecture Lab</a></li>
+                    <li><a class="nav-link dropdown-item" href="web_tech_lab.html">Web Technologies Lab</a></li>
+                    <li><a class="nav-link dropdown-item" href="os_lab.html">OS Lab</a></li>    
+                    <li><a class="nav-link dropdown-item" href="startup.html">Startup</a></li>   
+                </ul>
+                <li><a class="nav-link dropdown-item" href="contributers.html"><center>Our Valuable Contributers</center></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      
+      
+<div id="body">
+   <div id="watermark">@Debuggers</div>
+ <!-- <marquee><a href="https://bit.ly/47pIBam">Mathematics assignment </a> -->
+    <!-- <a href="https://bit.ly/group_debuggers">Joint us <i class="fa fa-whatsapp" style="color: #45a049;" aria-hidden="true"></i></a> -->
+<!-- </marquee> -->
+
+<!-- <a href="sanskrit.html">Sanskrit Important</a>&nbsp;<a href="mech_mcq.html">Assignment Questions DAA</a> -->
+<!-- <hr> -->
+ 
 <body>
-    <div class="container">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <button type="submit">Login</button>
-            </div>
+    <center><h1>Database Managment Systems Viva Questions</h1></center>
+
+<div id="viva"></div>
+</div><br><br>
+</div>
+<script>
+    var cookieString = document. cookie;
+    var cookies = cookieString. split(';');
+    var len = cookies. length;
+    var foundActiveUser = false;
+    var invis = true;
+    for(i=0; i<len; i++){
+        if(cookies[i]==="user=active"){
+               invis = false;
+            foundActiveUser = true;
+        break;
+        }
+    }
+    if (!foundActiveUser) {
+        feedback();
+    }
+   function feedback(){
+    setTimeout(function() {
+        document.getElementById("body").style.position = "absolute";
+        setTimeout(function() {
+            close();
+        }, 60000);
+    }, 2000);
+   }
+    
+
+   
+    function close() {
+  
+        document.getElementById("body").style.position = "relative";
+    }
+
+    function close1() {
+      
+        document.getElementById("body").style.position = "relative";
+    }
+</script>
+<style>
+    #main {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: rgb(45, 40, 40);
+        position: relative;
+        visibility: visible;
+    }
+    #box {
+        background-color: rgb(242, 236, 236);
+        border: 1px black solid;
+        height: 50% !important;
+        width: 70%; 
+        flex: 0;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    form {
+        margin-top: 10px;
+        text-align: center;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    input,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    input{
+        border-radius: 5px;
+    }
+    #right{
+        position: relative;
+        float: right;
+    }
+    #heading_tag {
+        animation: change 2s linear infinite;
+        color: red;
+        font-size: 15px;
+    }
+    
+    @keyframes change {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    #wishing_part{
+        position: relative;
+      align-self: center;
+      
+        
+    }
+</style>
+</head>
+<!-- <div id="main">
+    <div id="box">
+        <div id="right" onclick="close1()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div> 
+         <div><blink id="heading_tag">
+           Your Feedback is expensive for us
+         </blink></div>
+        <form action="https://sheetdb.io/api/v1/g61yskkf7kixl" method="post" id="sheetdb-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="data[name]" required>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="data[Feedback]" rows="4" required></textarea>
+
+            <input type="submit" value="Submit" onclick="close1()">
         </form>
     </div>
+</div>
+<div id="loginactive" style="display: none;">
+    <form action="https://sheetdb.io/api/v1/o3nxu9n6otryl" method="post" id="logindb">
+        <input type="text" id="user" name="data[username]">
+        <input type="text" name="data[time]" id="time">
+        <input type="submit" name="subme" id="subme">
+    </form>
+</div> -->
+<script>
+    var form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  fetch(form.action, {
+      method : "POST",
+      body: new FormData(document.getElementById("sheetdb-form")),
+  }).then(
+      response => response.json()
+  ).then((html) => {
+    close1();
+    document.cookie = "user=active";
+    document.cookie = "name="+document.getElementById("name").value;
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-        
-            var username = document.getElementById('username').value;
-        
-            // Constructing the URL with username parameter
-            var apiUrl = 'https://arambhsoftech.com/helpdesk.php?username=' + encodeURIComponent(username);
-        
-            // Constructing the request object
-            var request = new XMLHttpRequest();
-            request.open('GET', apiUrl, true);
-        
-            // Handling the response from the server
-            request.onload = function() {
-                if (request.status >= 200 && request.status < 400) {
-                    // Success response from the server
-                    console.log('Login successful');
-        
-                    // Set cookies
-                    document.cookie = "username=" + username;
-                    document.cookie = "user=active";
-        
-                    // Redirect to dbms.html
-                    window.location.href = "dbms.html";
-                } else {
-                    // Error response from the server
-                    console.error('Login failed');
-                }
-            };
-        
-            // Handling network errors
-            request.onerror = function() {
-                console.error('Network error occurred');
-            };
-        
-            // Sending the request
-            request.send();
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var cookieString = document.cookie;
-            var cookies = cookieString.split(';');
-            var invis = true;
-            for (var i = 0; i < cookies.length; i++) {
-                if (cookies[i].trim() === "user=active") {
-                    invis = false;
-                    break;
-                }
+  });
+});
+
+if (!invis) {
+    document.getElementById("main").style.display = "none";
+}
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {debugger;
+        var currentDate = new Date();
+
+        // Display current date and time
+        console.log("Current Date and Time:", currentDate);
+
+        // Extract individual components
+        var year = currentDate.getFullYear();
+        var month = currentDate.getMonth() + 1; // Months are zero-based
+        var day = currentDate.getDate();
+        var hours = currentDate.getHours();
+        var minutes = currentDate.getMinutes();
+        var seconds = currentDate.getSeconds();
+
+        // Format date and time
+        var formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        document.getElementById("time").value = formattedDateTime;
+
+        var cookieString = document.cookie;
+        var cookies = cookieString.split(';');
+        var userset = false; // Initialize userset flag outside the loop
+
+        // Loop through cookies
+        for (let i = 0; i < cookies.length; i++) {
+            var n = cookies[i].trim().split("=");
+
+            // Check if cookie name is "name"
+            if (n[0] === "name") {
+                // Set values in the form
+                document.getElementById("user").value = n[1];
+                userset = true;
+                break;
             }
-            if (!invis) {
-                window.location.href = "dbms.html";
-            }
+        }
+
+        // Check if "name" cookie was not found
+        if (!userset) {
+            document.getElementById("user").value = "user";
+        }
+
+        // Prevent the default form submission behavior
+        var form = document.getElementById('logindb');
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Serialize the form data
+            var formData = new FormData(form);
+
+            // Fetch API call
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(html => {
+                console.log("Done");
+                // You can add further actions here if needed
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
         });
-    </script>
+
+        // Manually trigger a click on the submit button
+        var submitButton = document.getElementById('subme');
+        submitButton.click();
+    });
+</script>
+
 </body>
 </html>
