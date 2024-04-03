@@ -86,8 +86,10 @@
   </header>
   <style>
     #user-table {
-        width: 95%;
+        margin: 10px;
+        width: 80%;
         border-collapse: collapse;
+      
     }
 
     table, th, td {
@@ -108,18 +110,20 @@
     
        <center> <div>Total Users: <span id="total-users"></span></div></center>
     
-        <table id="user-table">
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Username</th>
-                    <th>No. of Logins</th>
-                </tr>
-            </thead>
-            <tbody id="user-data">
-                <!-- User data will be inserted here dynamically -->
-            </tbody>
-        </table>
+        <center>
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Username</th>
+                        <th>No. of Logins</th>
+                    </tr>
+                </thead>
+                <tbody id="user-data">
+                    <!-- User data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </center>
     </div>
     
     <script>
