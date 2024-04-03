@@ -30,6 +30,7 @@ if (cookieValue === "active") {
     // Retrieve the username from the cookie
     const username = getCookie('username');
     if (username) {
+        wishme(username);
         // Prepare the data to be sent to the API
         const data = { username: username };
 
@@ -354,53 +355,6 @@ if (cookieValue === "active") {
     }
 </style>
 </head>
-<!-- <div id="main">
-    <div id="box">
-        <div id="right" onclick="close1()">
-            <i class="fa fa-times" aria-hidden="true"></i>
-        </div> 
-         <div><blink id="heading_tag">
-           Your Feedback is expensive for us
-         </blink></div>
-        <form action="https://sheetdb.io/api/v1/g61yskkf7kixl" method="post" id="sheetdb-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="data[name]" required>
-
-            <label for="feedback">Feedback:</label>
-            <textarea id="feedback" name="data[Feedback]" rows="4" required></textarea>
-
-            <input type="submit" value="Submit" onclick="close1()">
-        </form>
-    </div>
-</div>
-<div id="loginactive" style="display: none;">
-    <form action="https://sheetdb.io/api/v1/o3nxu9n6otryl" method="post" id="logindb">
-        <input type="text" id="user" name="data[username]">
-        <input type="text" name="data[time]" id="time">
-        <input type="submit" name="subme" id="subme">
-    </form>
-</div> -->
-<!-- <script>
-    var form = document.getElementById('sheetdb-form');
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  fetch(form.action, {
-      method : "POST",
-      body: new FormData(document.getElementById("sheetdb-form")),
-  }).then(
-      response => response.json()
-  ).then((html) => {
-    close1();
-    document.cookie = "user=active";
-    document.cookie = "name="+document.getElementById("name").value;
-
-  });
-});
-
-if (!invis) {
-    document.getElementById("main").style.display = "none";
-}
-</script> -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var currentDate = new Date();
@@ -429,10 +383,10 @@ if (!invis) {
             var n = cookies[i].trim().split("=");
 
             // Check if cookie name is "name"
-            if (n[0] === "name") {debugger;
+            if (n[0] === "name") {
                 // Set values in the form
                 document.getElementById("user").value = n[1];
-                wishme(n[1]);
+               
                 userset = true;
                 break;
             }
