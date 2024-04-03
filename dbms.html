@@ -31,7 +31,7 @@ var cookieValue = getCookie('user');
 if (cookieValue === "active") {
     // Retrieve the username from the cookie
     const username = getCookie('username');
-    if (username) {
+    if (username) {debugger;
         wishme(username);
         // Prepare the data to be sent to the API
         const data = { username: username };
