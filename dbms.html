@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="style.css?v=2" />
 <script src="script.js"></script>
 <script>
-  // Function to retrieve the value of a cookie by its name
+ // Function to retrieve the value of a cookie by its name
 function getCookie(cookieName) {
     const cookies = document.cookie.split(';');
     for (let i = 0; i < cookies.length; i++) {
@@ -22,19 +22,19 @@ function getCookie(cookieName) {
     return null; // Return null if cookie not found
 }
 
-// Check if the cookie exists
+// Check if the cookie 'user' exists
 var cookieValue = getCookie('user');
 
 // If the cookie value is "active", continue, else redirect to the login page
 if (cookieValue === "active") {
-    // Prepare the data to be sent to the API
+    // Retrieve the username from the cookie
     const username = getCookie('username');
     if (username) {
         // Prepare the data to be sent to the API
         const data = { username: username };
 
         // Send the data to the API endpoint
-        fetch('https://arambhsoftech.com/Helpdesk_login.php', {
+        fetch('https://arambhsoftech.com/Helpdesk_login.php?username=' + encodeURIComponent(username), {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -59,7 +59,6 @@ if (cookieValue === "active") {
     // Redirect to the login page
     window.location.href = "login.html";
 }
-
 </script>
 <script>
     window.onload = function() {
