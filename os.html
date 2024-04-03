@@ -441,9 +441,18 @@ Contiguous memory allocation is a memory allocation strategy. As the name implie
   
 
 
-<img src="img/Opreting System/fix.png" alt=""id="img1">
+<img src="img/Opreting System/fixx.png" alt=""id="img1">
 
-Internal fragmentation is found in fixed partition scheme. To overcome the problem of internal fragmentation, instead of fixed partition scheme, variable partition scheme is used.</ul><br>
+Internal fragmentation is found in fixed partition scheme. To overcome the problem of internal fragmentation, instead of fixed partition scheme, variable partition scheme is used.</ul>
+<ul type="square">
+  <li><b> Internal Fragmentation:-</b></li>
+  Internal Fragmentation is a problem that occurs due to poor memory allocation and it results in wastage of memory. When a process is loaded into the system it requests memory which is essential for its working. The operating system allocates memory to processes to work with but if the memory happens to be smaller and bigger than the process requirement the extra space goes unused. This small amount of memory unutilization is the major Internal Fragmentation appearing in the Operating System.
+  <img src="img/Opreting System/inte.png" alt=""id="img1">
+  <li><b> External Fragmentation:-</b></li>
+  External fragmentation refers to the phenomenon where memory becomes separated into little blocks of free space dispersed all through the framework, making it challenging to distribute bigger adjacent blocks of memory to processes. This division of memory happens because of the allocation and deallocation of processes after some time.
+</ul>
+
+<br>
 
 <li><b>Dynamic Partitioning =></b>The dynamic partitioning was designed to overcome the problems of a fixed partitioning scheme. In a dynamic partitioning scheme, each process occupies only as much memory as they require when loaded for processing. Requested processes are allocated memory until the entire physical memory is exhausted or the remaining space is insufficient to hold the requesting process. In this scheme the partitions used are of variable size, and the number of partitions is not defined at the system generation time.</li><br>
 <b>Advantages of Dynamic Partitioning memory management schemes:</b>
@@ -459,7 +468,84 @@ Internal fragmentation is found in fixed partition scheme. To overcome the probl
     </li>
   <li>The number of partitions is specified at the time of system segmentation.</li>
 </ul>
+   <img src="img/Opreting System/dynn.png" alt="" id="img1">
 </ol>
+
+<h5><b><mark>Non-Contiguous memory management schemes:-</mark></b></h5>
+In a Non-Contiguous memory management scheme, the program is divided into different blocks and loaded at different portions of the memory that need not necessarily be adjacent to one another. This scheme can be classified depending upon the size of blocks and whether the blocks reside in the main memory or not.<br>
+<ol type="i">
+<li><b>Paging =></b></li>
+Paging is a technique that eliminates the requirements of contiguous allocation of main memory. In this, the main memory is divided into fixed-size blocks of physical memory called frames. The size of a frame should be kept the same as that of a page to maximize the main memory and avoid external fragmentation.<br>
+In Operating Systems, Paging is a storage mechanism used to retrieve processes from the secondary storage into the main memory in the form of pages.
+The main idea behind the paging is to divide each process in the form of pages. The main memory will also be divided in the form of frames.<br>
+One page of the process is to be stored in one of the frames of the memory. The pages can be stored at the different locations of the memory but the priority is always to find the contiguous frames or holes.
+Pages of the process are brought into the main memory only when they are required otherwise they reside in the secondary storage.<br><br>
+
+<b>Advantages of paging:-</b>
+<ul type="disc">
+  <li>Pages reduce external fragmentation.</li>
+  <li>Simple to implement.</li>
+  <li>Memory efficient.</li>
+  <li>Due to the equal size of frames, swapping becomes very easy. </li>
+  <li>It is used for faster access of data.</li>
+</ul><br>
+<img src="img/Opreting System/page.png" alt="" id="img1">
+
+<li><b> Segmentation =></b></li>
+Segmentation is a technique that eliminates the requirements of contiguous allocation of main memory. In this, the main memory is divided into variable-size blocks of physical memory called segments. It is based on the way the programmer follows to structure their programs. With segmented memory allocation, each job is divided into several segments of different sizes, one for each module. Functions, subroutines, stack, array, etc., are examples of such modules.
+
+
+</ol>
+
+<h5><b>Compaction:-</b></h5>
+We got to know that the dynamic partitioning suffers from external fragmentation. However, this can cause some serious problems.
+To avoid compaction, we need to change the rule which says that the process can't be stored in the different places in the memory.
+We can also use compaction to minimize the probability of external fragmentation. In compaction, all the free partitions are made contiguous and all the loaded partitions are brought together.
+By applying this technique, we can store the bigger processes in the memory. The free partitions are merged which can now be allocated according to the needs of new processes. This technique is also called defragmentation.
+
+<img src="img/Opreting System/com.png" alt="" id="img1"><br>
+
+As shown in the image above, the process P5, which could not be loaded into the memory due to the lack of contiguous space, can be loaded now in the memory since the free partitions are made contiguous.<br><br>
+
+<h4><b><u>Partition Allocation Methods in Memory Management</u></b></h4>
+In Partition Allocation, when there is more than one partition freely available to accommodate a process’s request, a partition must be selected. To choose a particular partition, a partition allocation method is needed. A partition allocation method is considered better if it avoids internal fragmentation. 
+
+When it is time to load a process into the main memory and if there is more than one free block of memory of sufficient size then the OS decides which free block to allocate.<br> <br>
+
+<b>There are different Placement Algorithm:-</b><br>
+<ol type="1">
+<li><mark>First Fit =</mark>In the first fit, the partition is allocated which is the first sufficient block from the top of Main Memory. It scans memory from the beginning and chooses the first available block that is large enough. Thus it allocates the first hole that is large enough.
+</li>
+<img src="img/Opreting System/first.png" alt="" id="img1"><br><br>
+<li><mark>Best Fit =</mark>Best Fit Allocate the process to the partition which is the first smallest sufficient partition among the free available partition. It searches the entire list of holes to find the smallest hole whose size is greater than or equal to the size of the process.</li>
+ 
+<img src="img/Opreting System/best.png" alt="" id="img1"><br><br>
+
+
+<li><mark>Worst Fit =</mark>Worst Fit Allocate the process to the partition which is the largest sufficient among the freely available partitions available in the main memory. It is opposite to the best-fit algorithm. It searches the entire list of holes to find the largest hole and allocate it to process.</li>
+  
+ 
+ <img src="img/Opreting System/aa.png" alt="" id="img1">
+
+</ol>
+
+<h4><b><mark>Logical Address:-</mark></b></h4>
+A logical address, also known as a virtual address, is an address generated by the CPU during program execution. It is the address seen by the process and is relative to the program’s address space. The process accesses memory using logical addresses, which are translated by the operating system into physical addresses. An address that is created by the CPU while a program is running is known as a logical address. Because the logical address is virtual—that is, it doesn’t exist physically—it is also referred to as such. The CPU uses this address as a reference to go to the actual memory location. All logical addresses created from a program’s perspective are referred to as being in the “logical address space”. This address is used as a reference to access the physical memory location by CPU. The term Logical Address Space is used for the set of all logical addresses generated by a program’s perspective.<br>
+<img src="img/Opreting System/log.png" alt="" id="img1">
+<br><br>
+
+<h4><b><mark>Physical Address:-</mark></b></h4>
+A physical address is the actual address in the main memory where data is stored. It is a location in physical memory, as opposed to a virtual address. Physical addresses are used by the Memory Management Unit (MMU) to translate logical addresses into physical addresses. The user must use the corresponding logical address to go to the physical address rather than directly accessing the physical address. For a computer program to function, physical memory space is required. Therefore, the logical address and physical address need to be mapped before the program is run.
+
+The term “physical address” describes the precise position of necessary data in a memory. Before they are used, the MMU must map the logical address to the physical address. This is because the user program creates the logical address and believes that the program is operating in this logical address. However, the program requires physical memory to execute. All physical addresses that match the logical addresses in a logical address space are collectively referred to as the “physical address space”.<br>
+<img src="img/Opreting System/phy.png" alt="" id="img1"><br><br>
+
+<img src="img/Opreting System/ss.png" alt="" id="img1">
+
+
+
+
+
 
 
 
