@@ -9,9 +9,62 @@
 <link rel="stylesheet" type="text/css" href="style.css?v=2" />
 <script src="script.js"></script>
 <script>
-    function redirect(){
-        window.location.href = "outofservice.html";
-      }
+  // Function to retrieve the value of a cookie by its name
+function getCookie(cookieName) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        // Check if the cookie starts with the desired name
+        if (cookie.startsWith(cookieName + '=')) {
+            return cookie.substring(cookieName.length + 1);
+        }
+    }
+    return null; // Return null if cookie not found
+}
+
+// Check if the cookie exists
+var cookieValue = getCookie('user');
+
+// If the cookie value is "active", continue, else redirect to the login page
+if (cookieValue === "active") {
+    // Prepare the data to be sent to the API
+    const username = getCookie('username');
+    if (username) {
+        // Prepare the data to be sent to the API
+        const data = { username: username };
+
+        // Send the data to the API endpoint
+        fetch('https://arambhsoftech.com/Helpdesk_login.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // Log the response from the API
+            // Continue with further actions if needed
+        })
+        .catch(error => {
+            console.error('Error:', error); // Log any errors
+            // Handle errors if needed
+        });
+    } else {
+        console.log('Username not found in cookie'); // Log if username not found in cookie
+        // Redirect to the login page
+        window.location.href = "login.html";
+    }
+} else {
+    // Redirect to the login page
+    window.location.href = "login.html";
+}
+
+</script>
+<script>
+    window.onload = function() {
+        
+    };
 </script>
 <script
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
