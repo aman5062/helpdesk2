@@ -128,7 +128,7 @@ if (cookieValue === "active") {
 
         if(n[j]==="name"){
          //   alert("Welcome Back "+n[1]);
-            wishme(n[1]);
+           // wishme(n[1]);
         break;
         }}
        
@@ -380,7 +380,7 @@ if (cookieValue === "active") {
         <input type="submit" name="subme" id="subme">
     </form>
 </div> -->
-<script>
+<!-- <script>
     var form = document.getElementById('sheetdb-form');
 form.addEventListener("submit", e => {
   e.preventDefault();
@@ -400,7 +400,7 @@ form.addEventListener("submit", e => {
 if (!invis) {
     document.getElementById("main").style.display = "none";
 }
-</script>
+</script> -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {debugger;
         var currentDate = new Date();
@@ -432,6 +432,7 @@ if (!invis) {
             if (n[0] === "name") {
                 // Set values in the form
                 document.getElementById("user").value = n[1];
+                wishme(n[1])
                 userset = true;
                 break;
             }
