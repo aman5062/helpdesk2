@@ -27,7 +27,7 @@ function getCookie(cookieName) {
 var cookieValue = getCookie('user');
 
 // If the cookie value is "active", continue, else redirect to the login page
-if (cookieValue === "active") {
+if (cookieValue === "active") {debugger;
     // Retrieve the username from the cookie
     const username = getCookie('username');
     document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ username+"</b>";
