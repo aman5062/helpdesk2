@@ -31,7 +31,7 @@ if (cookieValue === "active") {
     // Retrieve the username from the cookie
     const username = getCookie('username');
     document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ username+"</b>";
-    if (username) {debugger;
+    if (username) {
         
         // Prepare the data to be sent to the API
         const data = { username: username };
