@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="style.css?v=2" />
 <script src="script.js"></script>
 <script>
-    wishme(username);
+    
  // Function to retrieve the value of a cookie by its name
 function getCookie(cookieName) {
     const cookies = document.cookie.split(';');
@@ -409,6 +409,8 @@ if (cookieValue === "active") {debugger;
         var submitButton = document.getElementById('subme');
         submitButton.click();
     });
+    var username = getCookie(username);
+    wishme(username);
     function wishme(username){
         document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ username+"</b>";
     }
