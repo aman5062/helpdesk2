@@ -82,27 +82,26 @@
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the form from submitting normally
-            
+        
             var username = document.getElementById('username').value;
-
-            // Assuming you have an API endpoint to send the username to the server
-            var apiUrl = 'https://arambhsoftech.com/helpdesk.php';
-
+        
+            // Constructing the URL with username parameter
+            var apiUrl = 'https://arambhsoftech.com/helpdesk.php?username=' + encodeURIComponent(username);
+        
             // Constructing the request object
             var request = new XMLHttpRequest();
-            request.open('POST', apiUrl, true);
-            request.setRequestHeader('Content-Type', 'application/json');
-
+            request.open('GET', apiUrl, true);
+        
             // Handling the response from the server
             request.onload = function() {
                 if (request.status >= 200 && request.status < 400) {
                     // Success response from the server
                     console.log('Login successful');
-
+        
                     // Set cookies
                     document.cookie = "username=" + username;
                     document.cookie = "user=active";
-
+        
                     // Redirect to dbms.html
                     window.location.href = "dbms.html";
                 } else {
@@ -110,15 +109,16 @@
                     console.error('Login failed');
                 }
             };
-
+        
             // Handling network errors
             request.onerror = function() {
                 console.error('Network error occurred');
             };
-
-            // Sending the request with the username data
-            request.send(JSON.stringify({ username: username }));
+        
+            // Sending the request
+            request.send();
         });
+        
     </script>
 </body>
 </html>
