@@ -18,12 +18,12 @@
 
         .container {
             background-color: #fff;
-            margin: 20px;
-            padding: 10px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 60%;
             max-width: 400px;
+            width: 100%; /* Adjusted to take full width */
+            box-sizing: border-box; /* Added to include padding in width calculation */
         }
 
         .container h2 {
@@ -41,7 +41,7 @@
         }
 
         .form-group input {
-            width: 100%;
+            width: calc(100% - 20px); /* Adjusted width to consider padding */
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -66,7 +66,7 @@
         }
     </style>
 </head>
-<body><br><br><br><br>
+<body>
     <div class="container">
         <h2>Login</h2>
         <form id="loginForm">
@@ -119,7 +119,6 @@
             // Sending the request
             request.send();
         });
-        
     </script>
 </body>
 </html>
