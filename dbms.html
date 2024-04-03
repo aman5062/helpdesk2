@@ -30,7 +30,8 @@ var cookieValue = getCookie('user');
 if (cookieValue === "active") {debugger;
     // Retrieve the username from the cookie
     const username = getCookie('username');
-    document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ username+"</b>";
+    wishme(username);
+    
     if (username) {
         
         // Prepare the data to be sent to the API
@@ -408,6 +409,9 @@ if (cookieValue === "active") {debugger;
         var submitButton = document.getElementById('subme');
         submitButton.click();
     });
+    function wishme(username){
+        document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ username+"</b>";
+    }
 </script>
 
 </body>
