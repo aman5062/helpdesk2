@@ -128,41 +128,50 @@
     </div>
     
     <script>
-        // Fetch JSON data using AJAX
-        fetch('https://arambhsoftech.com/Helpdesk/daily.php')
-        .then(response => response.json())
-        .then(data => {
-            // Get the table body element
-            var tbody = document.getElementById('user-data');
-    
-            // Loop through the JSON data and create rows for the table
-            data.forEach(user => {
-                var row = document.createElement('tr');
-    
-                // Create cells for each data field
-                var snoCell = document.createElement('td');
-                snoCell.textContent = user['S.no'];
-                row.appendChild(snoCell);
-    
-                var usernameCell = document.createElement('td');
-                usernameCell.textContent = user['Username'];
-                row.appendChild(usernameCell);
-    
-                var loginsCell = document.createElement('td');
-                loginsCell.textContent = user['Time'];
-                row.appendChild(loginsCell);
-    
-                // Append the row to the table body
-                tbody.appendChild(row);
-            });
-    
-            // Display total number of users
-            document.getElementById('total-users').textContent = data.length;
-        })
-        .catch(error => {
-            console.error('Error fetching user data:', error);
-        });
-    </script>
+      function fetchAndDisplayData() {
+          // Fetch JSON data using AJAX
+          fetch('https://arambhsoftech.com/Helpdesk/daily.php')
+          .then(response => response.json())
+          .then(data => {
+              // Get the table body element
+              var tbody = document.getElementById('user-data');
+              tbody.innerHTML = ''; // Clear previous data
+
+              // Loop through the JSON data and create rows for the table
+              data.forEach(user => {
+                  var row = document.createElement('tr');
+      
+                  // Create cells for each data field
+                  var snoCell = document.createElement('td');
+                  snoCell.textContent = user['S.no'];
+                  row.appendChild(snoCell);
+      
+                  var usernameCell = document.createElement('td');
+                  usernameCell.textContent = user['Username'];
+                  row.appendChild(usernameCell);
+      
+                  var loginsCell = document.createElement('td');
+                  loginsCell.textContent = user['Time'];
+                  row.appendChild(loginsCell);
+      
+                  // Append the row to the table body
+                  tbody.appendChild(row);
+              });
+      
+              // Display total number of users
+              document.getElementById('total-users').textContent = data.length;
+          })
+          .catch(error => {
+              console.error('Error fetching user data:', error);
+          });
+      }
+
+      // Initial fetch
+      fetchAndDisplayData();
+
+      // Refresh data every 5 seconds
+      setInterval(fetchAndDisplayData, 5000);
+  </script>
         </div>
        </div>
 </body>
