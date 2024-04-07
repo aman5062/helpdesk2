@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta meta name="viewport" content=
             "width=device-width, user-scalable=no" />
-    <title>Helpdesk : <span id="total-users"></span></title>
+    <title>Helpdesk</title>
 </head>
 <link rel="stylesheet" type="text/css" href="style.css?v=2" />
 <script src="script.js"></script>
@@ -160,6 +160,7 @@
       
               // Display total number of users
               document.getElementById('total-users').textContent = data.length;
+              document.title = "Helpdesk :" +data.length;
               
           })
           .catch(error => {
