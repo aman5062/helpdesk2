@@ -109,8 +109,9 @@
     <div class="container">
         <center><h2>User Data</h2></center>
     
-       <center> <div>Total Users: <span id="total-users"></span></div></center>
-    
+       <center> <div>Total Users: <span id="total-users"></span></div>
+       <div>Total Logins : <span id="total_logins"></span></div>
+    </center>
         <center>
             <table id="user-table">
                 <thead>
@@ -121,7 +122,7 @@
                     </tr>
                 </thead>
                 <tbody id="user-data">
-                    <!-- User data will be inserted here dynamically -->
+                   
                 </tbody>
             </table>
         </center>
@@ -150,6 +151,7 @@
     
                 var loginsCell = document.createElement('td');
                 loginsCell.textContent = user['No_of_Login'];
+                var tl = tl + user['No_of_Login'];
                 row.appendChild(loginsCell);
     
                 // Append the row to the table body
@@ -158,6 +160,7 @@
     
             // Display total number of users
             document.getElementById('total-users').textContent = data.length;
+            document.getElementById('total-users').textContent = tl;
         })
         .catch(error => {
             console.error('Error fetching user data:', error);
