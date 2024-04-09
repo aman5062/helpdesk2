@@ -1059,6 +1059,89 @@
        (x<sup>2</sup> + 2x + 1) ≤ 4x2 {whenever x > 1}<br>
        here, C = 4 and k = 1 <br>
        <img src="img/big0.png" alt="bigO" width="350px">
+       <br>
+       <br>
+       f(x) = x<sup>2</sup> + 2x + 1 is O(x<sup>2</sup>)<br>
+       if we take x > 2, we have x<sup>2</sup> &GreaterEqual; 2x  & x<sup>2</sup> &GreaterEqual;1 <br>
+       x<sup>2</sup> + x<sup>2</sup> + x<sup>2</sup> &GreaterEqual; x<sup>2</sup> + 2x +1 &GreaterEqual; 0<br>
+       3x<sup>2</sup> &GreaterEqual; x<sup>2</sup> + 2x +1 &GreaterEqual; 0<br>
+       It follows that c=3 & k=2 are also
+
+
+       <br><br>
+
+       <b>NOTE-</b>
+       <ol>
+        <li> Observe that in the relationship f(x) is O(x<sup>2</sup>), x<sup>2</sup> can be replace by any function with larger value than x<sup>2</sup> <br>
+          eg-<br>
+          <ul>
+            <li>f(x) is O(x<sup>3</sup>)</li>
+            <li>f(x) is O(x<sup>2</sup> + x + 7)</li>
+          </ul>
+         </li>
+        <li>
+          It is also true that x<sup>2</sup> is O(x<sup>2</sup> + 2x + 1)<br>
+          &there4; x<sup>2</sup> + 2x + 1 > x<sup>2</sup>, whenever x > 1<br>
+          <b>eg-<br>
+            show that 7x<sup>2</sup> is O(x<sup>3</sup>)<br>
+          Sol-<br>
+        </b>
+          Here,f(x) = 7x<sup>2</sup> & g(x) = x<sup>3</sup><br>
+          when x > 7,<br>
+          7x<sup>2</sup> < x<sup>3</sup><,brbr>
+          then c = 1 & k = 7 as witnesses<br>
+          when, x > 1
+
+          <br><br>
+        </li>
+      </ol>
+          <b>Q.Show that n2 is not O(n).</b><br>
+            <b>Solution:</b><br>
+            To show that n<sup>2</sup> is n ot O(n), we must show that no pair of witnesses C and k exist
+            such that n<sup>2</sup> ≤ Cn whenever n>k. For this when n > 0 we can divide both sides of the inequality n<sup>2</sup> ≤ Cn by n we get
+             n ≤ C. However, no matter what C and k are, the inequality n ≤ C cannot hold for
+            all n with n>k. In particular, once we set a value of k, we see that when n is larger than the
+            maximum of k and C, it is not true that n ≤ C even though n>k.
+
+            <br><br>
+
+            <h1><u>Graph Theory</u></h1>
+            A graph is a pair of sets (V,E) where V is the set of vertices & E is the set of edges, formed by pair of vertices.<br><br>
+
+            <img src="img/graph.png" alt="graph" width="150px"><br>
+
+
+            <b>NOTE-</b><br>
+            <ol> <li> E is the multiset i.e. the element can occurs more than once so that every element has a multiplicity.</li>
+            <li>
+              The two edges (v,u) and (u,v) are the same i.e. the pair is not ordered
+            </li></ol>
+            <br>
+
+            <b>Trivial Graph-</b><br>
+            The (1,0) graph is called trivial graph.
+            <br><br>
+
+            <b>Directed Graph-</b><br>
+            A graph in which each edge of the graph G has a directed is called directed graph.
+              <br><br>
+              <img src="img/dir_graph.jpg" alt="dir_graph" width="150px"><br>
+            <b>NOTE-</b><br>
+            Suppose e=(a,b) is a directed edge in a graph then, <br>
+            <ol>
+              <li>a is called the initial vertex of e and b is the terminal vertex of e.</li>
+              <li>e is said to be incident from a and to be incident to b.</li>
+              <li>a is adjacent to b, and b is adjacent from a</li>
+            </ol>
+
+       
+       <b>Undirected Graph-</b><br>
+       A graph in which each edge of graph g as no direction is called undirected graph.
+       <br>
+       <img src="img/undir_graph.png" alt="undir_graph"width="150px">
+
+
+
 
 
 
