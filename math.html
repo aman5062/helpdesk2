@@ -1139,7 +1139,74 @@
        A graph in which each edge of graph g as no direction is called undirected graph.
        <br>
        <img src="img/undir_graph.png" alt="undir_graph"width="150px">
+       <br>
+       <br>
 
+      <u><h3><li><b>Basic of Graph Theory-</b></li></h3></u>
+      <ul>
+        <li><b>Loop-</b>
+          As edge of a graph that joint a node to itself is called loop/self-loop i.e. a loop is an edge (V<sub>i</sub>,V<sub>j</sub>) where V<sub>i</sub> = V<sub>j</sub>
+        </li>
+        <li><b>Multi-Graph-</b>
+          In a multigraph no loop are allowed but more than one edge can join two vertices, these edges are called multiple edges or parallel edges and graph is called multi-graph.
+        </li>
+        <li><b>Pseudo Graph-</b>
+          A graph in which loops and multiple edges are allowed is called a pseudo graph.
+        </li>
+        <li><b>Simple graph</b>
+          A graph which has neither loop nor multiple edges is called a simple graph.
+        </li>
+        <li><b>Finite & Infinite Graph-</b>
+          A graph with finite number of vertices as well as a finite number of edges is called a finite graph.
+          otherwise it is an infinite graph.
+        </li>
+        <li><b>Degree (Valency) of vertex -</b>
+          The number of edges incident on a vertex V<sub>i</sub> with self-loop counted twice is called the degree of vertex V<sub>i</sub> and is denoted by deg<sub>G</sub>(V<sub>i</sub>) / deg(V<sub>i</sub>) / d(V<sub>i</sub>)
+        </li>
+
+        <li><b>In & Out Degree-</b>
+          In directed graph 'G', the out-degree of vertex V<sub>i</sub> of G, denoted by deg<sub>G</sub><sup>+</sup> (V<sub>i</sub>) is the number of edges beginning at V<sub>i</sub> and the in-degree of V<sub>i</sub> is denoted by deg<sub>G</sub><sup>-</sup>(V<sub>i</sub>) is the number of edges ending at V<sub>i</sub><br>
+          The sum of the in-degree and out-degree of the vertex is called the total degree of vertex.<br>
+          A vertex with zero in-degree is called a source and vertex with zero out-degree is called sink.
+        </li>
+        <li><b>Isolated vertex-</b>
+          A vertex have no incident edge is called an Isolated vertex. Isolated vertex are those with zero degree.
+        </li>
+        <li><b>Pendent or End vertex-</b>
+           A vertex of degree one is called a Pendent vertex or an end vertex.
+
+        </li>
+      </ul>
+      <li><b>The Handshaking Theorem-</b>
+        If G = (V,E) be an undirected graph with 'e' edges.<br>
+        <center>
+          then, <img src="img/handshaking_theorem.png" alt="handshaking_theorem" width="100px">
+      
+        </center>
+        i.e. the sum of the degree of the vertices is even.
+<br>
+        <b>Proof-</b><br>
+        Since, the degree of vertex if the number of edges incident with that vertex the sum of the degree counts the total number of times and edge is incident with a vertex.<br>
+        Since, every edge is incident with exactly two vertex, each edge gets counted twice once at each end.<br>
+        Thus, sum of degree equal twice the number of edges.
+      </li><br>
+      <b>NOTE-</b>
+      <ol>
+        <li>The theorem applies even if multiple edges and loops are present.</li>
+        <li>In a simple graph with P vertices <br>
+           <b>P(P-1)/2</b><br>
+           <b>
+            
+          Eg- <br>
+          Calculate the possible maximum number of edges of 4 vertex.<br>
+          sol-<br>
+           </b>
+           p = 4<br>
+          p = {4(4-1)}/2 = 6
+          </li>
+        <li>So, that the maximum degree of any vertex in a simple graph with P vertex is (P-1)</li>
+
+      </ol>
 
 
 
