@@ -154,6 +154,7 @@
         xhr.open("GET", "https://arambhsoftech.com/Helpdesk/join_mailer.php?email=" + email, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
+                debugger;
                 document.getElementById("Alerting").innerHTML = "<p style='color: green;'>Check your email for the joining link.</p>";
                 setTimeout(function() {
                     window.location.href = "dbms.html"; // Redirect after 1 second
