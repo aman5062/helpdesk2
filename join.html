@@ -153,7 +153,7 @@ function subscribe() {
   }
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "https://arambhsoftech.com/Helpdesk/join_mailer.php?email=" + email, true);
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = function() {debugger;
     if (xhr.readyState == 4 && xhr.status == 200) {
       if (xhr.responseText === "Email sent successfully!") {
         document.getElementById("Alerting").innerHTML = "Check your email for the joining link.";
