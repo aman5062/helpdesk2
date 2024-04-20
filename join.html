@@ -156,7 +156,7 @@ function subscribe() {
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       if (xhr.responseText === "Email sent successfully!") {
-        document.getElementById("Alerting").value = "Check your email for the joining link.";
+        document.getElementById("Alerting").innerHTML = "Check your email for the joining link.";
         window.location.href = "dbms.html"; // Redirect to dbms.html
       } else {
         alert("Failed to send email. Please try again later.");
