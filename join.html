@@ -144,29 +144,28 @@
     </div>
   </section>
 
-<script>
-function subscribe() {
-  var email = document.getElementById("emailInput").value;
-  if (email.trim() === "") {
-    alert("Please enter your email address.");
-    return;
-  }
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://arambhsoftech.com/Helpdesk/join_mailer.php?email=" + email, true);
-  xhr.onreadystatechange = function() {debugger;
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      if (xhr.responseText === "Email sent successfully!") {
-        document.getElementById("Alerting").innerHTML = "Check your email for the joining link.";
-        
-      } else {
-        alert("Failed to send email. Please try again later.");
-      }
+  <script>
+    function subscribe() {
+        var email = document.getElementById("emailInput").value.trim();
+        if (email === "") {
+            return; // Do nothing if email is empty
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://arambhsoftech.com/Helpdesk/join_mailer.php?email=" + email, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                document.getElementById("Alerting").innerHTML = "<p style='color: green;'>Check your email for the joining link.</p>";
+                setTimeout(function() {
+                    window.location.href = "dbms.html"; // Redirect after 1 second
+                }, 1000);
+            }
+        };
+        xhr.send();
     }
-  };
-  xhr.send();
-  window.location.replace("dbms.html"); 
-}
 </script>
+
+  
+
 
 </body>
 </html>
