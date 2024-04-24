@@ -59,10 +59,12 @@
     // Retrieve the username from the cookie
     const username = getCookie('username');
 
+    console.log("Username:", username); // Log the username to check if it's retrieved correctly
+
     // If the username is available, continue, else redirect to the login page
     if (username) {
         // Submit review form
-        document.getElementById('reviewForm').addEventListener('submit', function (event) {debugger;
+        document.getElementById('reviewForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the default form submission
             
             // Get the review text from the form
@@ -74,6 +76,8 @@
                 review: reviewText
             };
 
+            console.log("Data:", data); // Log the data object to check its structure
+
             // Send the data to the API endpoint
             fetch('https://arambhsoftech.com/Helpdesk/submit_review.php', {
                 method: 'POST',
@@ -84,8 +88,10 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data); // Log the response from the API
-                // Redirect to dbms.html after successfully submitting the review
+                console.log("Response:", data); // Log the response from the API
+                // If the review was submitted successfully, set the 'reviewed' cookie to true
+                document.cookie = 'reviewed=true';
+                // Redirect to dbms.html after setting the cookie
                 window.location.href = 'dbms.html';
             })
             .catch(error => {
@@ -98,5 +104,6 @@
         window.location.href = "login.html";
     }
 </script>
+
 </body>
 </html>
