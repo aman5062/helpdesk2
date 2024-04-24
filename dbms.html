@@ -56,15 +56,11 @@
         return null; // Return null if cookie not found
     }
 
-    // Check if the cookie 'user' exists
-    var cookieValue = getCookie('user');
+    // Retrieve the username from the cookie
+    const username = getCookie('username');
 
-    // If the cookie value is "active", continue, else redirect to the login page
-    if (cookieValue === "active") {
-        // Retrieve the username from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const username = urlParams.get('username');
-
+    // If the username is available, continue, else redirect to the login page
+    if (username) {
         // Submit review form
         document.getElementById('reviewForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the default form submission
@@ -79,7 +75,7 @@
             };
 
             // Send the data to the API endpoint
-            fetch('https://arambhsoftech.com/Helpdesk/submit_review.php?username=' + encodeURIComponent(username) + '&review=' + encodeURIComponent(reviewText), {
+            fetch('https://arambhsoftech.com/Helpdesk/submit_review.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -104,5 +100,6 @@
         window.location.href = "login.html";
     }
 </script>
+
 </body>
 </html>
