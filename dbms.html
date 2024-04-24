@@ -52,30 +52,49 @@
                             // Redirect to the review page if the "reviewed" cookie is not set to true
                             window.location.href = "review.html";
                         } else {
-                            // Prepare the data to be sent to the API
-                            const data = { username: username };
+                             // Prepare the data to be sent to the API
+                             const data = { username: username };
 
-                            // Send the data to the API endpoint
-                            fetch('https://arambhsoftech.com/Helpdesk/Helpdesk_login.php?username=' + encodeURIComponent(username), {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify(data)
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log('Response from Helpdesk_login.php:', data); // Log the response from Helpdesk_login.php
-                                // Continue with further actions if needed
-                            })
-                            .catch(error => {
-                                console.error('Error from Helpdesk_login.php:', error); // Log any errors from Helpdesk_login.php
-                                // Handle errors if needed
-                            });
+                             // Send the data to the API endpoint
+                             fetch('https://arambhsoftech.com/Helpdesk/Helpdesk_login.php?username=' + encodeURIComponent(username), {
+                                 method: 'POST',
+                                 headers: {
+                                     'Content-Type': 'application/json'
+                                 },
+                                 body: JSON.stringify(data)
+                             })
+                             .then(response => response.json())
+                             .then(data => {
+                                 console.log('Response from Helpdesk_login.php:', data); // Log the response from Helpdesk_login.php
+                                 // Continue with further actions if needed
+                             })
+                             .catch(error => {
+                                 console.error('Error from Helpdesk_login.php:', error); // Log any errors from Helpdesk_login.php
+                                 // Handle errors if needed
+                             });
+                           
                         }
                     } else {
-                        console.log('Login count is not greater than 5'); // Log that login count is not greater than 5
-                        // Continue with further actions if needed
+                         // Prepare the data to be sent to the API
+                         const data = { username: username };
+
+                         // Send the data to the API endpoint
+                         fetch('https://arambhsoftech.com/Helpdesk/Helpdesk_login.php?username=' + encodeURIComponent(username), {
+                             method: 'POST',
+                             headers: {
+                                 'Content-Type': 'application/json'
+                             },
+                             body: JSON.stringify(data)
+                         })
+                         .then(response => response.json())
+                         .then(data => {
+                             console.log('Response from Helpdesk_login.php:', data); // Log the response from Helpdesk_login.php
+                             // Continue with further actions if needed
+                         })
+                         .catch(error => {
+                             console.error('Error from Helpdesk_login.php:', error); // Log any errors from Helpdesk_login.php
+                             // Handle errors if needed
+                         });
                     }
                 })
                 .catch(error => {
