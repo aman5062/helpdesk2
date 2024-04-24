@@ -43,7 +43,7 @@
                 .then(data => {
                     console.log('Data from user_check.php:', data); // Log the data returned from user_check.php
                     // Check if login count is greater than 5
-                    if (data.login_count > 5) {
+                    if (data.login_count > 10) {
                         console.log('Login count is greater than 5'); // Log that login count is greater than 5
                         // Check if the "reviewed" cookie exists and its value is true
                         const reviewed = getCookie('reviewed');
