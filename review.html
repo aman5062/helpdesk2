@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
+    <style>
+    #ale{
+        color: red;
+    }
+    </style>
 <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
     <div class="container-fluid">
         <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -27,11 +32,13 @@
     <form id="reviewForm">
         <div class="form-group">
             <label for="review">Your Review:</label>
-            <textarea class="form-control" id="review" name="review" rows="3" placeholder="Write your review here"></textarea>
+            <textarea class="form-control" id="review" name="review" rows="3" placeholder="Write your review here" ></textarea>
         </div>
         <br>
+       
         <center><button type="submit" class="btn btn-primary">Submit</button></center>
     </form>
+    <div id="ale"></div>
     <br>
     <center><p><a href="join.html" style="color: green; text-decoration: none;">Join our Whatsapp group</a></p></center>
 </div>
@@ -42,7 +49,7 @@
     <p style="color: green;"> Whatsapp - +91 6207753704</p>
 </center>
 
-<script>debugger;
+<script>
     // Function to retrieve the value of a cookie by its name
     function getCookie(cookieName) {
         const cookies = document.cookie.split(';');
@@ -65,11 +72,14 @@
     if (username) {
         // Submit review form
         document.getElementById('reviewForm').addEventListener('submit', function (event) {
+            
             event.preventDefault(); // Prevent the default form submission
             
             // Get the review text from the form
             const reviewText = document.getElementById('review').value;
-
+            if(reviewText=""){
+                document.getElementById("ale").innerHTML = "<p>Add a review !!!</p>";
+            }else{
             // Prepare the data to be sent to the API
             const data = {
                 username: username,
@@ -101,10 +111,10 @@
                 console.error('Error:', error); // Log any errors
                 // Handle errors if needed
             });
-        });
+        }});
     } else {
         // Redirect to the login page
-        window.location.href = "login.html";
+        <!-- window.location.href = "login.html"; -->
     }
 </script>
 
