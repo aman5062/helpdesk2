@@ -78,8 +78,11 @@
 
             console.log("Data:", data); // Log the data object to check its structure
 
+            // Construct the URL with username and review as query parameters
+            const url = 'https://arambhsoftech.com/Helpdesk/submit_review.php?username=' + encodeURIComponent(username) + '&review=' + encodeURIComponent(reviewText);
+
             // Send the data to the API endpoint
-            fetch('https://arambhsoftech.com/Helpdesk/submit_review.php', {
+            fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -106,6 +109,7 @@
         window.location.href = "login.html";
     }
 </script>
+
 
 
 </body>
