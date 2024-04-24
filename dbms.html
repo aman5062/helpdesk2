@@ -34,14 +34,21 @@
         if (username) {
             // Send a request to the API to get the login count
             fetch('https://arambhsoftech.com/Helpdesk/user_check.php?username=' + encodeURIComponent(username))
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
-                    console.log(data); // Log the response from the API
+                    console.log('Data from user_check.php:', data); // Log the data returned from user_check.php
                     // Check if login count is greater than 5
                     if (data.login_count > 5) {
+                        console.log('Login count is greater than 5'); // Log that login count is greater than 5
                         // Check if the "reviewed" cookie exists and its value is true
                         const reviewed = getCookie('reviewed');
                         if (reviewed !== "true") {
+                            console.log('Redirecting to review.html'); // Log that redirection to review.html is happening
                             // Redirect to the review page if the "reviewed" cookie is not set to true
                             window.location.href = "review.html";
                         } else {
@@ -58,20 +65,21 @@
                             })
                             .then(response => response.json())
                             .then(data => {
-                                console.log(data); // Log the response from the API
+                                console.log('Response from Helpdesk_login.php:', data); // Log the response from Helpdesk_login.php
                                 // Continue with further actions if needed
                             })
                             .catch(error => {
-                                console.error('Error:', error); // Log any errors
+                                console.error('Error from Helpdesk_login.php:', error); // Log any errors from Helpdesk_login.php
                                 // Handle errors if needed
                             });
                         }
                     } else {
+                        console.log('Login count is not greater than 5'); // Log that login count is not greater than 5
                         // Continue with further actions if needed
                     }
                 })
                 .catch(error => {
-                    console.error('Error:', error); // Log any errors
+                    console.error('Error from user_check.php:', error); // Log any errors from user_check.php
                     // Handle errors if needed
                 });
         } else {
@@ -84,6 +92,7 @@
         window.location.href = "login.html";
     }
 </script>
+
 
     
 <script>
