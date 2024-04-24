@@ -89,10 +89,7 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data); // Log the response from the API
-                // If the review was submitted successfully, set the 'reviewed' cookie to true
-                document.cookie = 'reviewed=true';
-                // Redirect to dbms.html after setting the cookie
-                window.location.href = 'dbms.html';
+                // Handle the response if needed
             })
             .catch(error => {
                 console.error('Error:', error); // Log any errors
