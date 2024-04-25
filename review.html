@@ -36,7 +36,7 @@
         </div>
         <br>
        
-        <center><button type="submit" class="btn btn-primary">Submit</button></center>
+        <center><button id="su_btn" type="submit" class="btn btn-primary">Submit</button></center>
     </form>
     <div id="ale"></div>
     <br>
@@ -82,6 +82,7 @@
             if (reviewText.trim() === "") {
                 document.getElementById("ale").innerHTML = "<p>Please add a review before submitting.</p>";
             } else {
+                document.getElementById("su_btn").style.display = "none";
                 // Prepare the data to be sent to the API
                 const data = {
                     username: username,
