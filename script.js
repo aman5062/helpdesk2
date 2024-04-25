@@ -8,16 +8,16 @@ function toggleMenu() {
     bar.classList.toggle("fa-times");
 }
 
-function handleScroll() {
-    const goToTopButton = document.getElementById('goToTopButton');
-    const scrollPositionThreshold = 300;
+// function handleScroll() {
+//     const goToTopButton = document.getElementById('goToTopButton');
+//     const scrollPositionThreshold = 300;
 
-    if (window.scrollY > scrollPositionThreshold) {
-        goToTopButton.style.display = 'block';
-    } else {
-        goToTopButton.style.display = 'none';
-    }
-}
+//     if (window.scrollY > scrollPositionThreshold) {
+//         goToTopButton.style.display = 'block';
+//     } else {
+//         goToTopButton.style.display = 'none';
+//     }
+// }
 
 function highlightActiveNavLink() {
     const navLinks = document.querySelectorAll('#myNav .nav-link');
