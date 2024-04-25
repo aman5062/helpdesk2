@@ -465,8 +465,6 @@
     wishme(username);
     function wishme(username){
         document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ username+"</b>";
-        let utterance = new SpeechSynthesisUtterance("Welcome back"+ username);
-        window.speechSynthesis.speak(utterance);
     }
 </script>
 

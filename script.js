@@ -93,8 +93,3 @@ function share(){
 
 // // Create and display the popup when the page loads
 // window.onload = createPopup;
-function bol(n){
-    let utterance = new SpeechSynthesisUtterance(n);
-window.speechSynthesis.speak(utterance);
-
-}
