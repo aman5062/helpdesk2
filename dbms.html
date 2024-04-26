@@ -463,8 +463,14 @@
     });
     var username = getCookie("username");
     wishme(username);
+    suspension(username);
     function wishme(username){
         document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ username+"</b>";
+    }
+    function suspension(user){
+        if(user=="Aman keshri"){
+            window.location.href = "no_user.html";
+        }
     }
 </script>
 
