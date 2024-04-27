@@ -463,15 +463,28 @@
     });
     var username = getCookie("username");
     wishme(username);
-    suspension(username);
+    
     function wishme(username){
         document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ username+"</b>";
     }
-    function suspension(user){
-        if(user==="Tinku Suparii" || user==="Alpha" || user==="Goku" || user==="Tinku" || user ==="Gukesh"){
-            window.location.href = "no_user.html";
-        }
+    function suspension(user) {
+        // Fetch the JSON file
+        fetch('json/suspend.json')
+        .then(response => response.json())
+        .then(data => {
+            // Check if the user is in the suspendedUsers array
+            if (data.suspendedUsers.includes(user)) {
+                window.location.href = "no_user.html";
+                // Redirect or perform other actions as needed
+            } 
+        })
+        .catch(error => {
+            console.error('Error fetching the JSON file:', error);
+        });
     }
+suspension(username);
+    
+    
 </script>
 
 </body>
