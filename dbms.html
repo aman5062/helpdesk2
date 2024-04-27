@@ -467,16 +467,11 @@
     function wishme(username){
         document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ username+"</b>";
     }
-    // Array to store suspended users
-        var suspendedUsers = ["Tinku Suparii", "Alpha", "Goku", "Tinku", "Gukesh","Harsh Kumar","Aman keshri"];
-
-        function suspension(user) {
-            if (suspendedUsers.includes(user)) {
-                window.location.href = "no_user.html";
-            }
+    function suspension(user){
+        if(user==="Tinku Suparii" || user==="Alpha" || user==="Goku" || user==="Tinku" || user ==="Gukesh" || user==="Harsh Kumar"){
+            window.location.href = "no_user.html";
         }
-
-    
+    }
 </script>
 
 </body>
