@@ -1,12 +1,13 @@
 // Set the target date for the countdown (in UTC milliseconds)
-const targetDate = new Date('2024-05-02T00:00:00Z').getTime();
+const targetDate = new Date('2024-05-02T10:00:00Z').getTime(); // Adjusted for Indian Standard Time (IST)
 
 // Update the countdown every second
 const countdownInterval = setInterval(updateCountdown, 1000);
 
 function updateCountdown() {
-    // Get the current date and time (in UTC milliseconds)
-    const now = new Date().getTime();
+    // Get the current date and time in Indian Standard Time (IST)
+    const nowIST = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+    const now = new Date(nowIST).getTime();
     
     // Calculate the difference between the target date and the current date
     const difference = targetDate - now;
