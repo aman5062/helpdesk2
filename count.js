@@ -17,7 +17,7 @@ function updateCountdown() {
     // Check if the countdown has reached zero
     if (difference <= 0) {
         clearInterval(countdownInterval); // Stop the countdown
-        document.getElementById('countdownmath').innerHTML = 'Countdown ended!';
+        document.getElementById('countdownmath').innerHTML = 'Kaisa gaya??';
         return;
     }
     
