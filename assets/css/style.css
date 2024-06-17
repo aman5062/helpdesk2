@@ -440,3 +440,10 @@ li.nav-item a{
  pointer-events: none;
 
 }
+.heading_name{
+	background-color: #ebd6d6;
+	margin-left:-20px ;
+	text-align: center;
+	font-size: large;
+	font-family: cursive;
+}
