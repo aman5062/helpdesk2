@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Helpdesk</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Custom JavaScript -->
     <script src="assets/js/script.js"></script>
+    <!-- CryptoJS for MD5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <style>
         #img1 {
             width: 300px;
@@ -23,7 +25,7 @@
 
         #img1:hover {
             transform: scale(1.055);
-            cursor: zoom-in
+            cursor: zoom-in;
         }
 
         h3 {
@@ -53,19 +55,19 @@
                         <form id="loginForm" onsubmit="submitForm(event)">
                             <div class="form-group mb-2">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
                             </div>
                             <div class="form-group mb-2">
                                 <label for="email">Email address</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
                             </div>
                             <div class="form-group mb-2">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <input type="password" class="form-control" id="password" placeholder="Password" required>
                             </div>
                             <div class="form-group mb-2">
                                 <label for="semester">Select Semester</label>
-                                <select class="form-control" id="semester">
+                                <select class="form-control" id="semester" required>
                                     <option value="1">Semester 1</option>
                                     <option value="2">Semester 2</option>
                                     <option value="3">Semester 3</option>
@@ -113,8 +115,8 @@
         // Assuming you have an API endpoint to handle login
         const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
 
-        // Convert password to MD5 (assuming you have a function for this)
-        const passwordMD5 = md5(password);
+        // Convert password to MD5
+        const passwordMD5 = CryptoJS.MD5(password).toString();
 
         // Example API request using fetch
         fetch(apiUrl, {
@@ -173,13 +175,6 @@
             }
         }
         return null;
-    }
-
-    // MD5 function (you need to include a proper MD5 library for this)
-    function md5(string) {
-        // Implementation of MD5 hashing
-        // You should use a proper MD5 library here
-        return string; // Placeholder, replace with actual MD5 hashing logic
     }
 </script>
 
