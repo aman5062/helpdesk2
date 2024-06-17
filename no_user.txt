@@ -1,5 +1,0 @@
- function suspension(user){
-        if(user==="Tinku Suparii" || user==="Alpha" || user==="Goku" || user==="Tinku" || user ==="Gukesh"){
-            window.location.href = "no_user.html";
-        }
-    }

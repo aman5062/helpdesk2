@@ -1,513 +1,186 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta meta name="viewport" content="width=device-width, user-scalable=no" />
     <title>Helpdesk</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Custom JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <style>
+        #img1 {
+            width: 300px;
+            transition: transform .2s ease-in-out;
+        }
+
+        #img1:hover {
+            transform: scale(1.055);
+            cursor: zoom-in
+        }
+
+        h3 {
+            margin-left: 0 !important;
+        }
+    </style>
 </head>
-<link rel="stylesheet" type="text/css" href="style.css?v=2" />
-<script src="script.js"></script>
-<script>
-    // Function to retrieve the value of a cookie by its name
-    function getCookie(cookieName) {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            // Check if the cookie starts with the desired name
-            if (cookie.startsWith(cookieName + '=')) {
-                return cookie.substring(cookieName.length + 1);
-            }
-        }
-        return null; // Return null if cookie not found
-    }
-
-    // Check if the cookie 'user' exists
-    var cookieValue = getCookie('user');
-
-    // If the cookie value is "active", continue, else redirect to the login page
-    if (cookieValue === "active") {
-        // Retrieve the username from the cookie
-        const username = getCookie('username');
-
-        // Check if the username exists
-        if (username) {
-            // Send a request to the API to get the login count
-            fetch('https://arambhsoftech.com/Helpdesk/user_check.php?username=' + encodeURIComponent(username))
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Data from user_check.php:', data); // Log the data returned from user_check.php
-                    // Check if login count is greater than 5
-                    if (data.login_count > 5) {
-                        console.log('Login count is greater than 5'); // Log that login count is greater than 5
-                        // Check if the "reviewed" cookie exists and its value is true
-                        const reviewed = getCookie('reviewed');
-                        if (reviewed !== "true") {
-                            console.log('Redirecting to review.html'); // Log that redirection to review.html is happening
-                            // Redirect to the review page if the "reviewed" cookie is not set to true
-                            window.location.href = "review.html";
-                        } else {
-                             // Prepare the data to be sent to the API
-                             const data = { username: username };
-
-                             // Send the data to the API endpoint
-                             fetch('https://arambhsoftech.com/Helpdesk/Helpdesk_login.php?username=' + encodeURIComponent(username), {
-                                 method: 'POST',
-                                 headers: {
-                                     'Content-Type': 'application/json'
-                                 },
-                                 body: JSON.stringify(data)
-                             })
-                             .then(response => response.json())
-                             .then(data => {
-                                 console.log('Response from Helpdesk_login.php:', data); // Log the response from Helpdesk_login.php
-                                 // Continue with further actions if needed
-                             })
-                             .catch(error => {
-                                 console.error('Error from Helpdesk_login.php:', error); // Log any errors from Helpdesk_login.php
-                                 // Handle errors if needed
-                             });
-                           
-                        }
-                    } else {
-                         // Prepare the data to be sent to the API
-                         const data = { username: username };
-
-                         // Send the data to the API endpoint
-                         fetch('https://arambhsoftech.com/Helpdesk/Helpdesk_login.php?username=' + encodeURIComponent(username), {
-                             method: 'POST',
-                             headers: {
-                                 'Content-Type': 'application/json'
-                             },
-                             body: JSON.stringify(data)
-                         })
-                         .then(response => response.json())
-                         .then(data => {
-                             console.log('Response from Helpdesk_login.php:', data); // Log the response from Helpdesk_login.php
-                             // Continue with further actions if needed
-                         })
-                         .catch(error => {
-                             console.error('Error from Helpdesk_login.php:', error); // Log any errors from Helpdesk_login.php
-                             // Handle errors if needed
-                         });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error from user_check.php:', error); // Log any errors from user_check.php
-                    // Handle errors if needed
-                });
-        } else {
-            console.log('Username not found in cookie'); // Log if username not found in cookie
-            // Redirect to the login page
-            window.location.href = "login.html";
-        }
-    } else {
-        // Redirect to the login page
-        window.location.href = "login.html";
-    }
-</script>
-
-
-    
-<script>
-    window.onload = function() {
-        
-    };
-</script>
-<script
-	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-	crossorigin="anonymous"
->
-
-
-
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-    
-  $(document).ready(function() {
-    if (window.location.href.indexOf("daa_viva") > -1) {
-        location.href = 'json/daa_viva.json';
-    }
-    else if (window.location.href.indexOf("oops_viva") > -1 ){
-        location.href = 'json/oops_viva.json';
-    }
-  });
-</script>
-<style>
-  *{
-      padding: 0;
-  }
-  #all{
-      
-      padding: 5px;
-
-  }
-  .box{
-      /* border: 1px black solid; */
-      padding: 2px;
-      margin: 5px;
-      border-radius: 10px;
-  }
-  #body{
-    position: relative;
-  }
-</style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
-  </div>
-</div>
-
-<body >  
-	<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDCo5yDTebh1FrgUyQNRxNhHlzg_kJhd5I",
-    authDomain: "arambh-a5832.firebaseapp.com",
-    projectId: "arambh-a5832",
-    storageBucket: "arambh-a5832.appspot.com",
-    messagingSenderId: "432670261814",
-    appId: "1:432670261814:web:6bebeaee84c912567b8e97",
-    measurementId: "G-21GPYKSDQ1"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-    <script>
-       
-
-        fetch("json/dbms_viva.json")
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
-        })
-        .then(function(datas) {
-            let thedata = document.querySelector("#viva");
-            let out = "";
-            for (let data of datas) {
-                out += `<h4>${data.sno}. ${data.question}</h4>
-                <h6 style="padding-left:15px;">${data.answer}</h6><br>
-                `;
-            }
-            thedata.innerHTML = out;
-        })
-        .catch(function(error) {
-            console.error('Error during fetch:', error);
-        });
-      </script>
-      <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
-        <div class="container-fluid">
-          <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <img src="logo.png" id="imglogo">
+<body onload="checkLogin()">
+<header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center p-3 mb-2 border-bottom">
+    <div class="container-fluid">
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="assets/images/logo.png" id="imglogo">
             <span class="fs-4 mr-5 lo"><h2 class="bold-text">Helpdesk</h2></span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="nav nav-pills navbar-nav ms-auto" id="myNav">
-              <!-- Sem1 -->
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 1</a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link dropdown-item" href="c_language.html">C-Language</a></li>
-                                 
-                 </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 2</a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link dropdown-item" href="data_structure.html">Data Structure</a></li>
-                    </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 3</a>
-                <ul class="dropdown-menu">
-                  <!-- Add subjects for Sem1 here -->
-                  <li><a class="nav-link dropdown-item" href="dbms.html">DBMS</a></li>
-                  <li><a class="nav-link dropdown-item" href="mech_updated.html">Mechanics</a></li>
-                  <li><a class="nav-link dropdown-item" href="object_updated.html">OOPS Code</a></li>
-                  <li><a class="nav-link dropdown-item" href="daa_updated.html">DAA</a></li>
-                </ul>
-              </li>
-              <!-- Sem2 -->
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Semister 4</a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link dropdown-item" href="python.html">Python</a></li>
-                    <li><a class="nav-link dropdown-item" href="os.html">OS</a></li>
-                    <li><a class="nav-link dropdown-item" href="web_tech.html">Web Technologies</a></li>
-                    <li><a class="nav-link dropdown-item" href="archi.html">Comp. Architecture</a></li>
-                    <li><a class="nav-link dropdown-item" href="math.html">Mathematics</a></li>     
-                    <li><a class="nav-link dropdown-item" href="archi_lab.html">Comp. Architecture Lab</a></li>
-                    <li><a class="nav-link dropdown-item" href="web_tech_lab.html">Web Technologies Lab</a></li>
-                    <li><a class="nav-link dropdown-item" href="os_lab.html">OS Lab</a></li>    
-                    <li><a class="nav-link dropdown-item" href="startup.html">Startup</a></li>   
-                </ul>
-                <li><a class="nav-link dropdown-item" href="contributers.html"><center>Our Valuable Contributers</center></a></li>
-                <li><a class="nav-link dropdown-item" href="Admin.html"><center>Admin Portal</center></a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </header>
-      
-      
+        </a>
+    </div>
+</header>
+
 <div id="body">
-   <div id="watermark">@Debuggers</div>
-   <center><div id="wishing_part">Welcome</div></center>
-   <hr>
- <!-- <marquee><a href="https://bit.ly/47pIBam">Mathematics assignment </a> -->
-    <!-- <a href="https://bit.ly/group_debuggers">Joint us <i class="fa fa-whatsapp" style="color: #45a049;" aria-hidden="true"></i></a> -->
-<!-- </marquee> -->
-
-<a href="python_notes.html">Python Viva Important</a>&nbsp;
-<a href="join.html">Join Us</a>&nbsp;
-<!-- <a href="mech_mcq.html">Assignment Questions DAA</a>  -->
- <hr>
- 
-<body>
-    <center><h1>Database Managment Systems Viva Questions</h1></center>
-
-<div id="viva"></div>
-</div><br><br>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Login/Signup
+                    </div>
+                    <div class="card-body">
+                        <form id="loginForm" onsubmit="submitForm(event)">
+                            <div class="form-group mb-2">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="semester">Select Semester</label>
+                                <select class="form-control" id="semester">
+                                    <option value="1">Semester 1</option>
+                                    <option value="2">Semester 2</option>
+                                    <option value="3">Semester 3</option>
+                                    <option value="4">Semester 4</option>
+                                    <option value="5">Semester 5</option>
+                                    <option value="6">Semester 6</option>
+                                    <option value="7">Semester 7</option>
+                                    <option value="8">Semester 8</option>
+                                </select>
+                            </div>
+                            <center><button type="submit" class="btn btn-primary">Login</button></center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- Bootstrap JS and dependencies (Popper.js and Bootstrap bundle) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-    var cookieString = document. cookie;
-    var cookies = cookieString. split(';');
-    var len = cookies. length;
-    var foundActiveUser = false;
-    var invis = true;
-    for(i=0; i<len; i++){
-        if(cookies[i]==="user=active"){
-               invis = false;
-            foundActiveUser = true;
-        break;
+    // Function to check if user is already logged in
+    function checkLogin() {
+        const userEmail = getCookie('user_email');
+        const userSemester = getCookie('user_semester');
+
+        if (userEmail && userSemester) {
+            // Redirect to the respective semester page
+            window.location.href = `semister${userSemester}/index.html`;
         }
     }
-    if (!foundActiveUser) {
-        feedback();
-    }
-   function feedback(){
-    setTimeout(function() {
-        document.getElementById("body").style.position = "absolute";
-        setTimeout(function() {
-            close();
-        }, 60000);
-    }, 2000);
-   }
-    
 
-   
-    function close() {
-  
-        document.getElementById("body").style.position = "relative";
-    }
+    // Function to handle form submission
+    function submitForm(event) {
+        event.preventDefault(); // Prevent default form submission
 
-    function close1() {
-      
-        document.getElementById("body").style.position = "relative";
-    }
-</script>
-<style>
-    #main {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: rgb(45, 40, 40);
-        position: relative;
-        visibility: visible;
-    }
-    #box {
-        background-color: rgb(242, 236, 236);
-        border: 1px black solid;
-        height: 50% !important;
-        width: 70%; 
-        flex: 0;
-        padding: 10px;
-        border-radius: 10px;
-    }
-    form {
-        margin-top: 10px;
-        text-align: center;
-    }
-    label {
-        display: block;
-        margin-bottom: 10px;
-    }
-    input,
-    textarea {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-    }
-    input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        cursor: pointer;
-    }
-    input[type="submit"]:hover {
-        background-color: #45a049;
-    }
-    input{
-        border-radius: 5px;
-    }
-    #right{
-        position: relative;
-        float: right;
-    }
-    #heading_tag {
-        animation: change 2s linear infinite;
-        color: red;
-        font-size: 15px;
-    }
-    
-    @keyframes change {
-        0% {
-            opacity: 0;
-        }
-        50% {
-            opacity: 0.5;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-    
-    #wishing_part{
-        position: relative;
-      align-self: center;
-      
-        
-    }
-</style>
-</head>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var currentDate = new Date();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const semester = document.getElementById('semester').value;
 
-        // Display current date and time
-        console.log("Current Date and Time:", currentDate);
+        // Assuming you have an API endpoint to handle login
+        const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
 
-        // Extract individual components
-        var year = currentDate.getFullYear();
-        var month = currentDate.getMonth() + 1; // Months are zero-based
-        var day = currentDate.getDate();
-        var hours = currentDate.getHours();
-        var minutes = currentDate.getMinutes();
-        var seconds = currentDate.getSeconds();
+        // Convert password to MD5 (assuming you have a function for this)
+        const passwordMD5 = md5(password);
 
-        // Format date and time
-        var formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-        document.getElementById("time").value = formattedDateTime;
-
-        var cookieString = document.cookie;
-        var cookies = cookieString.split(';');
-        var userset = false; // Initialize userset flag outside the loop
-
-        // Loop through cookies
-        for (let i = 0; i < cookies.length; i++) {
-            var n = cookies[i].trim().split("=");
-
-            // Check if cookie name is "name"
-            if (n[0] === "name") {
-                // Set values in the form
-                document.getElementById("user").value = n[1];
-               
-                userset = true;
-                break;
-            }
-        }
-
-        // Check if "name" cookie was not found
-        if (!userset) {
-            document.getElementById("user").value = "user";
-        }
-
-        // Prevent the default form submission behavior
-        var form = document.getElementById('logindb');
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            // Serialize the form data
-            var formData = new FormData(form);
-
-            // Fetch API call
-            fetch(form.action, {
-                method: "POST",
-                body: formData,
+        // Example API request using fetch
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                password: passwordMD5,
+                semester: semester
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(html => {
-                console.log("Done");
-                // You can add further actions here if needed
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
-        });
-
-        // Manually trigger a click on the submit button
-        var submitButton = document.getElementById('subme');
-        submitButton.click();
-    });
-    var username = getCookie("username");
-    wishme(username);
-    
-    function wishme(username){
-        document.getElementById("wishing_part").innerHTML="<b>Welcome Back "+ username+"</b>";
-    }
-    function suspension(user) {
-        // Fetch the JSON file
-        fetch('json/suspend.json')
+        })
         .then(response => response.json())
         .then(data => {
-            // Check if the user is in the suspendedUsers array
-            if (data.suspendedUsers.includes(user)) {
-                window.location.href = "no_user.html";
-                // Redirect or perform other actions as needed
-            } 
+            // Assuming the API responds with a success message
+            if (data.success) {
+                // Save name, email, and semester in cookies without expiration
+                setCookie('user_name', name, null); // No expiration
+                setCookie('user_email', email, null); // No expiration
+                setCookie('user_semester', semester, null); // No expiration
+                setCookie('user_active', 'true', null); // No expiration
+
+                // Redirect to the respective semester page
+                window.location.href = `semister${semester}/index.html`;
+            } else {
+                alert('Login failed. Please check your credentials.');
+            }
         })
         .catch(error => {
-            console.error('Error fetching the JSON file:', error);
+            console.error('Error:', error);
+            alert('An error occurred while logging in. Please try again later.');
         });
     }
-suspension(username);
-    
-    
+
+    // Function to set a cookie
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    // Function to get a cookie value
+    function getCookie(name) {
+        const cookieName = name + "=";
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.indexOf(cookieName) === 0) {
+                return cookie.substring(cookieName.length, cookie.length);
+            }
+        }
+        return null;
+    }
+
+    // MD5 function (you need to include a proper MD5 library for this)
+    function md5(string) {
+        // Implementation of MD5 hashing
+        // You should use a proper MD5 library here
+        return string; // Placeholder, replace with actual MD5 hashing logic
+    }
 </script>
 
 </body>
