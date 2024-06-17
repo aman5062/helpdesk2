@@ -108,60 +108,58 @@
         event.preventDefault(); // Prevent default form submission
 
         const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const semester = document.getElementById('semester').value;
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+const semester = document.getElementById('semester').value;
 
-        // Assuming you have an API endpoint to handle login
-        const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
+// Assuming you have an API endpoint to handle registration
+const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
 
-        // Convert password to MD5 (assuming you have a function for this)
-        const passwordMD5 = md5(password);
+// Convert password to MD5 (assuming you have a function for this)
+const passwordMD5 = md5(password);
 
-        // Example API request using fetch
-        fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                password: passwordMD5,
-                semester: semester
-            })
-        })
-        .then(response => {
-            if (response.status === 409) {
-                throw new Error('User already exists.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Assuming the API responds with a success message
-            if (data.success) {
-                // Save name, email, and semester in cookies without expiration
-                setCookie('user_name', name, null); // No expiration
-                setCookie('user_email', email, null); // No expiration
-                setCookie('user_semester', semester, null); // No expiration
-                setCookie('user_active', 'true', null); // No expiration
-
-                // Redirect to the respective semester page
-                window.location.href = `semister${semester}/index.html`;
-            } else {
-                alert('Login failed. Please check your credentials.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            if (error.message === 'User already exists.') {
-                alert('This email is already registered. Please use a different email.');
-            } else {
-                alert('An error occurred while logging in. Please try again later.');
-            }
-        });
+// Example API request using fetch
+fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        name: name,
+        email: email,
+        password: passwordMD5,
+        semester: semester
+    })
+})
+.then(response => {
+    if (response.status === 409) {
+        throw new Error('User already exists.');
     }
+    if (response.status === 201) {
+        // User successfully registered
+        return response.json(); // Proceed to save cookies and redirect
+    }
+    throw new Error('An unexpected error occurred.');
+})
+.then(data => {
+    // Save name, email, and semester in cookies without expiration
+    setCookie('user_name', name, null); // No expiration
+    setCookie('user_email', email, null); // No expiration
+    setCookie('user_semester', semester, null); // No expiration
+    setCookie('user_active', 'true', null); // No expiration
 
+    // Redirect to the respective semester page
+    window.location.href = `semister${semester}/index.html`;
+})
+.catch(error => {
+    console.error('Error:', error);
+    if (error.message === 'User already exists.') {
+        alert('This email is already registered. Please use a different email.');
+    } else {
+        alert('An error occurred while registering. Please try again later.');
+    }
+});
+    }
     // Function to set a cookie
     function setCookie(name, value, days) {
         let expires = "";
