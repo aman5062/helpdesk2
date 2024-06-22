@@ -201,20 +201,20 @@
         <li><b>Uni-Programing </b><br>
           Opreting System only process to reside to in main memory . single process can not  keep CPU & I/O devices busy simutanesuly .  Uni-Programing means old O.S system only one program runs on the computer at a time . Either of the browser calculator or word processor runs at a time . </li>
           ex :- Bank Statment, Mobile phone etc...
-          <img src="img/batch.png" alt="" id="img1">
+          <img src="../assets/images/os/batch.png" alt="" id="img1">
           <br>
          
             <br><br>
           <li><b>Multiprogramming System</b></li>
           A multiprogramming system is one where many programs (application or user programs ) reside in the main memory at the same time. These application or users programs not only share the main memory but also CPU time and other system resources. Earliar these resides only a single program in memory and that single program was not able to make efficient use of systen in multiprogramming was developed so as to improve the CPU utilisation and make effiecient use of system. IN multiprogramming system, the memory is divided into several small portions. One portion of the memory holds the operating system and other portions of the memory holds different programs.
           <br><br>
-          <img src="img/Opreting System/batch.png" alt="" id="img1">
+          <img src="../assets/images/os/batch.png" alt="" id="img1">
       <br>
     <br>
     <li><b>Time Sharing System / multi-tasking O.S </b></li>
     Both batch system and multiprogramming system worked in non-interactive environment, means the user of the system has no direct interaction with the system when the program is being executed. So there was a need for interactive computing environment so that user of the computer system can provide input with the help input devices and can see the output on the computer monitor. Time sharing system is the enhancement of multiprogramming system to provide this interactive user environment. TIme sharing is also multitasking system. In time sharing system two or more users are allowed to share the system. The users interact withe the system through their seperate monitor terminals. The user programs are stored in computer memory. The operating system assigns time interval called time-slice to each programs stored in memory associated with different users. The operating system uses CPU scheduling (CPU scheduling is decision making how to assign CPU time efficiently to different user programs stored in memory for execution) to switch the CPU time among different user programs. 
     <br> <br>
-    <img src="img/Opreting System/multi tasking.jpg" alt="" id="img1">
+    <img src="../assets/images/os/multi tasking.jpg" alt="" id="img1">
     <br><br>
     <li><b>Real Time System</b></li>
     Real Time Systems are the systems designed to work in environment where processing is to be done within bounded time constraint otherwise there are several consequences and even system failure. Real-time systems are used in real-time applications or in embedded systems. Some examples of real time applications are : fire control system, nuclear plants control system, air defence system, industrial control system, nuclear plants control system, flight control system, modern automobile containing an embedded systems etc. Since real time systems are used to handle real time applications so the proper functioing of real time system is based on time bounded processing as well as correct result.
@@ -223,19 +223,19 @@
     <li><b>Multi-User   </b></li>
     This OS allows multiple numbers of users can access different resoures of a computer at a same time . The access is provided using a network that consists of varios personal computers attache to a personal computers system . It helps in the sharing of data informaton among diffrente users .
     <br><br>
-    <img src="img/Opreting System/user.jpg" alt="" id="img1"> 
+    <img src="../assets/images/os/user.jpg" alt="" id="img1"> 
     <br><br<br> 
     <li><b>Multi-Processing </b></li>
     There is more than one proccessors present in the system which can execute more than one process at same time .  Multiple CPUs are linked together so that a job can be divided and executed more quickly. When a job is completed, the results from all CPUs are compiled to provide the final output.
     ex :- Symmetric , Asymmetrics
     <br><br>
-    <img src="img/Opreting System/procce.jpg" alt=""id="img1">
+    <img src="../assets/images/os/procce.jpg" alt=""id="img1">
     <br><br><br>
     <h3><b> Process And Process States transition Diagram :-</b></h3>
     <br>
     <h6><b>Process =></b>  A process is a program in execution which then forms the basis of all computation. The process is not as same as program code but a lot more than it. A process is an 'active' entity as opposed to the program which is considered to be a 'passive' entity. </h6> <br> 
     <h6><b>Process State transition Diagram :- </b></h6><br>
-    <img src="img/Opreting System/states .jpg" alt=""id="img1"> <br>
+    <img src="../assets/images/os/states .jpg" alt=""id="img1"> <br>
     <h6>A process has several stages that it passes through from beginning to end. There must be a minimum of five states. Even though during execution, the process could be in one of these states, the names of the states are not standardized. Each process goes through several stages throughout its life cycle.
       <br><br>
 
@@ -271,7 +271,7 @@
         <br><br><br> 
         <h3><b> Proces Control Block ( PCB ) :- </b></h3>
         In an operating system, a Process Control Block (PCB) is a data structure that contains information about a process, including its current state, program counter, CPU registers, and other relevant information. PCBs are used by the operating system to manage and control processes, including scheduling, resource allocation, and communication between processes. Each process in the system has its own PCB, which is created and maintained by the operating system. <br> 
-        <img src="img/Opreting System/PCB.jpg" alt=""id="img1"> <br> 
+        <img src="../assets/images/os/PCB.jpg" alt=""id="img1"> <br> 
         <b>Pointer:</b> It is a stack pointer that is required to be saved when the process is switched from one state to another to retain the current position of the process. <br><br>
 <b>Process state:</b> It stores the respective state of the process.<br><br>
 <b>Process number:</b> Every process is assigned a unique id known as process ID or PID which stores the process identifier.<br><br>
@@ -295,7 +295,7 @@ It brings the new process to the ‘Ready State’. It controls the Degree of Mu
 <b>2. Short-Term or CPU Scheduler -</b>
 The STS is also known as CPU Schedular .It is responsible for selecting one process from the ready state for scheduling it on the running state. Note: Short-term scheduler only selects the process to schedule it doesn’t load the process on running.  Here is when all the scheduling algorithms are used. The CPU scheduler is responsible for ensuring no starvation due to high burst time processes.
 <br>
-<img src="img/Opreting System/sts.png" alt=""id="img1">
+<img src="../assets/images/os/sts.png" alt=""id="img1">
 <br>
 The dispatcher is responsible for loading the process selected by the Short-term scheduler on the CPU (Ready to Running State) Context switching is done by the dispatcher only. A dispatcher does the following: 
 <br> <br>
@@ -306,22 +306,22 @@ The dispatcher is responsible for loading the process selected by the Short-term
 <br><br>
 <b>3. Medium-Term Scheduler -</b>
 It is responsible for suspending and resuming the process. It mainly does swapping (moving processes from main memory to disk and vice versa). Swapping may be necessary to improve the process mix or because a change in memory requirements has overcommitted available memory, requiring memory to be freed up. It is helpful in maintaining a perfect balance between the I/O bound and the CPU bound. It reduces the degree of multiprogramming .
-<img src="img/Opreting System/mts.png" alt=""id="img1">
+<img src="../assets/images/os/mts.png" alt=""id="img1">
 <br><br><br>
 
 <h3><b><u>Scheduling Algorithms:-</u></b></h3>
 CPU Scheduling is a process that allows one process to use the CPU while another process is delayed (in standby) due to unavailability of any resources such as I / O etc, thus making full use of the CPU. The purpose of CPU Scheduling is to make the system more efficient, faster, and fairer.<br>Whenever the CPU becomes idle, the operating system must select one of the processes in the line ready for launch. The selection process is done by a temporary (CPU) scheduler. The Scheduler selects between memory processes ready to launch and assigns the CPU to one of them.<br>
-<img src="img/Opreting System/algo.png" alt=""id="img1">
+<img src="../assets/images/os/algo.png" alt=""id="img1">
 <br>
 <b><h5>Types of Scheduling Algorithms:-</h5></b>
 <b>Preemtive:-</b>Preemptive scheduling is used when a process switches from the running state to the ready state or from the waiting state to the ready state. The resources (mainly CPU cycles) are allocated to the process for a limited amount of time and then taken away, and the process is again placed back in the ready queue if that process still has CPU burst time remaining. That process stays in the ready queue till it gets its next chance to execute. Algorithms based on preemptive scheduling are Round Robin (RR), Shortest Remaining Time First (SRTF), Priority (preemptive version), etc.<br>
 
-<img src="img/Opreting System/preemptive .png" alt=""id="img1"><br>
+<img src="../assets/images/os/preemptive .png" alt=""id="img1"><br>
 
 <b>Non-Preemtive:-</b> Non-preemptive Scheduling is used when a process terminates, or a process switches from running to the waiting state. In this scheduling, once the resources (CPU cycles) are allocated to a process, the process holds the CPU till it gets terminated or reaches a waiting state. In the case of non-preemptive scheduling does not interrupt a process running CPU in the middle of the execution. Instead, it waits till the process completes its CPU burst time, and then it can allocate the CPU to another process. 
 Algorithms based on non-preemptive scheduling are: Shortest Job First (SJF basically non preemptive) and Priority (nonpreemptive version), etc. <br>
 
-<img src="img/Opreting System/non preemptive .png" alt=""id="img1">
+<img src="../assets/images/os/non preemptive .png" alt=""id="img1">
 <br><br>
 <ol type="i">
 <h3><b><u>Proces :-</u></b></h3>
@@ -350,7 +350,7 @@ Process in Operating System. A process is a program in execution which then form
 <h3><b>Architecture Of Opreting System:- </b></h3>
 An Opreting System Architecture is the fundamental Design and Structure of an Opreting system. It describes how system mannage hardware, memory , procceses and Comunication. It also manage the interaction between Software and Hardware.<br>
 
-<img src="img/Opreting System/architecture .png" alt=""id="img1">
+<img src="../assets/images/os/architecture .png" alt=""id="img1">
 <br><br><br>
 
    
@@ -358,8 +358,8 @@ An Opreting System Architecture is the fundamental Design and Structure of an Op
 A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process.<BR> 
 
 Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once they are in front of each other. A similar situation occurs in operating systems when there are two or more processes that hold some resources and wait for resources held by other(s). For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1. <br>
-<img src="img/Opreting System/dead.png" alt=""id="img1">
-<img src="img/Opreting System/ded.png" alt=""id="img1"><br>
+<img src="../assets/images/os/dead.png" alt=""id="img1">
+<img src="../assets/images/os/ded.png" alt=""id="img1"><br>
 
  
 <h5>Examples Of Deadlock:-</h5>
@@ -372,10 +372,10 @@ Consider an example when two trains are coming toward each other on the same tra
  <li>P1 executes wait(B).</li> 
   <li>Now P0 and P1 enter in deadlock.</li>
 </ol>
-<img src="img/Opreting System/dwd.png" alt=""id="img1"><br><br>
+<img src="../assets/images/os/dwd.png" alt=""id="img1"><br><br>
 
 <b>Difference between Starvation and Deadlock:-</b><br>
-<img src="img/Opreting System/diff.png" alt=""id="img1"><br><br>
+<img src="../assets/images/os/diff.png" alt=""id="img1"><br><br>
 
 <h4><b>Necessary conditions for Deadlocks:-</b></h4>
 <ol type="i">
@@ -486,7 +486,7 @@ The memory management techniques can be classified into following main categorie
   <li>Non-Contiguous memory management schemes</li>
 </ul>
 
-<img src="img/Opreting System/mm.png" alt=""id="img1">
+<img src="../assets/images/os/mm.png" alt=""id="img1">
 
 <h5><b><mark>Contiguous memory management:-</mark></b></h5>
 Contiguous memory allocation is a memory allocation strategy. As the name implies, we utilize this technique to assign contiguous blocks of memory to each task. Thus, whenever a process asks to access the main memory, we allocate a continuous segment from the empty region to the process based on its size. In this technique, memory is allotted in a continuous way to the processes.<br> 
@@ -508,13 +508,13 @@ Contiguous memory allocation is a memory allocation strategy. As the name implie
   
 
 
-<img src="img/Opreting System/fixx.png" alt=""id="img1">
+<img src="../assets/images/os/fixx.png" alt=""id="img1">
 
 Internal fragmentation is found in fixed partition scheme. To overcome the problem of internal fragmentation, instead of fixed partition scheme, variable partition scheme is used.</ul>
 <ul type="square">
   <li><b> Internal Fragmentation:-</b></li>
   Internal Fragmentation is a problem that occurs due to poor memory allocation and it results in wastage of memory. When a process is loaded into the system it requests memory which is essential for its working. The operating system allocates memory to processes to work with but if the memory happens to be smaller and bigger than the process requirement the extra space goes unused. This small amount of memory unutilization is the major Internal Fragmentation appearing in the Operating System.
-  <img src="img/Opreting System/inte.png" alt=""id="img1">
+  <img src="../assets/images/os/inte.png" alt=""id="img1">
   <li><b> External Fragmentation:-</b></li>
   External fragmentation refers to the phenomenon where memory becomes separated into little blocks of free space dispersed all through the framework, making it challenging to distribute bigger adjacent blocks of memory to processes. This division of memory happens because of the allocation and deallocation of processes after some time.
 </ul>
@@ -535,7 +535,7 @@ Internal fragmentation is found in fixed partition scheme. To overcome the probl
     </li>
   <li>The number of partitions is specified at the time of system segmentation.</li>
 </ul>
-   <img src="img/Opreting System/dynn.png" alt="" id="img1">
+   <img src="../assets/images/os/dynn.png" alt="" id="img1">
 </ol>
 
 <h5><b><mark>Non-Contiguous memory management schemes:-</mark></b></h5>
@@ -556,7 +556,7 @@ Pages of the process are brought into the main memory only when they are require
   <li>Due to the equal size of frames, swapping becomes very easy. </li>
   <li>It is used for faster access of data.</li>
 </ul><br>
-<img src="img/Opreting System/page.png" alt="" id="img1">
+<img src="../assets/images/os/page.png" alt="" id="img1">
 
 <li><b> Segmentation =></b></li>
 Segmentation is a technique that eliminates the requirements of contiguous allocation of main memory. In this, the main memory is divided into variable-size blocks of physical memory called segments. It is based on the way the programmer follows to structure their programs. With segmented memory allocation, each job is divided into several segments of different sizes, one for each module. Functions, subroutines, stack, array, etc., are examples of such modules.
@@ -570,7 +570,7 @@ To avoid compaction, we need to change the rule which says that the process can'
 We can also use compaction to minimize the probability of external fragmentation. In compaction, all the free partitions are made contiguous and all the loaded partitions are brought together.
 By applying this technique, we can store the bigger processes in the memory. The free partitions are merged which can now be allocated according to the needs of new processes. This technique is also called defragmentation.
 
-<img src="img/Opreting System/com.png" alt="" id="img1"><br>
+<img src="../assets/images/os/com.png" alt="" id="img1"><br>
 
 As shown in the image above, the process P5, which could not be loaded into the memory due to the lack of contiguous space, can be loaded now in the memory since the free partitions are made contiguous.<br><br>
 
@@ -583,31 +583,31 @@ When it is time to load a process into the main memory and if there is more than
 <ol type="1">
 <li><mark>First Fit =</mark>In the first fit, the partition is allocated which is the first sufficient block from the top of Main Memory. It scans memory from the beginning and chooses the first available block that is large enough. Thus it allocates the first hole that is large enough.
 </li>
-<img src="img/Opreting System/first.png" alt="" id="img1"><br><br>
+<img src="../assets/images/os/first.png" alt="" id="img1"><br><br>
 <li><mark>Best Fit =</mark>Best Fit Allocate the process to the partition which is the first smallest sufficient partition among the free available partition. It searches the entire list of holes to find the smallest hole whose size is greater than or equal to the size of the process.</li>
  
-<img src="img/Opreting System/best.png" alt="" id="img1"><br><br>
+<img src="../assets/images/os/best.png" alt="" id="img1"><br><br>
 
 
 <li><mark>Worst Fit =</mark>Worst Fit Allocate the process to the partition which is the largest sufficient among the freely available partitions available in the main memory. It is opposite to the best-fit algorithm. It searches the entire list of holes to find the largest hole and allocate it to process.</li>
   
  
- <img src="img/Opreting System/aa.png" alt="" id="img1">
+ <img src="../assets/images/os/aa.png" alt="" id="img1">
 
 </ol>
 
 <h4><b><mark>Logical Address:-</mark></b></h4>
 A logical address, also known as a virtual address, is an address generated by the CPU during program execution. It is the address seen by the process and is relative to the program’s address space. The process accesses memory using logical addresses, which are translated by the operating system into physical addresses. An address that is created by the CPU while a program is running is known as a logical address. Because the logical address is virtual—that is, it doesn’t exist physically—it is also referred to as such. The CPU uses this address as a reference to go to the actual memory location. All logical addresses created from a program’s perspective are referred to as being in the “logical address space”. This address is used as a reference to access the physical memory location by CPU. The term Logical Address Space is used for the set of all logical addresses generated by a program’s perspective.<br>
-<img src="img/Opreting System/log.png" alt="" id="img1">
+<img src="../assets/images/os/log.png" alt="" id="img1">
 <br><br>
 
 <h4><b><mark>Physical Address:-</mark></b></h4>
 A physical address is the actual address in the main memory where data is stored. It is a location in physical memory, as opposed to a virtual address. Physical addresses are used by the Memory Management Unit (MMU) to translate logical addresses into physical addresses. The user must use the corresponding logical address to go to the physical address rather than directly accessing the physical address. For a computer program to function, physical memory space is required. Therefore, the logical address and physical address need to be mapped before the program is run.
 
 The term “physical address” describes the precise position of necessary data in a memory. Before they are used, the MMU must map the logical address to the physical address. This is because the user program creates the logical address and believes that the program is operating in this logical address. However, the program requires physical memory to execute. All physical addresses that match the logical addresses in a logical address space are collectively referred to as the “physical address space”.<br>
-<img src="img/Opreting System/phy.png" alt="" id="img1"><br><br>
+<img src="../assets/images/os/phy.png" alt="" id="img1"><br><br>
 
-<img src="img/Opreting System/ss.png" alt="" id="img1">
+<img src="../assets/images/os/ss.png" alt="" id="img1">
 
 
 
@@ -625,11 +625,11 @@ The term “physical address” describes the precise position of necessary data
 <center>
   <hr>
   Previous Year Paper<br> <hr>
-  <img src="img/pre/OS.jpg" alt="" id="img1">
-  <img src="img/pre/Os2.jpg" alt="" id="img1">
-  <img src="img/pre/pyq_mid_os_23-24.jpg" alt="" id="img1">
-  <img src="img/pre/pyq_end_os1_23-24.jpg" alt="" id="img1">
-  <img src="img/pre/pyq_end_os2_23-24.jpg" alt="" id="img1">
+  <img src="../assets/images/os/pre/OS.jpg" alt="" id="img1">
+  <img src="../assets/images/os/pre/Os2.jpg" alt="" id="img1">
+  <img src="../assets/images/os/pre/pyq_mid_os_23-24.jpg" alt="" id="img1">
+  <img src="../assets/images/os/pre/pyq_end_os1_23-24.jpg" alt="" id="img1">
+  <img src="../assets/images/os/pre/pyq_end_os2_23-24.jpg" alt="" id="img1">
 </center>
 
       <div>
