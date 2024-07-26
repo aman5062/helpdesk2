@@ -93,3 +93,31 @@ function share(){
 
 // // Create and display the popup when the page loads
 // window.onload = createPopup;
+
+function openLeftSidebar() {
+    document.getElementById("leftSidebar").style.width = "250px";
+}
+
+function closeLeftSidebar() {
+    document.getElementById("leftSidebar").style.width = "0";
+}
+
+
+
+function deleteAllCookies() {
+    // Get all cookies
+    const cookies = document.cookie.split(";");
+
+    // Loop through all cookies
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+
+        // Set cookie expiration date to a past date to delete it
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+}
+
+// Call the function to delete all cookies
+// deleteAllCookies();

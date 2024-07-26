@@ -162,9 +162,9 @@ a {
 	margin-right: 20px;
     text-decoration: none !important;
 }
-a:hover{
+/* a:hover{
     color: #04aa6d;
-}
+} */
 .topnav {
 	overflow: hidden;
 	background-color: #070707;;
@@ -368,10 +368,7 @@ tbody, td, tfoot, th, thead, tr{
 table{
 margin:5px;
 }
-li.nav-item a:hover{
-	background-color: #c4dcff;
-	border: 1px gray solid;
-}
+
 li.nav-item a{
 	padding-left: 10px;
 }
@@ -446,4 +443,100 @@ li.nav-item a{
 	text-align: center;
 	font-size: large;
 	font-family: cursive;
+}
+
+#top_bar{
+	width: 100%;
+	display: flex;
+	height: 4vh;
+}
+#tongle_arrow{
+	height: 6vh;
+	
+}
+#upper_menu_btn{
+	margin: 0;
+	border: none;
+	user-select: none;
+}
+
+#sec_nav{
+	height: 7vh;
+	margin: 0 !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+#myNav{
+	background-color: white;
+	width: 100%;
+	/* border: 1px solid black; */
+}
+#myNav li{
+	text-align: center;
+	width: 100%;
+	border-bottom: 1px solid black;
+}
+.nav-item:hover{
+	background-color: rgb(109, 170, 231);
+	
+}
+.nav-item a:hover{
+	color: white !important;
+}
+
+#img1{
+	width:300px;
+	transition:transform .2s ease-in-out;
+}
+	#img1:hover{transform:scale(1.055);cursor:zoom-in}
+	h3{
+	margin-left: 0 !important;
+	}
+	 /* Custom styles for the left sidebar */
+	 .sidebar-left {
+	  height: 100%;
+	  width: 0;
+	  position: fixed;
+	  z-index: 1;
+	  top: 0;
+	  left: 0;
+	  background-color: #111;
+	  overflow-x: hidden;
+	  transition: 0.5s;
+	  padding-top: 60px;
+  }
+  .sidebar-left h2{
+	padding: 8px 8px 8px 15px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+  }
+  .sidebar-left a {
+	  padding: 8px 8px 8px 32px;
+	  text-decoration: none;
+	  font-size: 20px;
+	  color: #818181;
+	  display: block;
+	  transition: 0.3s;
+  }
+
+  .sidebar-left a:hover {
+	  color: #f1f1f1;
+	  background-color: rgb(109, 170, 231);
+  }
+
+  .sidebar-left .closebtn {
+	  position: absolute;
+	  top: 0;
+	  right: 0px;
+	  font-size: 36px;
+	  margin-left: 50px;
+  }
+
+.sidebar-left > .active{
+	background-color: rgb(109, 170, 231);
+	color: #f1f1f1;
 }

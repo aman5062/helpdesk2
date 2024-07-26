@@ -44,47 +44,7 @@
 </header>
 
 <div id="body">
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        Login/Signup
-                    </div>
-                    <div class="card-body">
-                        <form id="loginForm" onsubmit="submitForm(event)">
-                            <div class="form-group mb-2">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                            </div>
-                            <div class="form-group mb-2">
-                                <label for="email">Email address</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email">
-                            </div>
-                            <div class="form-group mb-2">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password" required autocomplete="current-password">
-                            </div>
-                            <div class="form-group mb-2">
-                                <label for="semester">Select Semester</label>
-                                <select class="form-control" id="semester">
-                                    <option value="1">Semester 1</option>
-                                    <option value="2">Semester 2</option>
-                                    <option value="3">Semester 3</option>
-                                    <option value="4">Semester 4</option>
-                                    <option value="5">Semester 5</option>
-                                    <option value="6">Semester 6</option>
-                                    <option value="7">Semester 7</option>
-                                    <option value="8">Semester 8</option>
-                                </select>
-                            </div>
-                            <center><button type="submit" class="btn btn-primary">Login</button></center>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 <!-- Bootstrap JS and dependencies (Popper.js and Bootstrap bundle) -->
@@ -95,82 +55,28 @@
     // Function to check if user is already logged in
     function checkLogin() {
         const userEmail = getCookie('user_email');
-        const userSemester = getCookie('user_semester');
+        const userYear = getCookie('user_year');
 
-        if (userEmail && userSemester) {
-            // Redirect to the respective semester page
-            window.location.href = `semister${userSemester}/index.html`;
+        if (userEmail && userYear) {
+            
+           if(userYear==1){
+            window.location = "semister1/index.html";
+           }
+           else if(userYear==2){
+            window.location = "semister3/index.html";
+           }
+           else if(userYear==3){
+            window.location = "semister5/index.html";
+           }
+           else if(userYear==4){
+            window.location = "semister7/index.html";
+           }
+        }else{
+            window.location = "login.html";
+
         }
     }
-
-    // Function to handle form submission
-    function submitForm(event) {
-        event.preventDefault(); // Prevent default form submission
-
-        const name = document.getElementById('name').value;
-const email = document.getElementById('email').value;
-const password = document.getElementById('password').value;
-const semester = document.getElementById('semester').value;
-
-// Assuming you have an API endpoint to handle registration
-const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
-
-// Convert password to MD5 (assuming you have a function for this)
-const passwordMD5 = md5(password);
-
-// Example API request using fetch
-fetch(apiUrl, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        name: name,
-        email: email,
-        password: passwordMD5,
-        semester: semester
-    })
-})
-.then(response => {
-    if (response.status === 409) {
-        throw new Error('User already exists.');
-    }
-    if (response.status === 201) {
-        // User successfully registered
-        return response.json(); // Proceed to save cookies and redirect
-    }
-    throw new Error('An unexpected error occurred.');
-})
-.then(data => {
-    // Save name, email, and semester in cookies without expiration
-    setCookie('user_name', name, null); // No expiration
-    setCookie('user_email', email, null); // No expiration
-    setCookie('user_semester', semester, null); // No expiration
-    setCookie('user_active', 'true', null); // No expiration
-
-    // Redirect to the respective semester page
-    window.location.href = `semister${semester}/index.html`;
-})
-.catch(error => {
-    console.error('Error:', error);
-    if (error.message === 'User already exists.') {
-        alert('This email is already registered. Please use a different email.');
-    } else {
-        alert('An error occurred while registering. Please try again later.');
-    }
-});
-    }
-    // Function to set a cookie
-    function setCookie(name, value, days) {
-        let expires = "";
-        if (days) {
-            const date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    }
-
+  
     // Function to get a cookie value
     function getCookie(name) {
         const nameEQ = name + "=";
