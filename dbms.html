@@ -42,9 +42,21 @@
         </a>
     </div>
 </header>
-
+<style>
+    #welcome_msg{
+        margin-top: 15vh;
+        height: 20vh;
+        width: 80vw;
+    }
+</style>
 <div id="body">
-
+    <center>
+        <div style="font-size: 2rem;">
+            Welcome to Helpdesk
+        </div> <br>
+        <img src="assets/sys_img/welcome.jpg" alt="welcome" id="welcome_msg">
+        
+    </center>
 </div>
 
 <!-- Bootstrap JS and dependencies (Popper.js and Bootstrap bundle) -->
@@ -56,10 +68,33 @@
     function checkLogin() {
         const userEmail = getCookie('user_email');
         const userYear = getCookie('user_year');
+        const Username = getCookie('user_name');
 
         if (userEmail && userYear) {
-            
-           if(userYear==1){
+                const data = {
+                    Name: Username
+                };
+    
+                fetch('https://arambhsoftech.com/Helpdesk/Helpdesk_login.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(result => {
+                   redirectToPage(userYear);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });     
+    }else{
+        //window.location = "login.html";
+
+    }
+    function redirectToPage(userYear){
+        if(userYear==1){
             window.location = "semister1/index.html";
            }
            else if(userYear==2){
@@ -71,9 +106,6 @@
            else if(userYear==4){
             window.location = "semister7/index.html";
            }
-        }else{
-            window.location = "login.html";
-
         }
     }
   
