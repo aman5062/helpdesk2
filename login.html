@@ -132,16 +132,7 @@
         })
         .then(response => {
             if (response.status === 409) {
-                // User already exists, handle login
-                return response.json().then(data => {
-                    // Check if the password matches
-                    if (data.password && data.password === md5(password)) {
-                        // Successful login
-                        return handleLoginSuccess(data);
-                    } else {
-                        throw new Error('Invalid password.');
-                    }
-                });
+                return handleLoginSuccess(data);
             }
             if (response.status === 201) {
                 // User successfully registered
