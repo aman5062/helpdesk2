@@ -131,40 +131,37 @@
             })
         })
         .then(response => {
-            if (response.status === 409) {
-                return handleLoginSuccess(data);
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('An unexpected error occurred. Status: ' + response.status);
             }
-            if (response.status === 201) {
-                // User successfully registered
-                return response.json(); // Proceed to save cookies and redirect
-            }
-            throw new Error('An unexpected error occurred.');
         })
         .then(data => {
-            // Handle registration success or login success
-            if (data.password) {
+            if (data.status === 'login') {
                 // For login
                 handleLoginSuccess(data);
-            } else {
+            } else if (data.status === 'registration') {
                 // For registration
                 setCookie('user_name', name); // No expiration
                 setCookie('user_email', email); // No expiration
                 setCookie('user_year', year); // No expiration
                 setCookie('c_user', 'true'); // No expiration
                 redirectToYearPage(year);
+            } else {
+                throw new Error('Unexpected response format');
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            if (error.message === 'Invalid password.') {
+            if (error.message.includes('Invalid password')) {
                 er_msg("Invalid password. Please try again.");
-                clearForm();
-            } else if (error.message === 'User already exists.') {
+            } else if (error.message.includes('User already exists')) {
                 er_msg("This email is already registered. Please log in.");
-                clearForm();
             } else {
                 er_msg("An error occurred while processing your request. Please try again later.");
             }
+            clearForm();
             document.getElementById("btn_login").disabled = false;
         });
     }
@@ -232,6 +229,7 @@
         document.getElementById('year').value = "Year 1";
     }
 </script>
+
 
 </body>
 </html>
