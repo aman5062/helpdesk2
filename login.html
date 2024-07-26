@@ -86,22 +86,7 @@
         const userYear = getCookie('user_year');
 
         if (userEmail && userYear) {
-            switch (parseInt(userYear)) {
-                case 1:
-                    window.location = "semister1/index.html";
-                    break;
-                case 2:
-                    window.location = "semister3/index.html";
-                    break;
-                case 3:
-                    window.location = "semister5/index.html";
-                    break;
-                case 4:
-                    window.location = "semister7/index.html";
-                    break;
-                default:
-                    console.error('Invalid year:', userYear);
-            }
+            redirectToYearPage(userYear);
         }
     }
 
@@ -122,6 +107,7 @@
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
+                // Include authentication headers here if needed
             },
             body: JSON.stringify({
                 name: name,
@@ -134,15 +120,16 @@
             if (response.ok) {
                 return response.json();
             } else {
-                throw new Error('An unexpected error occurred. Status: ' + response.status);
+                return response.text().then(text => {
+                    throw new Error('An unexpected error occurred. Status: ' + response.status + ' - ' + text);
+                });
             }
         })
         .then(data => {
+            console.log('Server response:', data);
             if (data.status === 'login') {
-                // For login
                 handleLoginSuccess(data);
             } else if (data.status === 'registration') {
-                // For registration
                 setCookie('user_name', name); // No expiration
                 setCookie('user_email', email); // No expiration
                 setCookie('user_year', year); // No expiration
@@ -229,6 +216,9 @@
         document.getElementById('year').value = "Year 1";
     }
 </script>
+
+
+
 
 
 </body>
