@@ -545,3 +545,14 @@ li.nav-item a{
 .down_arrow{
 	font-size: 30px;
 }
+ans::before{
+	
+	content: "➡";
+	
+}
+ans{
+	margin-bottom: 20px;
+}
+que{
+	font-size: 18px;
+}
