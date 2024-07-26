@@ -541,3 +541,6 @@ li.nav-item a{
 	background-color: rgb(109, 170, 231);
 	color: #f1f1f1;
 }
+.down_arrow{
+	font-size: 30px;
+}
