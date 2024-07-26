@@ -448,7 +448,7 @@ li.nav-item a{
 #top_bar{
 	width: 100%;
 	display: flex;
-	height: 4vh;
+	/*height: 4vh;*/
 }
 #tongle_arrow{
 	height: 6vh;
