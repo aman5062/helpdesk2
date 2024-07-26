@@ -469,6 +469,7 @@ li.nav-item a{
 }
 
 #myNav{
+	margin-top: -10px;
 	background-color: white;
 	width: 100%;
 	/* border: 1px solid black; */
