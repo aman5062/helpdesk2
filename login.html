@@ -100,58 +100,63 @@
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const year = document.getElementById('year').value;
-
-        const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
-
-        fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-                // Include authentication headers here if needed
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                password: password,
-                year: year
+        if (name !== "" && email !== "" && password !== "" && year !== "") {
+            const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
+        
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // Include authentication headers here if needed
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    password: password,
+                    year: year
+                })
             })
-        })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                return response.text().then(text => {
-                    throw new Error('An unexpected error occurred. Status: ' + response.status + ' - ' + text);
-                });
-            }
-        })
-        .then(data => {
-            console.log('Server response:', data);
-            if (data.status === 'login') {
-                handleLoginSuccess(data);
-            } else if (data.status === 'registration') {
-                setCookie('user_name', name); // No expiration
-                setCookie('user_email', email); // No expiration
-                setCookie('user_year', year); // No expiration
-                setCookie('c_user', 'true'); // No expiration
-                redirectToYearPage(year);
-            } else {
-                throw new Error('Unexpected response format');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            if (error.message.includes('Invalid password')) {
-                er_msg("Invalid password. Please try again.");
-            } else if (error.message.includes('User already exists')) {
-                er_msg("This email is already registered. Please log in.");
-            } else {
-                er_msg("An error occurred while processing your request. Please try again later.");
-            }
-            clearForm();
-            document.getElementById("btn_login").disabled = false;
-        });
-    }
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    return response.text().then(text => {
+                        throw new Error('An unexpected error occurred. Status: ' + response.status + ' - ' + text);
+                    });
+                }
+            })
+            .then(data => {
+                console.log('Server response:', data);
+                if (data.status === 'login') {
+                    handleLoginSuccess(data);
+                } else if (data.status === 'registration') {
+                    setCookie('user_name', name); // No expiration
+                    setCookie('user_email', email); // No expiration
+                    setCookie('user_year', year); // No expiration
+                    setCookie('c_user', 'true'); // No expiration
+                    redirectToYearPage(year);
+                } else {
+                    throw new Error('Unexpected response format');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                if (error.message.includes('Invalid password')) {
+                    er_msg("Invalid password. Please try again.");
+                } else if (error.message.includes('User already exists')) {
+                    er_msg("This email is already registered. Please log in.");
+                } else {
+                    er_msg("An error occurred while processing your request. Please try again later.");
+                }
+                clearForm();
+                document.getElementById("btn_login").disabled = false;
+            });
+        } else {
+            er_msg("Fill all the details");
+        }
+        
+        }
+ 
 
     // Function to handle successful login
     function handleLoginSuccess(data) {
