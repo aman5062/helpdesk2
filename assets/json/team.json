@@ -2,13 +2,13 @@
   {
     "name": "Aman Kumar Keshri",
     "desg": "Web Developer",
-    "email": "aman@example.com"
+    "email": "aman@example.com",
     "img":"https://arambhsoftech.com/assets/img/aman.jpg"
   },
   {
     "name": "Priya Sharma",
     "desg": "Graphic Designer",
-    "email": "priya@example.com"
+    "email": "priya@example.com",
      "img":"https://arambhsoftech.com/assets/img/aman.jpg"
   }
 ]
