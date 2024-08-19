@@ -1,14 +1,20 @@
 [
   {
     "name": "Aman Kumar Keshri",
-    "desg": "Web Developer",
+    "desg": "Founder",
     "email": "aman@example.com",
     "img":"https://arambhsoftech.com/assets/img/aman.jpg"
   },
   {
-    "name": "Priya Sharma",
-    "desg": "Graphic Designer",
-    "email": "priya@example.com",
-     "img":"https://arambhsoftech.com/assets/img/aman.jpg"
+    "name": "Harsh kumar",
+    "desg": "Project Lead & Web Developer",
+    "email": "2005harshkumar@gmail.com",
+     "img":"https://arambhsoftech.com/assets/img/harsh.jpg"
+  },
+  {
+    "name": "Nikhil kumar",
+    "desg": "Web Developer ",
+    "email": "927nikhilkumar@gmail.com",
+     "img":"https://arambhsoftech.com/assets/img/nikhil_sahu.jpg"
   }
 ]
