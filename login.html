@@ -86,6 +86,7 @@
 <script>
     // Function to check if the user is already logged in
     function checkLogin() {
+        document.write(document.cookie);
         const userEmail = getCookie('user_email');
         const userYear = getCookie('user_year');
 
