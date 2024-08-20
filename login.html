@@ -34,9 +34,7 @@
 </header>
 
 <div id="body">
-    <div id="check">
-
-    </div>
+    
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -89,7 +87,7 @@
 <script>
     // Function to check if the user is already logged in
     function checkLogin() {
-        document.getElementById("check").innerHTML = document.cookie;
+       
         const userEmail = getCookie('user_email');
         const userYear = getCookie('user_year');
 
@@ -142,7 +140,9 @@
                     setCookie('user_email', email); // No expiration
                     setCookie('user_year', year); // No expiration
                     setCookie('c_user', 'true'); // No expiration
-                    redirectToYearPage(year);
+                    setTimeout(() => {
+                        redirectToYearPage(data.year);
+                  }, 4000);
                 } else {
                     throw new Error('Unexpected response format');
                 }
@@ -172,7 +172,7 @@
         setCookie('user_email', data.email); // No expiration
         setCookie('user_year', data.year); // No expiration
         setCookie('c_user', 'true'); // No expiration
-        document.write(document.cookie);
+        
         setTimeout(() => {
               redirectToYearPage(data.year);
         }, 4000);
