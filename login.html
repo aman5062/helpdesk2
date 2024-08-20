@@ -168,7 +168,10 @@
         setCookie('user_email', data.email); // No expiration
         setCookie('user_year', data.year); // No expiration
         setCookie('c_user', 'true'); // No expiration
-        redirectToYearPage(data.year);
+      
+        setTimeout(() => {
+              redirectToYearPage(data.year);
+        }, 4000);
     }
 
     // Function to redirect based on year
