@@ -89,6 +89,258 @@
       </marquee>
       <hr>
       
+      <center><Strong><h3>Automata</h3></Strong></center>
+      &rarr; Automata is an exciting and theoretical branch of computer science.
+
+     <br>
+     &rarr; Automation = an abstract computing device.
+     <br>
+     &rarr; Simply, Automata theory deals with the logic of computation with respect to simple machines, referred to as automata.
+     <br>
+     &rarr; Through automata, Computer scientists can understand how machines compute functions and solve problems.
+
+     <br><br>
+     <h4>Basic Concepts of automata theory: </h4>
+      <strong><h4>1. Alphabets : </h4></strong>
+      &rarr; It is a finite, non-empty sets of symbols. <br>
+      &rarr; Representation : &Sigma; (Sigma) <br>
+      &rarr; Ex => Binary symbols : &Sigma; = {0,1}
+      <br>
+<br>
+      <strong><h4>2. Strings : </h4></strong>
+      &rarr; A String or word is a finite collection of Symbols selected from the Alphabets (&Sigma;). <br>
+
+      &rarr; A String can be empty, which is represented by &epsilon; ("epsilon").
+      <br><br>
+
+      <strong>Length of String: </strong>The length of the String is denoted by |w| and it is the number positions for the symbol in the String. For Example:
+
+      <br>
+      w = 01101 has length = 5, i.e. |w| = 5.
+      <br><br>
+
+      <Strong>Empty String: </Strong> The empty String is the string with zero occurance of Symbols. The empty string is represented by &epsilon;. 
+<br><br>
+<strong><h4>3. Languages </h4></strong>
+&rarr; L- is said to be the language over a given set of Alphabets, if L belongs to &Sigma;<sup>*</sup>
+<br>
+For Ex - L is a language that comprises of set of even numbers over the alphabets &Sigma; = {0,1}. 
+
+<br><br>
+<h3>Finite Automata</h3>
+&rarr; Finite automata are mainly used for pattern recognition. <br>
+&rarr; It takes the string of Symbols as input and changes its states accordingly. When the desired symbol is found, then the transition occurs. <br>
+&rarr; At the time of transition, the automata can either move to the next state or stay in the same state.
+<br>
+&rarr; Finite automata have two states, <b>Accept state</b> and <b>Reject State</b>. 
+
+<br><br>
+<ul>
+  <li>Q = Finite set of States</li>
+  <li>&Sigma; = Finite sets of the input Symbol</li>
+  <li>q <sub>o</sub> = initial State</li>
+  <li>F = Final State</li>
+  <li>&delta; = transition functions</li>
+</ul>
+
+<h4>Types of finite Automata: </h4>
+<ol type="1">
+  <li>DFA (Deterministic Finite Automata)</li>
+  <li>NFA (Non-Deterministic Finite Automata)</li>
+</ol>
+<h4>DFA</h4>
+&rarr; DFA refers to Deterministic finite automata. Deterministic refers to the uniqueness of the computation.
+<br>
+&rarr; In DFA, there is only one path for specific input from the current State to the next state. <br>
+&rarr; DFA does not accept the null move, i.e, the DFA cannot change state without any input character.
+<br>
+<br>
+<h4>Transition Diagram</h4>
+A transition diagram is a graphical way to represent a finite automaton. It shows the following: <br>
+
+<Strong>1. States: </Strong>Represented by circles. One state is the start state (marked with an arrow pointing to it) and some states can be final states (double circles). <br>
+<Strong>2. Transitions:</Strong> Arrows between states, labeled with input symbols, showing how the automaton moves from one state to another based on the input. <br>
+<Strong>3. Input Symbols: </Strong>These are the symbols that cause transitions between states. <br><br>
+The automaton starts in the start state and follows the transitions according to the input symbols. If it reaches a final state after reading the input, the input is accepted. If not, the input is rejected.
+<br>
+<br>
+<h4>Transition Table</h4>
+<p>A <strong>transition table</strong> is a tabular representation of the transitions of a finite automaton. It details how the automaton changes states in response to input symbols from its alphabet. This table is crucial in understanding the behavior of deterministic finite automata (DFA) or non-deterministic finite automata (NFA).</p>
+
+
+
+<p><strong>Example Transition Table:</strong></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Input `a`</th>
+            <th>Input `b`</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>q0</td>
+            <td>q1</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>q1</td>
+            <td>-</td>
+            <td>q2</td>
+        </tr>
+        <tr>
+            <td>q2</td>
+            <td>q2</td>
+            <td>q2</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<h4>Nondeterministic Finite Automaton (NFA)</h4>
+
+    <p>A <strong>Nondeterministic Finite Automaton (NFA)</strong> is a theoretical model of computation used in automata theory. An NFA is similar to a Deterministic Finite Automaton (DFA), but it allows multiple possible transitions for the same input symbol from a given state, including the possibility of moving to multiple states or no states at all.</p>
+
+    <h4>Key Symbols in Nondeterministic Finite Automaton (NFA)</h4>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Q</td>
+                <td>Set of all states in the automaton</td>
+            </tr>
+            <tr>
+                <td>&Sigma;</td>
+                <td>Input alphabet (set of allowed input symbols)</td>
+            </tr>
+            <tr>
+                <td>&delta;</td>
+                <td>Transition function that maps a state and input symbol to a set of next possible states</td>
+            </tr>
+            <tr>
+                <td>q&#8320;</td>
+                <td>Start state (initial state of the automaton)</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>Set of final (accepting) states</td>
+            </tr>
+            <tr>
+                <td>&rarr;</td>
+                <td>Represents the start state in the diagram (arrow pointing to the start state)</td>
+            </tr>
+            <tr>
+                <td>&#8943;</td>
+                <td>Ellipsis, used when multiple transitions are possible</td>
+            </tr>
+            <tr>
+                <td>&Lambda; or &epsilon;</td>
+                <td>Represents an empty string transition (no input required to move to the next state)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Explanation</h3>
+    <p><strong>Q:</strong> This is the set of all possible states in the NFA.</p>
+    <p><strong>&Sigma; (Sigma):</strong> Represents the input symbols the automaton can process.</p>
+    <p><strong>&delta; (Delta):</strong> The transition function that tells the NFA where to move based on the current state and input.</p>
+    <p><strong>q&#8320;:</strong> The start state where the automaton begins processing the input.</p>
+    <p><strong>F:</strong> The set of final states where the automaton halts and accepts the input.</p>
+    <p><strong>&rarr;:</strong> Indicates the initial state in a transition diagram.</p>
+    <p><strong>&Lambda; or &epsilon;:</strong> Represents an epsilon transition, where the automaton can change states without consuming any input.</p>
+
+
+    <h2>Comparison Between NFA and DFA</h2>
+
+    <table style="font-size: 12px;">
+        <thead>
+            <tr>
+                <th>Criteria</th>
+                <th>NFA (Nondeterministic Finite Automaton)</th>
+                <th>DFA (Deterministic Finite Automaton)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Definition</td>
+                <td>An automaton where for a given input symbol, the machine can transition to multiple states or no state at all.</td>
+                <td>An automaton where for a given input symbol, the machine can transition to exactly one state.</td>
+            </tr>
+            <tr>
+                <td>Transition Function</td>
+                <td>&delta;(q, a) → set of states (can be zero, one, or more states)</td>
+                <td>&delta;(q, a) → single state (always one specific state)</td>
+            </tr>
+            <tr>
+                <td>Epsilon (ε) Transitions</td>
+                <td>Allowed (the automaton can change states without consuming input).</td>
+                <td>Not allowed (each transition requires an input symbol).</td>
+            </tr>
+            <tr>
+                <td>Determinism</td>
+                <td>Non-deterministic (the automaton can choose multiple paths).</td>
+                <td>Deterministic (only one path for each input symbol from any given state).</td>
+            </tr>
+            <tr>
+                <td>Number of Possible Transitions</td>
+                <td>Can have multiple transitions for the same input symbol.</td>
+                <td>Only one transition per input symbol per state.</td>
+            </tr>
+            <tr>
+                <td>Acceptance of Input</td>
+                <td>An input is accepted if at least one possible transition sequence leads to a final state.</td>
+                <td>An input is accepted only if the unique transition sequence leads to a final state.</td>
+            </tr>
+            <tr>
+                <td>Memory Usage</td>
+                <td>Generally requires less memory as multiple paths are conceptually handled.</td>
+                <td>Requires more memory as the automaton must store information for every specific state and transition.</td>
+            </tr>
+            <tr>
+                <td>Conversion</td>
+                <td>Can be converted to an equivalent DFA.</td>
+                <td>Cannot be converted to NFA (but any NFA can be converted to DFA).</td>
+            </tr>
+            <tr>
+                <td>Construction</td>
+                <td>Easier to construct for some languages due to non-determinism.</td>
+                <td>Can be more difficult to construct as it requires explicitly defined transitions for every state and symbol.</td>
+            </tr>
+            <tr>
+                <td>Performance</td>
+                <td>Can be faster in recognizing languages due to multiple parallel paths.</td>
+                <td>Generally slower due to the need to process a single path deterministically.</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -103,7 +355,6 @@
       </div>  
      
 
-      <div>
-        <section>
+      
         </body>
 </html>
