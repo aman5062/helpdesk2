@@ -95,9 +95,84 @@
           <span><i class="fa fa-arrow-up" aria-hidden="true" id="arrow"></i></span>
       </a>
       </div>  
-     
+      <h3>Distributed Computing and Virtualization </h3>
+      <h4>1. Cloud Fundamentals</h4>
+      <h4>Cloud Definition</h4>
+      <p>Cloud computing refers to the delivery of computing services over the internet. These services include servers, storage, databases, networking, software, and more. Users can access and use these services on a pay-as-you-go basis.</p>
 
-      <div>
-        <section>
+      <h3>Evolution of Cloud Computing</h3>
+      <ul>
+          <li><strong>Mainframe Era:</strong> Centralized computing with terminals connected to a mainframe.</li>
+          <li><strong>Client-Server Era:</strong> Introduction of networked computers and local servers.</li>
+          <li><strong>Virtualization Era:</strong> Virtual machines and resources pooling.</li>
+          <li><strong>Cloud Era:</strong> Scalable, on-demand services provided over the internet.</li>
+      </ul>
+
+      <h3>Cloud Architecture</h3>
+      <ul>
+          <li><strong>Front-end:</strong> The client-side, which includes the user interface and applications used to access cloud services.</li>
+          <li><strong>Back-end:</strong> The cloud infrastructure, including servers, storage, and data centers.</li>
+          <li><strong>Middleware:</strong> Software that connects different applications or services and handles the communication between the front-end and back-end.</li>
+      </ul>
+
+      <h3>Cloud Applications</h3>
+      <ul>
+          <li><strong>Software as a Service (SaaS):</strong> Applications delivered over the internet (e.g., Gmail, Office 365).</li>
+          <li><strong>Platform as a Service (PaaS):</strong> Platforms providing runtime environments for development and deployment (e.g., Heroku, Google App Engine).</li>
+          <li><strong>Infrastructure as a Service (IaaS):</strong> Virtualized computing resources over the internet (e.g., AWS EC2, Google Compute Engine).</li>
+      </ul>
+
+      <h3>Deployment Models</h3>
+      <ul>
+          <li><strong>Public Cloud:</strong> Services offered over the public internet and available to anyone (e.g., AWS, Azure).</li>
+          <li><strong>Private Cloud:</strong> Dedicated to a single organization, providing more control and security.</li>
+          <li><strong>Hybrid Cloud:</strong> Combination of public and private clouds, allowing data and applications to be shared between them.</li>
+          <li><strong>Community Cloud:</strong> Shared by several organizations with common interests or requirements.</li>
+      </ul>
+
+      <h3>Service Models</h3>
+      <ul>
+          <li><strong>Infrastructure as a Service (IaaS):</strong> Provides virtualized computing resources over the internet.</li>
+          <li><strong>Platform as a Service (PaaS):</strong> Provides a platform allowing customers to develop, run, and manage applications.</li>
+          <li><strong>Software as a Service (SaaS):</strong> Provides software applications over the internet, accessible via a web browser.</li>
+      </ul>
+
+      <h2>2. Virtualization</h2>
+      <h3>Issues with Virtualization</h3>
+      <ul>
+          <li><strong>Performance Overheads:</strong> Virtual machines may experience reduced performance compared to physical machines.</li>
+          <li><strong>Resource Contention:</strong> Multiple VMs sharing resources can lead to contention and reduced efficiency.</li>
+          <li><strong>Security Risks:</strong> Vulnerabilities in hypervisors can potentially affect multiple VMs.</li>
+          <li><strong>Complexity:</strong> Managing and configuring virtual environments can be complex.</li>
+      </ul>
+
+      <h3>Virtualization Technologies and Architectures</h3>
+      <ul>
+          <li><strong>Type 1 Hypervisors:</strong> Also known as bare-metal hypervisors, they run directly on the hardware (e.g., VMware ESXi, Microsoft Hyper-V).</li>
+          <li><strong>Type 2 Hypervisors:</strong> Also known as hosted hypervisors, they run on top of an existing operating system (e.g., VMware Workstation, Oracle VirtualBox).</li>
+          <li><strong>Containerization:</strong> A form of virtualization that involves running applications in isolated containers (e.g., Docker, Kubernetes).</li>
+      </ul>
+
+      <h3>Internals of Virtual Machine Monitors/Hypervisors</h3>
+      <ul>
+          <li><strong>Virtual Machine Monitor (VMM):</strong> Manages the execution of virtual machines. It abstracts the hardware and provides virtualized resources.</li>
+          <li><strong>Hypervisor:</strong> A software layer that enables multiple virtual machines to share the same physical hardware.</li>
+          <li><strong>Virtualization Layer:</strong> Provides virtualized hardware to VMs, including CPU, memory, storage, and network resources.</li>
+      </ul>
+
+      <h3>Virtualization of Data Centers</h3>
+      <ul>
+          <li><strong>Server Virtualization:</strong> Divides physical servers into multiple virtual servers.</li>
+          <li><strong>Storage Virtualization:</strong> Abstracts physical storage to appear as a single storage pool.</li>
+          <li><strong>Network Virtualization:</strong> Abstracts network resources to create virtual networks over physical networks.</li>
+      </ul>
+
+      <h3>Issues with Multi-Tenancy</h3>
+      <ul>
+          <li><strong>Isolation:</strong> Ensuring that one tenant's data and operations are isolated from others.</li>
+          <li><strong>Security:</strong> Protecting against attacks that may target shared resources.</li>
+          <li><strong>Resource Management:</strong> Balancing resources among multiple tenants to avoid performance degradation.</li>
+          <li><strong>Compliance:</strong> Adhering to regulatory requirements in a shared environment.</li>
+      </ul>
         </body>
 </html>
