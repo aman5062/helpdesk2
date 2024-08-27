@@ -83,7 +83,8 @@
             .then(response => response.json())
             .then(result => {
                 if (result.message === "Data inserted successfully") {
-                    redirectToPage(userYear);
+                   document.write("success");
+                    // redirectToPage(userYear);
                 } else if (result.message === "Error: User is not active or does not exist") {
                     window.location = "nouser.html";
                 } else {
