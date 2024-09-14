@@ -87,141 +87,129 @@
 <script>
     // Function to check if the user is already logged in
     function checkLogin() {
-       
         const userEmail = getCookie('user_email');
         const userYear = getCookie('user_year');
-
         if (userEmail && userYear) {
             redirectToYearPage(userYear);
         }
     }
 
-    // Function to handle form submission
-    function submitForm(event) {
+    // Function to handle form submission with async/await
+    async function submitForm(event) {
         event.preventDefault(); // Prevent default form submission
 
-        document.getElementById("btn_login").disabled = true;
+        const submitButton = document.getElementById("btn_login");
+        submitButton.disabled = true;
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const year = document.getElementById('year').value;
-        if (name !== "" && email !== "" && password !== "" && year !== "") {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const year = document.getElementById('year').value.trim();
+
+        if (name === "" || email === "" || password === "" || year === "") {
+            er_msg("Fill in all the details");
+            submitButton.disabled = false;
+            return;
+        }
+
+        try {
             const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
-        
-            fetch(apiUrl, {
+
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
-                    // Include authentication headers here if needed
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    password: password,
-                    year: year
-                })
-            })
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    return response.text().then(text => {
-                        throw new Error('An unexpected error occurred. Status: ' + response.status + ' - ' + text);
-                    });
-                }
-            })
-            .then(data => {
-                console.log('Server response:', data);
-                if (data.status === 'login') {
-                    handleLoginSuccess(data);
-                } else if (data.status === 'registration') {
-                    setCookie('user_name', name); // No expiration
-                    setCookie('user_email', email); // No expiration
-                    setCookie('user_year', year); // No expiration
-                    setCookie('c_user', 'true'); // No expiration
-                    setTimeout(() => {
-                        redirectToYearPage(data.year);
-                  }, 4000);
-                } else {
-                    throw new Error('Unexpected response format');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                if (error.message.includes('Invalid password')) {
-                    er_msg("Invalid password. Please try again.");
-                } else if (error.message.includes('User already exists')) {
-                    er_msg("This email is already registered. Please log in.");
-                } else {
-                    er_msg("An error occurred while processing your request. Please try again later.");
-                }
-                clearForm();
-                document.getElementById("btn_login").disabled = false;
+                body: JSON.stringify({ name, email, password, year })
             });
-        } else {
-            er_msg("Fill all the details");
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Error ${response.status}: ${errorText}`);
+            }
+
+            const data = await response.json();
+            console.log('Server response:', data);
+
+            if (data.status === 'login') {
+                handleLoginSuccess(data);
+            } else if (data.status === 'registration') {
+                setLoginCookies({ name, email, year });
+                setTimeout(() => redirectToYearPage(data.year), 4000);
+            } else {
+                throw new Error('Unexpected response format');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            handleErrors(error);
+            clearForm();
+        } finally {
+            submitButton.disabled = false;
         }
-        
-        }
- 
+    }
 
     // Function to handle successful login
     function handleLoginSuccess(data) {
-        setCookie('user_name', data.name); // No expiration
-        setCookie('user_email', data.email); // No expiration
-        setCookie('user_year', data.year); // No expiration
-        setCookie('c_user', 'true'); // No expiration
-        
-        setTimeout(() => {
-              redirectToYearPage(data.year);
-        }, 4000);
+        setLoginCookies(data);
+        setTimeout(() => redirectToYearPage(data.year), 4000);
+    }
+
+    // Function to set multiple cookies
+    function setLoginCookies({ name, email, year }) {
+        setCookie('user_name', name);
+        setCookie('user_email', email);
+        setCookie('user_year', year);
+        setCookie('c_user', 'true');
+    }
+
+    // Function to handle errors more gracefully
+    function handleErrors(error) {
+        if (error.message.includes('Invalid password')) {
+            er_msg("Invalid password. Please try again.");
+        } else if (error.message.includes('User already exists')) {
+            er_msg("This email is already registered. Please log in.");
+        } else {
+            er_msg("An error occurred while processing your request. Please try again later.");
+        }
     }
 
     // Function to redirect based on year
     function redirectToYearPage(year) {
-        switch (parseInt(year)) {
-            case 1:
-                window.location = "semister1/index.html";
-                break;
-            case 2:
-                window.location = "semister3/index.html";
-                break;
-            case 3:
-                window.location = "semister5/index.html";
-                break;
-            case 4:
-                window.location = "semister7/index.html";
-                break;
-            default:
-                console.error('Invalid year:', year);
+        const pages = {
+            1: "semister1/index.html",
+            2: "semister3/index.html",
+            3: "semister5/index.html",
+            4: "semister7/index.html"
+        };
+        const page = pages[parseInt(year)];
+        if (page) {
+            window.location = page;
+        } else {
+            console.error('Invalid year:', year);
         }
     }
 
     // Function to set a cookie
     function setCookie(name, value) {
-        document.cookie = name + "=" + (value || "") + "; path=/";
+        document.cookie = `${name}=${value || ""}; path=/`;
     }
 
     // Function to get a cookie value
     function getCookie(name) {
-        const nameEQ = name + "=";
-        const ca = document.cookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') {
-                c = c.substring(1, c.length);
-            }
-            if (c.indexOf(nameEQ) === 0) {
-                return c.substring(nameEQ.length, c.length);
+        const nameEQ = `${name}=`;
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            cookie = cookie.trim();
+            if (cookie.startsWith(nameEQ)) {
+                return cookie.substring(nameEQ.length);
             }
         }
         return null;
     }
 
     // Function to display error messages
-    function er_msg(err) {
-        document.getElementById("error_msg").innerHTML = err;
+    function er_msg(message) {
+        document.getElementById("error_msg").innerHTML = message;
     }
 
     // Function to clear the form fields
@@ -232,7 +220,6 @@
         document.getElementById('year').value = "Year 1";
     }
 </script>
-
 
 
 
