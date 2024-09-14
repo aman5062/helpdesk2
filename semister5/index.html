@@ -32,24 +32,44 @@ function removememe(){
 }
 </script>
 <style>
- 
-#meme_box{
+#meme_box {
+    padding: 10px;
+    z-index: 100;
+    align-items: center;
+    position: fixed; /* Changed to fixed */
+    top: 25%;
+    width: 90%; /* Adjust for mobile view */
+    height: 35%;
+    background-color: wheat;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
 
-padding: 10px;
-z-index: 100;
-align-items: center;
-top:25%;
-position: relative;
-width: 100%;
-height: 35%;
-background-color: wheat;
+#blur_back {
+    background-color: rgba(255, 255, 255, 0.688);
+    position: fixed; /* Changed to fixed */
+    top: 0; /* Ensure it starts from the top */
+    left: 0; /* Ensure it starts from the left */
+    height: 100%;
+    width: 100%;
+    z-index: 99;
 }
-#blur_back{
-background-color: rgba(255, 255, 255, 0.688);
-position: absolute;
-height: 100%;
-width: 100%;
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    #meme_box {
+        top: 30%; /* Adjust to center it better on mobile */
+        height: 40%; /* Adjust height for mobile */
+        width: 80%; /* More flexible width for mobile */
+    }
+
+    #meme_img {
+        height: 80%; /* Adjust image size */
+        width: 100%; /* Ensure the image fills the box */
+    }
 }
+
 .cut{
 
 margin-left: 90%;
