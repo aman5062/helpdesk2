@@ -24,66 +24,36 @@
 <script src="../assets/js/script.js"></script>
 
 <script>
-  function memelogy() {
-    document.getElementById("meme_img").style.backgroundImage = 'url("https://arambhsoftech.com/Helpdesk/meme/meme.png")';
+function memelogy() {
+    document.getElementById("meme_img").src = 'https://arambhsoftech.com/Helpdesk/meme/meme.png';
 }
-function removememe(){
-  document.getElementById("blur_back").style.display = "none";
-}
+
+function removememe() {
+            document.getElementById('meme_box').style.display = 'none';
+            document.getElementById('blur_back').style.display = 'none';
+        }
 </script>
-<style>
-#meme_box {
-    padding: 10px;
-    z-index: 100;
-    align-items: center;
-    position: fixed; /* Changed to fixed */
-    top: 25%;
-    width: 90%; /* Adjust for mobile view */
-    height: 35%;
-    background-color: wheat;
-    margin: auto;
-    left: 0;
-    right: 0;
+<style>   #meme_box {
+  background-color: wheat;
+  z-index: 1000;
+  padding: 20px;
+  text-align: center;
 }
-
 #blur_back {
-    background-color: rgba(255, 255, 255, 0.688);
-    position: fixed; /* Changed to fixed */
-    top: 0; /* Ensure it starts from the top */
-    left: 0; /* Ensure it starts from the left */
-    height: 100%;
-    width: 100%;
-    z-index: 99;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    #meme_box {
-        top: 30%; /* Adjust to center it better on mobile */
-        height: 40%; /* Adjust height for mobile */
-        width: 80%; /* More flexible width for mobile */
-    }
-
-    #meme_img {
-        height: 80%; /* Adjust image size */
-        width: 100%; /* Ensure the image fills the box */
-    }
-}
-
-.cut{
-
-margin-left: 90%;
-
-}
-#meme_img {
-  background-color: black;
-  height: 90%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;  /* Ensures the background covers the entire element */
-  background-position: center;  /* Centers the background image */
+  z-index: 999;
 }
-
+@media (max-width: 768px) {
+  #meme_img {
+      height: 100%;
+      width: auto;
+  }
+}
   </style>
 <body onload="memelogy();"> 
  
@@ -140,20 +110,20 @@ margin-left: 90%;
       </div>
     </div>
   </header>
-  <center onclick="removememe();">
-    <div id="blur_back">
-     <section id="meme_box">
-       <div class="cut">
-         X
-       </div>
-       <div id="meme_img">
-   
-       </div>
-     </section>
+    <!-- Background Blur -->
+    <div id="blur_back"></div>
+
+    <!-- Meme Box Content -->
+    <div id="meme_box" class="container position-fixed top-50 start-50 translate-middle rounded shadow-lg">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <img id="meme_img" src="your-image-url.jpg" class="img-fluid rounded" alt="Meme Image">
+            </div>
+            <div class="col-12 mt-3">
+                <button class="btn btn-danger" onclick="removememe()">Close Meme</button>
+            </div>
+        </div>
     </div>
-   
-   
-    </center>
     <div id="body">
       <div class="heading_name">Software technology</div>
       <div id="watermark">@Debuggers</div>
