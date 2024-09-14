@@ -50,11 +50,13 @@
     }
 </style>
 <div id="body">
-    <center>
-        <div style="font-size: 2rem;">
-            Welcome to Helpdesk
+    <center><br><br><br><br><br><br>
+        <br><br>
+        <div style="font-size: 1rem;" >
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
         </div> <br>
-        <img src="assets/sys_img/welcome.jpg" alt="welcome" id="welcome_msg">
         
     </center>
 </div>
@@ -97,7 +99,7 @@
                 document.write("An error occurred: " + error.message);
             }
         } else {
-            window.location = "login.html";
+           window.location = "login.html";
         }
     }
     
