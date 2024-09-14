@@ -85,140 +85,144 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // Function to check if the user is already logged in
-    function checkLogin() {
-        const userEmail = getCookie('user_email');
-        const userYear = getCookie('user_year');
-        if (userEmail && userYear) {
-            redirectToYearPage(userYear);
+  // Function to delete all cookies
+function deleteAllCookies() {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"; // Delete each cookie
+    }
+}
+
+// Function to set a new cookie
+function setCookie(name, value, days = 7) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Set expiration
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+}
+
+// Function to check if a specific cookie is set
+function isCookieSet(name) {
+    return getCookie(name) !== null;
+}
+
+// Function to get a cookie value
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1, c.length);
+        }
+        if (c.indexOf(nameEQ) === 0) {
+            return c.substring(nameEQ.length, c.length);
         }
     }
+    return null;
+}
 
-    // Function to handle form submission with async/await
-    async function submitForm(event) {
-        event.preventDefault(); // Prevent default form submission
+// Modified submitForm function
+async function submitForm(event) {
+    event.preventDefault(); // Prevent default form submission
 
-        const submitButton = document.getElementById("btn_login");
-        submitButton.disabled = true;
+    const submitButton = document.getElementById("btn_login");
+    submitButton.disabled = true;
 
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value.trim();
-        const year = document.getElementById('year').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const year = document.getElementById('year').value.trim();
 
-        if (name === "" || email === "" || password === "" || year === "") {
-            er_msg("Fill in all the details");
-            submitButton.disabled = false;
-            return;
+    if (name === "" || email === "" || password === "" || year === "") {
+        er_msg("Fill in all the details");
+        submitButton.disabled = false;
+        return;
+    }
+
+    try {
+        const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
+
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, password, year })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Error ${response.status}: ${errorText}`);
         }
 
-        try {
-            const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
+        const data = await response.json();
+        console.log('Server response:', data);
 
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name, email, password, year })
+        if (data.status === 'login') {
+            handleLoginSuccess(data);
+        } else if (data.status === 'registration') {
+            // Delete all existing cookies
+            deleteAllCookies();
+
+            // Set new cookies and wait until they are confirmed to be set
+            setLoginCookies({ name, email, year });
+
+            // Wait until the cookies are set before redirecting
+            const checkCookiesSet = new Promise((resolve, reject) => {
+                let attempts = 0;
+                const interval = setInterval(() => {
+                    if (isCookieSet('user_email') && isCookieSet('user_year')) {
+                        clearInterval(interval);
+                        resolve();
+                    } else if (attempts++ > 10) { // Timeout after 10 attempts (~2 seconds)
+                        clearInterval(interval);
+                        reject(new Error('Cookie setting timed out.'));
+                    }
+                }, 200); // Check every 200ms
             });
 
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`Error ${response.status}: ${errorText}`);
-            }
-
-            const data = await response.json();
-            console.log('Server response:', data);
-
-            if (data.status === 'login') {
-                handleLoginSuccess(data);
-            } else if (data.status === 'registration') {
-                setLoginCookies({ name, email, year });
-                setTimeout(() => redirectToYearPage(data.year), 4000);
-            } else {
-                throw new Error('Unexpected response format');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            handleErrors(error);
-            clearForm();
-        } finally {
-            submitButton.disabled = false;
-        }
-    }
-
-    // Function to handle successful login
-    function handleLoginSuccess(data) {
-        setLoginCookies(data);
-        setTimeout(() => redirectToYearPage(data.year), 4000);
-    }
-
-    // Function to set multiple cookies
-    function setLoginCookies({ name, email, year }) {
-        setCookie('user_name', name);
-        setCookie('user_email', email);
-        setCookie('user_year', year);
-        setCookie('c_user', 'true');
-    }
-
-    // Function to handle errors more gracefully
-    function handleErrors(error) {
-        if (error.message.includes('Invalid password')) {
-            er_msg("Invalid password. Please try again.");
-        } else if (error.message.includes('User already exists')) {
-            er_msg("This email is already registered. Please log in.");
+            // Wait for cookie confirmation, then redirect
+            await checkCookiesSet;
+            redirectToYearPage(data.year);
         } else {
-            er_msg("An error occurred while processing your request. Please try again later.");
+            throw new Error('Unexpected response format');
         }
+    } catch (error) {
+        console.error('Error:', error);
+        handleErrors(error);
+        clearForm();
+    } finally {
+        submitButton.disabled = false;
     }
+}
 
-    // Function to redirect based on year
-    function redirectToYearPage(year) {
-        const pages = {
-            1: "semister1/index.html",
-            2: "semister3/index.html",
-            3: "semister5/index.html",
-            4: "semister7/index.html"
-        };
-        const page = pages[parseInt(year)];
-        if (page) {
-            window.location = page;
-        } else {
-            console.error('Invalid year:', year);
-        }
-    }
+// Function to handle successful login (if required)
+function handleLoginSuccess(data) {
+    setCookie('user_name', data.name);
+    setCookie('user_email', data.email);
+    setCookie('user_year', data.year);
+    setCookie('c_user', 'true');
 
-    // Function to set a cookie
-    function setCookie(name, value) {
-        document.cookie = `${name}=${value || ""}; path=/`;
-    }
+    setTimeout(() => {
+        redirectToYearPage(data.year);
+    }, 4000);
+}
 
-    // Function to get a cookie value
-    function getCookie(name) {
-        const nameEQ = `${name}=`;
-        const cookies = document.cookie.split(';');
-        for (let cookie of cookies) {
-            cookie = cookie.trim();
-            if (cookie.startsWith(nameEQ)) {
-                return cookie.substring(nameEQ.length);
-            }
-        }
-        return null;
-    }
+// Function to set multiple login-related cookies
+function setLoginCookies({ name, email, year }) {
+    setCookie('user_name', name);
+    setCookie('user_email', email);
+    setCookie('user_year', year);
+    setCookie('c_user', 'true');
+}
 
-    // Function to display error messages
-    function er_msg(message) {
-        document.getElementById("error_msg").innerHTML = message;
-    }
-
-    // Function to clear the form fields
-    function clearForm() {
-        document.getElementById('name').value = "";
-        document.getElementById('email').value = "";
-        document.getElementById('password').value = "";
-        document.getElementById('year').value = "Year 1";
-    }
 </script>
 
 
