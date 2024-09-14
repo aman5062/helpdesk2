@@ -556,34 +556,3 @@ ans{
 que{
 	font-size: 18px;
 }
-
-#meme_box{
-
-	padding: 10px;
-	z-index: 100;
-	align-items: center;
-	top:25%;
-	position: relative;
-	width: 100%;
-	height: 35%;
-	background-color: wheat;
-}
-#blur_back{
-	background-color: rgba(255, 255, 255, 0.688);
-	position: absolute;
-	height: 100%;
-	width: 100%;
-}
-.cut{
-
-	margin-left: 90%;
-
-}
-#meme_img {
-    background-color: black;
-    height: 90%;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;  /* Ensures the background covers the entire element */
-    background-position: center;  /* Centers the background image */
-}
