@@ -25,7 +25,10 @@
 
 <script>
 function memelogy() {
-    document.getElementById("meme_img").src = 'https://arambhsoftech.com/Helpdesk/meme/meme.png';
+  const imageElement = document.getElementById("meme_img");
+    const randomNumber = Math.floor(Math.random() * 10000); // Generates a random number between 0 and 9999
+    imageElement.src = `https://arambhsoftech.com/Helpdesk/meme/meme.png?r=${randomNumber}`;
+
 }
 
 function removememe() {
