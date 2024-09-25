@@ -353,8 +353,204 @@ The automaton starts in the start state and follows the transitions according to
           <span><i class="fa fa-arrow-up" aria-hidden="true" id="arrow"></i></span>
       </a>
       </div>  
-     
+     <hr>
+     <center>
+Some Important Questions
+     </center>
+<hr>
 
-      
+<h4>Q1: What is Finite Automata?</h4>
+<p>A finite automaton is a mathematical model of computation used to design both computer programs and sequential logic circuits. It consists of states, transitions, an initial state, and a set of accepting states. Finite automata are used to recognize regular languages.</p>
+
+
+<h4>Q2: What is a Moore machine?</h4>
+<p>A Moore machine is a finite state machine where the output depends only on the current state. The outputs are produced in response to entering a state, not by the transitions. It is defined by a 6-tuple (Q, Σ, Δ, δ, λ, q₀), where λ maps states to outputs.</p>
+
+<h4>Q3: What is a Mealy machine?</h4>
+<p>A Mealy machine is a finite state machine where the output depends on both the current state and the input. It is described by a 6-tuple (Q, Σ, Δ, δ, λ, q₀), where λ maps input and state pairs to outputs. Mealy machines can react faster compared to Moore machines.</p>
+
+
+<h4>Q4: What is a DFA?</h4>
+<p>A DFA, or Deterministic Finite Automaton, is a type of finite automaton where each state has exactly one transition for each symbol in the input alphabet. It is deterministic, meaning that the machine’s behavior is entirely predictable, and there is no ambiguity in transitions.</p>
+
+
+<h4>Q5: What is the difference between NFA and DFA?</h4>
+<p>In an NFA (Non-deterministic Finite Automaton), for a given state and input symbol, there can be multiple possible next states. In contrast, a DFA has exactly one transition for each symbol in the input alphabet from any state. Despite this difference, both DFA and NFA recognize the same set of languages, the regular languages.</p>
+
+
+<h4>Q6: What is an ε-NFA?</h4>
+<p>An ε-NFA is a type of NFA where transitions can occur without consuming any input symbol (ε-transitions). These ε-transitions allow the automaton to change states spontaneously. ε-NFAs can be converted to equivalent NFAs or DFAs that recognize the same language.</p>
+
+
+<h4>Q7: What is ε-closure?</h4>
+<p>The ε-closure of a state in an ε-NFA is the set of all states that can be reached from the given state through ε-transitions. It includes the state itself and any other states that can be reached by following ε-transitions from that state.</p>
+
+<section>
+    <strong>
+     8) Construct a DFA for the language over {0, 1}* such that it contains “000” as a substring.
+    </strong> <br>
+     <img id="img1" src="../assets/images/formal/q1.png">
+     <br>
+    <strong> 9) Define (a) Finite Automata (FA) (b) Transition Diagram</strong>
+
+     <br>
+     
+         <h5 style="color: #2c3e50;">Finite Automata (FA)</h5>
+         <p>
+             A Finite Automaton (FA) is a theoretical model of computation used to design and analyze the behavior of digital circuits and algorithms. It consists of a finite number of states, transitions between these states, and an input alphabet. A finite automaton can be categorized into two main types:
+         </p>
+         <ul>
+             <li>
+                 <strong>Deterministic Finite Automaton (DFA):</strong> For each state and input symbol, there is exactly one transition to a next state. The DFA has a unique path for each input string.
+             </li>
+             <li>
+                 <strong>Nondeterministic Finite Automaton (NFA):</strong> For a given state and input symbol, there can be multiple possible transitions, or none at all. An NFA may have multiple paths for the same input string.
+             </li>
+         </ul>
+         <p>
+             An FA can be represented formally by a 5-tuple <code>(Q, &Sigma;, &delta;, q<sub>0</sub>, F)</code>, where:
+         </p>
+         <ul>
+             <li><strong>Q</strong> is a finite set of states.</li>
+             <li><strong>&Sigma;</strong> is a finite set of input symbols (alphabet).</li>
+             <li><strong>&delta;</strong> is the transition function <code>&delta;: Q &times; &Sigma; &rarr; Q</code> (for DFA) or <code>&delta;: Q &times; &Sigma; &rarr; 2<sup>Q</sup></code> (for NFA).</li>
+             <li><strong>q<sub>0</sub></strong> is the start state.</li>
+             <li><strong>F</strong> is the set of accept states.</li>
+         </ul>
+     
+         <h5 style="color: #2c3e50;">Transition Diagram</h5>
+         <p>
+             A Transition Diagram is a graphical representation of a finite automaton. It visually shows the states and transitions of the automaton, making it easier to understand and analyze its behavior. In a transition diagram:
+         </p>
+         <ul>
+             <li><strong>States</strong> are represented as circles or nodes.</li>
+             <li><strong>Transitions</strong> are shown as arrows connecting the states, labeled with the input symbols that cause the transition.</li>
+             <li>The <strong>start state</strong> is typically indicated with an arrow pointing to it from nowhere.</li>
+             <li><strong>Accept states</strong> are often denoted with a double circle or a different color to signify that reaching these states indicates acceptance of the input string.</li>
+         </ul>
+         <p>
+             The transition diagram provides a clear, visual way to understand how the automaton processes input and moves from state to state based on input symbols.
+         </p>
+         <img id="img1" src="../assets/images/formal/dfanfa.png">
+         <br>
+<strong>10) State the difference between NFA and DFA. 
+</strong>
+         <br>
+
+<table style="width: 80vw;">
+ <thead>
+     <tr>
+         <th>Aspect</th>
+         <th>NFA (Nondeterministic Finite Automaton)</th>
+         <th>DFA (Deterministic Finite Automaton)</th>
+     </tr>
+ </thead>
+ <tbody>
+     <tr>
+         <td>Transition Function</td>
+         <td>The transition function &delta; can lead to multiple possible next states or none at all. <br> &delta;: Q &times; &Sigma; &rarr; 2<sup>Q</sup>.</td>
+         <td>The transition function &delta; leads to exactly one next state for each state and input symbol. <br> &delta;: Q &times; &Sigma; &rarr; Q.</td>
+     </tr>
+     <tr>
+         <td>Paths</td>
+         <td>Multiple possible paths for a given input string. The NFA can be in multiple states simultaneously.</td>
+         <td>Single unique path for a given input string. The DFA is in exactly one state at any point in time.</td>
+     </tr>
+     <tr>
+         <td>Epsilon Transitions</td>
+         <td>Can have epsilon (&epsilon;) transitions, allowing state changes without consuming input.</td>
+         <td>No epsilon (&epsilon;) transitions; state changes occur only with input symbols.</td>
+     </tr>
+     <tr>
+         <td>Complexity and Computation</td>
+         <td>More complex to implement due to multiple possible states. Conceptually simpler for certain languages.</td>
+         <td>Simpler to implement due to deterministic behavior. Requires less computational overhead.</td>
+     </tr>
+ </tbody>
+</table>
+<br>
+<strong>
+ 11) Convert the given NFA to DFA.
+
+</strong>
+<img id="img1" src="../assets/images/formal/q4.png">
+<br><br>
+
+<img id="img1" src="../assets/images/formal/q4_ans.jpg">
+<br>
+<strong>12) Describe DFA and NFA with the help of its Tuples.
+</strong>
+<br>
+<div style="margin-bottom: 20px;">
+ <h5 style="color: #2c3e50;">DFA (Deterministic Finite Automaton)</h5>
+ <p>A DFA is defined by a 5-tuple (Q, &Sigma;, &delta;, q<sub>0</sub>, F), where:</p>
+ <ul style="list-style-type: disc; margin-left: 20px;">
+     <li><strong>Q:</strong> A finite set of states. <br> Example: Q = {q<sub>0</sub>, q<sub>1</sub>, q<sub>2</sub>}</li>
+     <li><strong>&Sigma;:</strong> A finite set of input symbols (alphabet). <br> Example: &Sigma; = {0, 1}</li>
+     <li><strong>&delta;:</strong> The transition function, &delta;: Q &times; &Sigma; &rarr; Q. <br> Example: 
+         <ul style="list-style-type: circle; margin-left: 20px;">
+             <li>&delta;(q<sub>0</sub>, 0) = q<sub>1</sub></li>
+             <li>&delta;(q<sub>0</sub>, 1) = q<sub>2</sub></li>
+             <li>&delta;(q<sub>1</sub>, 0) = q<sub>0</sub></li>
+             <li>&delta;(q<sub>1</sub>, 1) = q<sub>1</sub></li>
+         </ul>
+     </li>
+     <li><strong>q<sub>0</sub>:</strong> The start state. <br> Example: q<sub>0</sub></li>
+     <li><strong>F:</strong> The set of accept states (final states). <br> Example: F = {q<sub>1</sub>}</li>
+ </ul>
+</div>
+
+<div style="margin-bottom: 20px;">
+ <h5 style="color: #2c3e50;">NFA (Nondeterministic Finite Automaton)</h5>
+ <p>An NFA is defined by a 5-tuple (Q, &Sigma;, &delta;, q<sub>0</sub>, F), where:</p>
+ <ul style="list-style-type: disc; margin-left: 20px;">
+     <li><strong>Q:</strong> A finite set of states. <br> Example: Q = {q<sub>0</sub>, q<sub>1</sub>, q<sub>2</sub>}</li>
+     <li><strong>&Sigma;:</strong> A finite set of input symbols (alphabet). <br> Example: &Sigma; = {0, 1}</li>
+     <li><strong>&delta;:</strong> The transition function, &delta;: Q &times; &Sigma; &rarr; 2<sup>Q</sup>. <br> Example:
+         <ul style="list-style-type: circle; margin-left: 20px;">
+             <li>&delta;(q<sub>0</sub>, 0) = {q<sub>0</sub>, q<sub>1</sub>}</li>
+             <li>&delta;(q<sub>0</sub>, 1) = {q<sub>0</sub>}</li>
+             <li>&delta;(q<sub>1</sub>, 1) = {q<sub>2</sub>}</li>
+             <li>&delta;(q<sub>2</sub>, 0) = {q<sub>2</sub>}</li>
+         </ul>
+     </li>
+     <li><strong>q<sub>0</sub>:</strong> The start state. <br> Example: q<sub>0</sub></li>
+     <li><strong>F:</strong> The set of accept states (final states). <br> Example: F = {q<sub>2</sub>}</li>
+ </ul>
+</div>
+<strong>
+ 13) Minimize the DFA
+</strong>
+<br>
+<img src="../assets/images/formal/q5.png" alt="" id="img1">
+<br>
+<img src="../assets/images/formal/q5_ans1.jpg" alt="" id="img1">
+<img src="../assets/images/formal/q5_ans2.jpg" alt="" id="img1">
+<br><br>
+14) Design a FA with ∑ = {0, 1} accepts those string which starts with 1 and ends with 0.
+<img src="../assets/images/formal/q14.png" alt="" id="img1">
+<br><br>
+15) Design FA with ∑ = {0, 1} accepts even number of 0's and even number of 1's.
+
+<img src="../assets/images/formal/q15.png" alt="" id="img1">
+
+<br><br>
+16)Draw deterministic finite automata (DFA) of the language containing the set of all strings over {a, b} in which 2nd symbol from RHS is 'a'.
+<img src="../assets/images/formal/q16.png" alt="" id="img1">
+ <br><br>
+ <hr>
+ <center>Other important Questions</center>
+ <hr>
+ 1) Convert the given NFA to DFA.
+ <br><img src="../assets/images/formal/q1_more.png" alt="" id="img1">
+ <br><br>
+ 2) Convert the given NFA to DFA.
+ <br><img src="../assets/images/formal/q2_more.png" alt="" id="img1">
+ <br><br>
+ 3) Design the NFA for the given transition table. 
+ <img src="../assets/images/formal/q3_more.png" alt="" id="img1"><br><br>
+   </section>
+
+
         </body>
 </html>
