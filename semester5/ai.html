@@ -306,33 +306,32 @@
     <p>The ordinal representation of `"HGELIDAKFCBJ"` is:</p>
 
     <p><strong>[8, 7, 5, 12, 9, 4, 1, 11, 6, 3, 2, 10]</strong></p>
+    <h3>Can we measure 8 liters in the 12-9-7 water jug problem?</h3>
 
-    <h3>Can we measure 8 liters in the 12-5 water jug problem?</h3>
-
-    <p><strong>Answer:</strong> Yes, we can measure exactly 8 liters using the 12-liter and 5-liter jugs. Here are the steps:</p>
-
+    <p><strong>Answer:</strong> Yes, we can measure exactly 8 liters using the 12-liter, 9-liter, and 7-liter jugs. Here are the steps:</p>
+    
     <ol>
-        <li>Start: <strong>(0, 0, 0)</strong>  <!-- (12L, 5L, 0L) --></li>
-        <li>Fill the 12-liter jug: <strong>(12, 0, 0)</strong></li>
-        <li>Pour from 12L to 5L: <strong>(7, 5, 0)</strong></li>
-        <li>Empty the 5-liter jug: <strong>(7, 0, 0)</strong></li>
-        <li>Pour from 12L to 5L: <strong>(2, 5, 0)</strong></li>
-        <li>Empty the 5-liter jug: <strong>(2, 0, 0)</strong></li>
-        <li>Pour from 12L to 5L: <strong>(0, 2, 0)</strong></li>
-        <li>Fill the 12-liter jug: <strong>(12, 2, 0)</strong></li>
-        <li>Pour from 12L to 5L: <strong>(11, 5, 0)</strong></li>
-        <li>Empty the 5-liter jug: <strong>(11, 0, 0)</strong></li>
-        <li>Pour from 12L to 5L: <strong>(6, 5, 0)</strong></li>
-        <li>Empty the 5-liter jug: <strong>(6, 0, 0)</strong></li>
-        <li>Pour from 12L to 5L: <strong>(1, 5, 0)</strong></li>
-        <li>Fill the 12-liter jug: <strong>(12, 5, 0)</strong></li>
-        <li>Pour from 12L to 5L: <strong>(11, 5, 0)</strong></li>
-        <li>Empty the 5-liter jug: <strong>(11, 0, 0)</strong></li>
-        <li>Pour from 12L to 5L: <strong>(8, 5, 0)</strong></li>
+        <li>Start: <strong class="state">(0, 0, 0)</strong></li>
+        <li>Fill the 12-liter jug: <strong class="state">(12, 0, 0)</strong></li>
+        <li>Pour from 12L to 9L: <strong class="state">(3, 9, 0)</strong></li>
+        <li>Fill the 7-liter jug: <strong class="state">(3, 9, 7)</strong></li>
+        <li>Pour from 7L to 12L: <strong class="state">(10, 9, 0)</strong></li>
+        <li>Pour from 12L to 9L: <strong class="state">(6, 9, 3)</strong></li>
+        <li>Empty the 9-liter jug: <strong class="state">(6, 0, 3)</strong></li>
+        <li>Pour from 7L to 9L: <strong class="state">(6, 3, 0)</strong></li>
+        <li>Fill the 7-liter jug: <strong class="state">(6, 3, 7)</strong></li>
+        <li>Pour from 7L to 9L: <strong class="state">(6, 9, 1)</strong></li>
+        <li>Empty the 9-liter jug: <strong class="state">(6, 0, 1)</strong></li>
+        <li>Pour from 7L to 9L: <strong class="state">(6, 1, 0)</strong></li>
+        <li>Fill the 7-liter jug: <strong class="state">(6, 1, 7)</strong></li>
+        <li>Pour from 7L to 12L: <strong class="state">(12, 1, 0)</strong></li>
+        <li>Pour from 12L to 9L: <strong class="state">(3, 9, 0)</strong></li>
+        <li>Fill the 9-liter jug: <strong class="state">(3, 9, 7)</strong></li>
+        <li>Pour from 9L to 12L: <strong class="state">(8, 0, 0)</strong></li>
     </ol>
-
-    <p>Now you have exactly 8 liters in the 12-liter jug!</p>
-    <div>
+    
+    <p>Now you have exactly <strong class="goal">8 liters</strong> in the 12-liter jug!</p>
+        <div>
       <strong>What is Artificial Intelligence (AI)?</strong>
       <p>Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, particularly computer systems. These processes include learning, reasoning, problem-solving, perception, and language understanding.</p>
   </div>
