@@ -35,13 +35,20 @@
                     tableBody.innerHTML = '';
 
                     // Iterate over the data and create rows for the table
-                    data.forEach(entry => {
+                    data.forEach((entry, index) => {
                         const row = document.createElement('tr');
 
+                        // Serial number column
+                        const serialNumberCell = document.createElement('td');
+                        serialNumberCell.textContent = index + 1; // Add 1 to make it 1-based index
+                        row.appendChild(serialNumberCell);
+
+                        // Name column
                         const nameCell = document.createElement('td');
                         nameCell.textContent = entry.name;
                         row.appendChild(nameCell);
 
+                        // Entry count column
                         const countCell = document.createElement('td');
                         countCell.textContent = entry.entry_count;
                         row.appendChild(countCell);
@@ -67,6 +74,7 @@
     <table>
         <thead>
             <tr>
+                <th>S.No.</th>
                 <th>Name</th>
                 <th>Entry Count</th>
             </tr>
