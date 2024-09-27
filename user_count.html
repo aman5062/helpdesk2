@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry Count Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        // Function to fetch data from the API and update the table
+        function fetchData() {
+            fetch('https://arambhsoftech.com/Helpdesk/count.php')
+                .then(response => response.json())
+                .then(data => {
+                    // Clear the existing table body
+                    const tableBody = document.getElementById('table-body');
+                    tableBody.innerHTML = '';
+
+                    // Iterate over the data and create rows for the table
+                    data.forEach(entry => {
+                        const row = document.createElement('tr');
+
+                        const nameCell = document.createElement('td');
+                        nameCell.textContent = entry.name;
+                        row.appendChild(nameCell);
+
+                        const countCell = document.createElement('td');
+                        countCell.textContent = entry.entry_count;
+                        row.appendChild(countCell);
+
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+
+        // Auto-refresh every 10 seconds
+        setInterval(fetchData, 10000);
+
+        // Fetch data when the page loads
+        window.onload = fetchData;
+    </script>
+</head>
+<body>
+
+    <h1>Entry Count Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Entry Count</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Data will be inserted here dynamically -->
+        </tbody>
+    </table>
+
+</body>
+</html>
