@@ -104,22 +104,23 @@
     }
     
     function redirectToPage(userYear) {
-        switch(userYear) {
-            case '1':
-                window.location = "semester1/index.html";
-                break;
-            case '2':
-                window.location = "semester3/index.html";
-                break;
-            case '3':
-                window.location = "semester5/index.html";
-                break;
-            case '4':
-                window.location = "semester7/index.html";
-                break;
-            default:
-                console.error('Invalid user year:', userYear);
-        }
+        window.location = "maintainance.html";
+        // switch(userYear) {
+        //     case '1':
+        //         window.location = "semester1/index.html";
+        //         break;
+        //     case '2':
+        //         window.location = "semester3/index.html";
+        //         break;
+        //     case '3':
+        //         window.location = "semester5/index.html";
+        //         break;
+        //     case '4':
+        //         window.location = "semester7/index.html";
+        //         break;
+        //     default:
+        //         console.error('Invalid user year:', userYear);
+        // }
     }
   
     function getCookie(name) {
