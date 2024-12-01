@@ -1,0 +1,496 @@
+{
+    "questions": [
+      {
+        "question": "What was the source of inspiration for the Indian Constitution?",
+        "options": {
+          "a": "British Constitution",
+          "b": "American Constitution",
+          "c": "Government of India Act, 1935",
+          "d": "Canadian Constitution"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "The Preamble of the Indian Constitution begins with which phrase?",
+        "options": {
+          "a": "We the Citizens of India",
+          "b": "We the Government",
+          "c": "We the People of India",
+          "d": "None of the above"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "In which year was the Indian Constitution adopted?",
+        "options": {
+          "a": "1947",
+          "b": "1948",
+          "c": "1949",
+          "d": "1950"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "Who is considered the chief architect of the Indian Constitution?",
+        "options": {
+          "a": "Jawaharlal Nehru",
+          "b": "Dr. B.R. Ambedkar",
+          "c": "Mahatma Gandhi",
+          "d": "Sardar Patel"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Which of the following is NOT a part of the Preamble of the Indian Constitution?",
+        "options": {
+          "a": "Justice",
+          "b": "Sovereignty",
+          "c": "Liberty",
+          "d": "Federalism"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "question": "The Constitution of India came into effect on:",
+        "options": {
+          "a": "January 26, 1947",
+          "b": "January 26, 1950",
+          "c": "August 15, 1947",
+          "d": "November 26, 1949"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Fundamental Rights are enshrined in which part of the Indian Constitution?",
+        "options": {
+          "a": "Part III",
+          "b": "Part IV",
+          "c": "Part V",
+          "d": "Part II"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question": "The Right to Equality is guaranteed under which Articles?",
+        "options": {
+          "a": "Articles 12 to 17",
+          "b": "Articles 14 to 18",
+          "c": "Articles 19 to 22",
+          "d": "Articles 23 to 24"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Which writ is issued by a court to release a person unlawfully detained?",
+        "options": {
+          "a": "Mandamus",
+          "b": "Habeas Corpus",
+          "c": "Certiorari",
+          "d": "Quo Warranto"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "The Directive Principles of State Policy aim to:",
+        "options": {
+          "a": "Protect Fundamental Rights",
+          "b": "Establish a Welfare State",
+          "c": "Strengthen the Executive",
+          "d": "Promote Federalism"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "The President of India is elected by:",
+        "options": {
+          "a": "The Prime Minister and Chief Ministers",
+          "b": "Lok Sabha members only",
+          "c": "Elected members of Parliament and State Legislatures",
+          "d": "Supreme Court Judges"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "What is the term of the President of India?",
+        "options": {
+          "a": "5 years",
+          "b": "6 years",
+          "c": "4 years",
+          "d": "3 years"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question": "Who appoints the Chief Justice of India?",
+        "options": {
+          "a": "Prime Minister",
+          "b": "President",
+          "c": "Parliament",
+          "d": "Supreme Court Judges"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Who is the ex-officio Chairman of the Rajya Sabha?",
+        "options": {
+          "a": "The Vice President of India",
+          "b": "The President of India",
+          "c": "The Speaker of Lok Sabha",
+          "d": "The Prime Minister"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question": "Which part of the Indian Constitution deals with the duties of citizens?",
+        "options": {
+          "a": "Part IV",
+          "b": "Part III",
+          "c": "Part IVA",
+          "d": "Part II"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "Which of the following is NOT a function of the Indian Parliament?",
+        "options": {
+          "a": "Make laws",
+          "b": "Formulate policies",
+          "c": "Elect the President",
+          "d": "Appoint the Chief Justice"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "question": "The Union Executive consists of the President, the Vice President, and:",
+        "options": {
+          "a": "The Prime Minister",
+          "b": "The Governor",
+          "c": "The Speaker",
+          "d": "The Council of Ministers"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "question": "The Parliament can legislate on matters mentioned in which list of the Seventh Schedule?",
+        "options": {
+          "a": "Union List",
+          "b": "State List",
+          "c": "Concurrent List",
+          "d": "All of the above"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "question": "Which of the following is NOT a feature of the Indian federal system?",
+        "options": {
+          "a": "Dual polity",
+          "b": "Single Citizenship",
+          "c": "Rigid Constitution",
+          "d": "Equal distribution of powers"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "The highest court of appeal in India is the:",
+        "options": {
+          "a": "High Court",
+          "b": "Supreme Court",
+          "c": "Lok Adalat",
+          "d": "District Court"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Which Article of the Indian Constitution grants the Right to Constitutional Remedies?",
+        "options": {
+          "a": "Article 19",
+          "b": "Article 32",
+          "c": "Article 21",
+          "d": "Article 51A"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Which part of the Constitution of India deals with the Directive Principles of State Policy?",
+        "options": {
+          "a": "Part III",
+          "b": "Part IV",
+          "c": "Part II",
+          "d": "Part V"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Who can introduce a Bill in the Parliament?",
+        "options": {
+          "a": "The President",
+          "b": "The Vice President",
+          "c": "The Prime Minister",
+          "d": "A Member of Parliament"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "question": "The Speaker of Lok Sabha is elected by the members of the Lok Sabha, from among themselves, for a term of:",
+        "options": {
+          "a": "1 year",
+          "b": "2 years",
+          "c": "5 years",
+          "d": "6 years"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "Which Article of the Indian Constitution deals with the amendment process?",
+        "options": {
+          "a": "Article 368",
+          "b": "Article 32",
+          "c": "Article 76",
+          "d": "Article 51A"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question": "The Vice President of India is elected for a term of:",
+        "options": {
+          "a": "4 years",
+          "b": "5 years",
+          "c": "6 years",
+          "d": "7 years"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Which of the following is NOT a Fundamental Right under the Indian Constitution?",
+        "options": {
+          "a": "Right to Education",
+          "b": "Right to Property",
+          "c": "Right to Freedom of Speech",
+          "d": "Right to Equality"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Which of the following Articles provides for the abolition of untouchability?",
+        "options": {
+          "a": "Article 15",
+          "b": "Article 17",
+          "c": "Article 21",
+          "d": "Article 23"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "The President of India can remove a Governor on the recommendation of:",
+        "options": {
+          "a": "The Prime Minister",
+          "b": "The Chief Justice",
+          "c": "The Council of Ministers",
+          "d": "The Lok Sabha"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question": "Which of the following articles of the Indian Constitution deals with the abolition of untouchability?",
+        "options": {
+          "a": "Article 15",
+          "b": "Article 17",
+          "c": "Article 21",
+          "d": "Article 23"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Who appoints the Chief Election Commissioner of India?",
+        "options": {
+          "a": "President of India",
+          "b": "Prime Minister of India",
+          "c": "Speaker of the Lok Sabha",
+          "d": "Chief Justice of India"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question": "Which of the following is NOT a fundamental right under the Indian Constitution?",
+        "options": {
+          "a": "Right to Equality",
+          "b": "Right to Education",
+          "c": "Right to Property",
+          "d": "Right to Religion"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "Which of the following is the highest court of appeal in India?",
+        "options": {
+          "a": "High Court",
+          "b": "District Court",
+          "c": "Supreme Court",
+          "d": "Subordinate Court"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "Which of the following is the correct description of a 'bicameral legislature'?",
+        "options": {
+          "a": "A legislature with only one house",
+          "b": "A legislature with two houses",
+          "c": "A legislature with no house",
+          "d": "A legislature with more than two houses"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Which of the following articles deals with the power of judicial review in India?",
+        "options": {
+          "a": "Article 32",
+          "b": "Article 13",
+          "c": "Article 226",
+          "d": "Article 368"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Who is the ex-officio Chairman of the Rajya Sabha?",
+        "options": {
+          "a": "Prime Minister of India",
+          "b": "President of India",
+          "c": "Vice President of India",
+          "d": "Speaker of Lok Sabha"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "Which body approves the President's Rule in a state?",
+        "options": {
+          "a": "Prime Minister",
+          "b": "Council of Ministers",
+          "c": "Lok Sabha",
+          "d": "Rajya Sabha"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "Which of the following is a part of the 'Indian Federal System'?",
+        "options": {
+          "a": "Division of powers between the Union and States",
+          "b": "Single-party system",
+          "c": "Elected judiciary",
+          "d": "Independent military"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question": "Which of the following functions is performed by the Union Public Service Commission (UPSC)?",
+        "options": {
+          "a": "Promoting trade and commerce",
+          "b": "Distributing government funds",
+          "c": "Conducting examinations for appointments to the public services",
+          "d": "Issuing currency notes"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "Which of the following is a feature of the 'Preamble' of the Indian Constitution?",
+        "options": {
+          "a": "It lists all the fundamental rights",
+          "b": "It is a legally enforceable part of the Constitution",
+          "c": "It reflects the values and objectives of the Constitution",
+          "d": "It was added by an amendment"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "question": "The Directive Principles of State Policy are intended to:",
+        "options": {
+          "a": "Provide a framework for the Government to follow for the welfare of citizens",
+          "b": "Establish a system of checks and balances",
+          "c": "Protect individual rights",
+          "d": "Empower the Judiciary"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question": "The maximum strength of the Lok Sabha is:",
+        "options": {
+          "a": "500",
+          "b": "545",
+          "c": "550",
+          "d": "552"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Which Article of the Indian Constitution allows for the amendment of the Constitution?",
+        "options": {
+          "a": "Article 32",
+          "b": "Article 368",
+          "c": "Article 14",
+          "d": "Article 21"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "The Governor of a State is appointed by:",
+        "options": {
+          "a": "The Chief Minister of the State",
+          "b": "The President of India",
+          "c": "The Parliament of India",
+          "d": "The Vice President of India"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "In which case was the basic structure doctrine established?",
+        "options": {
+          "a": "Keshavananda Bharati v. State of Kerala",
+          "b": "Maneka Gandhi v. Union of India",
+          "c": "Golaknath v. State of Punjab",
+          "d": "Shankari Prasad v. Union of India"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question": "Which article guarantees the right to constitutional remedies in case of violation of Fundamental Rights?",
+        "options": {
+          "a": "Article 21",
+          "b": "Article 32",
+          "c": "Article 14",
+          "d": "Article 19"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "Which of the following is the highest-ranking constitutional post in India?",
+        "options": {
+          "a": "President",
+          "b": "Prime Minister",
+          "c": "Chief Justice of India",
+          "d": "Governor"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "question": "Which of the following is NOT a feature of the Indian Constitution?",
+        "options": {
+          "a": "A blend of rigidity and flexibility",
+          "b": "A written and detailed document",
+          "c": "A federal system with a unitary bias",
+          "d": "A system of checks and balances"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "question": "The Constitution of India declares India as a:",
+        "options": {
+          "a": "Federation",
+          "b": "Unitary State",
+          "c": "Sovereign Socialist Secular Democratic Republic",
+          "d": "Parliamentary Republic"
+        },
+        "correct_answer": "c"
+      }
+      
+    ]
+  }
+  
