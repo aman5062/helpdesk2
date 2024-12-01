@@ -223,10 +223,232 @@
       <p><strong>Frequency-Division Multiplexing (FDM):</strong> Divides the available bandwidth of a communication medium into multiple frequency channels. Each channel carries a separate signal simultaneously.</p>
       <p><strong>Synchronous Time-Division Multiplexing (TDM):</strong> Allocates fixed time slots to each signal in a round-robin fashion. Each channel transmits in its designated time slot.</p>
       <p><strong>Statistical Time-Division Multiplexing:</strong> Dynamically allocates time slots based on the data traffic of each channel. This allows for more efficient use of bandwidth compared to synchronous TDM.</p>
-  <hr>
+  <br>
+  
+  <h3>Medium Access Control</h3>
+  <ul>
+      <li><strong>CDMA (Code Division Multiple Access):</strong> 
+          <ul>
+              <li>Uses unique spreading codes for each user, enabling multiple users to share the same frequency band.</li>
+              <li>Efficient in handling multiple simultaneous connections with low interference.</li>
+          </ul>
+      </li>
+      <li><strong>ALOHA Protocol:</strong>
+          <ul>
+              <li><em>Pure ALOHA:</em> Sends data whenever ready. Collisions occur often; throughput = 18% of the channel capacity.</li>
+              <li><em>Slotted ALOHA:</em> Introduces time slots, reducing collisions and improving throughput to 37%.</li>
+          </ul>
+      </li>
+      <li><strong>Ethernet:</strong> Implements the CSMA/CD protocol for collision detection and resolution in wired networks.</li>
+  </ul>
+
+  <h3>Link Layer Addressing and Forwarding</h3>
+  <ul>
+      <li><strong>MAC Address:</strong> Unique 48-bit address for devices on a local network.</li>
+      <li><strong>Forwarding:</strong> Switches use MAC tables to determine the port to which a frame should be forwarded.</li>
+  </ul>
+
+  <h3>Spanning Trees</h3>
+  <ul>
+      <li><strong>Purpose:</strong> Avoids loops in switched networks by building a loop-free topology.</li>
+      <li><strong>Spanning Tree Protocol (STP):</strong>
+          <ul>
+              <li>Elects a root bridge and computes shortest paths from the root to all switches.</li>
+              <li>Disables redundant links to ensure a loop-free environment.</li>
+          </ul>
+      </li>
+  </ul>
+
+  <h3>The Channel Allocation Problem</h3>
+  <ul>
+      <li>Occurs when multiple devices share a common communication medium.</li>
+      <li>Solutions include:
+          <ul>
+              <li><em>Static Allocation:</em> Fixed assignment of channels (e.g., frequency division).</li>
+              <li><em>Dynamic Allocation:</em> On-demand assignment (e.g., ALOHA, CSMA).</li>
+          </ul>
+      </li>
+  </ul>
+
+  <h3>LAN Systems</h3>
+  <ul>
+      <li><strong>LAN Technologies:</strong> Ethernet, Token Ring, FDDI, ATM LANs, Fiber Channel.</li>
+      <li><strong>LAN Architectures:</strong>
+          <ul>
+              <li><em>Bus/Tree:</em> All devices share a single communication medium.</li>
+              <li><em>Ring:</em> Devices form a circular topology.</li>
+              <li><em>Star:</em> Devices connect to a central hub or switch.</li>
+              <li><em>Wireless:</em> Based on IEEE 802.11 standards, uses access points and wireless signals.</li>
+          </ul>
+      </li>
+  </ul>
+
+  <h3>Switching Concepts</h3>
+  <ul>
+      <li><strong>Packet Switching:</strong> Data is divided into packets and routed independently to the destination.</li>
+      <li><strong>Circuit Switching:</strong> Establishes a dedicated path for the duration of the communication session.</li>
+      <li><strong>Switched Networks:</strong> Use switches to forward data frames between devices efficiently.</li>
+  </ul>
+
+  <h3>Bridges</h3>
+  <ul>
+      <li><strong>Operation:</strong> Connects multiple LAN segments and filters traffic based on MAC addresses.</li>
+      <li><strong>Routing with Bridges:</strong> Uses spanning tree algorithms to determine paths.</li>
+  </ul>
+
+  <h3>Design Issues</h3>
+  <ul>
+      <li><strong>Routing:</strong> Determining the best path for data from source to destination.</li>
+      <li><strong>Congestion Control:</strong> Managing network traffic to prevent overload.</li>
+      <li><strong>Internetworking:</strong> Connecting multiple networks to operate as a single network.</li>
+  </ul>
+
+  <h3>Routing Algorithms</h3>
+  <ul>
+      <li><strong>Flooding:</strong> Sends packets on all outgoing links, leading to redundancy.</li>
+      <li><strong>Shortest Path Routing:</strong> Uses algorithms like Dijkstra's to find the shortest path.</li>
+      <li><strong>Link State Routing:</strong> Each node has knowledge of the entire network topology.</li>
+      <li><strong>Hierarchical Routing:</strong> Divides network into regions to reduce complexity.</li>
+      <li><strong>Broadcast/Multicast Routing:</strong> Used for sending data to all or a group of nodes.</li>
+  </ul>
+
+  <h3>Network Layer in the Internet</h3>
+  <ul>
+      <li><strong>IP Protocol:</strong> Provides logical addressing and packet delivery across networks.</li>
+      <li><strong>ARP/RARP:</strong> Resolves IP to MAC addresses (ARP) or MAC to IP addresses (RARP).</li>
+      <li><strong>BOOTP/DHCP:</strong> Assigns IP addresses dynamically to devices on a network.</li>
+      <li><strong>ICMP:</strong> Used for error reporting and diagnostics (e.g., ping).</li>
+      <li><strong>NAT:</strong> Maps private IP addresses to a public IP address for Internet communication.</li>
+  </ul>
+
+  <h3>Transport Layer</h3>
+  <ul>
+      <li><strong>TCP:</strong> Reliable transport with features like acknowledgments, sequencing, and congestion control.</li>
+      <li><strong>UDP:</strong> Connectionless, faster but unreliable transport protocol.</li>
+      <li><strong>Congestion Control:</strong> Manages data flow to prevent congestion using techniques like additive increase and multiplicative decrease.</li>
+  </ul>
+
+  <h3>Application Layer</h3>
+  <ul>
+      <li><strong>DNS:</strong> Resolves domain names to IP addresses.</li>
+      <li><strong>Electronic Mail:</strong> Uses protocols like SMTP, POP, and IMAP for communication.</li>
+      <li><strong>HTTP:</strong> Protocol for accessing web resources.</li>
+      <li><strong>FTP:</strong> Transfers files between client and server.</li>
+      <li><strong>SNMP:</strong> Manages and monitors network devices.</li>
+      <li><strong>World Wide Web:</strong> System of interlinked hypertext documents accessible via the Internet.</li>
+  </ul>
+
+  <h3>Network Security</h3>
+  <ul>
+      <li>Includes measures like encryption, authentication, firewalls, and intrusion detection to protect data.</li>
+  </ul>
+      <hr>
  <center> Some Important Questions</center>
   <hr>
+  <h3>10-Mark Questions with Answers</h3>
+    <h4>1. Explain the operation of CDMA (Code Division Multiple Access) and its advantages.</h4>
+    <p><strong>Answer:</strong> CDMA allows multiple users to share the same frequency band by assigning unique spreading codes to each user. This ensures minimal interference and allows simultaneous connections. Key advantages include high capacity, efficient bandwidth usage, and enhanced security due to unique codes.</p>
 
+    <h4>2. Describe the Spanning Tree Protocol (STP) and its role in switched networks.</h4>
+    <p><strong>Answer:</strong> STP ensures a loop-free topology in switched networks by electing a root bridge and calculating the shortest path from the root to all other switches. It disables redundant paths, preventing broadcast storms and ensuring efficient network operation.</p>
+
+    <h4>3. Compare and contrast Pure ALOHA and Slotted ALOHA.</h4>
+    <p><strong>Answer:</strong> Pure ALOHA allows data transmission anytime, leading to a high collision rate and a throughput of 18%. In contrast, Slotted ALOHA divides time into slots, reducing collisions and improving throughput to 37%. Slotted ALOHA is more efficient but requires synchronization.</p>
+
+    <h4>4. Explain the difference between packet switching and circuit switching.</h4>
+    <p><strong>Answer:</strong> Packet switching divides data into packets, which are transmitted independently over various paths, ensuring flexibility and efficiency. Circuit switching establishes a dedicated path for the entire communication duration, guaranteeing a fixed bandwidth but less efficiency.</p>
+
+    <h4>5. Discuss the concept and purpose of NAT (Network Address Translation).</h4>
+    <p><strong>Answer:</strong> NAT maps private IP addresses to a public IP address, enabling devices in a private network to access the Internet. It conserves IP addresses and enhances security by masking internal network details from external entities.</p>
+
+    <h4>6. Describe the working of the Distance-Vector Routing algorithm with an example.</h4>
+    <p><strong>Answer:</strong> Distance-Vector Routing calculates the shortest path to a destination using information from neighboring routers. Each router maintains a table of distances, updated periodically. Example: RIP (Routing Information Protocol) uses Distance-Vector Routing to find the best path based on hop count.</p>
+
+    <h4>7. Explain the operation of DHCP and its role in dynamic IP address allocation.</h4>
+    <p><strong>Answer:</strong> DHCP automates IP address allocation. Devices request an IP from the DHCP server, which assigns an address along with other configuration parameters like subnet mask and DNS. This simplifies network management and reduces manual configuration.</p>
+
+    <h4>8. Discuss the challenges and solutions in wireless LANs.</h4>
+    <p><strong>Answer:</strong> Wireless LANs face challenges like interference, security risks, and limited bandwidth. Solutions include using encryption protocols (e.g., WPA2), advanced modulation techniques (e.g., OFDM), and frequency management to minimize interference.</p>
+
+    <h4>9. Compare TCP and UDP in terms of reliability and use cases.</h4>
+    <p><strong>Answer:</strong> TCP provides reliable communication with acknowledgments, error checking, and sequencing, suitable for applications like web browsing and email. UDP is faster but unreliable, used in real-time applications like video streaming and gaming.</p>
+
+    <h4>10. Explain the concept of hierarchical routing and its advantages.</h4>
+    <p><strong>Answer:</strong> Hierarchical routing divides a network into regions, reducing routing table size and computational complexity. Routers manage intra-region routing and summarize information for inter-region routing, improving scalability and efficiency.</p>
+
+    <h4>11. What is the role of ICMP in networking? Provide examples of its use.</h4>
+    <p><strong>Answer:</strong> ICMP is used for error reporting and diagnostics. Examples include:
+        <ul>
+            <li><em>Ping:</em> Checks connectivity by sending echo requests.</li>
+            <li><em>Traceroute:</em> Identifies the path packets take to a destination.</li>
+        </ul>
+    </p>
+
+    <h4>12. Explain the concept of congestion control in TCP.</h4>
+    <p><strong>Answer:</strong> TCP uses congestion control to prevent network overload. Techniques include:
+        <ul>
+            <li><em>Slow Start:</em> Gradually increases the transmission rate.</li>
+            <li><em>Congestion Avoidance:</em> Adjusts the rate based on network feedback.</li>
+            <li><em>Fast Recovery:</em> Quickly recovers after packet loss.</li>
+        </ul>
+    </p>
+
+    <h4>13. Discuss the structure and operation of Token Ring networks.</h4>
+    <p><strong>Answer:</strong> In Token Ring, devices are connected in a circular topology. A token circulates, granting permission to transmit data. This avoids collisions and ensures fair access, but failure of one device can disrupt the network.</p>
+
+    <h4>14. How does the OSPF routing protocol work? Mention its key features.</h4>
+    <p><strong>Answer:</strong> OSPF is a link-state protocol that maintains a map of the network. Routers calculate shortest paths using the Dijkstra algorithm. Key features include fast convergence, hierarchical design, and support for authentication.</p>
+
+    <h4>15. Describe the ARP and RARP protocols and their roles in networking.</h4>
+    <p><strong>Answer:</strong> ARP resolves IP addresses to MAC addresses, enabling communication within a LAN. RARP performs the reverse, mapping MAC addresses to IP addresses, useful for diskless devices needing network configuration.</p>
+
+    <h3>5-Mark Questions with Answers</h3>
+    <h4>1. What is the purpose of MAC addressing?</h4>
+    <p><strong>Answer:</strong> MAC addresses uniquely identify devices on a local network, enabling accurate forwarding of frames at the Data Link Layer.</p>
+
+    <h4>2. Define the term "spanning tree" in networking.</h4>
+    <p><strong>Answer:</strong> A spanning tree is a loop-free subset of a network's topology that ensures all nodes are reachable without redundant links.</p>
+
+    <h4>3. Explain the term "collision domain."</h4>
+    <p><strong>Answer:</strong> A collision domain refers to a network segment where data frames can collide. Reducing collision domains improves network performance.</p>
+
+    <h4>4. What is meant by flooding in routing?</h4>
+    <p><strong>Answer:</strong> Flooding sends packets on all outgoing links without considering optimal paths, ensuring delivery but causing redundancy.</p>
+
+    <h4>5. What is DHCP lease time?</h4>
+    <p><strong>Answer:</strong> Lease time defines how long a device can use an IP address assigned by the DHCP server before renewal is required.</p>
+
+    <h4>6. What is the purpose of BOOTP in networking?</h4>
+    <p><strong>Answer:</strong> BOOTP is a protocol that assigns IP addresses and configuration details to devices during boot-up, useful for simple network configurations.</p>
+
+    <h4>7. Define NAT and its key benefits.</h4>
+    <p><strong>Answer:</strong> NAT translates private IP addresses to a public IP address, enhancing security, conserving IPs, and enabling Internet access for devices on a private network.</p>
+
+    <h4>8. What is a wireless access point?</h4>
+    <p><strong>Answer:</strong> A wireless access point is a device that connects wireless devices to a wired network, acting as a bridge between wired and wireless segments.</p>
+
+    <h4>9. What is the function of ICMP echo requests?</h4>
+    <p><strong>Answer:</strong> ICMP echo requests are used in the ping utility to test network connectivity by sending a message to the destination and waiting for a reply.</p>
+
+    <h4>10. What are the benefits of using VLANs?</h4>
+    <p><strong>Answer:</strong> VLANs improve network management by segregating traffic, enhancing security, and reducing broadcast domains.</p>
+
+    <h4>11. What is the primary use of FTP?</h4>
+    <p><strong>Answer:</strong> FTP is used to transfer files between a client and a server over a network, supporting large files and resuming interrupted transfers.</p>
+
+    <h4>12. Explain CSMA/CD in Ethernet networks.</h4>
+    <p><strong>Answer:</strong> CSMA/CD (Carrier Sense Multiple Access/Collision Detection) manages data transmission in Ethernet by detecting and avoiding collisions.</p>
+
+    <h4>13. What does DNS do?</h4>
+    <p><strong>Answer:</strong> DNS translates human-readable domain names (e.g., example.com) into IP addresses for network communication.</p>
+
+    <h4>14. Define the term "default gateway."</h4>
+    <p><strong>Answer:</strong> A default gateway is a router or device through which a networked device communicates with devices in other networks.</p>
+
+    <h4>15. What is the significance of subnet masks?</h4>
+    <p><strong>Answer:</strong> Subnet masks divide an IP address into network and host portions, facilitating efficient IP address management and routing.</p>
+<br>
+<hr>
   <h3>Difference between IPv4 and IPv6</h3>
   <ul>
       <li><strong>Address Length:</strong> IPv4 uses a 32-bit address, while IPv6 uses a 128-bit address.</li>
