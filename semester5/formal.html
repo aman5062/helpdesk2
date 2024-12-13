@@ -538,6 +538,126 @@ Some Important Questions
 16)Draw deterministic finite automata (DFA) of the language containing the set of all strings over {a, b} in which 2nd symbol from RHS is 'a'.
 <img src="../assets/images/formal/q16.png" alt="" id="img1">
  <br><br>
+ <h3>Turing Machine in Automata</h3>
+
+ <h2>Components of a Turing Machine</h2>
+ <ul>
+     <li><strong>Tape</strong>: A potentially infinite memory divided into discrete cells, each holding a symbol from a finite alphabet.</li>
+     <li><strong>Head</strong>: Reads and writes symbols on the tape and moves left or right based on the current state and symbol.</li>
+     <li><strong>Finite State Control</strong>: Contains a finite set of states and determines actions based on the current state and symbol.</li>
+     <li><strong>Alphabet</strong>:
+         <ul>
+             <li>Input symbols</li>
+             <li>A special blank symbol (e.g., <code>&square;</code>)</li>
+         </ul>
+     </li>
+     <li><strong>Transition Function</strong> (<code>&delta;</code>): Defines the machine's behavior as a mapping:
+         <code>&delta;(Q &times; &Gamma;) &rarr; (Q &times; &Gamma; &times; {L, R})</code>
+     </li>
+     <li><strong>States</strong>:
+         <ul>
+             <li><strong>Start State</strong> (<code>q<sub>0</sub></code>): Where computation begins.</li>
+             <li><strong>Accept State</strong> (<code>q<sub>accept</sub></code>): Signifies successful computation.</li>
+             <li><strong>Reject State</strong> (<code>q<sub>reject</sub></code>): Signifies failure or rejection.</li>
+         </ul>
+     </li>
+ </ul>
+
+ <h2>Operation of a Turing Machine</h2>
+ <p>The Turing Machine begins in the start state <code>q<sub>0</sub></code>, with the head positioned at the first cell of the tape. The current symbol and state determine:</p>
+ <ul>
+     <li>The symbol to write.</li>
+     <li>The direction to move the head (left or right).</li>
+     <li>The next state to transition to.</li>
+ </ul>
+ <p>The machine halts when it enters an accept or reject state, or if there is no valid transition.</p>
+
+ <h2>Types of Turing Machines</h2>
+ <ul>
+     <li><strong>Deterministic Turing Machine (DTM)</strong>: For every state and symbol, there is exactly one defined action.</li>
+     <li><strong>Non-Deterministic Turing Machine (NDTM)</strong>: Allows multiple possible actions for a given state and symbol.</li>
+     <li><strong>Multi-Tape Turing Machine</strong>: Features multiple tapes and corresponding heads for more efficient computation.</li>
+     <li><strong>Universal Turing Machine (UTM)</strong>: Can simulate any other Turing machine by encoding its description and input on the tape.</li>
+ </ul>
+
+ <div class="example">
+     <h3>Example: Formal Definition</h3>
+     <p>A Turing Machine is formally defined as:</p>
+     <pre>
+M = (Q, &Sigma;, &Gamma;, &delta;, q<sub>0</sub>, q<sub>accept</sub>, q<sub>reject</sub>)
+Where:
+- Q = {q<sub>0</sub>, q<sub>1</sub>, q<sub>accept</sub>, q<sub>reject</sub>} (states)
+- &Sigma; = {0, 1} (input alphabet)
+- &Gamma; = {0, 1, &square;} (tape alphabet)
+- &delta; = Transition function (example depends on specific problem)
+- q<sub>0</sub>, q<sub>accept</sub>, q<sub>reject</sub>: Start, accept, and reject states
+     </pre>
+ </div>
+
+
+ <h3>Regular Expression to DFA</h3>
+
+ <h2>Steps to Convert Regular Expression to DFA</h2>
+ <p>The process of converting a regular expression to a Deterministic Finite Automaton (DFA) typically involves the following steps:</p>
+ <ol>
+     <li><strong>Convert Regular Expression to NFA</strong>: Use Thompson's construction to create a Non-Deterministic Finite Automaton (NFA).</li>
+     <li><strong>Convert NFA to DFA</strong>: Apply the subset construction algorithm to transform the NFA into an equivalent DFA.</li>
+     <li><strong>Minimize the DFA</strong> (optional): Simplify the DFA by merging equivalent states.</li>
+ </ol>
+
+ <h2>Key Concepts</h2>
+ <ul>
+     <li><strong>Regular Expression:</strong> A sequence of characters that define a search pattern, e.g., <code>a*b|c</code>.</li>
+     <li><strong>NFA:</strong> A finite automaton where transitions can be non-deterministic (i.e., multiple transitions for the same input or &epsilon;-transitions).</li>
+     <li><strong>DFA:</strong> A finite automaton where each state has exactly one transition per input symbol.</li>
+ </ul>
+
+ <h2>Example</h2>
+ <div class="example">
+     <h3>Convert Regular Expression <code>(a|b)*abb</code> to DFA</h3>
+     <ol>
+         <li><strong>Step 1:</strong> Construct an NFA for <code>(a|b)*abb</code> using Thompson's construction.
+             <ul>
+                 <li><code>(a|b)</code>: Create an NFA for alternation.</li>
+                 <li><code>(a|b)*</code>: Add a loop for Kleene star.</li>
+                 <li><code>abb</code>: Concatenate NFAs for each character.</li>
+             </ul>
+         </li>
+         <li><strong>Step 2:</strong> Convert the NFA to a DFA using the subset construction algorithm:
+             <ul>
+                 <li>Identify all possible sets of NFA states (subsets).</li>
+                 <li>Define transitions between subsets based on input symbols.</li>
+             </ul>
+         </li>
+         <li><strong>Step 3:</strong> Minimize the DFA:
+             <ul>
+                 <li>Merge equivalent states to reduce the number of states.</li>
+             </ul>
+         </li>
+     </ol>
+ </div>
+ <h2>Formal Definitions</h2>
+ <ul>
+     <li><strong>Regular Expression:</strong> A formal language over an alphabet <code>&Sigma;</code>.</li>
+     <li><strong>NFA:</strong> Defined as a 5-tuple <code>(Q, &Sigma;, &delta;, q<sub>0</sub>, F)</code> where:
+         <ul>
+             <li><code>Q</code>: Finite set of states.</li>
+             <li><code>&Sigma;</code>: Input alphabet.</li>
+             <li><code>&delta;</code>: Transition function (<code>Q &times; (&Sigma; &cup; {&epsilon;}) &rarr; 2^Q</code>).</li>
+             <li><code>q<sub>0</sub></code>: Start state.</li>
+             <li><code>F</code>: Set of accept states.</li>
+         </ul>
+     </li>
+     <li><strong>DFA:</strong> Defined as a 5-tuple <code>(Q, &Sigma;, &delta;, q<sub>0</sub>, F)</code> where:
+         <ul>
+             <li><code>Q</code>: Finite set of states.</li>
+             <li><code>&Sigma;</code>: Input alphabet.</li>
+             <li><code>&delta;</code>: Transition function (<code>Q &times; &Sigma; &rarr; Q</code>).</li>
+             <li><code>q<sub>0</sub></code>: Start state.</li>
+             <li><code>F</code>: Set of accept states.</li>
+         </ul>
+     </li>
+ </ul>
  <hr>
  <center>Other important Questions</center>
  <hr>
