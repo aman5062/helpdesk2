@@ -123,13 +123,7 @@ function deleteAllCookies() {
 // deleteAllCookies();
 function waterm(){
     let n = getCookie("name");
-    if(n!=null){
-      document.getElementById("watermark").innerHTML = n;  
-    }
-    else{
-        document.getElementById("watermark").innerHTML = "@Debuggers";  
-    }
-    
+    document.getElementById("watermark").innerHTML = n;
 }
 
 function getCookie(name) {
