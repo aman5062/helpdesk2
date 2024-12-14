@@ -122,7 +122,7 @@ function deleteAllCookies() {
 // Call the function to delete all cookies
 // deleteAllCookies();
 function waterm(){
-    let n = getCookie("name");
+    let n = getCookie("user_name");
     document.getElementById("watermark").innerHTML = n;
 }
 
