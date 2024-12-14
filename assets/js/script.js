@@ -123,6 +123,7 @@ function deleteAllCookies() {
 // deleteAllCookies();
 function waterm(){
     let n = getCookie("user_name");
+    console.log(n);
     document.getElementById("watermark").innerHTML = n;
 }
 
