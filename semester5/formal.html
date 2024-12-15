@@ -658,6 +658,111 @@ Where:
          </ul>
      </li>
  </ul>
+
+ <h2>Turing Machine</h2>
+
+ <h3>Definition</h3>
+ <p>A Turing Machine (TM) is a mathematical model of computation that defines an abstract machine. It manipulates symbols on a strip of tape according to a set of rules and serves as a fundamental concept in theoretical computer science.</p>
+
+ <h3>Representation of Turing Machines</h3>
+ <ul>
+     <li>A Turing Machine consists of:
+         <ul>
+             <li>A tape divided into cells, each capable of holding a symbol.</li>
+             <li>A head that can read and write symbols on the tape and move left or right.</li>
+             <li>A finite set of states, including a start state and one or more halt states.</li>
+             <li>A transition function that defines the machine's behavior based on the current state and symbol.</li>
+         </ul>
+     </li>
+ </ul>
+
+ <h3>Variants of Turing Machines</h3>
+ <ul>
+     <li>Multi-tape Turing Machines</li>
+     <li>Non-deterministic Turing Machines</li>
+     <li>Universal Turing Machines</li>
+     <li>Oracle Turing Machines</li>
+ </ul>
+
+ <h3>Design of Turing Machines</h3>
+ <p>The process of designing a Turing Machine involves:</p>
+ <ol>
+     <li>Defining the input alphabet and tape alphabet.</li>
+     <li>Specifying the states and transitions.</li>
+     <li>Constructing the transition function to solve a specific problem.</li>
+     <li>Testing the machine with sample inputs to verify its correctness.</li>
+ </ol>
+
+ <h3>Linear Bounded Automata</h3>
+ <p>A Linear Bounded Automaton (LBA) is a restricted form of Turing Machine where the tape is limited to a finite segment proportional to the input size. LBAs are used to recognize context-sensitive languages.</p>
+
+ <h3>Computational Complexity & Decidability</h3>
+ <p>Computational complexity examines the resources required for a Turing Machine to solve a problem, including time and space. Decidability refers to whether a problem can be solved by a Turing Machine in finite time.</p>
+
+ <h3>Recursively Enumerable Languages</h3>
+ <p>A language is recursively enumerable (RE) if there exists a Turing Machine that can enumerate all strings in the language. RE languages may not be decidable but are semi-decidable.</p>
+
+ <h3>Complexity</h3>
+ <ul>
+     <li>Time Complexity: Measures the number of steps a Turing Machine takes to solve a problem.</li>
+     <li>Space Complexity: Measures the amount of tape used during computation.</li>
+ </ul>
+
+ <h3>Decidability</h3>
+ <p>Decidability categorizes problems into:</p>
+ <ul>
+     <li><strong>Decidable Problems:</strong> Problems for which a Turing Machine halts with a yes/no answer for every input.</li>
+     <li><strong>Undecidable Problems:</strong> Problems for which no Turing Machine can provide a solution for all inputs.</li>
+ </ul>
+
+ <h3>Halting Problem of Turing Machines</h3>
+ <p>The Halting Problem is a classic example of an undecidable problem. It asks whether a Turing Machine will halt on a given input. Alan Turing proved that no general algorithm can solve this problem for all possible machine-input pairs.</p>
+
+
+ <h2>Turing Machine Numericals</h2>
+
+    <h3>Example 1: Design a Turing Machine to Recognize Strings with Equal Number of 0s and 1s</h3>
+    <p><strong>Problem:</strong> Create a Turing Machine that accepts strings containing an equal number of 0s and 1s, such as "0011" or "1100".</p>
+    <p><strong>Solution:</strong>
+        <ul>
+            <li>Mark the first unprocessed 0 and search for a corresponding 1 to mark.</li>
+            <li>If a corresponding 1 is found, continue. If not, reject the string.</li>
+            <li>Repeat until all 0s and 1s are processed.</li>
+            <li>If all symbols are matched and no unprocessed symbols remain, accept the string.</li>
+        </ul>
+    </p>
+
+    <h3>Example 2: Turing Machine for Binary Addition</h3>
+    <p><strong>Problem:</strong> Design a Turing Machine that adds two binary numbers represented on the tape, separated by a blank.</p>
+    <p><strong>Solution:</strong>
+        <ul>
+            <li>Scan the tape to identify the two binary numbers.</li>
+            <li>Perform bit-by-bit addition from right to left, carrying over as necessary.</li>
+            <li>Write the result back to the tape, replacing the original numbers.</li>
+        </ul>
+    </p>
+
+    <h3>Example 3: Turing Machine for Palindrome Detection</h3>
+    <p><strong>Problem:</strong> Construct a Turing Machine to check if a string is a palindrome (e.g., "abba").</p>
+    <p><strong>Solution:</strong>
+        <ul>
+            <li>Mark the first and last symbols and check if they are the same.</li>
+            <li>Move inward and repeat for all pairs of symbols.</li>
+            <li>If all pairs match, accept the string. Otherwise, reject it.</li>
+        </ul>
+    </p>
+
+    <h3>Example 4: Turing Machine for Unary Multiplication</h3>
+    <p><strong>Problem:</strong> Design a Turing Machine to compute the product of two unary numbers (e.g., "111*11" represents 3*2).</p>
+    <p><strong>Solution:</strong>
+        <ul>
+            <li>Replicate the first number for each 1 in the second number.</li>
+            <li>Separate the product with a designated delimiter.</li>
+            <li>Ensure correctness by iteratively testing outputs with sample inputs.</li>
+        </ul>
+    </p>
+
+
  <hr>
  <center>Other important Questions</center>
  <hr>
