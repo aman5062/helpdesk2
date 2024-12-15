@@ -34,7 +34,6 @@
 </header>
 
 <div id="body">
-    
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -63,14 +62,13 @@
                                     <option value="2">Year 2</option>
                                     <option value="3">Year 3</option>
                                     <option value="4">Year 4</option>
-                                    
                                 </select>
                             </div>
-
-                           
-                                <br>
-                                <a href="forgetpass.html">Forget Password</a><br> <center>
-                                <button type="submit" class="btn btn-primary" id="btn_login">Login</button></center>
+                            <br>
+                            <a href="forgetpass.html">Forget Password</a><br> 
+                            <center>
+                                <button type="submit" class="btn btn-primary" id="btn_login">Login</button>
+                            </center>
                         </form>
                         <div id="error_msg"></div>
                     </div>
@@ -87,7 +85,6 @@
 <script>
     // Function to check if the user is already logged in
     function checkLogin() {
-       
         const userEmail = getCookie('user_email');
         const userYear = getCookie('user_year');
 
@@ -106,14 +103,14 @@
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const year = document.getElementById('year').value;
+
         if (name !== "" && email !== "" && password !== "" && year !== "") {
             const apiUrl = 'https://arambhsoftech.com/Helpdesk/new_user.php';
-        
+
             fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
-                    // Include authentication headers here if needed
                 },
                 body: JSON.stringify({
                     name: name,
@@ -136,13 +133,15 @@
                 if (data.status === 'login') {
                     handleLoginSuccess(data);
                 } else if (data.status === 'registration') {
-                    setCookie('user_name', name); // No expiration
-                    setCookie('user_email', email); // No expiration
-                    setCookie('user_year', year); // No expiration
-                    setCookie('c_user', 'true'); // No expiration
+                    setCookie('user_name', name);
+                    setCookie('user_email', email);
+                    setCookie('user_year', year);
+                    setCookie('c_user', 'true');
                     setTimeout(() => {
                         redirectToYearPage(data.year);
-                  }, 4000);
+                    }, 4000);
+                } else if (data.message === 'User account is inactive. Please contact support.') {
+                    window.location = 'nouser.html';
                 } else {
                     throw new Error('Unexpected response format');
                 }
@@ -162,19 +161,17 @@
         } else {
             er_msg("Fill all the details");
         }
-        
-        }
- 
+    }
 
     // Function to handle successful login
     function handleLoginSuccess(data) {
-        setCookie('user_name', data.name); // No expiration
-        setCookie('user_email', data.email); // No expiration
-        setCookie('user_year', data.year); // No expiration
-        setCookie('c_user', 'true'); // No expiration
-        
+        setCookie('user_name', data.name);
+        setCookie('user_email', data.email);
+        setCookie('user_year', data.year);
+        setCookie('c_user', 'true');
+
         setTimeout(() => {
-              redirectToYearPage(data.year);
+            redirectToYearPage(data.year);
         }, 4000);
     }
 
@@ -224,18 +221,25 @@
         document.getElementById("error_msg").innerHTML = err;
     }
 
-    // Function to clear the form fields
+    // Function to clear the form
     function clearForm() {
-        document.getElementById('name').value = "";
-        document.getElementById('email').value = "";
-        document.getElementById('password').value = "";
-        document.getElementById('year').value = "Year 1";
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
+        document.getElementById('year').value = '';
+    }
+
+    // Function to handle user logout
+    function logout() {
+        // Clear all cookies related to the user
+        document.cookie = 'user_name=; Max-Age=0; path=/;';
+        document.cookie = 'user_email=; Max-Age=0; path=/;';
+        document.cookie = 'user_year=; Max-Age=0; path=/;';
+        document.cookie = 'c_user=; Max-Age=0; path=/;';
+
+        // Redirect to the login page
+        window.location = 'login.html';
     }
 </script>
-
-
-
-
-
 </body>
 </html>
