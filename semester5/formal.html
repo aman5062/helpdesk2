@@ -538,6 +538,84 @@ Some Important Questions
 16)Draw deterministic finite automata (DFA) of the language containing the set of all strings over {a, b} in which 2nd symbol from RHS is 'a'.
 <img src="../assets/images/formal/q16.png" alt="" id="img1">
  <br><br>
+ <h3>Push Down Automata (PDA)</h3>
+    <p>Push Down Automata (PDA) are computational models used to recognize <strong>Context-Free Languages (CFLs)</strong>. They extend the capabilities of Finite Automata by adding a <em>stack</em>, which provides additional memory for storing intermediate information.</p>
+    
+    <h3>1. PDA Definition and Model</h3>
+    <p>A <strong>Push Down Automaton (PDA)</strong> is defined as a 7-tuple:</p>
+    <p><code>M = (Q, Σ, Γ, δ, q<sub>0</sub>, Z<sub>0</sub>, F)</code></p>
+    <ul>
+        <li><strong>Q</strong>: Finite set of states.</li>
+        <li><strong>Σ</strong>: Input alphabet.</li>
+        <li><strong>Γ</strong>: Stack alphabet (symbols stored in the stack).</li>
+        <li><strong>δ: Q × (Σ ∪ {ε}) × Γ → Q × Γ*</strong>: Transition function, which depends on the current state, input symbol, and top stack symbol, and determines the next state and stack action.</li>
+        <li><strong>q<sub>0</sub></strong>: Start state.</li>
+        <li><strong>Z<sub>0</sub></strong>: Initial stack symbol.</li>
+        <li><strong>F</strong>: Set of accepting states.</li>
+    </ul>
+    <p>The stack can be used for operations such as:</p>
+    <ul>
+        <li><strong>Push</strong>: Add a symbol to the stack.</li>
+        <li><strong>Pop</strong>: Remove the top symbol from the stack.</li>
+        <li><strong>No operation (ε)</strong>: Leave the stack unchanged.</li>
+    </ul>
+
+    <h3>2. Acceptance of Context-Free Languages</h3>
+    <p>A PDA can accept a Context-Free Language (CFL) in two ways:</p>
+    <ol>
+        <li><strong>Acceptance by Final State:</strong> A string is accepted if the PDA reaches an accepting state after consuming the input.</li>
+        <li><strong>Acceptance by Empty Stack:</strong> A string is accepted if the PDA finishes processing the input and the stack is empty.</li>
+    </ol>
+
+    <h3>3. Equivalence of Acceptance Criteria</h3>
+    <p>The two methods of acceptance (final state and empty stack) are <strong>equivalent</strong>:</p>
+    <ul>
+        <li>Any PDA that accepts by empty stack can be converted into a PDA that accepts by final state, and vice versa.</li>
+        <li>This equivalence ensures the robustness of PDA in recognizing CFLs.</li>
+    </ul>
+
+    <h3>4. Equivalence of CFG and PDA</h3>
+    <p>There is a direct equivalence between <strong>Context-Free Grammars (CFGs)</strong> and PDAs:</p>
+    <ol>
+        <li><strong>CFG to PDA:</strong> Every Context-Free Grammar can be converted into a PDA that accepts the same language. The PDA uses the stack to simulate derivations of the grammar.</li>
+        <li><strong>PDA to CFG:</strong> Every PDA can be converted into a Context-Free Grammar that generates the same language.</li>
+    </ol>
+
+    <h3>5. Deterministic Context-Free Languages (DCFL) and PDAs</h3>
+    <p>
+        <ul>
+            <li>A <strong>Deterministic Push Down Automaton (DPDA)</strong> is a PDA where at most one transition is possible for any given input, stack symbol, and state.</li>
+            <li><strong>Deterministic Context-Free Languages (DCFLs)</strong> are a subset of CFLs that can be recognized by a DPDA.</li>
+            <li>DPDAs are less powerful than general (non-deterministic) PDAs and cannot recognize all CFLs.</li>
+        </ul>
+    </p>
+
+    <h3>6. DPDA vs NPDA</h3>
+    <ul>
+        <li><strong>DPDA (Deterministic PDA):</strong>
+            <ul>
+                <li>Has exactly one valid transition for any given state, input, and stack symbol.</li>
+                <li>Recognizes only DCFLs.</li>
+                <li>Simpler and easier to implement.</li>
+            </ul>
+        </li>
+        <li><strong>NPDA (Non-Deterministic PDA):</strong>
+            <ul>
+                <li>Can have multiple possible transitions for a given state, input, and stack symbol.</li>
+                <li>Recognizes all CFLs.</li>
+                <li>More powerful than DPDAs.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Applications of PDA</h3>
+    <ul>
+        <li>Parsing and syntax analysis in compilers.</li>
+        <li>Modeling languages and grammars, especially for <strong>programming languages</strong>.</li>
+        <li>Validating expressions in natural language processing.</li>
+    </ul>
+
+ <br>
  <h3>Turing Machine in Automata</h3>
 
  <h2>Components of a Turing Machine</h2>
@@ -776,6 +854,21 @@ Where:
  3) Design the NFA for the given transition table. 
  <img src="../assets/images/formal/q3_more.png" alt="" id="img1"><br><br>
    </section>
+<hr>
+Important Questions : Numericals
+<hr>
+<br>
+<img src="../assets/images/formal/img_endsem/img1.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img2.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img8.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img11.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img14.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img17.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img20.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img23.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img26.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img29.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img32.jpg" alt="" id="img1"><br>
 
 
         </body>
