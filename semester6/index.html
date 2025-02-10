@@ -144,6 +144,42 @@ function removememe() {
           <span><i class="fa fa-arrow-up" aria-hidden="true" id="arrow"></i></span>
       </a>
       </div> 
- 
-        </body>
+      <strong><u>Run-length coding (Lossless compression algorithm)</u></strong>
+      <br>
+      Run-length coding (RLC) exploits the repetitive nature of the image. It tries to identify the length of the pixel values and encodes the images in the form of a run. Each row of the image is written as a sequence. Then the length is represented as a run of black or white pixels. This is an effective way of compressing an image. If necessary, there can be farther compression using variable length coding to code the ran length themselves. The technique scans the image row by row and identifies the ran . The output ran length vector specifies the pixel value and the length of the run. <br>
+      <img src="../assets/images/image_processing/img_pro1.png" alt="" id="img1">
+      <br>
+      <center><i>Sample binary image for ran-length coding.</i></center>
+      <br>
+      #The horizontal RLC Starts from the top-left pixel, scans the image from left to right, and generates the run-length vector. For the images in fig. the run-length vectors are as follows :-
+      <br>
+      <img src="../assets/images/image_processing/img_pro2.png" alt="" id="img1">
+      <br>
+      The maximum length here is five. It requires three bits in binary. The total number of vector is six. The maximum number of bits required is three. The number of bits per pixel, as the pixels od the image are either o or 1. Therefore, the total number of pixels is given by 6 X (3+1) = 24. The total number of bits of the original image is 5 x 5 = 25. Therefore, the compression ratio is 25/24, that is 1.042:1.
+      <br>
+      #The scan line can be changed. This change affects the compression ratio. Vertical line scanning of the same image yields. 
+      <br>
+      <img src="../assets/images/image_processing/img_pro3.png" alt="" id="img1">
+      <br>
+      Here the total number of vector = 10 <br>
+      Maximum no. of bits = 3
+      <br>
+      Number of bits per pixel = 1
+      <br>
+      Therefore, 10 X (3+1) = 40
+      <br>
+      compression ratio = 25/24 = 0.625:1
+      <br>
+      It can be observed that this is signifivantly lesser than the previous schemes. <br>
+      #The scan lines can be changed to a zig-zag line as shown in fig.
+
+      <br>
+      <img src="../assets/images/image_processing/img_pro4.png" alt="" id="img1">
+      <br>
+      <br>
+      <img src="../assets/images/image_processing/img_pro5.png" alt="" id="img1">
+      <br>
+      <strong><u>Explain the need for Image compression in digital Image processing.</u></strong><br>
+      With the advantaged development in internet, telecommunication, multimedia, and high-definition television technologies. The amount of information that is handled by computers has grown exporentially over the past decades. The amount of data transmitted through the internet doubles every year, and a large portion of that data comprises of image. Reducing the bandwidth needs of any given device will result in significant cost reductions and will make the use of the device more affordable. Image compression offers ways to represent an image in a more compact way, so that images can be stored in a compact manner and can be transmitted faster.
+    </body>
 </html>
