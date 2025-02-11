@@ -106,16 +106,16 @@
     function redirectToPage(userYear) {
         switch(userYear) {
             case '1':
-                window.location = "semester1/index.html";
+                window.location = "semester2/index.html";
                 break;
             case '2':
-                window.location = "semester3/index.html";
+                window.location = "semester4/index.html";
                 break;
             case '3':
-                window.location = "semester5/index.html";
+                window.location = "semester6/index.html";
                 break;
             case '4':
-                window.location = "semester7/index.html";
+                window.location = "semester8/index.html";
                 break;
             default:
                 console.error('Invalid user year:', userYear);
@@ -138,7 +138,9 @@
     }
   
     // Call checkLogin on page load or whenever needed
-   
+   function shutdown(){
+    window.location = "shutdown.html";
+   }
   </script>
   
 </body>

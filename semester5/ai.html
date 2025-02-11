@@ -25,7 +25,7 @@
 <style>
  
   </style>
-<body> 
+<body onload="waterm()"> 
   <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center mt-2 p-2 mb-2 border-bottom">
    <div id="top_bar">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -50,7 +50,14 @@
       <a href="../semester5/cloud.html">Cloud Computing</a>
 
       <h2>semester 6</h2>
-      <a href="#">Comming Soon....</a>
+     
+      <a href="../semester6/index.html">Digital Image</a>
+      <a href="../semester6/Compiler.html">Compiler Design</a>
+      <a href="../semester6/Computational.html">Computational Intell.</a>
+      <a href="../semester6/ds_big_data.html">DS and Big data</a>
+      <a href="../semester6/computer_graphics.html">Computer Graphics</a>
+      <a href="../semester6/python_da.html">Python for DA</a>
+      <a href="../semester6/ds.html">Data Science</a>
      
   </div>
   <div class="semester">semester-5</div>
@@ -82,7 +89,10 @@
   
   
     <div id="body">
-      <div class="heading_name">Artificail Intelligence</div>
+      <div class="heading_name">Artificial Intelligence</div>
+      <hr>
+      <marquee behavior="" direction=""><a href="#mid-sem">Important Numerical Questions with solution</a></marquee>
+      <hr>
       <div id="watermark">@Debuggers</div>
 
       <div id="up">
@@ -154,6 +164,270 @@
         <li>6</li>
         <li>3</li>
     </ul>
+    <h3>CSP(Constraint Satisfaction Problem)</h3>
+    Constraint Satisfaction Problems (CSP) play a crucial role in artificial intelligence (AI) as they help solve various problems that require decision-making under certain constraints. CSPs represent a class of problems where the goal is to find a solution that satisfies a set of constraints. These problems are commonly encountered in fields like scheduling, planning, resource allocation, and configuration.
+    <br>
+    Common applications of CSPs include:
+<br>
+<li><strong>Scheduling:</strong>Assigning resources like employees or equipment while respecting time and availability constraints.</li>
+<li><strong>Planning: </strong>Organizing tasks with specific deadlines or sequences.</li>
+<li><strong>Resource Allocation:</strong>Distributing resources efficiently without overuse.</li>
+ 
+<img src="../assets/images/ai/ai1.jpg" alt="" id="img1">
+<h2>SSS* Algorithm</h2>
+<h3>Overview</h3>
+<p>
+    The <strong>SSS*</strong> (Star SSS) algorithm is a game-tree search algorithm primarily used in two-player games. 
+    It is an alternative to the alpha-beta pruning algorithm and is designed to find the optimal solution more efficiently.
+    SSS* focuses on searching a subset of the game tree that is sufficient to determine the best move.
+</p>
+
+<h2>Key Features</h2>
+<ul>
+    <li>Uses <strong>best-first search</strong> to explore the game tree.</li>
+    <li>Operates on a set of solution trees called <em>Live Nodes</em>.</li>
+    <li>Finds the optimal minimax value by selectively expanding the tree.</li>
+    <li>Minimizes redundant exploration of nodes.</li>
+</ul>
+
+<h2>Steps of the Algorithm</h2>
+<ol>
+    <li>
+        Start with the root node representing the entire game tree.
+    </li>
+    <li>
+        Generate a priority queue of <em>Live Nodes</em> to represent possible solution trees.
+    </li>
+    <li>
+        Use a <strong>best-first search</strong> approach to expand the most promising node based on its priority.
+    </li>
+    <li>
+        Continue expanding nodes while maintaining the minimax solution for the game tree.
+    </li>
+    <li>
+        Stop when the optimal solution tree is identified and the minimax value is found.
+    </li>
+</ol>
+
+<h2>Advantages</h2>
+<ul>
+    <li>More efficient than traditional minimax or alpha-beta pruning in some cases.</li>
+    <li>Reduces the number of nodes that need to be evaluated.</li>
+    <li>Ideal for problems where minimizing node expansions is critical.</li>
+</ul>
+
+<h2>Disadvantages</h2>
+<ul>
+    <li>Complex to implement compared to alpha-beta pruning.</li>
+    <li>Requires maintaining a priority queue, which can increase overhead.</li>
+</ul>
+
+<h2>Applications</h2>
+<p>
+    The SSS* algorithm is mainly used in:
+</p>
+<ul>
+    <li>Two-player zero-sum games like chess, checkers, and tic-tac-toe.</li>
+    <li>Game tree analysis where optimal solutions are needed efficiently.</li>
+</ul>
+
+<h2>Example</h2>
+<p>Consider a small game tree:</p>
+<pre>
+    Root
+   /   \
+  A     B
+ / \   / \
+C   D E   F
+</pre>
+<p>The SSS* algorithm would selectively explore nodes based on their contribution to the optimal solution, rather than traversing the entire tree.</p>
+<h2>RETE Algorithm</h2>
+<h3>Overview</h3>
+<p>
+    The <strong>RETE</strong> algorithm is a pattern-matching algorithm used in rule-based systems to efficiently evaluate a set of production rules. It is designed to minimize the overhead of repeatedly matching rules against a changing set of facts in a knowledge base.
+</p>
+
+<h2>Key Features</h2>
+<ul>
+    <li>Uses a network structure to represent patterns and match them against facts.</li>
+    <li>Stores partial matches to avoid redundant computations.</li>
+    <li>Efficiently handles dynamic changes to the set of facts.</li>
+    <li>Optimized for systems with a large number of rules and facts.</li>
+</ul>
+
+<h2>Steps of the Algorithm</h2>
+<ol>
+    <li>
+        Construct a <em>RETE network</em>, which is a directed acyclic graph representing the conditions of all rules.
+    </li>
+    <li>
+        Process incoming facts by propagating them through the network.
+    </li>
+    <li>
+        Store partial matches in memory nodes to reuse for future fact changes.
+    </li>
+    <li>
+        Activate rules when all conditions for a rule are satisfied by the facts.
+    </li>
+</ol>
+
+<h2>Advantages</h2>
+<ul>
+    <li>Highly efficient for systems with many rules and frequent fact updates.</li>
+    <li>Avoids redundant computations by storing intermediate results.</li>
+    <li>Allows incremental updates to the knowledge base.</li>
+</ul>
+
+<h2>Disadvantages</h2>
+<ul>
+    <li>High memory usage due to storage of partial matches.</li>
+    <li>Complexity of implementing the RETE network.</li>
+</ul>
+
+<h2>Applications</h2>
+<p>
+    The RETE algorithm is widely used in:
+</p>
+<ul>
+    <li>Expert systems (e.g., OPS5, CLIPS).</li>
+    <li>Real-time decision-making systems.</li>
+    <li>Business rule engines.</li>
+</ul>
+
+<h2>Example</h2>
+<p>Consider the following rules and facts:</p>
+<pre>
+Rules:
+1. IF A AND B THEN C
+2. IF C AND D THEN E
+
+Facts:
+A, B, D
+</pre>
+<p>The RETE algorithm efficiently matches the facts against the rules to deduce that E is true.</p>
+<br>
+<h2>OPS5</h2>
+    <h3>Overview</h3>
+    <p>
+        <strong>OPS5</strong> is a forward-chaining production system language and one of the earliest expert system shells. It is built on the RETE algorithm and is designed for creating rule-based systems where rules are fired based on matching patterns in a knowledge base.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+        <li>Employs the RETE algorithm for efficient rule matching.</li>
+        <li>Supports forward-chaining inference, allowing rules to be triggered by changes in data.</li>
+        <li>Flexible and extensible for a variety of domains.</li>
+        <li>Used as a foundation for modern expert systems.</li>
+    </ul>
+
+    <h2>How OPS5 Works</h2>
+    <ol>
+        <li>
+            Define a set of rules (productions) consisting of conditions and actions.
+        </li>
+        <li>
+            Use a working memory to store facts about the current state of the system.
+        </li>
+        <li>
+            Match facts in working memory against the conditions of rules using the RETE algorithm.
+        </li>
+        <li>
+            Execute the actions of rules that match, potentially modifying the working memory.
+        </li>
+        <li>
+            Repeat until no more rules can be fired or a goal is achieved.
+        </li>
+    </ol>
+
+    <h2>Applications</h2>
+    <p>
+        OPS5 has been widely used in the following areas:
+    </p>
+    <ul>
+        <li>Expert systems for diagnostics, troubleshooting, and decision support.</li>
+        <li>Simulations and modeling systems.</li>
+        <li>Artificial intelligence research and education.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>Consider a simplified example of OPS5 rules:</p>
+    <pre>
+    Rule 1: IF (object A is red) AND (object A is round) THEN (object A is a ball)
+    Rule 2: IF (object B is blue) THEN (object B is a cube)
+    </pre>
+    <p>Given facts about objects in the working memory, OPS5 applies these rules to infer new information, such as classifying objects by their properties.</p>
+<br>
+<h2>AO* Algorithm</h2>
+    <h3>Overview</h3>
+    <p>
+        The <strong>AO*</strong> algorithm is a heuristic search algorithm used in Artificial Intelligence to solve problems modeled as AND-OR graphs. It is designed to find the optimal solution by simultaneously exploring multiple branches of the graph and selecting the most promising paths based on heuristic evaluation.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+        <li>Works on AND-OR graphs, which include decision points (OR nodes) and problem decomposition (AND nodes).</li>
+        <li>Incorporates heuristic evaluation to guide the search process.</li>
+        <li>Updates the cost estimates dynamically as the graph is explored.</li>
+        <li>Backtracking ensures optimality by revising choices when better solutions are discovered.</li>
+    </ul>
+
+    <h2>Steps of the Algorithm</h2>
+    <ol>
+        <li>
+            Start at the initial node of the graph.
+        </li>
+        <li>
+            Expand the most promising unexpanded node based on heuristic evaluation.
+        </li>
+        <li>
+            For AND nodes, expand all child nodes and combine their costs; for OR nodes, choose the child node with the minimum cost.
+        </li>
+        <li>
+            Update the cost estimates of parent nodes as new information is obtained.
+        </li>
+        <li>
+            Repeat until a solution path is identified that satisfies the problem constraints.
+        </li>
+    </ol>
+
+    <h2>Advantages</h2>
+    <ul>
+        <li>Optimized for problems with both decision points and subproblem decomposition.</li>
+        <li>Combines heuristic guidance with dynamic cost updates for efficient search.</li>
+        <li>Guaranteed to find the optimal solution if the heuristic is admissible.</li>
+    </ul>
+
+    <h2>Disadvantages</h2>
+    <ul>
+        <li>Computationally expensive for large graphs with many nodes.</li>
+        <li>Requires an admissible heuristic for optimal performance.</li>
+        <li>Complex implementation compared to simpler search algorithms.</li>
+    </ul>
+
+    <h2>Applications</h2>
+    <p>
+        The AO* algorithm is commonly used in:
+    </p>
+    <ul>
+        <li>Automated planning and scheduling.</li>
+        <li>Game playing where decision points and subproblems are involved.</li>
+        <li>Problem-solving systems requiring optimal solutions with constraints.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>Consider a simple AND-OR graph:</p>
+    <pre>
+        Root
+       /    \
+      A      B
+     / \    / \
+    C   D  E   F
+    </pre>
+    <p>The AO* algorithm explores nodes selectively based on heuristic evaluations, combining the costs of AND nodes and choosing the minimum-cost child for OR nodes to find the optimal solution.</p>
+<img src="../assets/images/ai/ai2.jpg" alt="" id="img1">
+
+
+
     <hr>
     <center>Some Important Questions</center>
     <hr>
@@ -356,4 +630,33 @@
       <p>Computer Vision is a field of AI that enables machines to interpret and make decisions based on visual data from the world. It plays a crucial role in applications such as image recognition, facial recognition, autonomous vehicles, and medical image analysis.</p>
   </div>
 
+  <hr id="mid-sem">
+<center><strong>Important Numericals with Solutions</strong></center>
+  <hr>
+  <center>
+  <img src="../assets/images/ai/sol/img1.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img5.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img8.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img11.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img14.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img17.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img20.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img23.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img26.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img29.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img32.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img36.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img39.jpg" alt="" id="img1"><br>
+  <img src="../assets/images/ai/sol/img42.jpg" alt="" id="img1">
+
+
+<hr>
+<center><strong>Mid Sem Question Paper</strong></center>
+<hr>
+
+
+<img src="../assets/images/ai/ai_q1.jpg" alt="" id="img1"><br>
+<img src="../assets/images/ai/ai_q2.jpg" alt="" id="img1">
+</center>
+  <hr>
 </html>

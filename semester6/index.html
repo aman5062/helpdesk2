@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <title>Helpdesk</title>
+</head>
+   
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+	crossorigin="anonymous"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+/>
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="../assets/css/style.css?s=5" />
+<script src="../assets/js/script.js"></script>
+
+<script>
+function memelogy() {
+  const imageElement = document.getElementById("meme_img");
+    const randomNumber = Math.floor(Math.random() * 10000); 
+    imageElement.src = `https://arambhsoftech.com/Helpdesk/meme/meme.png?r=${randomNumber}`;
+    waterm();
+}
+
+function removememe() {
+            document.getElementById('meme_box').style.display = 'none';
+            document.getElementById('blur_back').style.display = 'none';
+        }
+</script>
+<style>   #meme_box {
+  background-color: wheat;
+  z-index: 1000;
+  padding: 20px;
+  text-align: center;
+}
+#blur_back {
+  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+@media (max-width: 768px) {
+  #meme_img {
+      height: 100%;
+      width: auto;
+  }
+}
+  </style>
+<body onload="memelogy();"> 
+ 
+  <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center mt-2 p-2 mb-2 border-bottom">
+   <div id="top_bar">
+    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <img src="../assets/images/logo.png" id="imglogo">
+      <span class="fs-4 mr-5 lo"><h2 class="bold-text">Helpdesk</h2></span>
+    </a>
+   </div>
+    <div class="container-fluid" id="sec_nav">
+      <button class="navbar-toggler" type="button" onclick="openLeftSidebar()">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+     <div id="leftSidebar" class="sidebar-left">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeLeftSidebar()">&times;</a>
+      <h2>semester 5</h2>
+      <a href="../semester5/index.html">Software tech.</a>
+      <a href="../semester5/formal.html">Formal lang.</a>
+      <a href="../semester5/ai.html">AI</a>
+      <a href="../semester5/ml.html">ML</a>
+      <a href="../semester5/const.html">Indian Const.</a>
+      <a href="../semester5/comp_netw.html">Comp. Networks</a>
+      <a href="../semester5/big.html">Big Data</a>
+      <a href="../semester5/cloud.html">Cloud Computing</a>
+
+      <h2>semester 6</h2>
+      <a class="active" href="../semester6/index.html">Digital Image</a>
+      <a href="../semester6/Compiler.html">Compiler Design</a>
+      <a href="../semester6/Computational.html">Computational Intell.</a>
+      <a href="../semester6/ds_big_data.html">DS and Big data</a>
+      <a href="../semester6/computer_graphics.html">Computer Graphics</a>
+      <a href="../semester6/python_da.html">Python for DA</a>
+      <a href="../semester6/ds.html">Data Science</a>
+
+  </div>
+  <div class="semester">semester-5</div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="upper_menu_btn" data-bs-target="#collapsibleNavbar">
+ <i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar" >
+        <ul class="nav nav-pills navbar-nav ms-auto" id="myNav">
+          <!-- 1st Year -->
+          <li class="nav-item">
+            <a class="nav-link" href="../semester1/index.html">1st Year</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../semester3/index.html">2nd Year</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../semester5/index.html">3rd Year</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../semester7/index.html">4th Year</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../NPTEL/index.html">NPTEL</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+    <!-- Background Blur -->
+   <div id="blur_back"></div>
+
+    <!-- Meme Box Content -->
+    <div id="meme_box" class="container position-fixed top-50 start-50 translate-middle rounded shadow-lg">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <img id="meme_img" class="img-fluid rounded" alt="Meme Image">
+                
+           </div><br><center style="font-size: larger;">Meme of the Day</center><br>
+            <div class="col-12 mt-4" >
+                <button class="btn btn-danger" onclick="removememe()">Close</button>
+            </div>
+        </div>
+    </div>
+    <div id="body">
+      <div class="heading_name">Digital Image processing</div>
+      
+
+      <div id="watermark">@Debuggers</div>
+      <div id="up">
+        <a href="#" id="goToTopButton" class="go-to-top-button">
+          <span><i class="fa fa-arrow-up" aria-hidden="true" id="arrow"></i></span>
+      </a>
+      </div> 
+      <strong><u>Run-length coding (Lossless compression algorithm)</u></strong>
+      <br>
+      Run-length coding (RLC) exploits the repetitive nature of the image. It tries to identify the length of the pixel values and encodes the images in the form of a run. Each row of the image is written as a sequence. Then the length is represented as a run of black or white pixels. This is an effective way of compressing an image. If necessary, there can be farther compression using variable length coding to code the ran length themselves. The technique scans the image row by row and identifies the ran . The output ran length vector specifies the pixel value and the length of the run. <br>
+      <img src="../assets/images/image_processing/img_pro1.png" alt="" id="img1">
+      <br>
+      <center><i>Sample binary image for ran-length coding.</i></center>
+      <br>
+      #The horizontal RLC Starts from the top-left pixel, scans the image from left to right, and generates the run-length vector. For the images in fig. the run-length vectors are as follows :-
+      <br>
+      <img src="../assets/images/image_processing/img_pro2.png" alt="" id="img1">
+      <br>
+      The maximum length here is five. It requires three bits in binary. The total number of vector is six. The maximum number of bits required is three. The number of bits per pixel, as the pixels od the image are either o or 1. Therefore, the total number of pixels is given by 6 X (3+1) = 24. The total number of bits of the original image is 5 x 5 = 25. Therefore, the compression ratio is 25/24, that is 1.042:1.
+      <br>
+      #The scan line can be changed. This change affects the compression ratio. Vertical line scanning of the same image yields. 
+      <br>
+      <img src="../assets/images/image_processing/img_pro3.png" alt="" id="img1">
+      <br>
+      Here the total number of vector = 10 <br>
+      Maximum no. of bits = 3
+      <br>
+      Number of bits per pixel = 1
+      <br>
+      Therefore, 10 X (3+1) = 40
+      <br>
+      compression ratio = 25/24 = 0.625:1
+      <br>
+      It can be observed that this is signifivantly lesser than the previous schemes. <br>
+      #The scan lines can be changed to a zig-zag line as shown in fig.
+
+      <br>
+      <img src="../assets/images/image_processing/img_pro4.png" alt="" id="img1">
+      <br>
+      <br>
+      <img src="../assets/images/image_processing/img_pro5.png" alt="" id="img1">
+      <br>
+      <strong><u>Explain the need for Image compression in digital Image processing.</u></strong><br>
+      With the advantaged development in internet, telecommunication, multimedia, and high-definition television technologies. The amount of information that is handled by computers has grown exporentially over the past decades. The amount of data transmitted through the internet doubles every year, and a large portion of that data comprises of image. Reducing the bandwidth needs of any given device will result in significant cost reductions and will make the use of the device more affordable. Image compression offers ways to represent an image in a more compact way, so that images can be stored in a compact manner and can be transmitted faster.
+    </body>
+</html>

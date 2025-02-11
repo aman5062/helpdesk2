@@ -25,7 +25,7 @@
 <style>
  
   </style>
-<body> 
+<body  onload="waterm()">
   <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center mt-2 p-2 mb-2 border-bottom">
    <div id="top_bar">
     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -50,7 +50,13 @@
       <a href="../semester5/cloud.html">Cloud Computing</a>
 
       <h2>semester 6</h2>
-      <a href="#">Comming Soon....</a>
+      <a href="../semester6/index.html">Digital Image</a>
+      <a href="../semester6/Compiler.html">Compiler Design</a>
+      <a href="../semester6/Computational.html">Computational Intell.</a>
+      <a href="../semester6/ds_big_data.html">DS and Big data</a>
+      <a href="../semester6/computer_graphics.html">Computer Graphics</a>
+      <a href="../semester6/python_da.html">Python for DA</a>
+      <a href="../semester6/ds.html">Data Science</a>
      
   </div>
   <div class="semester">semester-5</div>
@@ -538,6 +544,310 @@ Some Important Questions
 16)Draw deterministic finite automata (DFA) of the language containing the set of all strings over {a, b} in which 2nd symbol from RHS is 'a'.
 <img src="../assets/images/formal/q16.png" alt="" id="img1">
  <br><br>
+ <h3>Push Down Automata (PDA)</h3>
+    <p>Push Down Automata (PDA) are computational models used to recognize <strong>Context-Free Languages (CFLs)</strong>. They extend the capabilities of Finite Automata by adding a <em>stack</em>, which provides additional memory for storing intermediate information.</p>
+    
+    <h3>1. PDA Definition and Model</h3>
+    <p>A <strong>Push Down Automaton (PDA)</strong> is defined as a 7-tuple:</p>
+    <p><code>M = (Q, Σ, Γ, δ, q<sub>0</sub>, Z<sub>0</sub>, F)</code></p>
+    <ul>
+        <li><strong>Q</strong>: Finite set of states.</li>
+        <li><strong>Σ</strong>: Input alphabet.</li>
+        <li><strong>Γ</strong>: Stack alphabet (symbols stored in the stack).</li>
+        <li><strong>δ: Q × (Σ ∪ {ε}) × Γ → Q × Γ*</strong>: Transition function, which depends on the current state, input symbol, and top stack symbol, and determines the next state and stack action.</li>
+        <li><strong>q<sub>0</sub></strong>: Start state.</li>
+        <li><strong>Z<sub>0</sub></strong>: Initial stack symbol.</li>
+        <li><strong>F</strong>: Set of accepting states.</li>
+    </ul>
+    <p>The stack can be used for operations such as:</p>
+    <ul>
+        <li><strong>Push</strong>: Add a symbol to the stack.</li>
+        <li><strong>Pop</strong>: Remove the top symbol from the stack.</li>
+        <li><strong>No operation (ε)</strong>: Leave the stack unchanged.</li>
+    </ul>
+
+    <h3>2. Acceptance of Context-Free Languages</h3>
+    <p>A PDA can accept a Context-Free Language (CFL) in two ways:</p>
+    <ol>
+        <li><strong>Acceptance by Final State:</strong> A string is accepted if the PDA reaches an accepting state after consuming the input.</li>
+        <li><strong>Acceptance by Empty Stack:</strong> A string is accepted if the PDA finishes processing the input and the stack is empty.</li>
+    </ol>
+
+    <h3>3. Equivalence of Acceptance Criteria</h3>
+    <p>The two methods of acceptance (final state and empty stack) are <strong>equivalent</strong>:</p>
+    <ul>
+        <li>Any PDA that accepts by empty stack can be converted into a PDA that accepts by final state, and vice versa.</li>
+        <li>This equivalence ensures the robustness of PDA in recognizing CFLs.</li>
+    </ul>
+
+    <h3>4. Equivalence of CFG and PDA</h3>
+    <p>There is a direct equivalence between <strong>Context-Free Grammars (CFGs)</strong> and PDAs:</p>
+    <ol>
+        <li><strong>CFG to PDA:</strong> Every Context-Free Grammar can be converted into a PDA that accepts the same language. The PDA uses the stack to simulate derivations of the grammar.</li>
+        <li><strong>PDA to CFG:</strong> Every PDA can be converted into a Context-Free Grammar that generates the same language.</li>
+    </ol>
+
+    <h3>5. Deterministic Context-Free Languages (DCFL) and PDAs</h3>
+    <p>
+        <ul>
+            <li>A <strong>Deterministic Push Down Automaton (DPDA)</strong> is a PDA where at most one transition is possible for any given input, stack symbol, and state.</li>
+            <li><strong>Deterministic Context-Free Languages (DCFLs)</strong> are a subset of CFLs that can be recognized by a DPDA.</li>
+            <li>DPDAs are less powerful than general (non-deterministic) PDAs and cannot recognize all CFLs.</li>
+        </ul>
+    </p>
+
+    <h3>6. DPDA vs NPDA</h3>
+    <ul>
+        <li><strong>DPDA (Deterministic PDA):</strong>
+            <ul>
+                <li>Has exactly one valid transition for any given state, input, and stack symbol.</li>
+                <li>Recognizes only DCFLs.</li>
+                <li>Simpler and easier to implement.</li>
+            </ul>
+        </li>
+        <li><strong>NPDA (Non-Deterministic PDA):</strong>
+            <ul>
+                <li>Can have multiple possible transitions for a given state, input, and stack symbol.</li>
+                <li>Recognizes all CFLs.</li>
+                <li>More powerful than DPDAs.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Applications of PDA</h3>
+    <ul>
+        <li>Parsing and syntax analysis in compilers.</li>
+        <li>Modeling languages and grammars, especially for <strong>programming languages</strong>.</li>
+        <li>Validating expressions in natural language processing.</li>
+    </ul>
+
+ <br>
+ <h3>Turing Machine in Automata</h3>
+
+ <h2>Components of a Turing Machine</h2>
+ <ul>
+     <li><strong>Tape</strong>: A potentially infinite memory divided into discrete cells, each holding a symbol from a finite alphabet.</li>
+     <li><strong>Head</strong>: Reads and writes symbols on the tape and moves left or right based on the current state and symbol.</li>
+     <li><strong>Finite State Control</strong>: Contains a finite set of states and determines actions based on the current state and symbol.</li>
+     <li><strong>Alphabet</strong>:
+         <ul>
+             <li>Input symbols</li>
+             <li>A special blank symbol (e.g., <code>&square;</code>)</li>
+         </ul>
+     </li>
+     <li><strong>Transition Function</strong> (<code>&delta;</code>): Defines the machine's behavior as a mapping:
+         <code>&delta;(Q &times; &Gamma;) &rarr; (Q &times; &Gamma; &times; {L, R})</code>
+     </li>
+     <li><strong>States</strong>:
+         <ul>
+             <li><strong>Start State</strong> (<code>q<sub>0</sub></code>): Where computation begins.</li>
+             <li><strong>Accept State</strong> (<code>q<sub>accept</sub></code>): Signifies successful computation.</li>
+             <li><strong>Reject State</strong> (<code>q<sub>reject</sub></code>): Signifies failure or rejection.</li>
+         </ul>
+     </li>
+ </ul>
+
+ <h2>Operation of a Turing Machine</h2>
+ <p>The Turing Machine begins in the start state <code>q<sub>0</sub></code>, with the head positioned at the first cell of the tape. The current symbol and state determine:</p>
+ <ul>
+     <li>The symbol to write.</li>
+     <li>The direction to move the head (left or right).</li>
+     <li>The next state to transition to.</li>
+ </ul>
+ <p>The machine halts when it enters an accept or reject state, or if there is no valid transition.</p>
+
+ <h2>Types of Turing Machines</h2>
+ <ul>
+     <li><strong>Deterministic Turing Machine (DTM)</strong>: For every state and symbol, there is exactly one defined action.</li>
+     <li><strong>Non-Deterministic Turing Machine (NDTM)</strong>: Allows multiple possible actions for a given state and symbol.</li>
+     <li><strong>Multi-Tape Turing Machine</strong>: Features multiple tapes and corresponding heads for more efficient computation.</li>
+     <li><strong>Universal Turing Machine (UTM)</strong>: Can simulate any other Turing machine by encoding its description and input on the tape.</li>
+ </ul>
+
+ <div class="example">
+     <h3>Example: Formal Definition</h3>
+     <p>A Turing Machine is formally defined as:</p>
+     <pre>
+M = (Q, &Sigma;, &Gamma;, &delta;, q<sub>0</sub>, q<sub>accept</sub>, q<sub>reject</sub>)
+Where:
+- Q = {q<sub>0</sub>, q<sub>1</sub>, q<sub>accept</sub>, q<sub>reject</sub>} (states)
+- &Sigma; = {0, 1} (input alphabet)
+- &Gamma; = {0, 1, &square;} (tape alphabet)
+- &delta; = Transition function (example depends on specific problem)
+- q<sub>0</sub>, q<sub>accept</sub>, q<sub>reject</sub>: Start, accept, and reject states
+     </pre>
+ </div>
+
+
+ <h3>Regular Expression to DFA</h3>
+
+ <h2>Steps to Convert Regular Expression to DFA</h2>
+ <p>The process of converting a regular expression to a Deterministic Finite Automaton (DFA) typically involves the following steps:</p>
+ <ol>
+     <li><strong>Convert Regular Expression to NFA</strong>: Use Thompson's construction to create a Non-Deterministic Finite Automaton (NFA).</li>
+     <li><strong>Convert NFA to DFA</strong>: Apply the subset construction algorithm to transform the NFA into an equivalent DFA.</li>
+     <li><strong>Minimize the DFA</strong> (optional): Simplify the DFA by merging equivalent states.</li>
+ </ol>
+
+ <h2>Key Concepts</h2>
+ <ul>
+     <li><strong>Regular Expression:</strong> A sequence of characters that define a search pattern, e.g., <code>a*b|c</code>.</li>
+     <li><strong>NFA:</strong> A finite automaton where transitions can be non-deterministic (i.e., multiple transitions for the same input or &epsilon;-transitions).</li>
+     <li><strong>DFA:</strong> A finite automaton where each state has exactly one transition per input symbol.</li>
+ </ul>
+
+ <h2>Example</h2>
+ <div class="example">
+     <h3>Convert Regular Expression <code>(a|b)*abb</code> to DFA</h3>
+     <ol>
+         <li><strong>Step 1:</strong> Construct an NFA for <code>(a|b)*abb</code> using Thompson's construction.
+             <ul>
+                 <li><code>(a|b)</code>: Create an NFA for alternation.</li>
+                 <li><code>(a|b)*</code>: Add a loop for Kleene star.</li>
+                 <li><code>abb</code>: Concatenate NFAs for each character.</li>
+             </ul>
+         </li>
+         <li><strong>Step 2:</strong> Convert the NFA to a DFA using the subset construction algorithm:
+             <ul>
+                 <li>Identify all possible sets of NFA states (subsets).</li>
+                 <li>Define transitions between subsets based on input symbols.</li>
+             </ul>
+         </li>
+         <li><strong>Step 3:</strong> Minimize the DFA:
+             <ul>
+                 <li>Merge equivalent states to reduce the number of states.</li>
+             </ul>
+         </li>
+     </ol>
+ </div>
+ <h2>Formal Definitions</h2>
+ <ul>
+     <li><strong>Regular Expression:</strong> A formal language over an alphabet <code>&Sigma;</code>.</li>
+     <li><strong>NFA:</strong> Defined as a 5-tuple <code>(Q, &Sigma;, &delta;, q<sub>0</sub>, F)</code> where:
+         <ul>
+             <li><code>Q</code>: Finite set of states.</li>
+             <li><code>&Sigma;</code>: Input alphabet.</li>
+             <li><code>&delta;</code>: Transition function (<code>Q &times; (&Sigma; &cup; {&epsilon;}) &rarr; 2^Q</code>).</li>
+             <li><code>q<sub>0</sub></code>: Start state.</li>
+             <li><code>F</code>: Set of accept states.</li>
+         </ul>
+     </li>
+     <li><strong>DFA:</strong> Defined as a 5-tuple <code>(Q, &Sigma;, &delta;, q<sub>0</sub>, F)</code> where:
+         <ul>
+             <li><code>Q</code>: Finite set of states.</li>
+             <li><code>&Sigma;</code>: Input alphabet.</li>
+             <li><code>&delta;</code>: Transition function (<code>Q &times; &Sigma; &rarr; Q</code>).</li>
+             <li><code>q<sub>0</sub></code>: Start state.</li>
+             <li><code>F</code>: Set of accept states.</li>
+         </ul>
+     </li>
+ </ul>
+
+ <h2>Turing Machine</h2>
+
+ <h3>Definition</h3>
+ <p>A Turing Machine (TM) is a mathematical model of computation that defines an abstract machine. It manipulates symbols on a strip of tape according to a set of rules and serves as a fundamental concept in theoretical computer science.</p>
+
+ <h3>Representation of Turing Machines</h3>
+ <ul>
+     <li>A Turing Machine consists of:
+         <ul>
+             <li>A tape divided into cells, each capable of holding a symbol.</li>
+             <li>A head that can read and write symbols on the tape and move left or right.</li>
+             <li>A finite set of states, including a start state and one or more halt states.</li>
+             <li>A transition function that defines the machine's behavior based on the current state and symbol.</li>
+         </ul>
+     </li>
+ </ul>
+
+ <h3>Variants of Turing Machines</h3>
+ <ul>
+     <li>Multi-tape Turing Machines</li>
+     <li>Non-deterministic Turing Machines</li>
+     <li>Universal Turing Machines</li>
+     <li>Oracle Turing Machines</li>
+ </ul>
+
+ <h3>Design of Turing Machines</h3>
+ <p>The process of designing a Turing Machine involves:</p>
+ <ol>
+     <li>Defining the input alphabet and tape alphabet.</li>
+     <li>Specifying the states and transitions.</li>
+     <li>Constructing the transition function to solve a specific problem.</li>
+     <li>Testing the machine with sample inputs to verify its correctness.</li>
+ </ol>
+
+ <h3>Linear Bounded Automata</h3>
+ <p>A Linear Bounded Automaton (LBA) is a restricted form of Turing Machine where the tape is limited to a finite segment proportional to the input size. LBAs are used to recognize context-sensitive languages.</p>
+
+ <h3>Computational Complexity & Decidability</h3>
+ <p>Computational complexity examines the resources required for a Turing Machine to solve a problem, including time and space. Decidability refers to whether a problem can be solved by a Turing Machine in finite time.</p>
+
+ <h3>Recursively Enumerable Languages</h3>
+ <p>A language is recursively enumerable (RE) if there exists a Turing Machine that can enumerate all strings in the language. RE languages may not be decidable but are semi-decidable.</p>
+
+ <h3>Complexity</h3>
+ <ul>
+     <li>Time Complexity: Measures the number of steps a Turing Machine takes to solve a problem.</li>
+     <li>Space Complexity: Measures the amount of tape used during computation.</li>
+ </ul>
+
+ <h3>Decidability</h3>
+ <p>Decidability categorizes problems into:</p>
+ <ul>
+     <li><strong>Decidable Problems:</strong> Problems for which a Turing Machine halts with a yes/no answer for every input.</li>
+     <li><strong>Undecidable Problems:</strong> Problems for which no Turing Machine can provide a solution for all inputs.</li>
+ </ul>
+
+ <h3>Halting Problem of Turing Machines</h3>
+ <p>The Halting Problem is a classic example of an undecidable problem. It asks whether a Turing Machine will halt on a given input. Alan Turing proved that no general algorithm can solve this problem for all possible machine-input pairs.</p>
+
+
+ <h2>Turing Machine Numericals</h2>
+
+    <h3>Example 1: Design a Turing Machine to Recognize Strings with Equal Number of 0s and 1s</h3>
+    <p><strong>Problem:</strong> Create a Turing Machine that accepts strings containing an equal number of 0s and 1s, such as "0011" or "1100".</p>
+    <p><strong>Solution:</strong>
+        <ul>
+            <li>Mark the first unprocessed 0 and search for a corresponding 1 to mark.</li>
+            <li>If a corresponding 1 is found, continue. If not, reject the string.</li>
+            <li>Repeat until all 0s and 1s are processed.</li>
+            <li>If all symbols are matched and no unprocessed symbols remain, accept the string.</li>
+        </ul>
+    </p>
+    <br>
+    <img src="../assets/images/formal/auto_tuni1.png" alt="" id="img1">
+    <h3>Example 2: Turing Machine for Binary Addition</h3>
+    <p><strong>Problem:</strong> Design a Turing Machine that adds two binary numbers represented on the tape, separated by a blank.</p>
+    <p><strong>Solution:</strong>
+        <ul>
+            <li>Scan the tape to identify the two binary numbers.</li>
+            <li>Perform bit-by-bit addition from right to left, carrying over as necessary.</li>
+            <li>Write the result back to the tape, replacing the original numbers.</li>
+        </ul>
+    </p>
+
+    <h3>Example 3: Turing Machine for Palindrome Detection</h3>
+    <p><strong>Problem:</strong> Construct a Turing Machine to check if a string is a palindrome (e.g., "abba").</p>
+    <p><strong>Solution:</strong>
+        <ul>
+            <li>Mark the first and last symbols and check if they are the same.</li>
+            <li>Move inward and repeat for all pairs of symbols.</li>
+            <li>If all pairs match, accept the string. Otherwise, reject it.</li>
+        </ul>
+    </p>
+
+    <h3>Example 4: Turing Machine for Unary Multiplication</h3>
+    <p><strong>Problem:</strong> Design a Turing Machine to compute the product of two unary numbers (e.g., "111*11" represents 3*2).</p>
+    <p><strong>Solution:</strong>
+        <ul>
+            <li>Replicate the first number for each 1 in the second number.</li>
+            <li>Separate the product with a designated delimiter.</li>
+            <li>Ensure correctness by iteratively testing outputs with sample inputs.</li>
+        </ul>
+    </p>
+
+
  <hr>
  <center>Other important Questions</center>
  <hr>
@@ -550,7 +860,23 @@ Some Important Questions
  3) Design the NFA for the given transition table. 
  <img src="../assets/images/formal/q3_more.png" alt="" id="img1"><br><br>
    </section>
-
+<hr>
+Important Questions : Numericals
+<hr>
+<br>
+<img src="../assets/images/formal/img_endsem/img1.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img2.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img8.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img11.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img14.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img17.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img20.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img23.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img26.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img29.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img32.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img_tur1.jpg" alt="" id="img1"><br>
+<img src="../assets/images/formal/img_endsem/img_tur2.jpg" alt="" id="img1"><br>
 
         </body>
 </html>
