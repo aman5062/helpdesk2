@@ -16,7 +16,8 @@ function handleScroll() {
         goToTopButton.style.display = 'block';
     } else {
         goToTopButton.style.display = 'none';
-    }
+    } 
+    
 }
 
 function highlightActiveNavLink() {
