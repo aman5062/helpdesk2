@@ -89,6 +89,50 @@
   
     <div id="body">
       <div class="heading_name">Compiler Designing</div>
-      
+      <mark><que>1. What is the role of a Compiler?</que><br></mark>
+    <ans>A compiler translates the entire source code into machine code before execution. It generates an executable file that can be run multiple times without recompilation.<br>
+    <strong>Example:</strong> C, C++ (GCC, Clang, MSVC)</ans><br><br>
+    
+    <mark><que>2. What is the role of an Interpreter?</que><br></mark>
+    <ans>An interpreter translates and executes code line by line, without generating a separate executable file.<br>
+    <strong>Example:</strong> Python, JavaScript (Python Interpreter, Node.js)</ans><br><br>
+    
+    <mark><que>3. What is the role of an Assembler?</que><br></mark>
+    <ans>An assembler converts assembly language code into machine code (binary instructions understood by the CPU).<br>
+    <strong>Example:</strong> NASM, MASM</ans><br><br>
+    
+    <h2>Differences Between Compiler, Interpreter, and Assembler</h2>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Compiler</th>
+            <th>Interpreter</th>
+            <th>Assembler</th>
+        </tr>
+        <tr>
+            <td>Translation Process</td>
+            <td>Converts the entire source code to machine code at once</td>
+            <td>Converts and executes code line by line</td>
+            <td>Converts assembly language to machine code</td>
+        </tr>
+        <tr>
+            <td>Execution Speed</td>
+            <td>Faster (once compiled)</td>
+            <td>Slower (executes line by line)</td>
+            <td>Fast (low-level conversion)</td>
+        </tr>
+        <tr>
+            <td>Error Detection</td>
+            <td>Detects all errors at once before execution</td>
+            <td>Stops at the first error</td>
+            <td>Syntax errors in assembly are detected</td>
+        </tr>
+        <tr>
+            <td>Example Languages</td>
+            <td>C, C++</td>
+            <td>Python, JavaScript</td>
+            <td>Assembly Language</td>
+        </tr>
+    </table>
         </body>
 </html>
