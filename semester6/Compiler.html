@@ -208,5 +208,49 @@
         </pre>
     </ans>
           
+
+
+
+    <mark><que>10. What is Writing Grammars for Programming Languages?</que></mark>
+<ans>
+    <p>Writing grammars for programming languages involves defining a set of rules that describe the syntactic structure of valid strings in a language. Context-Free Grammars (CFG) are commonly used for this purpose. The process often includes removing left recursion to ensure the grammar is suitable for parsing algorithms.</p>
+    <p><b>Removal of Left Recursion:</b> The goal is to transform the grammar into an equivalent form without left recursion, as shown below:</p>
+    <ul>
+        <li><b>Original Grammar:</b> <code>A → Aα | β</code></li>
+        <li><b>After Removal:</b>
+            <ul>
+                <li><code>A → βA'</code></li>
+                <li><code>A' → αA' | ε</code></li>
+            </ul>
+        </li>
+    </ul>
+</ans>
+
+<mark><que>11. What are Parse Trees and Ambiguity?</que></mark>
+<ans>
+    <p>A parse tree is a hierarchical structure that represents the syntactic structure of a string according to a given CFG. It is used in syntax analysis to check the grammatical structure of the source code.</p>
+    <p><b>Ambiguity:</b> A grammar is considered ambiguous if a single string can produce more than one distinct parse tree. Ambiguity complicates the parsing process and may lead to incorrect interpretation of the code.</p>
+    <p><b>Example of Ambiguous Grammar:</b></p>
+    <pre>
+        E → E + E | id
+    </pre>
+</ans>
+
+<mark><que>12. How to Remove Ambiguity from Grammar?</que></mark>
+<ans>
+    <p>To remove ambiguity, the grammar is rewritten to ensure that every string in the language has a unique parse tree. This process involves restructuring the rules while preserving the language's expressiveness.</p>
+    <p><b>Example:</b></p>
+    <p><b>Ambiguous Grammar:</b></p>
+    <pre>
+        E → E + E | E * E | id
+    </pre>
+    <p><b>Unambiguous Grammar:</b></p>
+    <pre>
+        E → E + T | T
+        T → T * F | F
+        F → id
+    </pre>
+</ans>
+
         </body>
 </html>
