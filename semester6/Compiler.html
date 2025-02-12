@@ -119,5 +119,25 @@
     <mark><que>3. What are the Types of Compilers?</que></mark>
     <ans>
 
+      <ul>
+        <li><b>Single-pass Compiler:</b> Processes the entire source code in one pass, without backtracking or revisiting code sections. It is fast but limited in optimization capabilities.</li>
+        <li><b>Multi-pass Compiler:</b> Processes the source code multiple times to optimize and improve the final machine code.</li>
+        <li><b>Cross Compiler:</b> Generates code for a platform that is different from the platform the compiler is running on. For example, compiling code on a Windows system for an ARM processor.</li>
+        <li><b>Just-in-Time (JIT) Compiler:</b> Compiles and executes code during runtime, commonly used in virtual machines like JVM (Java Virtual Machine).</li>
+        <li><b>Incremental Compiler:</b> Recompiles only the modified portions of code to save time during development.</li>
+    </ul>
+</ans>
+
+<mark><que>4. Explain the Structure and Phases of a Compiler.</que></mark>
+<ans>
+    <p>The structure of a compiler is divided into two main phases: Analysis (Front-End) and Synthesis (Back-End).</p>
+    <p><b>Analysis Phase:</b> This phase analyzes the source code and breaks it down into an intermediate representation (IR). It includes:</p>
+    <ul>
+        <li><b>Lexical Analysis:</b> Converts the input source code into a sequence of tokens.</li>
+        <li><b>Syntax Analysis:</b> Validates the syntactical structure of the code using grammar rules.</li>
+        <li><b>Semantic Analysis:</b> Checks for semantic correctness, such as type compatibility.</li>
+    </ul>
+    <p><b>Synthesis Phase:</b> This phase generates optimized machine code from the IR. It includes:</p>
+    <ul>
         </body>
 </html>
