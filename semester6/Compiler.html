@@ -180,5 +180,32 @@
               </pre>
           </ans>
 
+
+          <mark><que>8. Explain Context-Free Grammars (CFG).</que></mark>
+          <ans>
+              <p>CFGs define the syntax of programming languages in terms of production rules. Each rule specifies how a non-terminal symbol can be replaced by a sequence of terminal and non-terminal symbols.</p>
+              <p><b>Example CFG Rule:</b></p>
+              <pre>
+              E → E + T
+              T → T * F
+              F → (E) | id
+              </pre>
+          </ans>
+      
+          <mark><que>9. How Do You Remove Ambiguity from Grammar?</que></mark>
+          <ans>
+              <p>Ambiguity occurs when a grammar allows multiple parse trees for the same string. To remove ambiguity, rewrite the grammar to ensure a single parse tree for each string.</p>
+              <p><b>Example:</b></p>
+              <pre>
+              Ambiguous Grammar:
+              E → E + E | id
+      
+              Unambiguous Grammar:
+              E → E + T | T
+              T → id
+              </pre>
+          </ans>
+
+          
         </body>
 </html>
