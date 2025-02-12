@@ -162,50 +162,51 @@
         <p>The lexical analyzer, also known as the scanner, is responsible for reading the source code and breaking it into tokens. It also removes comments, whitespace, and invalid characters.</p>
         <p><b>Diagram:</b></p>
         <pre>
+        Source Code --> [Lexical Analyzer] --> Token Stream
+        </pre>
+    </ans>
 
-          <mark><que>7. What is the Role of a Parser?</que></mark>
-          <ans>
-              <p>A parser checks whether the token stream adheres to the grammatical rules of the programming language. It builds a hierarchical structure called a "parse tree." There are two main types of parsing:</p>
-              <ul>
-                  <li><b>Top-Down Parsing:</b> Starts from the root of the tree and works towards the leaves.</li>
-                  <li><b>Bottom-Up Parsing:</b> Starts from the leaves and works towards the root.</li>
-              </ul>
-              <p><b>Diagram:</b> Parse Tree Example for <code>E → E + T</code></p>
-              <pre>
-                     E
-                    / \
-                   E   T
-                  / \
-                 T   +
-              </pre>
-          </ans>
+    <mark><que>7. What is the Role of a Parser?</que></mark>
+    <ans>
+        <p>A parser checks whether the token stream adheres to the grammatical rules of the programming language. It builds a hierarchical structure called a "parse tree." There are two main types of parsing:</p>
+        <ul>
+            <li><b>Top-Down Parsing:</b> Starts from the root of the tree and works towards the leaves.</li>
+            <li><b>Bottom-Up Parsing:</b> Starts from the leaves and works towards the root.</li>
+        </ul>
+        <p><b>Diagram:</b> Parse Tree Example for <code>E → E + T</code></p>
+        <pre>
+               E
+              / \
+             E   T
+            / \
+           T   +
+        </pre>
+    </ans>
 
+    <mark><que>8. Explain Context-Free Grammars (CFG).</que></mark>
+    <ans>
+        <p>CFGs define the syntax of programming languages in terms of production rules. Each rule specifies how a non-terminal symbol can be replaced by a sequence of terminal and non-terminal symbols.</p>
+        <p><b>Example CFG Rule:</b></p>
+        <pre>
+        E → E + T
+        T → T * F
+        F → (E) | id
+        </pre>
+    </ans>
 
-          <mark><que>8. Explain Context-Free Grammars (CFG).</que></mark>
-          <ans>
-              <p>CFGs define the syntax of programming languages in terms of production rules. Each rule specifies how a non-terminal symbol can be replaced by a sequence of terminal and non-terminal symbols.</p>
-              <p><b>Example CFG Rule:</b></p>
-              <pre>
-              E → E + T
-              T → T * F
-              F → (E) | id
-              </pre>
-          </ans>
-      
-          <mark><que>9. How Do You Remove Ambiguity from Grammar?</que></mark>
-          <ans>
-              <p>Ambiguity occurs when a grammar allows multiple parse trees for the same string. To remove ambiguity, rewrite the grammar to ensure a single parse tree for each string.</p>
-              <p><b>Example:</b></p>
-              <pre>
-              Ambiguous Grammar:
-              E → E + E | id
-      
-              Unambiguous Grammar:
-              E → E + T | T
-              T → id
-              </pre>
-          </ans>
+    <mark><que>9. How Do You Remove Ambiguity from Grammar?</que></mark>
+    <ans>
+        <p>Ambiguity occurs when a grammar allows multiple parse trees for the same string. To remove ambiguity, rewrite the grammar to ensure a single parse tree for each string.</p>
+        <p><b>Example:</b></p>
+        <pre>
+        Ambiguous Grammar:
+        E → E + E | id
 
+        Unambiguous Grammar:
+        E → E + T | T
+        T → id
+        </pre>
+    </ans>
           
         </body>
 </html>
