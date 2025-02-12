@@ -88,9 +88,9 @@
   
   
     <div id="body">
-      <div class="heading_name">Computational Intelligence</div>
+      <div class="heading_name">Computational Intelligence</div><br>
       
-
+<mark><strong>Module :- 01</strong></mark><br><br>
       <mark><que>1. What is Soft Computing?</que></mark>
       <ans>
           <p>Soft computing is a branch of computational intelligence that mimics human decision-making capabilities and reasoning. Unlike hard computing, which relies on precise and exact solutions, soft computing uses approximate reasoning and uncertainty handling to find flexible and adaptable solutions for complex real-world problems.</p>
@@ -163,5 +163,191 @@
             </ul>
             <p>Modern AI integrates technologies such as deep learning and reinforcement learning to address more intricate challenges like gaming strategy or drug discovery.</p>
         </ans>
+        <mark><que>3.2 What are Neural Networks?</que></mark>
+        <ans>
+            <p>A Neural Network is a computational model inspired by the structure of the human brain. It is composed of interconnected nodes (neurons) that process information in a layered architecture.</p>
+            <ul>
+                <li><b>Key Features:</b></li>
+                <ul>
+                    <li><b>Learning Process:</b> Neural networks use a technique called backpropagation to adjust weights and minimize error.</li>
+                    <li><b>Structure:</b> Includes input layers, hidden layers, and output layers.</li>
+                    <li><b>Adaptability:</b> Excels in tasks like image classification, speech recognition, and prediction.</li>
+                </ul>
+                <li><b>Applications:</b> Fraud detection, language translation, and autonomous systems.</li>
+            </ul>
+            <p>Advancements in neural networks, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs), have significantly boosted capabilities in image processing and sequential data handling, respectively.</p>
+        </ans>
+
+        <mark><que>3.3 What is Fuzzy Logic?</que></mark>
+        <ans>
+            <p>Fuzzy Logic is a mathematical framework for dealing with uncertainty and imprecision. Instead of binary true/false values, it uses degrees of truth, enabling more human-like reasoning.</p>
+            <ul>
+                <li><b>Key Features:</b></li>
+                <ul>
+                    <li>Fuzzy sets represent how much a value belongs to a set.</li>
+                    <li>Rule-based systems rely on "if-then" rules.</li>
+                    <li>Highly flexible and adaptable to vague information.</li>
+                </ul>
+                <li><b>Applications:</b> Washing machines, climate control systems, and decision-making systems.</li>
+            </ul>
+            <p>Fuzzy logic enhances decision-making in environments where binary decision-making fails to provide adequate flexibility.</p>
+        </ans>
+
+        <mark><que>3.4 What are Genetic Algorithms?</que></mark>
+        <ans>
+            <p>Genetic Algorithms are optimization techniques based on the principles of natural selection and evolution. They are used to find the best solution in large and complex search spaces.</p>
+            <ul>
+                <li><b>Key Features:</b></li>
+                <ul>
+                    <li>Encoded solutions are represented as chromosomes.</li>
+                    <li>A fitness function measures the quality of each solution.</li>
+                    <li>Genetic operators like selection, crossover, and mutation evolve better solutions.</li>
+                </ul>
+                <li><b>Steps:</b>
+                    <ol>
+                        <li>Generate an initial population.</li>
+                        <li>Evaluate fitness.</li>
+                        <li>Perform crossover and mutation.</li>
+                        <li>Repeat until an optimal solution is found.</li>
+                    </ol>
+                </li>
+                <li><b>Applications:</b> Scheduling problems, route optimization, and feature selection in machine learning.</li>
+            </ul>
+            <p>Through iterative evolution, genetic algorithms efficiently address problems with vast solution spaces that traditional methods struggle to optimize.</p>
+        </ans>
+    </ans>
+<br>
+
+<mark><strong>Module :- 02</strong></mark><br><br>
+<mark><que>1. What is Fuzzy Set Theory?</que></mark>
+<ans>
+    <p>Fuzzy set theory is an extension of classical set theory that allows for partial membership in a set. Unlike crisp sets, where an element is either a member or not (binary logic: 0 or 1), fuzzy sets define membership using a degree that ranges between 0 and 1. This approach enables us to represent and reason with uncertainty and vagueness present in real-world scenarios.</p>
+    <p>Fuzzy set theory is widely used in areas such as control systems, decision-making, and artificial intelligence, where binary categorizations are insufficient. In essence, fuzzy sets generalize the concept of a "set" to handle imprecision and subjectivity effectively.</p>
+    <p><b>Example:</b> A fuzzy set "Tall People" might assign a membership degree of 0.8 to a person who is 6 feet tall, whereas a crisp set would categorize the person as either "tall" or "not tall."</p>
+    <b>Diagram:</b>
+    <pre>
+Membership Degree
+1.0 |                    ________
+|                   /
+0.8 |          _______/
+|         /
+0.6 |        /
+|       /
+0.4 |      /
+|     /
+0.2 |    /
+|___/________________________
+   160  165  170  175  180  (Height in cm)
+    </pre>
+</ans>
+
+<mark><que>2. Fuzzy Set vs Crisp Set</que></mark>
+<ans>
+    <p>The difference between a fuzzy set and a crisp set lies in how they handle membership. In a crisp set, an element belongs either fully or not at all, while in a fuzzy set, an element can have partial membership characterized by a degree ranging between 0 and 1.</p>
+    <b>Comparison Table:</b>
+    <table border="1">
+        <tr>
+            <th>Feature</th>
+            <th>Fuzzy Set</th>
+            <th>Crisp Set</th>
+        </tr>
+        <tr>
+            <td>Membership</td>
+            <td>Partial membership with degrees (0 to 1)</td>
+            <td>Full membership (0 or 1)</td>
+        </tr>
+        <tr>
+            <td>Uncertainty</td>
+            <td>Handles uncertainty and vagueness</td>
+            <td>Does not handle uncertainty</td>
+        </tr>
+        <tr>
+            <td>Example</td>
+            <td>"Tall people" where height = 6ft may have a membership of 0.8</td>
+            <td>"Tall people" where height = 6ft is either in or out of the set</td>
+        </tr>
+    </table>
+</ans>
+
+<mark><que>3. Crisp Relation vs Fuzzy Relation</que></mark>
+<ans>
+    <p>A crisp relation is a subset of the Cartesian product of two sets, where each pair is either included or not (binary logic). On the other hand, a fuzzy relation extends this concept by associating each pair with a membership degree, representing the strength or intensity of the relationship.</p>
+    <b>Comparison Table:</b>
+    <table border="1">
+        <tr>
+            <th>Feature</th>
+            <th>Crisp Relation</th>
+            <th>Fuzzy Relation</th>
+        </tr>
+        <tr>
+            <td>Membership</td>
+            <td>Binary (0 or 1)</td>
+            <td>Range from 0 to 1</td>
+        </tr>
+        <tr>
+            <td>Representation</td>
+            <td>Matrix with entries 0 or 1</td>
+            <td>Matrix with entries in [0, 1]</td>
+        </tr>
+        <tr>
+            <td>Example</td>
+            <td>Relation between cities with direct flights (1 if direct, 0 if not)</td>
+            <td>Relation between cities with membership representing flight frequency</td>
+        </tr>
+    </table>
+</ans>
+
+<mark><que>4. What are Membership Functions?</que></mark>
+<ans>
+    <p>Membership functions define how each element in the universe of discourse is mapped to a membership degree in a fuzzy set. They are a key component of fuzzy logic, enabling the representation of vagueness and uncertainty in mathematical terms. A membership function is typically represented as a curve that maps each input value to a degree between 0 and 1.</p>
+    <b>Types of Membership Functions:</b>
+    <ul>
+        <li><b>Triangular:</b> Defined by three points (a, b, c) where the peak represents full membership.</li>
+        <li><b>Trapezoidal:</b> Similar to triangular but with a flat top, defined by four points (a, b, c, d).</li>
+        <li><b>Gaussian:</b> Smooth and symmetric, defined by a mean and standard deviation.</li>
+    </ul>
+    <p><b>Applications:</b> Membership functions are used in fuzzy control systems, where they help in decision-making by providing a mathematical representation of linguistic terms like "high," "medium," or "low."</p>
+    <b>Diagram:</b>
+    <pre>
+Membership Degree
+1.0 |       /\\
+|      /  \\
+0.5 |     /    \\
+|____/______\\______
+ a    b      c
+    </pre>
+</ans>
+
+<mark><que>5. Fuzzy Rule-Based System</que></mark>
+<ans>
+    <p>A fuzzy rule-based system is a decision-making framework that uses fuzzy logic to model complex systems. It relies on a set of "if-then" rules to map inputs to outputs based on linguistic terms. These rules use fuzzy sets and membership functions to handle uncertainty and vagueness.</p>
+    <b>Components:</b>
+    <ul>
+        <li><b>Fuzzy Rules:</b> Statements that define the relationship between inputs and outputs.</li>
+        <li><b>Fuzzy Inference Engine:</b> Processes the rules and combines them to derive a fuzzy output.</li>
+        <li><b>Defuzzification:</b> Converts the fuzzy output into a crisp value.</li>
+    </ul>
+    <b>Example:</b>
+    <pre>
+IF temperature is "high" AND humidity is "low" THEN fan_speed is "medium."
+    </pre>
+    <p><b>Applications:</b> Used in systems like climate control, washing machines, and autonomous vehicles.</p>
+</ans>
+
+<mark><que>6. Fuzzy Inference Systems</que></mark>
+<ans>
+    <p>Fuzzy inference systems (FIS) are frameworks for reasoning and decision-making based on fuzzy logic. They process inputs using fuzzy rules and membership functions to generate a fuzzy output, which is then defuzzified to produce a crisp result.</p>
+    <b>Types of FIS:</b>
+    <ul>
+        <li><b>Mamdani FIS:</b> Uses fuzzy sets for both input and output.</li>
+        <li><b>Sugeno FIS:</b> Uses fuzzy sets for input and mathematical functions for output.</li>
+    </ul>
+    <p><b>Example:</b> In an air conditioning system, FIS can adjust the cooling based on fuzzy inputs like "hot" and "humid."</p>
+    <b>Diagram:</b>
+    <pre>
+Input -> Fuzzification -> Rule Evaluation -> Aggregation -> Defuzzification -> Output
+    </pre>
+</ans>
+
         </body>
 </html>
