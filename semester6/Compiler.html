@@ -89,6 +89,168 @@
   
     <div id="body">
       <div class="heading_name">Compiler Designing</div>
-      
+      <mark><que>1. What is a Compiler, Interpreter, and Assembler?</que></mark>
+    <ans>
+        <p><b>Compiler:</b> A compiler is a language processing system that converts high-level programming language (HLL) code into low-level machine code at once. It performs a series of steps like lexical analysis, syntax analysis, semantic analysis, code optimization, and code generation. A compiled program can be executed repeatedly without the need for recompilation.</p>
+        <p><b>Advantages:</b> It is faster during execution because the compilation is completed beforehand. Errors are detected before runtime.</p>
+        <p><b>Example:</b> GCC (GNU Compiler Collection), Clang.</p>
+
+        <p><b>Interpreter:</b> An interpreter processes the source code line-by-line, translating it into machine code and executing it simultaneously. It does not generate an intermediate file, making debugging easier. However, interpreted code is generally slower than compiled code during execution.</p>
+        <p><b>Example:</b> Python Interpreter, Node.js.</p>
+
+        <p><b>Assembler:</b> An assembler is a program that converts low-level assembly language code into machine language. It is used to bridge the gap between hardware instructions and human-readable assembly code. Assemblers are essential for system-level programming and hardware programming.</p>
+        <p><b>Example:</b> NASM (Netwide Assembler), MASM (Microsoft Macro Assembler).</p>
+    </ans>
+    <mark><que>2. What is a Language Processing System?</que></mark>
+    <ans>
+        <p>A Language Processing System (LPS) refers to the set of tools and processes that convert high-level programming code into an executable machine code format. It consists of several stages:</p>
+        <ul>
+            <li><b>Preprocessor:</b> Handles directives like <code>#include</code> and macro substitution.</li>
+            <li><b>Compiler:</b> Translates high-level code into an intermediate or assembly representation.</li>
+            <li><b>Assembler:</b> Converts assembly code into object code (binary code).</li>
+            <li><b>Linker:</b> Combines multiple object files and external libraries into a single executable file.</li>
+        </ul>
+        <p><b>Diagram:</b></p>
+        <pre>
+        Source Code --> Preprocessor --> Compiler --> Assembler --> Linker --> Executable File
+        </pre>
+    </ans>
+
+    <mark><que>3. What are the Types of Compilers?</que></mark>
+    <ans>
+
+      <ul>
+        <li><b>Single-pass Compiler:</b> Processes the entire source code in one pass, without backtracking or revisiting code sections. It is fast but limited in optimization capabilities.</li>
+        <li><b>Multi-pass Compiler:</b> Processes the source code multiple times to optimize and improve the final machine code.</li>
+        <li><b>Cross Compiler:</b> Generates code for a platform that is different from the platform the compiler is running on. For example, compiling code on a Windows system for an ARM processor.</li>
+        <li><b>Just-in-Time (JIT) Compiler:</b> Compiles and executes code during runtime, commonly used in virtual machines like JVM (Java Virtual Machine).</li>
+        <li><b>Incremental Compiler:</b> Recompiles only the modified portions of code to save time during development.</li>
+    </ul>
+</ans>
+
+<mark><que>4. Explain the Structure and Phases of a Compiler.</que></mark>
+<ans>
+    <p>The structure of a compiler is divided into two main phases: Analysis (Front-End) and Synthesis (Back-End).</p>
+    <p><b>Analysis Phase:</b> This phase analyzes the source code and breaks it down into an intermediate representation (IR). It includes:</p>
+    <ul>
+        <li><b>Lexical Analysis:</b> Converts the input source code into a sequence of tokens.</li>
+        <li><b>Syntax Analysis:</b> Validates the syntactical structure of the code using grammar rules.</li>
+        <li><b>Semantic Analysis:</b> Checks for semantic correctness, such as type compatibility.</li>
+    </ul>
+    <p><b>Synthesis Phase:</b> This phase generates optimized machine code from the IR. It includes:</p>
+    <ul>
+
+
+      <li><b>Intermediate Code Generation:</b> Produces an intermediate representation like three-address code.</li>
+            <li><b>Code Optimization:</b> Improves performance by reducing unnecessary operations.</li>
+            <li><b>Code Generation:</b> Translates IR into machine-level instructions.</li>
+        </ul>
+        <p><b>Diagram:</b></p>
+        <pre>
+        Source Code --> [Front-End] --> Intermediate Representation --> [Back-End] --> Machine Code
+        </pre>
+    </ans>
+
+    <mark><que>5. What are Tokens and Lexemes?</que></mark>
+    <ans>
+        <p><b>Tokens:</b> Tokens are the smallest syntactic units of a programming language. These include keywords, operators, identifiers, literals, etc.</p>
+        <p><b>Lexeme:</b> A lexeme is an instance of a token in the source code. For example, in the statement <code>int x = 10;</code>, "int" is a lexeme of the token type "keyword".</p>
+    </ans>
+
+    <mark><que>6. Explain the Role of a Lexical Analyzer.</que></mark>
+    <ans>
+        <p>The lexical analyzer, also known as the scanner, is responsible for reading the source code and breaking it into tokens. It also removes comments, whitespace, and invalid characters.</p>
+        <p><b>Diagram:</b></p>
+        <pre>
+        Source Code --> [Lexical Analyzer] --> Token Stream
+        </pre>
+    </ans>
+
+    <mark><que>7. What is the Role of a Parser?</que></mark>
+    <ans>
+        <p>A parser checks whether the token stream adheres to the grammatical rules of the programming language. It builds a hierarchical structure called a "parse tree." There are two main types of parsing:</p>
+        <ul>
+            <li><b>Top-Down Parsing:</b> Starts from the root of the tree and works towards the leaves.</li>
+            <li><b>Bottom-Up Parsing:</b> Starts from the leaves and works towards the root.</li>
+        </ul>
+        <p><b>Diagram:</b> Parse Tree Example for <code>E → E + T</code></p>
+        <pre>
+               E
+              / \
+             E   T
+            / \
+           T   +
+        </pre>
+    </ans>
+
+    <mark><que>8. Explain Context-Free Grammars (CFG).</que></mark>
+    <ans>
+        <p>CFGs define the syntax of programming languages in terms of production rules. Each rule specifies how a non-terminal symbol can be replaced by a sequence of terminal and non-terminal symbols.</p>
+        <p><b>Example CFG Rule:</b></p>
+        <pre>
+        E → E + T
+        T → T * F
+        F → (E) | id
+        </pre>
+    </ans>
+
+    <mark><que>9. How Do You Remove Ambiguity from Grammar?</que></mark>
+    <ans>
+        <p>Ambiguity occurs when a grammar allows multiple parse trees for the same string. To remove ambiguity, rewrite the grammar to ensure a single parse tree for each string.</p>
+        <p><b>Example:</b></p>
+        <pre>
+        Ambiguous Grammar:
+        E → E + E | id
+
+        Unambiguous Grammar:
+        E → E + T | T
+        T → id
+        </pre>
+    </ans>
+          
+
+
+
+    <mark><que>10. What is Writing Grammars for Programming Languages?</que></mark>
+<ans>
+    <p>Writing grammars for programming languages involves defining a set of rules that describe the syntactic structure of valid strings in a language. Context-Free Grammars (CFG) are commonly used for this purpose. The process often includes removing left recursion to ensure the grammar is suitable for parsing algorithms.</p>
+    <p><b>Removal of Left Recursion:</b> The goal is to transform the grammar into an equivalent form without left recursion, as shown below:</p>
+    <ul>
+        <li><b>Original Grammar:</b> <code>A → Aα | β</code></li>
+        <li><b>After Removal:</b>
+            <ul>
+                <li><code>A → βA'</code></li>
+                <li><code>A' → αA' | ε</code></li>
+            </ul>
+        </li>
+    </ul>
+</ans>
+
+<mark><que>11. What are Parse Trees and Ambiguity?</que></mark>
+<ans>
+    <p>A parse tree is a hierarchical structure that represents the syntactic structure of a string according to a given CFG. It is used in syntax analysis to check the grammatical structure of the source code.</p>
+    <p><b>Ambiguity:</b> A grammar is considered ambiguous if a single string can produce more than one distinct parse tree. Ambiguity complicates the parsing process and may lead to incorrect interpretation of the code.</p>
+    <p><b>Example of Ambiguous Grammar:</b></p>
+    <pre>
+        E → E + E | id
+    </pre>
+</ans>
+
+<mark><que>12. How to Remove Ambiguity from Grammar?</que></mark>
+<ans>
+    <p>To remove ambiguity, the grammar is rewritten to ensure that every string in the language has a unique parse tree. This process involves restructuring the rules while preserving the language's expressiveness.</p>
+    <p><b>Example:</b></p>
+    <p><b>Ambiguous Grammar:</b></p>
+    <pre>
+        E → E + E | E * E | id
+    </pre>
+    <p><b>Unambiguous Grammar:</b></p>
+    <pre>
+        E → E + T | T
+        T → T * F | F
+        F → id
+    </pre>
+</ans>
+
         </body>
 </html>

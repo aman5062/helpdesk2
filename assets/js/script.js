@@ -2,7 +2,6 @@
 function toggleMenu() {
     const topnav = document.getElementById("myTopnav");
     const bar = document.getElementById("bar");
-
     topnav.classList.toggle("responsive");
     bar.classList.toggle("fa-bars");
     bar.classList.toggle("fa-times");
@@ -16,7 +15,8 @@ function handleScroll() {
         goToTopButton.style.display = 'block';
     } else {
         goToTopButton.style.display = 'none';
-    }
+    } 
+
 }
 
 function highlightActiveNavLink() {

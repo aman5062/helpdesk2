@@ -144,6 +144,217 @@ function removememe() {
           <span><i class="fa fa-arrow-up" aria-hidden="true" id="arrow"></i></span>
       </a>
       </div> 
+
+      <h1>Classification of Digital Images</h1>
+
+      <mark><que>1. What are the two main types of digital images?</que></mark>
+      <ans>
+          <p>Digital images can be broadly classified into two types:</p>
+          <ul>
+              <li><b>Raster Images or Bitmap Images</b></li>
+              <li><b>Vector Images</b></li>
+          </ul>
+      </ans>
+  
+      <mark><que>2. What are Raster Images or Bitmap Images?</que></mark>
+      <ans>
+          <p>A <b>raster image</b> or <b>bitmap image</b> is a digital image made up of small squares called <b>pixels</b>, each containing color and brightness information. Raster images are commonly used for photographs and detailed images.</p>
+      </ans>
+  
+      <mark><que>3. How does resolution affect raster images?</que></mark>
+      <ans>
+          <p>The resolution of a raster image, measured in <b>dots per inch (dpi)</b> or <b>pixels per inch (ppi)</b>, determines its quality. Higher resolution results in a clearer image, but raster graphics are resolution-dependent. Enlarging a raster image can cause pixelation, making the image appear blurry.</p>
+      </ans>
+  
+      <mark><que>4. What are the common file formats for raster images?</que></mark>
+      <ans>
+          <p>Raster images come in various file formats, each with specific uses:</p>
+          <ul>
+              <li><b>JPEG (JPG):</b> Used for photographs due to its lossy compression.</li>
+              <li><b>PNG:</b> Supports transparency and is commonly used for web graphics.</li>
+              <li><b>GIF:</b> Used for simple animations but has a limited color palette.</li>
+              <li><b>BMP:</b> A high-quality, uncompressed image format.</li>
+              <li><b>TIFF:</b> Used in professional printing due to its high quality.</li>
+          </ul>
+      </ans>
+  
+      <mark><que>5. What are Vector Images?</que></mark>
+      <ans>
+          <p>A <b>vector image</b> is composed of mathematically defined shapes such as lines and curves, rather than pixels. These shapes have attributes like line thickness, length, and color.</p>
+      </ans>
+  
+      <mark><que>6. How do vector images differ from raster images?</que></mark>
+      <ans>
+          <p>Vector images are <b>scalable</b>, meaning they can be resized without losing quality. Unlike raster images, which become pixelated when enlarged, vector images maintain sharpness at any size.</p>
+      </ans>
+  
+      <mark><que>7. What are the common file formats for vector images?</que></mark>
+      <ans>
+          <p>Vector images are stored in various formats designed for different purposes:</p>
+          <ul>
+              <li><b>SVG (Scalable Vector Graphics):</b> Used for web graphics due to its small file size and scalability.</li>
+              <li><b>AI (Adobe Illustrator):</b> A standard format for professional graphic design.</li>
+              <li><b>EPS (Encapsulated PostScript):</b> Commonly used in print and publishing.</li>
+              <li><b>PDF (Portable Document Format):</b> Can store both vector and raster elements.</li>
+          </ul>
+      </ans>
+  
+      <mark><que>8. What are the advantages of vector images?</que></mark>
+      <ans>
+          <p>Vector images have several advantages:</p>
+          <ul>
+              <li>They are <b>scalable</b> and maintain high quality at any size.</li>
+              <li>They have <b>smaller file sizes</b> compared to high-resolution raster images.</li>
+              <li>They allow for easy <b>editing and modification</b> without losing quality.</li>
+          </ul>
+      </ans>
+  
+      <mark><que>9. What are the limitations of vector images?</que></mark>
+      <ans>
+          <p>Despite their advantages, vector images are not suitable for all purposes:</p>
+          <ul>
+              <li>They are <b>not ideal</b> for complex and highly detailed images such as photographs.</li>
+              <li>Some effects, like gradients and textures, may be difficult to achieve compared to raster images.</li>
+         </ul>
+      </ans>
+  
+      <mark><que>10. Where are vector images commonly used?</que></mark>
+      <ans>
+          <p>Vector images are commonly used in:</p>
+          <ul>
+              <li><b>Branding:</b> Logos and corporate identity design.</li>
+              <li><b>Advertisements:</b> Posters and banners.</li>
+              <li><b>Technical Drawings:</b> Engineering and architectural designs.</li>
+              <li><b>Animations:</b> Scalable character and motion graphics.</li>
+          </ul>
+      </ans>
+
+      <h1>Fundamental Steps in Digital Image Processing</h1>
+
+      <mark><que>1. What is Image Acquisition?</que></mark>
+      <ans>
+          <p>Image acquisition is the first step in digital image processing. It involves obtaining an image in digital form. This step may include pre-processing techniques such as scaling, noise reduction, and color correction to improve the image quality before further processing.</p>
+      </ans>
+  
+      <mark><que>2. What is Image Enhancement?</que></mark>
+      <ans>
+          <p>Image enhancement is used to improve the visual appearance of an image by adjusting contrast, brightness, sharpness, and removing noise. The goal is to highlight important details or features in an image to make it more interpretable for further analysis.</p>
+      </ans>
+  
+      <mark><que>3. What is Image Restoration?</que></mark>
+      <ans>
+          <p>Image restoration is a process that removes known distortions and improves image quality using mathematical or probabilistic models. Unlike enhancement, which is subjective, restoration is objective and focuses on reconstructing the original image from a degraded version.</p>
+      </ans>
+  
+      <mark><que>4. What is Color Image Processing?</que></mark>
+      <ans>
+          <p>Color image processing involves various techniques for handling colored images. This includes color modeling, color transformation, and color segmentation, which are essential for applications like medical imaging, computer vision, and remote sensing.</p>
+      </ans>
+  
+      <mark><que>5. What are Wavelets and Multi-Resolution Processing?</que></mark>
+      <ans>
+          <p>Wavelet transforms allow images to be represented at multiple resolutions, enabling effective data compression and progressive image transmission. This method is commonly used in applications such as image compression, denoising, and feature extraction.</p>
+      </ans>
+  
+      <mark><que>6. What is Image Compression?</que></mark>
+      <ans>
+          <p>Image compression reduces the storage space required for images and decreases transmission bandwidth. It is crucial for web applications, streaming, and mobile applications. Compression techniques include lossless (PNG, GIF) and lossy (JPEG) methods.</p>
+      </ans>
+  
+      <mark><que>7. What is Morphological Processing?</que></mark>
+      <ans>
+          <p>Morphological processing is used for analyzing and processing structures within an image. It includes operations like erosion, dilation, opening, and closing, which are useful for shape extraction, boundary detection, and noise removal.</p>
+      </ans>
+  
+      <mark><que>8. What is Image Segmentation?</que></mark>
+      <ans>
+          <p>Image segmentation divides an image into meaningful regions or objects. It is one of the most challenging steps in digital image processing and is crucial for object detection, medical imaging, and automated vision systems.</p>
+      </ans>
+  
+      <mark><que>9. What is Representation and Description?</que></mark>
+      <ans>
+          <p>Representation and description follow the segmentation process. Representation defines the shape and structure of objects, while description extracts attributes such as size, texture, and boundary features to classify different objects.</p>
+      </ans>
+  
+      <mark><que>10. What is Object Recognition?</que></mark>
+      <ans>
+          <p>Object recognition assigns labels to objects based on their features. This process is fundamental in artificial intelligence, robotics, and computer vision applications, such as facial recognition and automated vehicle detection.</p>
+      </ans>
+  
+      <mark><que>11. What is the Knowledge Base in Image Processing?</que></mark>
+      <ans>
+          <p>The knowledge base contains prior information about images, which helps in decision-making. It can be simple (e.g., areas of interest in an image) or complex (e.g., a database of high-resolution satellite images for change detection).</p>
+      </ans>
+  
+
+
+    <h1>Convolution and Correlation</h1>
+
+    <mark><que>1. What are Convolution and Correlation?</que></mark>
+    <ans>
+        <p>Convolution and Correlation operations are used to extract information from images. These operations are linear and shift-invariant. The term "linear" indicates that a pixel is replaced by the linear combination of its neighbors, while "shift-invariant" means the same operation is applied at every point in the image.</p>
+    </ans>
+
+    <mark><que>2. What is Convolution?</que></mark>
+    <ans>
+        <p>Convolution is a mathematical operation where each value in the output is expressed as the sum of values in the input multiplied by a set of weighting coefficients. Depending on these coefficients, convolution can be used for low-pass and high-pass filtering of images, allowing for image sharpening or smoothing.</p>
+    </ans>
+
+    <mark><que>3. What are the applications of Convolution?</que></mark>
+    <ans>
+        <p>Convolution is widely used in:</p>
+        <ul>
+            <li>Image Filtering</li>
+            <li>Image Enhancement</li>
+            <li>Image Restoration</li>
+            <li>Feature Extraction</li>
+            <li>Template Matching</li>
+        </ul>
+    </ans>
+
+    <mark><que>4. What is 1-D Convolution for Continuous Signals?</que></mark>
+    <ans>
+        <p>The 1-D convolution for continuous signals is given by:</p>
+        <pre> y (t) = ∫−∞∞ x (T ) . h(t−T ) . dT </pre>
+    </ans>
+
+    <mark><que>5. What is 1-D Convolution for Discrete Signals?</que></mark>
+    <ans>
+        <p>The 1-D convolution for discrete signals is given by:</p>
+        <pre> y (n) = ∑ K=−∞∞ x (K) . h(n−K) </pre>
+    </ans>
+
+    <mark><que>6. What is 2-D Convolution?</que></mark>
+    <ans>
+        <p>The 2-D convolution is given by:</p>
+        <pre> f (x , y) ∗ g(x , y) = ∫T₁=−∞∞ ∫T₂=−∞∞ f (T₁T₂) g(x−T₁, y−T₂) dT₁ dT₂ </pre>
+    </ans>
+
+    <mark><que>7. What are the different methods to perform 2-D Convolution?</que></mark>
+    <ans>
+        <p>2-D Convolution can be performed using:</p>
+        <ol>
+            <li>Convolution through Z-transform</li>
+            <li>Convolution through Graphical Method</li>
+            <li>Convolution through Matrix Analysis</li>
+        </ol>
+    </ans>
+
+    <mark><que>8. What is Convolution through Z-transform?</que></mark>
+    <ans>
+        <p>The concept of convolution in the spatial domain is equal to multiplication in the frequency domain. This principle is utilized to compute convolution through the Z-transform.</p>
+        <p>The convolution between two frequencies x(n₁, n₂) and h(n₁, n₂) is given by:</p>
+        <pre> y(n₁, n₂) = x(n₁, n₂) ** h(n₁, n₂) </pre>
+        <p>Here, ** indicates 2D convolution.</p>
+    </ans>
+
+    <mark><que>9. How does Z-transform relate to Convolution?</que></mark>
+    <ans>
+        <p>Taking the Z-transform on both sides of the convolution equation:</p>
+        <pre> Y(Z₁, Z₂) = X(Z₁, Z₂) * h(Z₁, Z₂) </pre>
+        <p>This implies that convolution in one domain is equivalent to multiplication in another domain.</p>
+    </ans>
+
       <strong><u>Run-length coding (Lossless compression algorithm)</u></strong>
       <br>
       Run-length coding (RLC) exploits the repetitive nature of the image. It tries to identify the length of the pixel values and encodes the images in the form of a run. Each row of the image is written as a sequence. Then the length is represented as a run of black or white pixels. This is an effective way of compressing an image. If necessary, there can be farther compression using variable length coding to code the ran length themselves. The technique scans the image row by row and identifies the ran . The output ran length vector specifies the pixel value and the length of the run. <br>
