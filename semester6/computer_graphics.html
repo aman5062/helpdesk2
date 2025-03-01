@@ -174,5 +174,232 @@
 
   <h3>What is a Stereoscopic Virtual Reality System?</h3>
   <p>A stereoscopic VR system uses two slightly different images for each eye to create a depth perception effect, enhancing the immersive experience.</p>
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Computer Graphics Notes</title>
+  </head>
+  <body>
+      <h3>Module I: Introduction to Graphics Systems</h3>
+      
+      <h3>1. Video Display Devices</h3>
+      <p>Video display devices are hardware components used to visually present graphical and textual information. The most common types include:</p>
+      <ul>
+          <li><b>Cathode Ray Tube (CRT):</b> Utilizes an electron beam to excite phosphors on the screen.</li>
+          <li><b>Liquid Crystal Display (LCD):</b> Uses liquid crystals modulated by an electric field.</li>
+          <li><b>Light Emitting Diode (LED):</b> An enhanced version of LCDs using LED backlighting.</li>
+          <li><b>Plasma Display Panels (PDP):</b> Uses ionized gases to produce images.</li>
+          <li><b>Organic LED (OLED):</b> Uses organic compounds for high contrast and flexibility.</li>
+      </ul>
+      
+      <h3>Q1: Define raster scan and random scan systems with differences.</h3>
+      <p><b>Ans:</b></p>
+      <table border="1">
+          <tr>
+              <th>Feature</th>
+              <th>Raster Scan</th>
+              <th>Random Scan</th>
+          </tr>
+          <tr>
+              <td>Image Formation</td>
+              <td>Uses a grid of pixels</td>
+              <td>Uses lines and curves</td>
+          </tr>
+          <tr>
+              <td>Refreshing</td>
+              <td>Refreshes entire screen</td>
+              <td>Refreshes selected lines</td>
+          </tr>
+          <tr>
+              <td>Complexity</td>
+              <td>Suitable for complex images</td>
+              <td>Best for line drawings</td>
+          </tr>
+          <tr>
+              <td>Memory Usage</td>
+              <td>High</td>
+              <td>Low</td>
+          </tr>
+          <tr>
+              <td>Example</td>
+              <td>Televisions, modern monitors</td>
+              <td>Oscilloscopes, early CAD systems</td>
+          </tr>
+      </table>
+      
+      <h3>2. Raster Scan Systems</h3>
+      <p><b>Definition:</b> A display system where images are drawn as a collection of pixels arranged in rows and columns.</p>
+      <p><b>Process:</b> The electron beam moves left to right and top to bottom to refresh the screen.</p>
+      <p><b>Advantages:</b> Supports color, smooth shading, and complex scenes.</p>
+      <p><b>Disadvantages:</b> Consumes more memory and is slower than random scan.</p>
+      
+      <h3>3. Random Scan Systems</h3>
+      <p><b>Definition:</b> A display system where images are drawn using a sequence of line segments.</p>
+      <p><b>Process:</b> The electron beam moves directly to draw specified lines or curves.</p>
+      <p><b>Advantages:</b> High resolution and smooth images.</p>
+      <p><b>Disadvantages:</b> Cannot efficiently display complex images like filled polygons.</p>
+      
+      <h3>Q2: Explain the working of LCD and OLED displays.</h3>
+      <p><b>Ans:</b></p>
+      <ul>
+          <li><b>LCD (Liquid Crystal Display):</b> Uses liquid crystals between two polarizing filters. Light passes through the liquid crystals, which adjust to form images.</li>
+          <li><b>OLED (Organic LED):</b> Uses organic molecules that emit light when an electric current passes through them, allowing for high contrast and flexibility.</li>
+      </ul>
+      
+      <h3>4. Graphics Monitors and Workstations</h3>
+      <p><b>Monitors:</b> Specialized screens with higher resolutions and refresh rates.</p>
+      <p><b>Workstations:</b> High-performance computing devices with dedicated GPUs for complex graphics processing.</p>
+      
+    
+      <h3>Q: What is the significance of the frame buffer in graphics systems?</h3>
+      <p><b>A:</b> The frame buffer stores pixel values before displaying them on the screen, ensuring smooth rendering and fast refresh rates.</p>
+      
+      <h3>Q: Explain the working of Bresenham’s line drawing algorithm with an example.</h3>
+      <p><b>Introduction:</b> Bresenham’s Line Drawing Algorithm is an efficient method for drawing a straight line between two points on a raster display. It uses only integer calculations (addition and subtraction), making it faster than other methods that rely on floating-point operations.</p>
+
+      <h3>Algorithm Steps:</h3>
+      <ol>
+          <li>Initialize:
+              <ul>
+                  <li>Compute differences: dx = x1 - x0, dy = y1 - y0</li>
+                  <li>Compute decision parameter: p0 = 2dy - dx</li>
+                  <li>Set initial point (x, y) = (x0, y0)</li>
+              </ul>
+          </li>
+          <li>Iterate over x-values:
+              <ul>
+                  <li>For each x from x0 to x1:</li>
+                  <li>Plot the pixel at (x, y)</li>
+                  <li>If pk < 0, next point is (x+1, y) and pk+1 = pk + 2dy</li>
+                  <li>If pk >= 0, next point is (x+1, y+1) and pk+1 = pk + 2dy - 2dx</li>
+              </ul>
+          </li>
+      </ol>
+      
+      <h3>Example: Draw a line from (2,3) to (8,5)</h3>
+      <table border="1">
+          <tr>
+              <th>Step</th>
+              <th>x</th>
+              <th>y</th>
+              <th>p</th>
+              <th>Next Pixel</th>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>-2</td>
+              <td>(3,3)</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>3</td>
+              <td>3</td>
+              <td>2</td>
+              <td>(4,4)</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td>4</td>
+              <td>4</td>
+              <td>-2</td>
+              <td>(5,4)</td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td>5</td>
+              <td>4</td>
+              <td>2</td>
+              <td>(6,5)</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>6</td>
+              <td>5</td>
+              <td>-2</td>
+              <td>(7,5)</td>
+          </tr>
+          <tr>
+              <td>6</td>
+              <td>7</td>
+              <td>5</td>
+              <td>2</td>
+              <td>(8,5)</td>
+          </tr>
+      </table>
+      
+      <h3>Advantages of Bresenham’s Algorithm:</h3>
+      <ul>
+          <li><b>Fast Execution:</b> Uses only integer calculations.</li>
+          <li><b>Efficient:</b> Avoids floating-point operations.</li>
+          <li><b>Simple Implementation:</b> Uses incremental decision-making.</li>
+      </ul>
+      
+      <h3>Q: Describe the Midpoint Circle Algorithm and explain its efficiency.</h3>
+      <p><b>Introduction:</b> The Midpoint Circle Algorithm is an efficient method for drawing a circle using only integer calculations. It is based on the symmetry of circles and avoids floating-point arithmetic.</p>
+
+<h3>Algorithm Steps:</h3>
+<ol>
+    <li>Initialize:
+        <ul>
+            <li>Set initial point (x, y) = (0, r)</li>
+            <li>Compute initial decision parameter: p = 1 - r</li>
+        </ul>
+    </li>
+    <li>Iterate while x ≤ y:
+        <ul>
+            <li>Plot the eight symmetric points.</li>
+            <li>Update x and y values:</li>
+            <li>If p < 0: p = p + 2x + 1</li>
+            <li>Else: p = p + 2x - 2y + 1 and y = y - 1</li>
+            <li>Increment x.</li>
+        </ul>
+    </li>
+</ol>
+
+<h3>Efficiency of Midpoint Circle Algorithm:</h3>
+<ul>
+    <li><b>Fast Execution:</b> Uses only integer calculations.</li>
+    <li><b>Efficient:</b> Reduces redundant computations.</li>
+    <li><b>Symmetry Utilization:</b> Draws only one-eighth of the circle and reflects the rest.</li>
+    <li><b>Avoids Multiplication:</b> Uses simple addition and subtraction.</li>
+</ul>
+
+      
+      <h3>Q: Explain the complete process of loading a frame buffer and how it interacts with output devices.</h3>
+      <p><b>A:</b></p>
+      <ul>
+          <li><b>Step 1:</b> Convert object geometry into pixels.</li>
+          <li><b>Step 2:</b> Store pixel values in a buffer.</li>
+          <li><b>Step 3:</b> Refresh the screen at a high frequency.</li>
+          <li><b>Interaction:</b> Data is transferred from the frame buffer to the display hardware for rendering.</li>
+      </ul>
+      <h3>Flood-Fill Algorithm</h3>
+      <p><b>Introduction:</b> The Flood-Fill Algorithm is used in computer graphics to fill a connected region with a particular color. It is commonly used in paint programs and for region filling in raster graphics.</p>
+      
+      <h3>Algorithm Steps:</h3>
+      <ol>
+          <li>Start at a seed pixel (x, y).</li>
+          <li>Check if the current pixel is the target color; if not, return.</li>
+          <li>Change the color of the current pixel to the fill color.</li>
+          <li>Recursively apply the algorithm to the neighboring pixels (4-connected or 8-connected).</li>
+      </ol>
+      
+      <h3>Types of Flood-Fill Algorithms:</h3>
+      <ul>
+          <li><b>4-Connected Flood Fill:</b> Considers only left, right, top, and bottom pixels.</li>
+          <li><b>8-Connected Flood Fill:</b> Considers all eight neighboring pixels.</li>
+      </ul>
+      
+      <h3>Efficiency of Flood-Fill Algorithm:</h3>
+      <ul>
+          <li><b>Recursive Approach:</b> Simple but may cause stack overflow for large regions.</li>
+          <li><b>Iterative Approach:</b> Uses an explicit stack or queue to prevent excessive recursion.</li>
+          <li><b>Time Complexity:</b> O(N) where N is the number of pixels in the region.</li>
+      </ul>
+      
+  
+  
 </body>
 </html>
