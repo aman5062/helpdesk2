@@ -23,7 +23,16 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
 <script src="../assets/js/script.js"></script>
 <style>
- 
+ pre {
+    font-family: "Courier New", monospace;
+    background-color: #f4f4f4;
+    color: #d63384; /* Nice color for pre text */
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: pre-wrap; /* Ensures pre breaks correctly */
+}
+
   </style>
 <body  onload="waterm()">
   <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center mt-2 p-2 mb-2 border-bottom">
@@ -97,25 +106,25 @@
       <h3>Regression vs. Classification</h3>
       <p>Both regression and classification are types of supervised learning, but they have different objectives.</p>
       <p><strong>Regression</strong> is used when the output variable is continuous. It aims to predict a numeric value based on input features. For example, predicting house prices based on square footage and location is a regression task. The most common regression algorithm is <strong>Linear Regression</strong>, where the relationship between input and output is modeled as a straight line:</p>
-      <p><code>Y = mX + c</code></p>
+      <p><pre>Y = mX + c</pre></p>
       <p><strong>Classification</strong>, on the other hand, is used when the output variable is categorical. The goal is to assign the input data to one of several predefined classes. For example, an email spam filter classifies emails as <em>spam or not spam</em>. Common classification algorithms include <em>Decision Trees, Logistic Regression, and Random Forest</em>.</p>
       
       <h3>Numerical Concepts</h3>
       
       <h3>Mean (Average)</h3>
       <p>The <strong>mean</strong> is the sum of all data points divided by the number of data points. It is a measure of central tendency, showing the "average" value of a dataset:</p>
-      <p><code>Mean = (ΣX) / n</code></p>
+      <p><pre>Mean = (ΣX) / n</pre></p>
       
       <h3>Variance</h3>
       <p><strong>Variance</strong> measures how spread out the data points are around the mean. A high variance means the data points are widely spread out, while a low variance means they are closely clustered around the mean:</p>
-      <p><code>Variance = (Σ (X - Mean)²) / n</code></p>
+      <p><pre>Variance = (Σ (X - Mean)²) / n</pre></p>
       
       <h3>K-Nearest Neighbors (KNN)</h3>
       <p>K-Nearest Neighbors (KNN) is a simple yet powerful machine learning algorithm used for both <strong>classification and regression</strong>. It works by finding the <strong>K</strong> nearest data points to a given input and making predictions based on the majority class (for classification) or the average value (for regression).</p>
       
       <h3>Regression (Basic Concept)</h3>
       <p>Regression is used to predict continuous values based on input variables. The simplest form is <strong>Linear Regression</strong>, which assumes a linear relationship between the input and output:</p>
-      <p><code>Y = mX + c</code></p>
+      <p><pre>Y = mX + c</pre></p>
       
       <h3>Data Science Basics</h3>
       
