@@ -23,7 +23,16 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
 <script src="../assets/js/script.js"></script>
 <style>
- 
+ pre {
+    font-family: "Courier New", monospace;
+    background-color: #f4f4f4;
+    color: #d63384; /* Nice color for pre text */
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: pre-wrap; /* Ensures pre breaks correctly */
+}
+
   </style>
 <body  onload="waterm()">
   <header class="navbar navbar-expand-md d-flex flex-wrap justify-content-center mt-2 p-2 mb-2 border-bottom">
@@ -89,6 +98,53 @@
   
     <div id="body">
       <div class="heading_name">Data science and Big data</div>
+      <h3>Supervised vs. Unsupervised Learning</h3>
+      <p>Machine learning is broadly classified into two types: <strong>Supervised Learning</strong> and <strong>Unsupervised Learning</strong>.</p>
+      <p>In <strong>Supervised Learning</strong>, the model learns from labeled data, meaning each input has a corresponding correct output. The goal is to learn a mapping function that can predict the output for new inputs. It is mainly used for tasks like <strong>regression</strong> (predicting continuous values, such as house prices) and <strong>classification</strong> (predicting discrete categories, such as spam or not spam). Common algorithms include <em>Linear Regression, Decision Trees, Support Vector Machines (SVM), and Neural Networks</em>.</p>
+      <p>On the other hand, <strong>Unsupervised Learning</strong> works with unlabeled data, meaning the model tries to identify patterns and structures in the data without predefined answers. It is used for tasks like <strong>clustering</strong> (grouping similar data points, such as customer segmentation) and <strong>association rule learning</strong> (finding relationships between data, like market basket analysis). Common algorithms include <em>K-Means Clustering, Hierarchical Clustering, and Principal Component Analysis (PCA)</em>.</p>
       
+      <h3>Regression vs. Classification</h3>
+      <p>Both regression and classification are types of supervised learning, but they have different objectives.</p>
+      <p><strong>Regression</strong> is used when the output variable is continuous. It aims to predict a numeric value based on input features. For example, predicting house prices based on square footage and location is a regression task. The most common regression algorithm is <strong>Linear Regression</strong>, where the relationship between input and output is modeled as a straight line:</p>
+      <p><pre>Y = mX + c</pre></p>
+      <p><strong>Classification</strong>, on the other hand, is used when the output variable is categorical. The goal is to assign the input data to one of several predefined classes. For example, an email spam filter classifies emails as <em>spam or not spam</em>. Common classification algorithms include <em>Decision Trees, Logistic Regression, and Random Forest</em>.</p>
+      
+      <h3>Numerical Concepts</h3>
+      
+      <h3>Mean (Average)</h3>
+      <p>The <strong>mean</strong> is the sum of all data points divided by the number of data points. It is a measure of central tendency, showing the "average" value of a dataset:</p>
+      <p><pre>Mean = (ΣX) / n</pre></p>
+      
+      <h3>Variance</h3>
+      <p><strong>Variance</strong> measures how spread out the data points are around the mean. A high variance means the data points are widely spread out, while a low variance means they are closely clustered around the mean:</p>
+      <p><pre>Variance = (Σ (X - Mean)²) / n</pre></p>
+      
+      <h3>K-Nearest Neighbors (KNN)</h3>
+      <p>K-Nearest Neighbors (KNN) is a simple yet powerful machine learning algorithm used for both <strong>classification and regression</strong>. It works by finding the <strong>K</strong> nearest data points to a given input and making predictions based on the majority class (for classification) or the average value (for regression).</p>
+      
+      <h3>Regression (Basic Concept)</h3>
+      <p>Regression is used to predict continuous values based on input variables. The simplest form is <strong>Linear Regression</strong>, which assumes a linear relationship between the input and output:</p>
+      <p><pre>Y = mX + c</pre></p>
+      
+      <h3>Data Science Basics</h3>
+      
+      <h3>Types of Data</h3>
+      <p>Data can be classified into three main types:</p>
+      <ul>
+          <li><strong>Structured Data</strong> - Organized and stored in tables, databases, or spreadsheets (e.g., Excel, SQL databases).</li>
+          <li><strong>Unstructured Data</strong> - Data without a predefined format, including text, images, videos, and audio files.</li>
+          <li><strong>Semi-Structured Data</strong> - A mix of structured and unstructured data, such as JSON and XML files.</li>
+      </ul>
+      
+      <h3>Exploratory Data Analysis (EDA)</h3>
+      <p>Exploratory Data Analysis (EDA) is the process of analyzing and visualizing data to understand its key characteristics before applying machine learning models. It involves several key steps:</p>
+      <ul>
+          <li><strong>Understanding Data</strong> - Looking at summary statistics such as <em>mean, median, variance, and standard deviation</em>.</li>
+          <li><strong>Visualizing Data</strong> - Using <em>histograms, scatter plots, and box plots</em> to understand distributions and relationships.</li>
+          <li><strong>Handling Missing Values</strong> - Filling missing values with <em>mean, median, or mode</em> or removing rows with missing data.</li>
+          <li><strong>Detecting Outliers</strong> - Identifying outliers using <em>box plots</em> or <em>standard deviation methods</em>.</li>
+      </ul>
+      <p>EDA is a crucial step before training machine learning models, as it helps in making data-driven decisions and improving model accuracy.</p>
+  
         </body>
 </html>
