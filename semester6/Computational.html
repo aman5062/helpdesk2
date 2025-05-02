@@ -349,5 +349,599 @@ Input -> Fuzzification -> Rule Evaluation -> Aggregation -> Defuzzification -> O
     </pre>
 </ans>
 
+
+<!-- module-3  -->
+<mark><strong>Module :- 03</strong></mark><br><br>
+
+<h1><mark>Artificial Neural Networks vs Biological Neural Networks</mark></h1>
+
+<h2><mark>Biological Neural Network (BNN)</mark></h2>
+<h3>Neuron Anatomy:</h3>
+<ul>
+  <li><strong>Dendrites:</strong> Receive input signals.</li>
+  <li><strong>Soma (Cell Body):</strong> Processes input.</li>
+  <li><strong>Axon:</strong> Sends output to other neurons.</li>
+</ul>
+<p><strong>Signal Propagation:</strong> Through synapses via chemical signals.</p>
+<p><strong>Learning:</strong> Adjusts synaptic strength based on experience.</p>
+
+<h2><mark>Artificial Neural Network (ANN)</mark></h2>
+<ul>
+  <li><strong>Artificial Neuron:</strong> Modeled to imitate a biological neuron.</li>
+  <li><strong>Weights:</strong> Represent the strength of connections.</li>
+  <li><strong>Learning:</strong> Uses algorithms like backpropagation to adjust weights.</li>
+</ul>
+<h2><mark>Comparison Table: BNN vs ANN</mark></h2>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>BNN</th>
+      <th>ANN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Basic Unit</td>
+      <td>Biological neuron</td>
+      <td>Artificial neuron</td>
+    </tr>
+    <tr>
+      <td>Signal</td>
+      <td>Electrical and chemical</td>
+      <td>Numeric (real values)</td>
+    </tr>
+    <tr>
+      <td>Learning</td>
+      <td>Hebbian-based, experience-driven</td>
+      <td>Error-correction-based (e.g. BP)</td>
+    </tr>
+    <tr>
+      <td>Structure</td>
+      <td>Irregular, complex</td>
+      <td>Structured layers (input, hidden, output)</td>
+    </tr>
+  </tbody>
+</table>
+<br><br><br>
+<h2><mark>2. ANN Architecture</mark></h2>
+
+<h3>Layers of ANN:</h3>
+<ul>
+  <li><strong>Input Layer:</strong> Raw data input (e.g. pixels of an image).</li>
+  <li><strong>Hidden Layer(s):</strong> Processes data, extracts patterns.</li>
+  <li><strong>Output Layer:</strong> Provides prediction/output.</li>
+</ul>
+
+<h3>Data Flow:</h3>
+<ol>
+  <li>Input → Linear combination (weights & bias)</li>
+  <li>Activation function applied</li>
+  <li>Output passed to next layer</li>
+</ol>
+
+<h3>Example: Image Classifier</h3>
+<ul>
+  <li><strong>Input:</strong> 784 pixels (28x28 image)</li>
+  <li><strong>Hidden Layer 1:</strong> 128 neurons</li>
+  <li><strong>Hidden Layer 2:</strong> 64 neurons</li>
+  <li><strong>Output Layer:</strong> 10 neurons (digits 0–9)</li>
+</ul>
+<p>Each neuron in a layer is connected to every neuron in the next layer (fully connected).</p>
+<br><br><br>
+
+<h2><mark>3. Basic Building Block of an Artificial Neuron</mark></h2>
+
+<h3>Mathematical Model:</h3>
+<p>
+  <strong>y = f(z) = f(∑<sub>i=1</sub><sup>n</sup> w<sub>i</sub>x<sub>i</sub> + b)</strong>
+</p>
+<ul>
+  <li><strong>x<sub>i</sub>:</strong> Inputs</li>
+  <li><strong>w<sub>i</sub>:</strong> Weights</li>
+  <li><strong>b:</strong> Bias</li>
+  <li><strong>f:</strong> Activation function (non-linear)</li>
+  <li><strong>y:</strong> Output</li>
+</ul>
+
+<h3> Intuitive Example:</h3>
+<p>Suppose we want to determine if a student passes based on:</p>
+<ul>
+  <li>Attendance (x₁ = 80%)</li>
+  <li>Homework score (x₂ = 70%)</li>
+</ul>
+<p>Weights:</p>
+<ul>
+  <li>w₁ = 0.3</li>
+  <li>w₂ = 0.6</li>
+  <li>b = 5</li>
+</ul>
+<p><strong>Calculation:</strong></p>
+<p>z = 0.3 × 80 + 0.6 × 70 + 5 = 24 + 42 + 5 = 71</p>
+<p>If we apply a threshold of 50 (step function), output = 1 (pass)</p>
+
+<br>
+
+<h2><mark>4. Activation Functions Comparison</mark></h2>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Formula</th>
+      <th>Shape & Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Step</strong></td>
+      <td>1 if x &gt; θ else 0</td>
+      <td>Binary classification</td>
+    </tr>
+    <tr>
+      <td><strong>Sigmoid</strong></td>
+      <td>1 / (1 + e<sup>-x</sup>)</td>
+      <td>Smooth, output between (0, 1)</td>
+    </tr>
+    <tr>
+      <td><strong>Tanh</strong></td>
+      <td>(e<sup>x</sup> - e<sup>-x</sup>) / (e<sup>x</sup> + e<sup>-x</sup>)</td>
+      <td>Output between (-1, 1)</td>
+    </tr>
+    <tr>
+      <td><strong>ReLU</strong></td>
+      <td>max(0, x)</td>
+      <td>Used in deep learning, efficient</td>
+    </tr>
+    <tr>
+      <td><strong>Leaky ReLU</strong></td>
+      <td>max(0.01x, x)</td>
+      <td>Solves dead ReLU problem</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Example:</h3>
+<p>If the neuron receives z = 2:</p>
+<ul>
+  <li><strong>Sigmoid:</strong> ~0.88</li>
+  <li><strong>ReLU:</strong> 2</li>
+  <li><strong>Tanh:</strong> ~0.96</li>
+</ul>
+
+<br><br>
+
+<h2><mark>5. Early ANN Architectures (Basics Only)</mark></h2>
+
+<h3>McCulloch & Pitts Model (1943)</h3>
+<p>Simplest binary neuron.</p>
+<ul>
+  <li><strong>Output:</strong> 1 if weighted sum ≥ threshold.</li>
+  <li>No learning – fixed weights.</li>
+</ul>
+<p><strong> Example: AND gate</strong></p>
+<ul>
+  <li>Inputs: x₁ = 1, x₂ = 1</li>
+  <li>Weights = [1, 1], Threshold = 2</li>
+  <li>z = 1×1 + 1×1 = 2 ⇒ Output = 1</li>
+</ul>
+
+<h3>Perceptron (1958)</h3>
+<p>Invented by Frank Rosenblatt</p>
+<ul>
+  <li>Single-layer neural network</li>
+  <li>Learns using Perceptron Learning Rule:</li>
+</ul>
+<p><strong>w<sub>i</sub> = w<sub>i</sub> + Δw<sub>i</sub>, where Δw<sub>i</sub> = η(t − o)x<sub>i</sub></strong></p>
+<ul>
+  <li><strong>t:</strong> Target output</li>
+  <li><strong>o:</strong> Actual output</li>
+  <li><strong>η:</strong> Learning rate</li>
+</ul>
+<p><strong> Example: Learn the OR gate</strong></p>
+<table border="1" cellpadding="6">
+  <thead>
+    <tr>
+      <th>x₁</th><th>x₂</th><th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td></tr>
+  </tbody>
+</table>
+<p>Weights adjust over iterations to correctly classify all inputs.</p>
+<p><strong> Limitation:</strong> Only works for linearly separable data.</p>
+
+<h3>ADALINE (Adaptive Linear Neuron) – by Widrow & Hoff</h3>
+<ul>
+  <li>Similar to perceptron, but output is <strong>continuous</strong>, not binary.</li>
+  <li>Uses LMS (Least Mean Squares) error correction:</li>
+</ul>
+<p><strong>E = (1/2) ∑(t − o)<sup>2</sup></strong></p>
+<p><strong>Example:</strong> Used in filtering signals, e.g., noise removal from audio.</p>
+
+<h3>MADALINE (Multiple ADALINE)</h3>
+<ul>
+  <li>Multi-layer extension of ADALINE.</li>
+  <li>First network applied to real-world problems.</li>
+  <li>Uses “rule-based” weight updates, not backpropagation.</li>
+</ul>
+<p><strong>Example:</strong> Used by AT&T for echo cancellation in telephone networks.</p>
+
+<h3> Recap:</h3>
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Type</th>
+      <th>Learning</th>
+      <th>Key Feature</th>
+      <th>Example Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>McCulloch-Pitts</td>
+      <td>Binary neuron</td>
+      <td>None</td>
+      <td>Fixed weights and threshold</td>
+      <td>Logic gates (AND, OR)</td>
+    </tr>
+    <tr>
+      <td>Perceptron</td>
+      <td>Single-layer</td>
+      <td>Perceptron Rule</td>
+      <td>Classifies linearly separable data</td>
+      <td>Binary classification</td>
+    </tr>
+    <tr>
+      <td>ADALINE</td>
+      <td>Single-layer</td>
+      <td>LMS Rule</td>
+      <td>Continuous output</td>
+      <td>Signal processing</td>
+    </tr>
+    <tr>
+      <td>MADALINE</td>
+      <td>Multi-layer</td>
+      <td>Rule-based</td>
+      <td>Real-world applications</td>
+      <td>Echo cancellation</td>
+    </tr>
+  </tbody>
+</table>
+
+<br><br>
+<br>
+<!-- module-4  -->
+
+<mark><strong>Module :- 04</strong></mark><br><br>
+<h2>Artificial Neural Networks: Supervised Learning</h2>
+
+<h3><mark>1. Backpropagation Networks</mark></h3>
+<p>Backpropagation is a supervised learning algorithm used for training multi-layer neural networks by minimizing the error between predicted and actual outputs. It is an example of gradient descent optimization.</p>
+
+<p><strong>Architecture:</strong></p>
+<ul>
+  <li><strong>Input Layer:</strong> Receives features (e.g., pixels in an image).</li>
+  <li><strong>Hidden Layers:</strong> Perform computations, extract patterns.</li>
+  <li><strong>Output Layer:</strong> Produces final prediction (e.g., image classification).</li>
+</ul>
+
+<p><strong>Backpropagation Learning:</strong></p>
+<ul>
+  <li><strong>Forward pass:</strong> Input data is passed through the network to generate output.</li>
+  <li><strong>Calculate error:</strong> Compare predicted output with actual target (using loss function).</li>
+  <li><strong>Backward pass:</strong> The error is propagated backward to adjust weights.</li>
+  <li><strong>Weight update:</strong> Using gradient descent, weights are updated to minimize the error.</li>
+</ul>
+
+<p><strong>Mathematical Update Rule:</strong></p>
+<p><strong>Δw = −η ∂E / ∂w</strong></p>
+<ul>
+  <li><strong>η:</strong> Learning rate.</li>
+  <li><strong>E:</strong> Error (difference between actual and predicted values).</li>
+  <li><strong>w:</strong> Weight of the network.</li>
+</ul>
+
+<p><strong>Example:</strong> For an image classification task (classifying images into categories), backpropagation updates the weights of neurons in hidden layers to reduce the classification error.</p>
+
+<h3><mark>2. Multilayer Perceptron (MLP)</mark></h3>
+<p>A Multilayer Perceptron is a type of neural network that consists of one input layer, one or more hidden layers, and one output layer. It uses backpropagation for training.</p>
+
+<p><strong>Structure:</strong></p>
+<ul>
+  <li><strong>Input Layer:</strong> Size equal to the number of input features.</li>
+  <li><strong>Hidden Layer(s):</strong> Contains neurons connected to each other, responsible for complex computations.</li>
+  <li><strong>Output Layer:</strong> Determines the prediction (classification or regression output).</li>
+</ul>
+
+<p><strong>Example:</strong> In a binary classification task (spam detection):</p>
+<ul>
+  <li><strong>Input:</strong> Email features like word frequencies.</li>
+  <li><strong>Output:</strong> 1 (spam) or 0 (not spam).</li>
+</ul>
+
+<h3><mark>3. Accelerated Learning in Multilayer Perceptron</mark></h3>
+<p>To speed up learning, several methods can be used in MLP:</p>
+<ul>
+  <li><strong>Momentum:</strong> Helps avoid local minima by adding a fraction of the previous weight update to the current one.</li>
+  <li><strong>Adaptive Learning Rate:</strong> Algorithms like Adam adjust the learning rate during training for more efficient convergence.</li>
+</ul>
+
+<p><strong>Example:</strong> Using Adam optimizer, the network can adjust its learning rate dynamically, leading to faster convergence and more accurate predictions.</p>
+
+<h3><mark>4. Hopfield Network</mark></h3>
+<p>A Hopfield Network is a recurrent neural network used for associative memory, meaning it can recall a pattern from partial information.</p>
+
+<p><strong>Architecture:</strong></p>
+<ul>
+  <li>Fully connected neurons with symmetric weights (no feedback loops).</li>
+  <li>Bipolar output: Each neuron outputs either 1 or -1.</li>
+  <li><strong>Energy Function:</strong> The network seeks to minimize its energy, reaching a stable state (attractor).</li>
+</ul>
+
+<p><strong>Example:</strong> If the network is trained to store binary patterns (e.g., 1010), it can recall the full pattern even from a noisy or incomplete input.</p>
+
+<h3><mark>5. Bidirectional Associative Memory (BAM)</mark></h3>
+<p>A BAM is a type of recurrent network consisting of two layers of neurons (input and output) with bidirectional connections.</p>
+
+<p><strong>Architecture:</strong></p>
+<ul>
+  <li>Two layers: One layer for inputs and another for outputs.</li>
+  <li>Symmetric connections: Weights are bidirectional, meaning either layer can serve as input or output.</li>
+</ul>
+
+<p><strong>Example:</strong> In a BAM, if you input a partial pattern (e.g., first half of a word), the network can recall the other half.</p>
+
+<h3><mark>6. Radial Basis Function (RBF) Neural Network</mark></h3>
+<p>The RBF Neural Network is a type of feedforward network used for function approximation and classification.</p>
+
+<p><strong>Architecture:</strong></p>
+<ul>
+  <li><strong>Input layer:</strong> Receives input features.</li>
+  <li><strong>Hidden layer:</strong> Consists of RBF neurons that use radial functions (like Gaussian) to compute activations.</li>
+  <li><strong>Output layer:</strong> Produces output based on the weighted sum of activations.</li>
+</ul>
+
+<p><strong>Example:</strong> For a classification task (e.g., recognizing objects), the RBF network can learn from labeled examples and classify new instances based on proximity to the center of the Gaussian functions.</p>
+
+<h2>Artificial Neural Networks: Unsupervised Learning</h2>
+
+<h3><mark>1. Hebbian Learning</mark></h3>
+<p>Hebbian Learning is based on the principle "neurons that fire together, wire together." This means if two neurons are activated together, the strength of their connection (synapse) increases.</p>
+
+<p><strong>Mathematical Rule:</strong></p>
+<p><strong>Δw = ηxy</strong></p>
+<ul>
+  <li><strong>x and y:</strong> Inputs to the connected neurons.</li>
+  <li><strong>η:</strong> Learning rate.</li>
+  <li><strong>w:</strong> Weight.</li>
+</ul>
+
+<p><strong>Example:</strong> If two neurons are activated simultaneously (say, when a dog and a bone are seen together), their connection will strengthen, making it easier for the network to recognize a dog-bone pair in future images.</p>
+
+<h3><mark>2. Generalized Hebbian Learning Algorithm (GHLA)</mark></h3>
+<p>The Generalized Hebbian Learning Algorithm is an extension of Hebbian learning used to optimize neuron connections in a multi-layer network.</p>
+
+<p><strong>Application:</strong></p>
+<ul>
+  <li>Used for principal component analysis (PCA) and unsupervised learning tasks.</li>
+  <li>Helps in identifying correlations in data without needing labeled examples.</li>
+</ul>
+
+<h3><mark>3. Competitive Learning</mark></h3>
+<p>Competitive Learning is a type of unsupervised learning where neurons "compete" to become active in response to an input. The winner neuron (with the most similar weights to the input) gets updated.</p>
+
+<p><strong>Example:</strong> In K-means clustering, a set of data points is divided into groups. Each neuron represents a group (cluster) and is updated to better match the data points assigned to it.</p>
+
+<h3><mark>4. Self-Organizing Computational Maps (SOM) – Kohonen Network</mark></h3>
+<p>The Self-Organizing Map (SOM), developed by Teuvo Kohonen, is an unsupervised learning algorithm that maps high-dimensional data to a lower-dimensional grid (usually 2D).</p>
+
+<p><strong>Architecture:</strong></p>
+<ul>
+  <li>A grid of neurons is trained to represent clusters of input data.</li>
+  <li>The neurons are connected and organized in a manner that similar inputs activate nearby neurons.</li>
+</ul>
+
+<p><strong>Example:</strong> Input: Data points from various customer preferences. SOM organizes these data points on a 2D grid where similar customers are grouped together, useful for market segmentation.</p>
+
+<h2>Summary of Key Concepts</h2>
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Type</th>
+      <th>Learning Type</th>
+      <th>Key Feature</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Backpropagation</td>
+      <td>Supervised</td>
+      <td>Supervised</td>
+      <td>Updates weights to minimize error</td>
+      <td>Image classification (MNIST)</td>
+    </tr>
+    <tr>
+      <td>Multilayer Perceptron</td>
+      <td>Feedforward</td>
+      <td>Supervised</td>
+      <td>Deep neural network for classification</td>
+      <td>Spam detection</td>
+    </tr>
+    <tr>
+      <td>Hopfield Network</td>
+      <td>Recurrent</td>
+      <td>Unsupervised</td>
+      <td>Used for associative memory</td>
+      <td>Pattern retrieval</td>
+    </tr>
+    <tr>
+      <td>Bidirectional Associative Memory (BAM)</td>
+      <td>Recurrent</td>
+      <td>Unsupervised</td>
+      <td>Recalls full pattern from partial input</td>
+      <td>Image reconstruction</td>
+    </tr>
+    <tr>
+      <td>RBF Network</td>
+      <td>Feedforward</td>
+
+</tr>
+  </tbody>
+  </table>
+      <br><br>
+      <!-- module-5  -->
+      <h1>Genetic Algorithms (GAs)</h1>
+
+      <h2><mark>🔹 1. Basic Concepts</mark></h2>
+      <ul>
+        <li><strong>Population:</strong> A group of candidate solutions.</li>
+        <li><strong>Chromosomes:</strong> A single candidate solution.</li>
+        <li><strong>Genes:</strong> Parts of a chromosome (variables).</li>
+        <li><strong>Fitness:</strong> How well a solution solves the problem.</li>
+        <li><strong>Generations:</strong> Iterations in the GA process.</li>
+      </ul>
+    
+      <h2><mark>🔹 2. Encoding (Chromosome Representation)</mark></h2>
+      <p>Solutions are encoded for the GA to process.</p>
+      <p><strong>Example: Binary Encoding</strong></p>
+      <ul>
+        <li>Function: f(x) = x², where 0 ≤ x ≤ 31</li>
+        <li>x = 6 → Binary = 00110</li>
+        <li>f(x) = 36</li>
+      </ul>
+      <p>Other encodings include:</p>
+      <ul>
+        <li>Real-valued encoding (for optimization problems)</li>
+        <li>Tree encoding (used in Genetic Programming)</li>
+      </ul>
+    
+      <h2><mark>🔹 3. Fitness Function</mark></h2>
+      <p>Evaluates how good a solution is.</p>
+      <p><strong>Example:</strong> f(x) = x², x = 6 (00110) → Fitness = 36</p>
+    
+      <h2><mark>🔹 4. Selection Methods (Reproduction)</mark></h2>
+      <p>Select the best individuals (parents) for crossover.</p>
+      <table border="1">
+        <tr><th>Method</th><th>Description</th></tr>
+        <tr><td>Roulette Wheel</td><td>Selection probability ∝ fitness</td></tr>
+        <tr><td>Tournament</td><td>Random subset; select best</td></tr>
+        <tr><td>Rank Selection</td><td>Based on rank, not actual fitness</td></tr>
+        <tr><td>Steady State</td><td>Only a few individuals replaced</td></tr>
+      </table>
+      <p><strong>Example (Roulette Wheel):</strong> Fitness values = [10, 30, 60] → Probabilities = [10%, 30%, 60%]</p>
+    
+      <h2><mark>🔹 5. Genetic Operators</mark></h2>
+    
+      <h3><mark>🔸 a) Crossover (Recombination)</mark></h3>
+      <p>Combines two parents to create offspring.</p>
+      <ul>
+        <li>Parent 1: 11001</li>
+        <li>Parent 2: 10110</li>
+        <li>Crossover at point 3 → Offspring 1: 11010, Offspring 2: 10101</li>
+      </ul>
+    
+      <h3><mark>🔸 b) Mutation</mark></h3>
+      <p>Randomly changes a gene to maintain diversity.</p>
+      <ul>
+        <li>Before: 11001</li>
+        <li>Mutation at 3rd bit → After: 11101</li>
+      </ul>
+      <h2><mark>🔹 6. Convergence of GA</mark></h2>
+      <ul>
+        <li>GA converges when the population becomes stable (no new better solutions).</li>
+        <li>Best solution remains the same for many generations.</li>
+        <li><strong>Premature convergence:</strong> Suboptimal solutions due to lack of diversity.</li>
+      </ul>
+    
+      <h2><mark>🔹 7. Applications of GA</mark></h2>
+      <h3><mark>Example 1: Traveling Salesman Problem (TSP)</mark></h3>
+      <ul>
+        <li><strong>Encoding:</strong> Permutation of city indices</li>
+        <li><strong>Fitness:</strong> Total distance</li>
+        <li><strong>Crossover:</strong> Partially mapped crossover</li>
+        <li><strong>Mutation:</strong> Swap cities</li>
+      </ul>
+    
+      <h3><mark> Example 2: Function Optimization</mark></h3>
+      <ul>
+        <li>Maximize f(x) = x ⋅ sin(x)</li>
+        <li>Use real-valued encoding</li>
+        <li>Evaluate f(x) for each individual</li>
+      </ul>
+    
+      <h2><mark>🔹 8. Genetic Programming (GP)</mark></h2>
+      <p>Genetic Programming is a GA-based method to evolve programs or expressions.</p>
+      <ul>
+        <li><strong>Operators:</strong> +, -, *, /</li>
+        <li><strong>Terminals:</strong> Constants, variables</li>
+      </ul>
+      <p><strong>Example:</strong> Evolving the function f(x) = x² + 2x + 1</p>
+      <pre>
+            +
+           / \
+          *   +
+         / \  / \
+        x  x 2  1
+      </pre>
+      <p><strong>Mutation:</strong> Change + to -</p>
+      <p><strong>Crossover:</strong> Swap subtrees between programs</p>
+    
+      <h2><mark> Computational Swarm Intelligence (CSI)</mark></h2>
+    
+      <h3><mark>🔹 1. Particle Swarm Optimization (PSO)</mark></h3>
+      <p>Inspired by bird flocking or fish schooling.</p>
+      <ul>
+        <li>Each particle has a position (solution) and velocity (direction).</li>
+        <li>Updates based on:</li>
+        <ul>
+          <li>Its own best position (pBest)</li>
+          <li>Global best position (gBest)</li>
+        </ul>
+      </ul>
+      <p><strong>Update Equations:</strong></p>
+      <pre>
+    vᵢ = vᵢ + c₁·r₁·(pBest − xᵢ) + c₂·r₂·(gBest − xᵢ)
+    xᵢ = xᵢ + vᵢ
+      </pre>
+      <p><strong>Example:</strong> Minimize f(x) = (x−3)²</p>
+      <ul>
+        <li>Start: x₁ = 5, x₂ = 1 → f(5)=4, f(1)=4</li>
+        <li>Update velocities and move toward x=3</li>
+        <li>Particles converge toward optimal value</li>
+      </ul>
+    
+      <h3><mark>🔹 2. Ant Colony Optimization (ACO)</mark></h3>
+      <p>Inspired by ants finding the shortest path using pheromone trails.</p>
+      <ul>
+        <li>Ants choose paths based on pheromone concentration.</li>
+        <li>Better paths → more pheromones.</li>
+        <li>More pheromones attract more ants.</li>
+        <li>Pheromones evaporate over time to prevent stagnation.</li>
+      </ul>
+      <p><strong>Example:</strong> Solving TSP (Cities = Nodes, Roads = Paths)</p>
+      <ul>
+        <li>Pheromone trails guide ants to shortest loop</li>
+        <li>Most efficient path dominates over iterations</li>
+      </ul>
+    
+      <h2><mark> Summary Table</mark></h2>
+      <table border="1">
+        <tr><th>Topic</th><th>Concept</th><th>Example</th></tr>
+        <tr><td>Genetic Algorithm</td><td>Natural selection</td><td>Optimize x², TSP</td></tr>
+        <tr><td>Fitness Function</td><td>Measures solution quality</td><td>f(x)=x²</td></tr>
+        <tr><td>Crossover</td><td>Combines parent chromosomes</td><td>11001 + 10110 → 11010</td></tr>
+        <tr><td>Mutation</td><td>Bit flip for diversity</td><td>11001 → 11101</td></tr>
+        <tr><td>Genetic Programming</td><td>Evolves trees/programs</td><td>x² + 2x + 1</td></tr>
+        <tr><td>PSO</td><td>Particles + Velocity</td><td>Minimize (x−3)²</td></tr>
+        <tr><td>ACO</td><td>Ants + Pheromones</td><td>Shortest route in TSP</td></tr>
+      </table>
+    
         </body>
 </html>
