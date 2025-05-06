@@ -179,7 +179,6 @@
       <title>Computer Graphics Notes</title>
   </head>
   <body>
-      <h3>Module I: Introduction to Graphics Systems</h3>
       
       <h3>1. Video Display Devices</h3>
       <p>Video display devices are hardware components used to visually present graphical and textual information. The most common types include:</p>
@@ -397,5 +396,442 @@
           <li><b>Iterative Approach:</b> Uses an explicit stack or queue to prevent excessive recursion.</li>
           <li><b>Time Complexity:</b> O(N) where N is the number of pixels in the region.</li>
       </ul>
+
+      <br>
+
+<h4>1. Basic Transformations</h4>
+<p>
+Transformations are fundamental operations in computer graphics used to modify the position, shape, or orientation of objects in 2D space. These include translation, scaling, rotation, reflection, and shear. Transformations help in viewing objects from different perspectives and building animations or simulations.
+</p>
+
+<h5>1.1 Translation</h5>
+<p>
+Translation moves an object from one location to another in 2D space. It is done by adding a constant value (called a translation vector) to the original coordinates of an object.
+</p>
+<ul>
+  <li>If a point P(x, y) is to be translated by Tx units in x-direction and Ty units in y-direction, the new coordinates P'(x', y') will be:</li>
+</ul>
+<p><strong>Formula:</strong> x' = x + Tx, y' = y + Ty</p>
+<p>Translation is applied uniformly to all points of the object.</p>
+
+<h5>1.2 Scaling</h5>
+<p>
+Scaling increases or decreases the size of an object. It is done by multiplying the coordinates by scaling factors along the x and y directions.
+</p>
+<p><strong>Formula:</strong> x' = x × Sx, y' = y × Sy</p>
+<ul>
+  <li>If Sx = Sy, the scaling is uniform.</li>
+  <li>If Sx ≠ Sy, the object is scaled non-uniformly (distorted).</li>
+</ul>
+
+<h5>1.3 Rotation</h5>
+<p>
+Rotation turns an object around a fixed point (usually the origin) by an angle θ (in degrees or radians).
+</p>
+<p><strong>Clockwise Rotation:</strong><br>
+x' = x·cosθ + y·sinθ<br>
+y' = -x·sinθ + y·cosθ
+</p>
+<p><strong>Counter-Clockwise Rotation:</strong><br>
+x' = x·cosθ - y·sinθ<br>
+y' = x·sinθ + y·cosθ
+</p>
+
+<h4>2. Matrix Representations and Homogeneous Coordinates</h4>
+<p>
+Transformations are conveniently represented in matrix form. This allows combining multiple transformations (called composition) efficiently. Homogeneous coordinates add a third coordinate (usually 1) to a 2D point for easier computation.
+</p>
+
+<h5>2.1 Homogeneous Representation:</h5>
+<p>
+Point P(x, y) becomes P(x, y, 1). All transformation matrices become 3x3.</p>
+
+<h5>2.2 Transformation Matrices:</h5>
+<ul>
+  <li><strong>Translation:</strong><br>
+  [ 1  0  Tx ]<br>
+  [ 0  1  Ty ]<br>
+  [ 0  0  1  ]
+  </li><br>
+  <li><strong>Scaling:</strong><br>
+  [ Sx  0   0 ]<br>
+  [ 0   Sy  0 ]<br>
+  [ 0   0   1 ]
+  </li><br>
+  <li><strong>Rotation (Counter-Clockwise θ):</strong><br>
+  [ cosθ  -sinθ  0 ]<br>
+  [ sinθ   cosθ  0 ]<br>
+  [ 0       0    1 ]
+  </li>
+</ul>
+
+<h4>3. Composite Transformations</h4>
+<p>
+Composite transformations are combinations of two or more transformations. Using matrix multiplication, multiple transformations can be applied as a single matrix.
+</p>
+<p><strong>Order matters:</strong> Rotation followed by translation is not the same as translation followed by rotation.</p>
+
+<h4>4. Other Transformations</h4>
+
+<h5>4.1 Reflection</h5>
+<p>
+Reflection flips an object across a line, such as the x-axis, y-axis, or origin.
+</p>
+<ul>
+  <li><strong>About x-axis:</strong> [ 1  0  0 ]<br> [ 0 -1  0 ]<br> [ 0  0  1 ]</li>
+  <li><strong>About y-axis:</strong> [ -1 0  0 ]<br> [ 0  1  0 ]<br> [ 0  0  1 ]</li>
+</ul>
+
+<h5>4.2 Shearing</h5>
+<p>
+Shearing distorts the shape of an object by shifting its x or y coordinates.
+</p>
+<ul>
+  <li><strong>X-Shear:</strong> x' = x + shx*y</li>
+  <li><strong>Y-Shear:</strong> y' = y + shy*x</li>
+</ul>
+
+<h4>5. The Viewing Pipeline</h4>
+<p>
+The viewing pipeline describes the sequence of operations required to display a 2D scene on the screen:
+</p>
+<ol>
+  <li>Modeling Transformation</li>
+  <li>World Coordinate System</li>
+  <li>Viewing Transformation</li>
+  <li>Clipping</li>
+  <li>Projection</li>
+  <li>Viewport Transformation</li>
+</ol>
+
+<h4>6. Viewing Coordinate Reference Frame</h4>
+<p>
+Defines a new coordinate system for viewing the scene. It includes:
+</p>
+<ul>
+  <li>Viewing Point</li>
+  <li>Viewing Direction</li>
+  <li>Up-direction (to establish orientation)</li>
+</ul>
+
+<h4>7. Window-to-Viewport Coordinate Transformation</h4>
+<p>
+This transformation maps coordinates from the world coordinate window to the device coordinate viewport.
+</p>
+<ul>
+  <li><strong>Window:</strong> Region in the world coordinate system.</li>
+  <li><strong>Viewport:</strong> Region on the display device.</li>
+</ul>
+<p>
+Mathematically,
+<br>
+xv = (x - xwmin) * (xvmax - xvmin) / (xwmax - xwmin) + xvmin<br>
+yv = (y - ywmin) * (yvmax - yvmin) / (ywmax - ywmin) + yvmin
+</p>
+
+<h4>8. Clipping</h4>
+<p>
+Clipping is the process of removing parts of the scene that lie outside the viewing window.
+</p>
+
+<h5>8.1 Point Clipping</h5>
+<p>
+Checks whether a point lies inside the window by comparing its coordinates against the window bounds.</p>
+
+<h5>8.2 Line Clipping – Cohen-Sutherland Algorithm</h5>
+<p>
+Each endpoint of the line is assigned a 4-bit region code based on its position relative to the window. The algorithm uses these codes to determine:
+</p>
+<ul>
+  <li>Trivially accept</li>
+  <li>Trivially reject</li>
+  <li>Partially visible → compute intersection</li>
+</ul>
+
+<h5>8.3 Polygon Clipping – Sutherland-Hodgman Algorithm</h5>
+<p>
+Used to clip polygons by sequentially testing all edges against each window boundary (left, right, top, bottom). New vertices are created at intersections.
+</p>
+<br>
+<h3>Module-IV: Three-Dimensional Geometric Transformations</h3>
+
+<h4>1. 3D Geometric Transformations</h4>
+<p>
+3D transformations extend 2D concepts into three-dimensional space. These are essential for manipulating 3D models in computer graphics applications like modeling, animation, and simulations.
+</p>
+
+<h5>1.1 Translation</h5>
+<p>
+Translation moves an object from one 3D location to another using a translation vector (Tx, Ty, Tz).
+</p>
+<p><strong>Formula:</strong><br>
+x' = x + Tx<br>
+y' = y + Ty<br>
+z' = z + Tz
+</p>
+<p>
+Matrix form (Homogeneous Coordinates):
+</p>
+<pre>
+[ 1  0  0  Tx ]
+[ 0  1  0  Ty ]
+[ 0  0  1  Tz ]
+[ 0  0  0  1  ]
+</pre>
+
+<h5>1.2 Scaling</h5>
+<p>
+Scaling increases or decreases the size of a 3D object.
+</p>
+<p><strong>Formula:</strong><br>
+x' = x * Sx<br>
+y' = y * Sy<br>
+z' = z * Sz
+</p>
+<p>
+Matrix form:
+</p>
+<pre>
+[ Sx  0   0   0 ]
+[ 0   Sy  0   0 ]
+[ 0   0   Sz  0 ]
+[ 0   0   0   1 ]
+</pre>
+
+<h5>1.3 Rotation</h5>
+<p>
+Rotation in 3D space can occur around any of the three axes.
+</p>
+
+<h6>Rotation about X-axis:</h6>
+<pre>
+x' = x
+y' = y*cosθ - z*sinθ
+z' = y*sinθ + z*cosθ
+
+Matrix:
+[ 1     0        0     0 ]
+[ 0   cosθ   -sinθ   0 ]
+[ 0   sinθ    cosθ   0 ]
+[ 0     0        0     1 ]
+</pre>
+
+<h6>Rotation about Y-axis:</h6>
+<pre>
+x' = x*cosθ + z*sinθ
+y' = y
+z' = -x*sinθ + z*cosθ
+
+Matrix:
+[ cosθ   0   sinθ   0 ]
+[ 0      1    0     0 ]
+[ -sinθ  0   cosθ   0 ]
+[ 0      0    0     1 ]
+</pre>
+
+<h6>Rotation about Z-axis:</h6>
+<pre>
+x' = x*cosθ - y*sinθ
+y' = x*sinθ + y*cosθ
+z' = z
+
+Matrix:
+[ cosθ  -sinθ  0   0 ]
+[ sinθ   cosθ  0   0 ]
+[ 0       0    1   0 ]
+[ 0       0    0   1 ]
+</pre>
+
+<h4>2. Polygon Surfaces</h4>
+<p>
+3D objects are often represented as collections of polygonal surfaces. Polygons (especially triangles and quadrilaterals) form the building blocks of 3D meshes.
+</p>
+<ul>
+  <li>Polygons are defined by ordered sets of vertices.</li>
+  <li>Used for flat shading and wireframe rendering.</li>
+</ul>
+
+<h4>3. Curved Lines & Surfaces</h4>
+<p>
+Unlike polygonal surfaces, curved lines and surfaces offer smooth contours. Common examples include cylinders, cones, and spheres.
+</p>
+<p>They are mathematically represented using parametric equations.</p>
+
+<h4>4. Quadric Surfaces</h4>
+<p>
+Quadric surfaces are second-degree algebraic surfaces defined by polynomial equations such as:
+</p>
+<pre>
+Ax² + By² + Cz² + Dxy + Exz + Fyz + Gx + Hy + Iz + J = 0
+</pre>
+<p>
+Examples: sphere, ellipsoid, cone, cylinder, paraboloid, hyperboloid.
+</p>
+
+<h4>5. Spline Representations</h4>
+<p>
+Splines are piecewise polynomial functions used for modeling curves and surfaces.
+</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+  <li>Smooth and flexible</li>
+  <li>Compact representation</li>
+  <li>Supports local control (changing one segment doesn’t affect the entire curve)</li>
+</ul>
+
+<h5>5.1 Cubic Spline Interpolation</h5>
+<p>
+Cubic splines are made of piecewise third-degree polynomials that pass through a series of control points.
+</p>
+<p>
+Properties:
+<ul>
+  <li>Continuity in 1st and 2nd derivatives</li>
+  <li>Good approximation of natural curves</li>
+</ul>
+</p>
+
+<h4>6. Bézier Curves and Surfaces</h4>
+<p>
+Bézier curves are defined by a set of control points and use Bernstein basis functions.
+</p>
+
+<h5>6.1 Bézier Curve</h5>
+<p>
+A Bézier curve of degree n is defined as:
+</p>
+<pre>
+B(t) = Σ (nCi) * (1 - t)<sup>n-i</sup> * t<sup>i</sup> * Pi , for t ∈ [0,1]
+</pre>
+<p>
+Where Pi are control points, and nCi is the binomial coefficient.
+</p>
+<ul>
+  <li>Start and end at the first and last control points</li>
+  <li>Shape is influenced by intermediate control points</li>
+</ul>
+
+<h5>6.2 Bézier Surfaces</h5>
+<p>
+Constructed using a grid of control points. A Bézier surface patch is the Cartesian product of Bézier curves in u and v directions.
+</p>
+<p>
+Used in 3D modeling and CAD software for smooth surface representation.
+</p>
+<br>
+<h3>1. Multimedia Systems</h3>
+<p>A <strong>multimedia system</strong> is a computer-based system that uses more than one type of media (e.g., text, images, audio, video, animation) to deliver content.</p>
+<p><em>Example:</em> An educational app that uses videos, images, and quizzes.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+    <li>Combines multiple types of content.</li>
+    <li>Interacts with users (e.g., through buttons, navigation).</li>
+    <li>Often used in education, entertainment, marketing, etc.</li>
+</ul>
+
+<h3>2. Multimedia Presentation & Production</h3>
+<p><strong>Presentation:</strong> How multimedia is shown to the user (e.g., slideshows, animations).</p>
+<p><strong>Production:</strong> The process of creating multimedia content.</p>
+
+<h4>Steps in Production:</h4>
+<ol>
+    <li>Planning and storyboarding.</li>
+    <li>Creating content (graphics, audio, video).</li>
+    <li>Combining everything using software.</li>
+    <li>Testing and publishing the final product.</li>
+</ol>
+
+<h3>3. Characteristics of Multimedia Presentation</h3>
+<ul>
+    <li><strong>Interactivity:</strong> Users can click or control playback.</li>
+    <li><strong>Non-linearity:</strong> Not just top-to-bottom; users choose what to view.</li>
+    <li><strong>Time-dependent:</strong> Sound and video play over time.</li>
+    <li><strong>Integration:</strong> All media types work together.</li>
+</ul>
+
+<h3>4. Uses of Multimedia</h3>
+<ul>
+    <li><strong>Education:</strong> Tutorials, simulations, e-books.</li>
+    <li><strong>Entertainment:</strong> Games, movies.</li>
+    <li><strong>Business:</strong> Ads, presentations.</li>
+    <li><strong>Healthcare:</strong> Medical imaging and training videos.</li>
+</ul>
+
+<h3>5. CD Formats</h3>
+<p><strong>CD-ROM:</strong> Read-only memory.</p>
+<p><strong>CD-R:</strong> Can write once.</p>
+<p><strong>CD-RW:</strong> Can be written and erased multiple times.</p>
+
+<h3>6. DVD and Its Formats</h3>
+<p>DVD stores more than CD.</p>
+<p><strong>Formats:</strong></p>
+<ul>
+    <li><strong>DVD-ROM:</strong> Read-only.</li>
+    <li><strong>DVD-R/+R:</strong> Write once.</li>
+    <li><strong>DVD-RW/+RW:</strong> Rewritable.</li>
+    <li><strong>DVD-DL:</strong> Dual-layer for extra storage.</li>
+</ul>
+
+<h3>7. Text and Its File Formats</h3>
+<ul>
+    <li><strong>Plain text:</strong> .txt</li>
+    <li><strong>Formatted:</strong> .docx, .rtf</li>
+    <li><strong>Web:</strong> .html, .xml</li>
+    <li><strong>Presentation:</strong> .ppt, .pdf</li>
+</ul>
+
+<h3>8. Image Types and File Formats</h3>
+<ul>
+    <li><strong>Raster Images:</strong> Made of pixels (e.g., JPG, PNG).</li>
+    <li><strong>Vector Images:</strong> Made of lines and shapes (e.g., SVG).</li>
+    <li><strong>Formats:</strong></li>
+    <ul>
+        <li>.jpg – good for photos.</li>
+        <li>.png – supports transparency.</li>
+        <li>.gif – supports animation.</li>
+        <li>.svg – for scalable images.</li>
+    </ul>
+</ul>
+
+<h3>9. Fundamentals of Sound</h3>
+<p>Sound is a wave caused by vibration.</p>
+<p><strong>Properties of Sound:</strong></p>
+<ul>
+    <li><strong>Amplitude:</strong> Loudness.</li>
+    <li><strong>Frequency:</strong> Pitch.</li>
+    <li><strong>Timbre:</strong> Quality or tone of sound.</li>
+</ul>
+
+<h3>10. Audio File Formats</h3>
+<ul>
+    <li>.mp3 – compressed, common format.</li>
+    <li>.wav – uncompressed, high quality.</li>
+    <li>.aac, .flac, .ogg – other popular formats.</li>
+</ul>
+
+<h3>11. Video</h3>
+<p>Video is a series of images shown quickly.</p>
+<p>Measured in <strong>frames per second (fps)</strong>.</p>
+<p>Higher <strong>resolution</strong> (like 1080p) means better quality.</p>
+<p>Needs more space and processing than images or audio.</p>
+
+<h3>12. Transmission of Video Signals</h3>
+<p>Videos can be:</p>
+<ul>
+    <li>Played from local storage (like USB/DVD).</li>
+    <li>Streamed over the internet (YouTube, Netflix).</li>
+    <li>Sent over networks (like video calls).</li>
+</ul>
+<p>They are often <strong>compressed</strong> to reduce size (e.g., using codecs like H.264).</p>
+
+<h3>13. Video File Formats</h3>
+<ul>
+    <li>.mp4 – most widely used, efficient compression.</li>
+    <li>.avi – older format, larger files.</li>
+    <li>.mkv – supports subtitles and multiple audio tracks.</li>
+    <li>.mov – used by Apple.</li>
+    <li>.wmv – Windows-based.</li>
+</ul>
+
 </body>
 </html>

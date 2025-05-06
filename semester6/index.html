@@ -395,6 +395,511 @@ function removememe() {
       <br>
       <strong><u>Explain the need for Image compression in digital Image processing.</u></strong><br>
       With the advantaged development in internet, telecommunication, multimedia, and high-definition television technologies. The amount of information that is handled by computers has grown exporentially over the past decades. The amount of data transmitted through the internet doubles every year, and a large portion of that data comprises of image. Reducing the bandwidth needs of any given device will result in significant cost reductions and will make the use of the device more affordable. Image compression offers ways to represent an image in a more compact way, so that images can be stored in a compact manner and can be transmitted faster.
-      
+      <br>
+
+<h4>Part A: Image Enhancement</h4>
+
+<h5>1. Image Enhancement in Spatial Domain</h5>
+<p>Spatial domain techniques operate directly on the pixel values of an image to improve its visual appearance or make it better suited for analysis.</p>
+
+<h5>2. Enhancement through Point Operations</h5>
+<p>Point operations modify a pixel value based only on its original value.</p>
+<ul>
+  <li><strong>Image Negative:</strong> s = L - 1 - r</li>
+  <li><strong>Log Transformation:</strong> s = c * log(1 + r)</li>
+  <li><strong>Gamma (Power-law) Transformation:</strong> s = c * r<sup>γ</sup></li>
+</ul>
+
+<h5>3. Contrast Stretching</h5>
+<p>Improves contrast by stretching intensity values across the full range:</p>
+<pre>s = ((r - r_min) * (L - 1)) / (r_max - r_min)</pre>
+
+<h5>4. Histogram Manipulation</h5>
+<ul>
+  <li><strong>Histogram Equalization:</strong> Redistributes intensity values to enhance contrast.</li>
+  <li><strong>Histogram Specification:</strong> Matches the histogram of one image to another.</li>
+</ul>
+
+<h5>5. Linear Gray Level Transformation</h5>
+<p>Applies a linear mapping to pixel intensities for brightness or contrast correction.</p>
+
+<h5>6. Non-Linear Gray Level Transformation</h5>
+<p>Uses non-linear functions like log, exponential, and power-law for specialized contrast improvements.</p>
+
+<h5>7. Local or Neighborhood Operations</h5>
+<p>Modifies a pixel based on its neighbors:</p>
+<ul>
+  <li>Mean Filter</li>
+  <li>Median Filter</li>
+</ul>
+
+<h5>8. Median Filter</h5>
+<p>Replaces the central pixel in a window with the median value. Best for removing salt-and-pepper noise.</p>
+
+<h5>9. Spatial Domain High Pass Filtering</h5>
+<p>Highlights edges and fine details using filters such as Laplacian, Sobel, and Prewitt.</p>
+
+<h5>10. Bit-Plane Slicing</h5>
+<p>Represents an image in individual binary layers (planes) from bit 0 to bit 7 in 8-bit images.</p>
+
+<h5>11. Image Enhancement in Frequency Domain</h5>
+<p>Transforms the image to the frequency domain (e.g., via DFT) to manipulate frequency components.</p>
+
+<h5>12. Root Filtering</h5>
+<p>Used in frequency domain to enhance specific root power components for clarity.</p>
+
+<h5>13. Homomorphic Filtering</h5>
+<p>Enhances contrast and reduces multiplicative noise by separating reflectance and illumination.</p>
+
+<hr>
+
+<h4>Part B: Image Restoring and Denoising</h4>
+
+<h5>1. Image Degradation</h5>
+<p>Occurs due to blur, noise, motion, or environment. Degraded image is less useful for analysis.</p>
+
+<h5>2. Types of Image Blur</h5>
+<ul>
+  <li>Motion Blur</li>
+  <li>Out-of-Focus Blur</li>
+  <li>Atmospheric Blur</li>
+</ul>
+
+<h5>3. Classification of Image Restoration Techniques</h5>
+<ul>
+  <li><strong>Deterministic:</strong> Uses fixed models (e.g., inverse filtering).</li>
+  <li><strong>Statistical:</strong> Uses probabilistic models (e.g., Wiener filtering).</li>
+</ul>
+
+<h5>4. Image Restoration Model</h5>
+<p>
+g(x,y) = h(x,y) * f(x,y) + η(x,y)
+</p>
+<p>Where:</p>
+<ul>
+  <li>g(x,y): degraded image</li>
+  <li>h(x,y): degradation function</li>
+  <li>f(x,y): original image</li>
+  <li>η(x,y): noise</li>
+</ul>
+
+<h5>5. Linear Image Restoration Techniques</h5>
+<ul>
+  <li><strong>Inverse Filtering:</strong> F(u,v) = G(u,v) / H(u,v)</li>
+  <li><strong>Wiener Filtering:</strong> Minimizes mean square error between restored and original image.</li>
+</ul>
+
+<h5>6. Non-Linear Image Restoration Techniques</h5>
+<ul>
+  <li>Median Filter</li>
+  <li>Morphological Filters</li>
+  <li>Iterative Restoration Algorithms</li>
+</ul>
+
+<h5>7. Image Denoising</h5>
+<p>Removes random noise while retaining important features like edges and textures.</p>
+
+<h5>8. Classification of Noise in Images</h5>
+<ul>
+  <li>Gaussian Noise</li>
+  <li>Salt-and-Pepper Noise</li>
+  <li>Speckle Noise</li>
+</ul>
+
+<h5>9. Median Filtering</h5>
+<p>Effective against impulsive noise like salt-and-pepper; preserves edges.</p>
+
+<h5>10. Trimmed Average Filter</h5>
+<p>Sorts pixel values in a neighborhood, removes extreme values, and averages the rest.</p>
+
+<h5>11. Methods to Minimize Speckle Noise</h5>
+<ul>
+  <li>Lee Filter</li>
+  <li>Kuan Filter</li>
+  <li>Adaptive Median Filter</li>
+  <li>Wavelet-based Denoising</li>
+</ul>
+
+<h5>12. Application of Image Restoration</h5>
+<ul>
+  <li>Medical Imaging (CT, MRI)</li>
+  <li>Astronomy</li>
+  <li>Remote Sensing</li>
+  <li>Surveillance Footage Improvement</li>
+</ul>
+<br>
+
+<h4>1. Introduction</h4>
+<p>
+Image segmentation is the process of dividing an image into multiple segments or regions to simplify its analysis or change its representation to something more meaningful. It plays a crucial role in object detection, medical imaging, and machine vision.
+</p>
+
+<h4>2. Classification of Image Segmentation Techniques</h4>
+<p>Segmentation methods can be broadly classified into:</p>
+<ul>
+  <li><strong>Region-Based Techniques:</strong> Operate by grouping neighboring pixels with similar properties.</li>
+  <li><strong>Edge-Based Techniques:</strong> Detect edges (discontinuities) to define object boundaries.</li>
+  <li><strong>Thresholding-Based Techniques:</strong> Use intensity value thresholds to segment images.</li>
+  <li><strong>Clustering-Based Techniques:</strong> Use algorithms like K-means, Fuzzy C-means to group pixels.</li>
+</ul>
+
+<h4>3. Region Approach to Image Segmentation</h4>
+<p>This approach groups together pixels or subregions into larger regions based on predefined criteria such as intensity, color, or texture.</p>
+<ul>
+  <li><strong>Region Growing:</strong> Starts with a seed point and adds neighboring pixels with similar properties.</li>
+  <li><strong>Region Splitting:</strong> Splits the image into quadrants and tests for homogeneity recursively.</li>
+  <li><strong>Region Merging:</strong> Merges adjacent regions that are similar based on predefined rules.</li>
+</ul>
+
+<h4>4. Image Segmentation Based on Thresholding</h4>
+<p>Thresholding converts a grayscale image into a binary image.</p>
+<ul>
+  <li><strong>Global Thresholding:</strong> Uses a single threshold value for the entire image.</li>
+  <li><strong>Local Thresholding:</strong> Applies different thresholds in different regions of the image.</li>
+  <li><strong>Otsu's Method:</strong> An automatic global thresholding technique that minimizes intra-class variance.</li>
+</ul>
+
+<h4>5. Edge-Based Segmentation</h4>
+<p>Based on the detection of discontinuities (edges) in an image. These edges often correspond to object boundaries.</p>
+<ul>
+  <li>Edges are detected using gradient magnitude and direction.</li>
+  <li>Common edge detectors include Sobel, Prewitt, Roberts, and Canny.</li>
+</ul>
+
+<h4>6. Classification of Edges</h4>
+<p>Edges are characterized by the nature of intensity changes.</p>
+<ul>
+  <li><strong>Step Edge:</strong> Abrupt change in intensity (common for object boundaries).</li>
+  <li><strong>Ramp Edge:</strong> Gradual change in intensity.</li>
+  <li><strong>Ridge Edge:</strong> Local maximum of intensity.</li>
+  <li><strong>Roof Edge:</strong> Narrow peak of intensity change.</li>
+</ul>
+
+<h4>7. Edge Detection</h4>
+<p>The process of identifying significant transitions in pixel intensity. Helps outline objects within an image.</p>
+
+<h4>8. Gradient Operator</h4>
+<p>Used to detect edges based on the rate of change in intensity.</p>
+<p>
+Gradient magnitude is given by: <br>
+|∇f| = √[(∂f/∂x)² + (∂f/∂y)²]
+</p>
+
+<h4>9. Edge Detection using First-Order Derivatives</h4>
+<p>Uses differences between neighboring pixel values to estimate intensity gradients.</p>
+<ul>
+  <li>Enhances regions of high spatial frequency.</li>
+  <li>Most commonly used operators use 3x3 convolution kernels.</li>
+</ul>
+
+<h4>10. Roberts Kernel</h4>
+<p>
+One of the earliest edge detectors using 2x2 convolution masks:
+<pre>
+Gx = [ 1  0 ]
+     [ 0 -1 ]
+Gy = [ 0  1 ]
+     [-1  0 ]
+</pre>
+</p>
+
+<h4>11. Prewitt Kernel</h4>
+<p>
+Estimates the gradient using 3x3 masks, with equal weights:
+<pre>
+Gx = [-1 0 1]          Gy = [ 1  1  1]
+     [-1 0 1]               [ 0  0  0]
+     [-1 0 1]               [-1 -1 -1]
+</pre>
+</p>
+
+<h4>12. Sobel Kernel</h4>
+<p>
+Similar to Prewitt, but with more emphasis on the center pixels:
+<pre>
+Gx = [-1 0 1]          Gy = [ 1  2  1]
+     [-2 0 2]               [ 0  0  0]
+     [-1 0 1]               [-1 -2 -1]
+</pre>
+</p>
+
+<h4>13. Canny Edge Detector</h4>
+<p>
+A powerful edge detector using multiple steps:
+</p>
+<ul>
+  <li>Noise reduction with Gaussian blur.</li>
+  <li>Gradient magnitude and direction calculation.</li>
+  <li>Non-maximum suppression.</li>
+  <li>Double thresholding and edge tracking by hysteresis.</li>
+</ul>
+
+<h4>14. HOG Transform (Histogram of Oriented Gradients)</h4>
+<p>
+A feature descriptor used in object detection:
+</p>
+<ul>
+  <li>Divides the image into small connected cells.</li>
+  <li>Computes a histogram of gradient directions for each cell.</li>
+  <li>Normalization is performed to improve accuracy and reduce noise.</li>
+  <li>Often used in combination with machine learning for detection (e.g., pedestrian detection).</li>
+</ul>
+<br>
+
+<h4>1. Introduction to Image Transform</h4>
+<p>
+Image transforms are mathematical tools used to represent an image in a different domain, often to simplify certain operations like filtering, compression, and enhancement. Transforming an image allows analysis of frequency components or spatial patterns that are not easily visible in the spatial domain.
+</p>
+
+<h4>2. Need of Transform</h4>
+<p>
+Transformations are essential because they:
+</p>
+<ul>
+  <li>Convert image data to a domain where image characteristics can be easily analyzed.</li>
+  <li>Enable efficient image compression and storage.</li>
+  <li>Help in frequency domain filtering.</li>
+  <li>Highlight features not evident in spatial representation.</li>
+</ul>
+
+<h4>3. Image Transforms</h4>
+<p>
+Common image transforms include:
+</p>
+<ul>
+  <li>Fourier Transform</li>
+  <li>Walsh Transform</li>
+  <li>Hadamard Transform</li>
+  <li>Haar Transform</li>
+  <li>Discrete Cosine Transform (DCT)</li>
+</ul>
+
+<h4>4. Fourier Transform</h4>
+<p>
+The Fourier Transform converts an image from spatial domain to frequency domain. It represents an image as a sum of sinusoids with different frequencies and amplitudes.
+</p>
+<p>
+<strong>Formula (1D):</strong><br>
+F(u) = ∑ f(x) · e<sup>-j2πux/N</sup>
+</p>
+<p>
+<strong>Applications:</strong> Image filtering, image analysis, pattern recognition.
+</p>
+
+<h4>5. 2D Discrete Fourier Transform (2D-DFT)</h4>
+<p>
+The 2D-DFT extends the concept of 1D-DFT to two dimensions. It converts a 2D spatial image into its frequency components.
+</p>
+<p>
+<strong>Formula:</strong><br>
+F(u, v) = ∑∑ f(x, y) · e<sup>-j2π(ux/M + vy/N)</sup>
+</p>
+<p>
+Here, (x, y) are spatial coordinates and (u, v) are frequency coordinates.
+</p>
+
+<h4>6. Properties of 2D-DFT</h4>
+<ul>
+  <li><strong>Linearity:</strong> DFT of a sum is the sum of DFTs.</li>
+  <li><strong>Translation:</strong> Shifting in spatial domain introduces a phase shift in frequency domain.</li>
+  <li><strong>Convolution:</strong> Convolution in spatial domain equals multiplication in frequency domain.</li>
+  <li><strong>Symmetry:</strong> For real-valued images, the DFT is conjugate symmetric.</li>
+</ul>
+
+<h4>7. Walsh Transform</h4>
+<p>
+The Walsh Transform uses a set of orthogonal, square wave functions. Unlike the Fourier Transform, it does not use sinusoidal basis functions.
+</p>
+<ul>
+  <li>Efficient for real-time signal and image processing.</li>
+  <li>Fast computation and hardware implementation-friendly.</li>
+</ul>
+
+<h4>8. Hadamard Transform</h4>
+<p>
+Hadamard Transform is similar to Walsh, defined using binary sequences. It transforms signals using only additions and subtractions, making it computationally inexpensive.
+</p>
+<ul>
+  <li>Elements are +1 and -1 only.</li>
+  <li>Useful in image compression and analysis.</li>
+</ul>
+
+<h4>9. Haar Transform</h4>
+<p>
+Haar Transform is the simplest form of wavelet transform. It captures both spatial and frequency information.
+</p>
+<ul>
+  <li>Uses square-shaped wavelets.</li>
+  <li>Fast and efficient for hierarchical image representation.</li>
+  <li>Often used in JPEG2000 compression.</li>
+</ul>
+
+<h4>10. Discrete Cosine Transform (DCT)</h4>
+<p>
+The DCT expresses an image as a sum of cosine functions oscillating at different frequencies. It is widely used in image compression (JPEG).
+</p>
+<p>
+<strong>1D-DCT Formula:</strong><br>
+F(u) = α(u) ∑ f(x) · cos[(2x+1)uπ / 2N]
+</p>
+<p>
+<strong>2D-DCT Formula:</strong><br>
+F(u,v) = α(u)α(v) ∑∑ f(x,y) · cos[(2x+1)uπ / 2N] · cos[(2y+1)vπ / 2N]
+</p>
+<p>
+Where:
+<ul>
+  <li>α(u) = √(1/N) when u = 0</li>
+  <li>α(u) = √(2/N) when u > 0</li>
+</ul>
+</p>
+
+<h4>Advantages of DCT:</h4>
+<ul>
+  <li>Energy compaction: Most energy is concentrated in a few coefficients.</li>
+  <li>High compression ratio with minimal loss.</li>
+  <li>Used in JPEG, MPEG standards.</li>
+</ul>
+<br>
+
+<h4>1. Introduction</h4>
+<p>
+Image compression is a process that reduces the amount of data required to represent an image without excessively compromising visual quality. It is essential for reducing storage requirements and increasing transmission efficiency.
+</p>
+
+<h4>2. Need for Image Compression</h4>
+<ul>
+  <li>Images take up significant storage space, especially in raw format.</li>
+  <li>Faster transmission of images over networks.</li>
+  <li>Required for efficient multimedia applications like video streaming and archiving.</li>
+</ul>
+
+<h4>3. Redundancy in Images</h4>
+<p>
+Image data often contains redundancy, which can be eliminated without affecting the perceived image quality.
+</p>
+<ul>
+  <li><strong>Spatial Redundancy:</strong> Correlation between neighboring pixels.</li>
+  <li><strong>Spectral Redundancy:</strong> Correlation among different color bands.</li>
+  <li><strong>Temporal Redundancy:</strong> Repetition in successive image frames (in video).</li>
+  <li><strong>Psychovisual Redundancy:</strong> Information not perceived by the human eye and can be safely discarded.</li>
+</ul>
+
+<h4>4. Classification of Redundancy</h4>
+<ol>
+  <li><strong>Inter-pixel redundancy:</strong> Based on correlation between neighboring pixels.</li>
+  <li><strong>Coding redundancy:</strong> Caused by inefficient encoding techniques.</li>
+  <li><strong>Psycho-visual redundancy:</strong> Eliminates data that is visually insignificant.</li>
+</ol>
+
+<h4>5. Image Compression Schemes</h4>
+<p>
+A typical image compression scheme includes:
+</p>
+<ul>
+  <li>Source Encoder (for removing redundancy)</li>
+  <li>Quantizer (for reducing precision)</li>
+  <li>Entropy Encoder (for efficient binary encoding)</li>
+</ul>
+
+<h4>6. Classification of Image Compression Schemes</h4>
+<ol>
+  <li><strong>Lossless Compression:</strong> Original image can be perfectly reconstructed. Examples: Run Length Encoding, Huffman Coding.</li>
+  <li><strong>Lossy Compression:</strong> Some data is lost, but often imperceptible to human eye. Examples: JPEG, MPEG.</li>
+</ol>
+
+<h4>7. Fundamentals of Information Theory</h4>
+<p>
+Information theory deals with the amount of information present in the image and sets the theoretical limits of compression. It is based on the concept of entropy, which measures the average information per pixel.
+</p>
+<p>
+<strong>Entropy (H):</strong><br>
+H = -∑ p(x) · log₂ p(x)
+</p>
+<p>
+Where p(x) is the probability of a pixel value x.
+</p>
+
+<h4>8. Run Length Coding (RLC)</h4>
+<p>
+A simple lossless compression method that replaces sequences of the same data value with a single value and a count.
+</p>
+<p><strong>Example:</strong> AAAAAABBB → 6A3B</p>
+
+<h4>9. Shannon-Fano Coding</h4>
+<p>
+A statistical coding technique that assigns shorter codes to more frequent symbols and longer codes to less frequent ones.
+</p>
+<ul>
+  <li>Builds a binary tree from bottom-up based on symbol probabilities.</li>
+  <li>Not optimal but better than fixed-length coding.</li>
+</ul>
+
+<h4>10. Huffman Coding</h4>
+<p>
+An optimal and widely-used entropy encoding algorithm for lossless compression. It builds a binary tree where:
+</p>
+<ul>
+  <li>More frequent symbols are closer to the root and have shorter codes.</li>
+  <li>The total code length is minimized.</li>
+</ul>
+
+<h4>Steps of Huffman Coding:</h4>
+<ol>
+  <li>List all symbols with their frequencies.</li>
+  <li>Combine two symbols with the lowest frequencies into a new node.</li>
+  <li>Repeat until only one node remains (the root).</li>
+  <li>Assign binary codes based on traversal (left = 0, right = 1).</li>
+</ol>
+
+<h4>11. Arithmetic Coding</h4>
+<p>
+Instead of assigning codes to individual symbols, arithmetic coding encodes the entire message into a single number (a fraction between 0 and 1).
+</p>
+<ul>
+  <li>More efficient than Huffman for small alphabets.</li>
+  <li>Offers better compression but is computationally more complex.</li>
+</ul>
+
+<h4>12. Transformation-Based Compression</h4>
+<p>
+Transforms the image to another domain (e.g., frequency) and then compresses the coefficients.
+</p>
+<ul>
+  <li>Examples: Discrete Cosine Transform (DCT), Wavelet Transform.</li>
+  <li>Lossy in nature but provides high compression with good quality.</li>
+</ul>
+
+<h4>13. Image Compression Standards</h4>
+<ul>
+  <li><strong>JPEG:</strong> Uses DCT and is widely used for lossy image compression.</li>
+  <li><strong>JPEG 2000:</strong> Uses wavelet transform, provides better quality at higher compression.</li>
+  <li><strong>MPEG:</strong> Compression standard for video, uses both inter-frame and intra-frame compression.</li>
+  <li><strong>PNG:</strong> Lossless compression using DEFLATE (LZ77 + Huffman).</li>
+</ul>
+
+<h4>14. Scalar Quantization</h4>
+<p>
+A lossy process that maps a large set of values to a smaller set. Each input value is rounded off to the nearest representative level.
+</p>
+<ul>
+  <li>Simple and fast, but may lose important details.</li>
+</ul>
+
+<h4>15. Vector Quantization</h4>
+<p>
+Instead of quantizing single values, vector quantization deals with blocks or vectors of pixels.
+</p>
+<ul>
+  <li>More efficient and powerful than scalar quantization.</li>
+  <li>Involves a codebook and mapping input vectors to the nearest code vector.</li>
+</ul>
+
+<h4>Types of Vector Quantization:</h4>
+<ul>
+  <li><strong>Fixed Vector Quantization:</strong> Uses a pre-defined codebook.</li>
+  <li><strong>Adaptive Vector Quantization:</strong> Codebook adapts based on the input data.</li>
+</ul>
+
     </body>
 </html>
